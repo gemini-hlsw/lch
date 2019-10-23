@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>lchUmbrella</artifactId>
+        <groupId>edu.gemini.lch</groupId>
+        <version>3.2.3-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <name>PAM Parser Module</name>
+    <artifactId>pam-parser</artifactId>
+    <packaging>jar</packaging>
+
+    <build>
+      <plugins>
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>antlr3-maven-plugin</artifactId>
+          <version>1.0</version>
+            <configuration>
+               <!-- needed to tell the plugin where to find the tokens file -->
+               <libDirectory>target/generated-sources/antlr/edu/gemini/lch/pamparser</libDirectory>
+             </configuration>
+            <executions>
+              <execution>
+                <goals>
+                  <goal>antlr</goal>
+                </goals>
+              </execution>
+            </executions>
+        </plugin>
+      </plugins>
+    </build>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>edu.gemini.lch</groupId>
+            <artifactId>model</artifactId>
+            <version>3.2.3-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.lch</groupId>
+            <artifactId>persistence</artifactId>
+            <version>3.2.3-SNAPSHOT</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.antlr</groupId>
+            <artifactId>antlr-runtime</artifactId>
+            <version>3.0.1</version>
+        </dependency>
+
+    </dependencies>
+
+</project>

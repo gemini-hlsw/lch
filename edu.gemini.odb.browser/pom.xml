@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>lchUmbrella</artifactId>
+        <groupId>edu.gemini.lch</groupId>
+        <version>3.2.3-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <name>Gemini ODB Browser (API)</name>
+    <groupId>edu.gemini.odb</groupId>
+    <artifactId>browser-api</artifactId>
+    <version>3.2.3-SNAPSHOT</version>
+    <!-- make this an OSGi bundle -->
+    <packaging>bundle</packaging>
+
+    <properties>
+        <bundle.symbolicName>edu.gemini.odb.browser</bundle.symbolicName>
+        <bundle.namespace>edu.gemini.odb.browser</bundle.namespace>
+    </properties>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>jaxb2-maven-plugin</artifactId>
+                <version>1.4</version>
+                <executions>
+                    <execution>
+                        <id>xjc</id>
+                        <goals>
+                            <goal>xjc</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <schemaDirectory>src/main/resources/xsd</schemaDirectory>
+                    <bindingDirectory>src/main/resources/xsd</bindingDirectory>
+                    <packageName>edu.gemini.odb.browser</packageName>
+                </configuration>
+            </plugin>
+
+            <!-- make this an OSGi bundle so it can be reused server side -->
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>2.3.7</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${bundle.symbolicName}</Bundle-SymbolicName>
+                        <Bundle-Version>${project.version}</Bundle-Version>
+                        <Export-Package>edu.gemini.odb.browser</Export-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+
+
+    <dependencies>
+    </dependencies>
+
+
+</project>

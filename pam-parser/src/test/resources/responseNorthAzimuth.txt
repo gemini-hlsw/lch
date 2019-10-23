@@ -1,0 +1,70 @@
+		Classification: UNCLASSIFIED
+
+UNITED STATES STATEGIC COMMAND LASER CLEARINGHOUSE (LCH) TIME WINDOWS REPORT
+
+Date:    2011 May 28 10:45:01
+From:    JSpOC/SBM
+To:      Requester
+Subject: LCH Authorized Shoot (Open) Windows
+
+
+1. The attached information contains the coordinated and approved
+   spatial parameters
+
+      (a) Authorized Shoot (Open) Windows
+
+   During Authorized Shoot Windows, the laser owner-operator (O/O) is authorized
+   to operate the approved system laser in accordance with the Source/Target
+   geometry definitions contained in this report.
+
+2. The laser O/O may perform Hybrid Predictive Avoidance (HPA) during Authorized
+   Shoot Windows, if previously certified in writing by USSTRATCOM to do so.
+
+3. Any deviation from this authorization must be immediately reported
+   to the Laser Clearinghouse/SBM at: Commercial 805-605-6546,6547. DSN=275-(xxxx).
+
+4. See below for comments specific to this mission.
+
+5. If you have any questions, please don't hesitate to contact LCH/SBM at
+   the above listed phone numbers.
+
+JSpOC/SBM
+VANDENBERG Air Force Base
+VAFB, CA 93437
+
+
+
+Mission ID:                      Gemini North_589nm_14W_.65urad_100kHz_11148104501_P
+Laser Owner/Operator:            Requester
+Report Date/Time (UTC):          2011 May 28 10:45:01
+Mission Name:                    Gemini North_589nm_14W_.65urad_100kHz
+Mission Start Date/Time (UTC):   2011 May 30 05:05:12
+Mission Stop  Date/Time (UTC):   2011 May 30 15:33:38
+Mission Duration   (HH:MM:SS):   10:28:25
+Type of Windows in this report:  Authorized Shoot (Open) Windows
+Comment:                         None
+Number of Targets:               1
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0623 10    0077:58
+2011 May 30 (150) 0623 14    2011 May 30 (150) 0840 10    0136:56
+2011 May 30 (150) 0840 12    2011 May 30 (150) 1039 37    0119:25
+2011 May 30 (150) 1039 41    2011 May 30 (150) 1143 34    0063:53
+2011 May 30 (150) 1144 01    2011 May 30 (150) 1409 47    0145:46
+2011 May 30 (150) 1409 54    2011 May 30 (150) 1533 38    0083:44
+
+Percent = 99.88%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Fixed Azimuth/Elevation
+Azimuth:   0.0 degrees
+Elevation: 90.0 degrees

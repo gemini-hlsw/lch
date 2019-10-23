@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configure id="wapp" class="org.eclipse.jetty.webapp.WebAppContext">
+
+    <!-- THE CONFIGURATION WHICH IS DEPENDING ON THE ENVIRONMENT AND SERVER WE DEPLOY TO -->
+    <!-- The servers we deploy to are expected to define these properties in their etc/jetty.xml file. -->
+
+    <New class="org.eclipse.jetty.plus.jndi.EnvEntry">
+        <Arg>ltts/environment</Arg>
+        <Arg type="java.lang.String">development</Arg>
+    </New>
+
+    <New class="org.eclipse.jetty.plus.jndi.EnvEntry">
+        <Arg>ltts/site</Arg>
+        <Arg type="java.lang.String">south</Arg>
+    </New>
+
+</Configure>

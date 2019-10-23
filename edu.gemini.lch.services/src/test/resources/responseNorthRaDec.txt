@@ -1,0 +1,2275 @@
+		Classification: UNCLASSIFIED
+
+UNITED STATES STATEGIC COMMAND LASER CLEARINGHOUSE (LCH) TIME WINDOWS REPORT
+
+Date:    2011 May 28 10:44:28
+From:    JSpOC/SBM
+To:      Requester
+Subject: LCH Authorized Shoot (Open) Windows
+
+
+1. The attached information contains the coordinated and approved
+   spatial parameters
+
+      (a) Authorized Shoot (Open) Windows
+
+   During Authorized Shoot Windows, the laser owner-operator (O/O) is authorized
+   to operate the approved system laser in accordance with the Source/Target
+   geometry definitions contained in this report.
+
+2. The laser O/O may perform Hybrid Predictive Avoidance (HPA) during Authorized
+   Shoot Windows, if previously certified in writing by USSTRATCOM to do so.
+
+3. Any deviation from this authorization must be immediately reported
+   to the Laser Clearinghouse/SBM at: Commercial 805-605-6546,6547. DSN=275-(xxxx).
+
+4. See below for comments specific to this mission.
+
+5. If you have any questions, please don't hesitate to contact LCH/SBM at
+   the above listed phone numbers.
+
+JSpOC/SBM
+VANDENBERG Air Force Base
+VAFB, CA 93437
+
+
+
+Mission ID:                      Gemini North_589nm_14W_.65urad_100kHz_11148104428_P
+Laser Owner/Operator:            Requester
+Report Date/Time (UTC):          2011 May 28 10:44:28
+Mission Name:                    Gemini North_589nm_14W_.65urad_100kHz
+Mission Start Date/Time (UTC):   2011 May 30 05:05:12
+Mission Stop  Date/Time (UTC):   2011 May 30 15:33:38
+Mission Duration   (HH:MM:SS):   10:28:25
+Type of Windows in this report:  Authorized Shoot (Open) Windows
+Comment:                         None
+Number of Targets:               95
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0707 20    0122:08
+2011 May 30 (150) 0708 11    2011 May 30 (150) 0833 08    0084:57
+2011 May 30 (150) 0833 14    2011 May 30 (150) 0958 11    0084:57
+2011 May 30 (150) 0958 20    2011 May 30 (150) 1533 38    0335:18
+
+Percent = 99.82%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 150.363 degrees
+Declination:     10.358 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0706 57    0121:45
+2011 May 30 (150) 0707 44    2011 May 30 (150) 0833 07    0085:23
+2011 May 30 (150) 0833 12    2011 May 30 (150) 0946 04    0072:52
+2011 May 30 (150) 0946 07    2011 May 30 (150) 0958 14    0012:07
+2011 May 30 (150) 0958 22    2011 May 30 (150) 1533 38    0335:16
+
+Percent = 99.83%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 2
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 150.189 degrees
+Declination:     10.695 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0814 03    0188:51
+2011 May 30 (150) 0814 08    2011 May 30 (150) 0912 07    0057:59
+2011 May 30 (150) 0912 13    2011 May 30 (150) 1533 38    0381:25
+
+Percent = 99.97%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 3
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 179.506 degrees
+Declination:     29.769 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0814 03    0188:51
+2011 May 30 (150) 0814 08    2011 May 30 (150) 0912 07    0057:59
+2011 May 30 (150) 0912 13    2011 May 30 (150) 1533 38    0381:25
+
+Percent = 99.97%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 4
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 179.542 degrees
+Declination:     29.679 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0606 00    0060:48
+2011 May 30 (150) 0606 01    2011 May 30 (150) 1228 17    0382:16
+2011 May 30 (150) 1228 33    2011 May 30 (150) 1341 27    0072:54
+2011 May 30 (150) 1341 43    2011 May 30 (150) 1533 38    0111:55
+
+Percent = 99.91%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 5
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 209.945 degrees
+Declination:     10.063 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0605 59    0060:47
+2011 May 30 (150) 0606 02    2011 May 30 (150) 1228 17    0382:15
+2011 May 30 (150) 1228 33    2011 May 30 (150) 1341 27    0072:54
+2011 May 30 (150) 1341 41    2011 May 30 (150) 1533 38    0111:57
+
+Percent = 99.91%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 6
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 210.051 degrees
+Declination:     10.005 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0605 59    0060:47
+2011 May 30 (150) 0606 02    2011 May 30 (150) 1228 17    0382:15
+2011 May 30 (150) 1228 33    2011 May 30 (150) 1341 29    0072:56
+2011 May 30 (150) 1341 40    2011 May 30 (150) 1533 38    0111:58
+
+Percent = 99.92%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 7
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 210.142 degrees
+Declination:     10.016 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0608 24    0063:12
+2011 May 30 (150) 0608 30    2011 May 30 (150) 0814 28    0125:58
+2011 May 30 (150) 0814 33    2011 May 30 (150) 0830 35    0016:02
+2011 May 30 (150) 0830 37    2011 May 30 (150) 1339 08    0308:31
+2011 May 30 (150) 1339 25    2011 May 30 (150) 1514 47    0095:22
+2011 May 30 (150) 1517 50    2011 May 30 (150) 1533 38    0015:48
+
+Percent = 99.44%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 8
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 240.241 degrees
+Declination:     31.015 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0608 21    0063:09
+2011 May 30 (150) 0608 28    2011 May 30 (150) 0814 26    0125:58
+2011 May 30 (150) 0814 30    2011 May 30 (150) 1533 38    0439:08
+
+Percent = 99.97%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 9
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 239.924 degrees
+Declination:     30.026 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0547 09    0041:57
+2011 May 30 (150) 0547 16    2011 May 30 (150) 1112 21    0325:05
+2011 May 30 (150) 1112 33    2011 May 30 (150) 1134 18    0021:45
+2011 May 30 (150) 1134 25    2011 May 30 (150) 1143 31    0009:06
+2011 May 30 (150) 1143 54    2011 May 30 (150) 1533 38    0229:44
+
+Percent = 99.87%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 10
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 269.994 degrees
+Declination:     9.997 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0547 10    0041:58
+2011 May 30 (150) 0547 16    2011 May 30 (150) 1112 21    0325:05
+2011 May 30 (150) 1112 33    2011 May 30 (150) 1134 18    0021:45
+2011 May 30 (150) 1134 24    2011 May 30 (150) 1143 31    0009:07
+2011 May 30 (150) 1143 54    2011 May 30 (150) 1533 38    0229:44
+
+Percent = 99.88%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 11
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 270.042 degrees
+Declination:     9.903 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0853 16    0228:04
+2011 May 30 (150) 0853 22    2011 May 30 (150) 1124 13    0150:51
+2011 May 30 (150) 1124 18    2011 May 30 (150) 1144 08    0019:50
+2011 May 30 (150) 1144 13    2011 May 30 (150) 1533 38    0229:25
+
+Percent = 99.96%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 12
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 300.076 degrees
+Declination:     30.018 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0853 16    0228:04
+2011 May 30 (150) 0853 22    2011 May 30 (150) 1124 13    0150:51
+2011 May 30 (150) 1124 17    2011 May 30 (150) 1144 07    0019:50
+2011 May 30 (150) 1144 13    2011 May 30 (150) 1533 38    0229:25
+
+Percent = 99.96%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 13
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 299.985 degrees
+Declination:     29.985 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0853 16    0228:04
+2011 May 30 (150) 0853 22    2011 May 30 (150) 1124 13    0150:51
+2011 May 30 (150) 1124 17    2011 May 30 (150) 1144 07    0019:50
+2011 May 30 (150) 1144 13    2011 May 30 (150) 1533 38    0229:25
+
+Percent = 99.96%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 14
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 299.983 degrees
+Declination:     29.999 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0938 17    0273:05
+2011 May 30 (150) 0938 28    2011 May 30 (150) 1046 41    0068:13
+2011 May 30 (150) 1046 57    2011 May 30 (150) 1212 40    0085:43
+2011 May 30 (150) 1212 44    2011 May 30 (150) 1228 10    0015:26
+2011 May 30 (150) 1228 24    2011 May 30 (150) 1533 38    0185:14
+
+Percent = 99.88%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 15
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 330.612 degrees
+Declination:     29.566 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0938 15    0273:03
+2011 May 30 (150) 0938 32    2011 May 30 (150) 1012 54    0034:22
+2011 May 30 (150) 1012 58    2011 May 30 (150) 1046 44    0033:46
+2011 May 30 (150) 1046 54    2011 May 30 (150) 1212 36    0085:42
+2011 May 30 (150) 1212 42    2011 May 30 (150) 1228 10    0015:28
+2011 May 30 (150) 1228 24    2011 May 30 (150) 1533 38    0185:14
+
+Percent = 99.86%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 16
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 330.142 degrees
+Declination:     29.983 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0938 15    0273:03
+2011 May 30 (150) 0938 33    2011 May 30 (150) 1012 54    0034:21
+2011 May 30 (150) 1012 58    2011 May 30 (150) 1046 45    0033:47
+2011 May 30 (150) 1046 53    2011 May 30 (150) 1212 35    0085:42
+2011 May 30 (150) 1212 42    2011 May 30 (150) 1228 10    0015:28
+2011 May 30 (150) 1228 24    2011 May 30 (150) 1533 38    0185:14
+
+Percent = 99.86%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 17
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 330.069 degrees
+Declination:     30.053 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0938 15    0273:03
+2011 May 30 (150) 0938 32    2011 May 30 (150) 1012 53    0034:21
+2011 May 30 (150) 1012 58    2011 May 30 (150) 1046 45    0033:47
+2011 May 30 (150) 1046 52    2011 May 30 (150) 1212 35    0085:43
+2011 May 30 (150) 1212 42    2011 May 30 (150) 1228 10    0015:28
+2011 May 30 (150) 1228 24    2011 May 30 (150) 1533 38    0185:14
+
+Percent = 99.87%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 18
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 329.977 degrees
+Declination:     29.989 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 1533 38    0628:26
+
+Percent = 100.00%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 19
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 57.209 degrees
+Declination:     -0.976 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0546 29    0041:17
+2011 May 30 (150) 0546 37    2011 May 30 (150) 1533 38    0587:01
+
+Percent = 99.98%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 20
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 88.117 degrees
+Declination:     15.887 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0824 34    0199:22
+2011 May 30 (150) 0824 37    2011 May 30 (150) 0833 25    0008:48
+2011 May 30 (150) 0833 32    2011 May 30 (150) 0841 20    0007:48
+2011 May 30 (150) 0841 27    2011 May 30 (150) 0923 51    0042:24
+2011 May 30 (150) 0923 55    2011 May 30 (150) 0928 49    0004:54
+2011 May 30 (150) 0928 56    2011 May 30 (150) 1533 38    0364:42
+
+Percent = 99.93%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 21
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 150.196 degrees
+Declination:     -7.559 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0618 51    0073:39
+2011 May 30 (150) 0618 56    2011 May 30 (150) 1122 48    0303:52
+2011 May 30 (150) 1122 54    2011 May 30 (150) 1203 19    0040:25
+2011 May 30 (150) 1207 24    2011 May 30 (150) 1533 38    0206:14
+
+Percent = 99.32%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 22
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 201.414 degrees
+Declination:     -8.822 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 1533 38    0628:26
+
+Percent = 100.00%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 23
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 58.294 degrees
+Declination:     0.456 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 1533 38    0628:26
+
+Percent = 100.00%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 24
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 102.925 degrees
+Declination:     -0.255 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0936 04    0270:52
+2011 May 30 (150) 0936 11    2011 May 30 (150) 1533 38    0357:27
+
+Percent = 99.98%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 25
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 149.404 degrees
+Declination:     -0.298 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0812 47    0187:35
+2011 May 30 (150) 0812 52    2011 May 30 (150) 0849 26    0036:34
+2011 May 30 (150) 0849 31    2011 May 30 (150) 0956 42    0067:11
+2011 May 30 (150) 0957 06    2011 May 30 (150) 1029 54    0032:48
+2011 May 30 (150) 1034 12    2011 May 30 (150) 1144 49    0070:37
+2011 May 30 (150) 1145 04    2011 May 30 (150) 1146 44    0001:40
+2011 May 30 (150) 1146 49    2011 May 30 (150) 1229 56    0043:07
+2011 May 30 (150) 1233 17    2011 May 30 (150) 1533 38    0180:21
+
+Percent = 98.64%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 26
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 190.583 degrees
+Declination:     -0.424 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0711 57    0126:45
+2011 May 30 (150) 0712 11    2011 May 30 (150) 1533 38    0501:27
+
+Percent = 99.96%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 27
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 114.535 degrees
+Declination:     38.882 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0708 50    0123:38
+2011 May 30 (150) 0708 54    2011 May 30 (150) 0710 55    0002:01
+2011 May 30 (150) 0711 00    2011 May 30 (150) 0920 27    0129:27
+2011 May 30 (150) 0920 31    2011 May 30 (150) 1143 24    0142:53
+2011 May 30 (150) 1143 34    2011 May 30 (150) 1325 16    0101:42
+2011 May 30 (150) 1325 35    2011 May 30 (150) 1533 38    0128:03
+
+Percent = 99.89%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 28
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 198.23 degrees
+Declination:     18.169 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0839 21    0214:09
+2011 May 30 (150) 0839 26    2011 May 30 (150) 1222 40    0223:14
+2011 May 30 (150) 1222 53    2011 May 30 (150) 1227 28    0004:35
+2011 May 30 (150) 1227 37    2011 May 30 (150) 1353 14    0085:37
+2011 May 30 (150) 1353 20    2011 May 30 (150) 1533 38    0100:18
+
+Percent = 99.91%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 29
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 205.547 degrees
+Declination:     28.376 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 1501 47    0596:35
+2011 May 30 (150) 1501 54    2011 May 30 (150) 1505 40    0003:46
+2011 May 30 (150) 1505 49    2011 May 30 (150) 1507 50    0002:01
+2011 May 30 (150) 1508 00    2011 May 30 (150) 1533 38    0025:38
+
+Percent = 99.93%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 30
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 59.415 degrees
+Declination:     30.804 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0545 51    0040:39
+2011 May 30 (150) 0545 57    2011 May 30 (150) 1533 38    0587:41
+
+Percent = 99.98%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 31
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 90.054 degrees
+Declination:     10.515 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0732 52    0147:40
+2011 May 30 (150) 0733 10    2011 May 30 (150) 0755 10    0022:00
+2011 May 30 (150) 0755 14    2011 May 30 (150) 1533 38    0458:24
+
+Percent = 99.94%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 32
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 120.171 degrees
+Declination:     30.618 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0707 25    0122:13
+2011 May 30 (150) 0708 02    2011 May 30 (150) 0833 08    0085:06
+2011 May 30 (150) 0833 14    2011 May 30 (150) 1533 38    0420:24
+
+Percent = 99.89%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 33
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 150.722 degrees
+Declination:     10.461 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0548 37    0043:25
+2011 May 30 (150) 0548 41    2011 May 30 (150) 0814 02    0145:21
+2011 May 30 (150) 0814 06    2011 May 30 (150) 0912 06    0058:00
+2011 May 30 (150) 0912 12    2011 May 30 (150) 1533 38    0381:26
+
+Percent = 99.96%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 34
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 180.182 degrees
+Declination:     29.386 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0605 58    0060:46
+2011 May 30 (150) 0606 03    2011 May 30 (150) 0838 51    0152:48
+2011 May 30 (150) 0838 55    2011 May 30 (150) 1228 18    0229:23
+2011 May 30 (150) 1228 34    2011 May 30 (150) 1533 38    0185:04
+
+Percent = 99.93%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 35
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 210.708 degrees
+Declination:     10.31 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0608 22    0063:10
+2011 May 30 (150) 0608 28    2011 May 30 (150) 0814 27    0125:59
+2011 May 30 (150) 0814 31    2011 May 30 (150) 1533 38    0439:07
+
+Percent = 99.97%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 36
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 240.059 degrees
+Declination:     30.199 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0547 05    0041:53
+2011 May 30 (150) 0547 12    2011 May 30 (150) 1112 23    0325:11
+2011 May 30 (150) 1112 33    2011 May 30 (150) 1134 19    0021:46
+2011 May 30 (150) 1134 25    2011 May 30 (150) 1143 32    0009:07
+2011 May 30 (150) 1143 54    2011 May 30 (150) 1243 04    0059:10
+2011 May 30 (150) 1243 07    2011 May 30 (150) 1533 38    0170:31
+
+Percent = 99.87%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 37
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 270.16 degrees
+Declination:     10.563 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 1433 53    0568:41
+2011 May 30 (150) 1433 58    2011 May 30 (150) 1533 38    0059:40
+
+Percent = 99.99%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 38
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 29.945 degrees
+Declination:     10.069 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 1507 15    0602:03
+2011 May 30 (150) 1507 25    2011 May 30 (150) 1526 40    0019:15
+2011 May 30 (150) 1526 49    2011 May 30 (150) 1533 38    0006:49
+
+Percent = 99.95%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 39
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 60.106 degrees
+Declination:     30.047 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 1533 38    0628:26
+
+Percent = 100.00%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 40
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 89.997 degrees
+Declination:     9.943 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0732 48    0147:36
+2011 May 30 (150) 0733 06    2011 May 30 (150) 0755 11    0022:05
+2011 May 30 (150) 0755 19    2011 May 30 (150) 0825 49    0030:30
+2011 May 30 (150) 0826 02    2011 May 30 (150) 1533 38    0427:36
+
+Percent = 99.90%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 41
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 119.965 degrees
+Declination:     29.985 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0706 46    0121:34
+2011 May 30 (150) 0707 36    2011 May 30 (150) 0833 06    0085:30
+2011 May 30 (150) 0833 12    2011 May 30 (150) 0958 15    0085:03
+2011 May 30 (150) 0958 23    2011 May 30 (150) 1533 38    0335:15
+
+Percent = 99.83%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 42
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 150.209 degrees
+Declination:     10.838 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0814 03    0188:51
+2011 May 30 (150) 0814 08    2011 May 30 (150) 0912 07    0057:59
+2011 May 30 (150) 0912 13    2011 May 30 (150) 1533 38    0381:25
+
+Percent = 99.97%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 43
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 179.516 degrees
+Declination:     29.672 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0606 00    0060:48
+2011 May 30 (150) 0606 01    2011 May 30 (150) 1228 17    0382:16
+2011 May 30 (150) 1228 33    2011 May 30 (150) 1341 27    0072:54
+2011 May 30 (150) 1341 44    2011 May 30 (150) 1533 38    0111:54
+
+Percent = 99.91%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 44
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 209.924 degrees
+Declination:     10.116 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0608 21    0063:09
+2011 May 30 (150) 0608 28    2011 May 30 (150) 0814 26    0125:58
+2011 May 30 (150) 0814 31    2011 May 30 (150) 1533 38    0439:07
+
+Percent = 99.97%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 45
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 240.047 degrees
+Declination:     30.052 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0547 10    0041:58
+2011 May 30 (150) 0547 15    2011 May 30 (150) 1112 21    0325:06
+2011 May 30 (150) 1112 33    2011 May 30 (150) 1134 18    0021:45
+2011 May 30 (150) 1134 25    2011 May 30 (150) 1143 32    0009:07
+2011 May 30 (150) 1143 54    2011 May 30 (150) 1533 38    0229:44
+
+Percent = 99.88%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 46
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 270.071 degrees
+Declination:     9.991 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 1533 38    0628:26
+
+Percent = 100.00%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 47
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 8.512 degrees
+Declination:     -0.869 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 1533 38    0628:26
+
+Percent = 100.00%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 48
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 23.639 degrees
+Declination:     30.782 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 1509 38    0604:26
+2011 May 30 (150) 1512 11    2011 May 30 (150) 1533 38    0021:27
+
+Percent = 99.59%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 49
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 25.991 degrees
+Declination:     2.35 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 1533 38    0628:26
+
+Percent = 100.00%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 50
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 36.361 degrees
+Declination:     41.824 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 1533 38    0628:26
+
+Percent = 100.00%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 51
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 36.71 degrees
+Declination:     -4.581 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 1533 38    0628:26
+
+Percent = 100.00%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 52
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 88.047 degrees
+Declination:     -7.456 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 1533 38    0628:26
+
+Percent = 100.00%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 53
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 110.614 degrees
+Declination:     -5.675 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0538 57    0033:45
+2011 May 30 (150) 0539 02    2011 May 30 (150) 0731 18    0112:16
+2011 May 30 (150) 0731 33    2011 May 30 (150) 0731 38    0000:05
+2011 May 30 (150) 0732 00    2011 May 30 (150) 1533 38    0481:38
+
+Percent = 99.89%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 54
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 116.677 degrees
+Declination:     20.009 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0652 14    0107:02
+2011 May 30 (150) 0652 47    2011 May 30 (150) 0738 33    0045:46
+2011 May 30 (150) 0738 41    2011 May 30 (150) 1533 38    0474:57
+
+Percent = 99.89%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 55
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 127.142 degrees
+Declination:     -13.155 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0851 47    0226:35
+2011 May 30 (150) 0851 53    2011 May 30 (150) 0859 01    0007:08
+2011 May 30 (150) 0903 01    2011 May 30 (150) 0931 12    0028:11
+2011 May 30 (150) 0932 19    2011 May 30 (150) 1533 38    0361:19
+
+Percent = 99.17%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 56
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 161.983 degrees
+Declination:     7.664 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0547 29    0042:17
+2011 May 30 (150) 0547 37    2011 May 30 (150) 0705 34    0077:57
+2011 May 30 (150) 0705 40    2011 May 30 (150) 0858 43    0113:03
+2011 May 30 (150) 0858 45    2011 May 30 (150) 1153 57    0175:12
+2011 May 30 (150) 1154 04    2011 May 30 (150) 1533 38    0219:34
+
+Percent = 99.94%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 57
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 180.136 degrees
+Declination:     3.429 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0554 09    0048:57
+2011 May 30 (150) 0554 16    2011 May 30 (150) 0702 16    0068:00
+2011 May 30 (150) 0702 20    2011 May 30 (150) 0711 33    0009:13
+2011 May 30 (150) 0711 37    2011 May 30 (150) 0744 12    0032:35
+2011 May 30 (150) 0745 48    2011 May 30 (150) 1141 14    0235:26
+2011 May 30 (150) 1141 40    2011 May 30 (150) 1239 08    0057:28
+2011 May 30 (150) 1239 17    2011 May 30 (150) 1251 42    0012:25
+2011 May 30 (150) 1251 45    2011 May 30 (150) 1313 35    0021:50
+2011 May 30 (150) 1313 42    2011 May 30 (150) 1533 38    0139:56
+
+Percent = 99.59%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 58
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 192.722 degrees
+Declination:     41.12 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0755 26    0170:14
+2011 May 30 (150) 0755 31    2011 May 30 (150) 0853 20    0057:49
+2011 May 30 (150) 0853 23    2011 May 30 (150) 1112 00    0138:37
+2011 May 30 (150) 1112 03    2011 May 30 (150) 1139 36    0027:33
+2011 May 30 (150) 1140 04    2011 May 30 (150) 1144 30    0004:26
+2011 May 30 (150) 1144 36    2011 May 30 (150) 1236 02    0051:26
+2011 May 30 (150) 1236 10    2011 May 30 (150) 1251 38    0015:28
+2011 May 30 (150) 1251 59    2011 May 30 (150) 1306 04    0014:05
+2011 May 30 (150) 1306 15    2011 May 30 (150) 1316 35    0010:20
+2011 May 30 (150) 1317 09    2011 May 30 (150) 1533 38    0136:29
+
+Percent = 99.68%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 59
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 195.177 degrees
+Declination:     19.21 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 1111 57    0366:45
+2011 May 30 (150) 1112 27    2011 May 30 (150) 1158 55    0046:28
+2011 May 30 (150) 1159 10    2011 May 30 (150) 1227 51    0028:41
+2011 May 30 (150) 1228 08    2011 May 30 (150) 1239 59    0011:51
+2011 May 30 (150) 1240 05    2011 May 30 (150) 1357 26    0077:21
+2011 May 30 (150) 1357 35    2011 May 30 (150) 1533 38    0096:03
+
+Percent = 99.80%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 60
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 210.082 degrees
+Declination:     4.746 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0624 52    0079:40
+2011 May 30 (150) 0624 56    2011 May 30 (150) 0701 27    0036:31
+2011 May 30 (150) 0704 49    2011 May 30 (150) 0750 56    0046:07
+2011 May 30 (150) 0751 09    2011 May 30 (150) 0834 25    0043:16
+2011 May 30 (150) 0834 30    2011 May 30 (150) 1013 46    0099:16
+2011 May 30 (150) 1013 51    2011 May 30 (150) 1240 14    0146:23
+2011 May 30 (150) 1240 30    2011 May 30 (150) 1254 59    0014:29
+2011 May 30 (150) 1255 06    2011 May 30 (150) 1303 00    0007:54
+2011 May 30 (150) 1303 06    2011 May 30 (150) 1413 24    0070:18
+2011 May 30 (150) 1413 32    2011 May 30 (150) 1533 38    0080:06
+
+Percent = 99.29%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 61
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 221.501 degrees
+Declination:     2.06 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0555 01    0049:49
+2011 May 30 (150) 0555 15    2011 May 30 (150) 0751 20    0116:05
+2011 May 30 (150) 0751 33    2011 May 30 (150) 1314 00    0322:27
+2011 May 30 (150) 1314 09    2011 May 30 (150) 1442 21    0088:12
+2011 May 30 (150) 1442 28    2011 May 30 (150) 1503 47    0021:19
+2011 May 30 (150) 1503 50    2011 May 30 (150) 1533 38    0029:48
+
+Percent = 99.88%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 62
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 231.526 degrees
+Declination:     41.67 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0750 36    0165:24
+2011 May 30 (150) 0750 55    2011 May 30 (150) 0839 18    0048:23
+2011 May 30 (150) 0839 23    2011 May 30 (150) 0853 00    0013:37
+2011 May 30 (150) 0853 05    2011 May 30 (150) 1142 34    0169:29
+2011 May 30 (150) 1143 14    2011 May 30 (150) 1429 21    0166:07
+2011 May 30 (150) 1429 31    2011 May 30 (150) 1533 38    0064:07
+
+Percent = 99.79%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 63
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 233.038 degrees
+Declination:     -18.126 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0750 36    0165:24
+2011 May 30 (150) 0750 55    2011 May 30 (150) 0839 18    0048:23
+2011 May 30 (150) 0839 23    2011 May 30 (150) 0853 00    0013:37
+2011 May 30 (150) 0853 05    2011 May 30 (150) 1142 34    0169:29
+2011 May 30 (150) 1143 14    2011 May 30 (150) 1429 20    0166:06
+2011 May 30 (150) 1429 31    2011 May 30 (150) 1533 38    0064:07
+
+Percent = 99.79%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 64
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 233.099 degrees
+Declination:     -18.14 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0505 13    0000:01
+2011 May 30 (150) 0505 20    2011 May 30 (150) 0714 14    0128:54
+2011 May 30 (150) 0714 18    2011 May 30 (150) 0813 19    0059:01
+2011 May 30 (150) 0813 24    2011 May 30 (150) 0854 28    0041:04
+2011 May 30 (150) 0857 13    2011 May 30 (150) 1143 06    0165:53
+2011 May 30 (150) 1143 36    2011 May 30 (150) 1533 38    0230:02
+
+Percent = 99.44%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 65
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 242.621 degrees
+Declination:     -0.682 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0713 01    0127:49
+2011 May 30 (150) 0713 07    2011 May 30 (150) 1142 44    0269:37
+2011 May 30 (150) 1143 15    2011 May 30 (150) 1231 32    0048:17
+2011 May 30 (150) 1231 38    2011 May 30 (150) 1533 38    0182:00
+
+Percent = 99.89%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 66
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 243.116 degrees
+Declination:     -21.943 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0759 35    0174:23
+2011 May 30 (150) 0759 40    2011 May 30 (150) 0926 12    0086:32
+2011 May 30 (150) 0926 18    2011 May 30 (150) 1445 50    0319:32
+2011 May 30 (150) 1446 02    2011 May 30 (150) 1533 38    0047:36
+
+Percent = 99.94%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 67
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 252.517 degrees
+Declination:     -26.378 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0505 51    0000:39
+2011 May 30 (150) 0506 01    2011 May 30 (150) 0507 29    0001:28
+2011 May 30 (150) 0507 34    2011 May 30 (150) 0556 02    0048:28
+2011 May 30 (150) 0556 15    2011 May 30 (150) 0631 34    0035:19
+2011 May 30 (150) 0631 50    2011 May 30 (150) 0648 50    0017:00
+2011 May 30 (150) 0648 55    2011 May 30 (150) 0652 48    0003:53
+2011 May 30 (150) 0652 55    2011 May 30 (150) 0947 47    0174:52
+2011 May 30 (150) 0947 49    2011 May 30 (150) 1143 48    0115:59
+2011 May 30 (150) 1143 53    2011 May 30 (150) 1533 38    0229:45
+
+Percent = 99.83%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 68
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 252.569 degrees
+Declination:     34.911 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0759 35    0174:23
+2011 May 30 (150) 0759 39    2011 May 30 (150) 0926 12    0086:33
+2011 May 30 (150) 0926 19    2011 May 30 (150) 1445 51    0319:32
+2011 May 30 (150) 1446 04    2011 May 30 (150) 1533 38    0047:34
+
+Percent = 99.94%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 69
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 252.76 degrees
+Declination:     -26.399 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0759 35    0174:23
+2011 May 30 (150) 0759 39    2011 May 30 (150) 0926 12    0086:33
+2011 May 30 (150) 0926 19    2011 May 30 (150) 1445 51    0319:32
+2011 May 30 (150) 1446 04    2011 May 30 (150) 1533 38    0047:34
+
+Percent = 99.94%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 70
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 252.782 degrees
+Declination:     -26.4 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0759 35    0174:23
+2011 May 30 (150) 0759 38    2011 May 30 (150) 0926 12    0086:34
+2011 May 30 (150) 0926 19    2011 May 30 (150) 1445 51    0319:32
+2011 May 30 (150) 1446 04    2011 May 30 (150) 1533 38    0047:34
+
+Percent = 99.94%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 71
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 252.825 degrees
+Declination:     -26.404 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0629 08    0083:56
+2011 May 30 (150) 0629 14    2011 May 30 (150) 0935 21    0186:07
+2011 May 30 (150) 0938 45    2011 May 30 (150) 1143 11    0124:26
+2011 May 30 (150) 1143 40    2011 May 30 (150) 1512 37    0208:57
+2011 May 30 (150) 1512 44    2011 May 30 (150) 1533 38    0020:54
+
+Percent = 99.35%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 72
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 252.894 degrees
+Declination:     -1.895 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0505 54    0000:42
+2011 May 30 (150) 0506 02    2011 May 30 (150) 0507 29    0001:27
+2011 May 30 (150) 0507 36    2011 May 30 (150) 0556 03    0048:27
+2011 May 30 (150) 0556 18    2011 May 30 (150) 0631 34    0035:16
+2011 May 30 (150) 0631 50    2011 May 30 (150) 0648 50    0017:00
+2011 May 30 (150) 0648 56    2011 May 30 (150) 0652 48    0003:52
+2011 May 30 (150) 0652 53    2011 May 30 (150) 1143 47    0290:54
+2011 May 30 (150) 1143 55    2011 May 30 (150) 1513 42    0209:47
+2011 May 30 (150) 1515 05    2011 May 30 (150) 1533 38    0018:33
+
+Percent = 99.61%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 73
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 253.076 degrees
+Declination:     34.902 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0936 12    0271:00
+2011 May 30 (150) 0939 35    2011 May 30 (150) 1143 11    0123:36
+2011 May 30 (150) 1143 40    2011 May 30 (150) 1216 12    0032:32
+2011 May 30 (150) 1216 15    2011 May 30 (150) 1512 37    0176:22
+2011 May 30 (150) 1512 44    2011 May 30 (150) 1533 38    0020:54
+
+Percent = 99.36%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 74
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 253.104 degrees
+Declination:     -1.927 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0655 27    0110:15
+2011 May 30 (150) 0655 36    2011 May 30 (150) 0656 42    0001:06
+2011 May 30 (150) 0656 51    2011 May 30 (150) 0710 22    0013:31
+2011 May 30 (150) 0710 31    2011 May 30 (150) 0954 41    0164:10
+2011 May 30 (150) 0954 53    2011 May 30 (150) 1056 08    0061:15
+2011 May 30 (150) 1056 14    2011 May 30 (150) 1242 17    0106:03
+2011 May 30 (150) 1242 29    2011 May 30 (150) 1504 11    0141:42
+2011 May 30 (150) 1504 19    2011 May 30 (150) 1504 31    0000:12
+2011 May 30 (150) 1504 39    2011 May 30 (150) 1533 38    0028:59
+
+Percent = 99.81%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 75
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 270.208 degrees
+Declination:     -23.343 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0655 21    0110:09
+2011 May 30 (150) 0655 25    2011 May 30 (150) 0656 35    0001:10
+2011 May 30 (150) 0656 41    2011 May 30 (150) 0710 14    0013:33
+2011 May 30 (150) 0710 22    2011 May 30 (150) 0954 39    0164:17
+2011 May 30 (150) 0954 51    2011 May 30 (150) 1056 04    0061:13
+2011 May 30 (150) 1056 11    2011 May 30 (150) 1242 18    0106:07
+2011 May 30 (150) 1242 31    2011 May 30 (150) 1504 21    0141:50
+2011 May 30 (150) 1504 27    2011 May 30 (150) 1504 35    0000:08
+2011 May 30 (150) 1504 48    2011 May 30 (150) 1533 38    0028:50
+
+Percent = 99.82%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 76
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 270.918 degrees
+Declination:     -24.379 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0710 44    0125:32
+2011 May 30 (150) 0710 52    2011 May 30 (150) 0812 31    0061:39
+2011 May 30 (150) 0812 38    2011 May 30 (150) 0954 56    0102:18
+2011 May 30 (150) 0955 01    2011 May 30 (150) 1110 56    0075:55
+2011 May 30 (150) 1111 13    2011 May 30 (150) 1533 38    0262:25
+
+Percent = 99.90%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 77
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 271.305 degrees
+Declination:     -19.843 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0955 00    0289:48
+2011 May 30 (150) 0955 10    2011 May 30 (150) 1110 59    0075:49
+2011 May 30 (150) 1111 18    2011 May 30 (150) 1133 42    0022:24
+2011 May 30 (150) 1133 44    2011 May 30 (150) 1533 38    0239:54
+
+Percent = 99.92%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 78
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 273.165 degrees
+Declination:     -18.406 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 1133 49    0388:37
+2011 May 30 (150) 1133 56    2011 May 30 (150) 1533 38    0239:42
+
+Percent = 99.98%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 79
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 274.492 degrees
+Declination:     -12.124 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0715 07    0129:55
+2011 May 30 (150) 0715 08    2011 May 30 (150) 0718 20    0003:12
+2011 May 30 (150) 0718 29    2011 May 30 (150) 0954 59    0156:30
+2011 May 30 (150) 0955 04    2011 May 30 (150) 1110 51    0075:47
+2011 May 30 (150) 1111 08    2011 May 30 (150) 1133 35    0022:27
+2011 May 30 (150) 1133 42    2011 May 30 (150) 1533 38    0239:56
+
+Percent = 99.90%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 80
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 274.801 degrees
+Declination:     -20.792 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0715 40    0130:28
+2011 May 30 (150) 0715 43    2011 May 30 (150) 0718 53    0003:10
+2011 May 30 (150) 0719 01    2011 May 30 (150) 0935 34    0136:33
+2011 May 30 (150) 0939 01    2011 May 30 (150) 0955 08    0016:07
+2011 May 30 (150) 0955 20    2011 May 30 (150) 1111 12    0075:52
+2011 May 30 (150) 1111 17    2011 May 30 (150) 1124 32    0013:15
+2011 May 30 (150) 1128 11    2011 May 30 (150) 1133 42    0005:31
+2011 May 30 (150) 1133 50    2011 May 30 (150) 1319 43    0105:53
+2011 May 30 (150) 1319 47    2011 May 30 (150) 1413 31    0053:44
+2011 May 30 (150) 1413 38    2011 May 30 (150) 1533 38    0080:00
+
+Percent = 98.75%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 81
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 275.102 degrees
+Declination:     -16.194 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0715 56    0130:44
+2011 May 30 (150) 0716 04    2011 May 30 (150) 0719 13    0003:09
+2011 May 30 (150) 0719 17    2011 May 30 (150) 0733 10    0013:53
+2011 May 30 (150) 0733 17    2011 May 30 (150) 0955 19    0142:02
+2011 May 30 (150) 0955 24    2011 May 30 (150) 1133 47    0098:23
+2011 May 30 (150) 1133 54    2011 May 30 (150) 1533 38    0239:44
+
+Percent = 99.92%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 82
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 275.61 degrees
+Declination:     -13.503 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0655 16    0110:04
+2011 May 30 (150) 0658 30    2011 May 30 (150) 0658 57    0000:27
+2011 May 30 (150) 0659 03    2011 May 30 (150) 0715 59    0016:56
+2011 May 30 (150) 0716 06    2011 May 30 (150) 0733 12    0017:06
+2011 May 30 (150) 0733 19    2011 May 30 (150) 0925 52    0112:33
+2011 May 30 (150) 0925 56    2011 May 30 (150) 0955 19    0029:23
+2011 May 30 (150) 0955 27    2011 May 30 (150) 1133 48    0098:21
+2011 May 30 (150) 1133 53    2011 May 30 (150) 1533 38    0239:45
+
+Percent = 99.39%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 83
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 276.255 degrees
+Declination:     -13.261 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0744 58    0159:46
+2011 May 30 (150) 0745 01    2011 May 30 (150) 0746 14    0001:13
+2011 May 30 (150) 0746 22    2011 May 30 (150) 0801 06    0014:44
+2011 May 30 (150) 0801 31    2011 May 30 (150) 0925 36    0084:05
+2011 May 30 (150) 0925 39    2011 May 30 (150) 1026 56    0061:17
+2011 May 30 (150) 1027 01    2011 May 30 (150) 1032 52    0005:51
+2011 May 30 (150) 1037 16    2011 May 30 (150) 1533 38    0296:22
+
+Percent = 99.18%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 84
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 278.605 degrees
+Declination:     -7.913 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0710 03    0124:51
+2011 May 30 (150) 0710 09    2011 May 30 (150) 0711 13    0001:04
+2011 May 30 (150) 0711 20    2011 May 30 (150) 1128 25    0257:05
+2011 May 30 (150) 1131 01    2011 May 30 (150) 1533 38    0242:37
+
+Percent = 99.55%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 85
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 281.063 degrees
+Declination:     -4.299 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0710 15    0125:03
+2011 May 30 (150) 0710 19    2011 May 30 (150) 0711 22    0001:03
+2011 May 30 (150) 0711 30    2011 May 30 (150) 0744 53    0033:23
+2011 May 30 (150) 0745 06    2011 May 30 (150) 0939 12    0114:06
+2011 May 30 (150) 0942 19    2011 May 30 (150) 1533 38    0351:19
+
+Percent = 99.44%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 86
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 281.517 degrees
+Declination:     -2.656 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0710 34    0125:22
+2011 May 30 (150) 0710 40    2011 May 30 (150) 1114 26    0243:46
+2011 May 30 (150) 1115 05    2011 May 30 (150) 1409 24    0174:19
+2011 May 30 (150) 1409 32    2011 May 30 (150) 1533 38    0084:06
+
+Percent = 99.86%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 87
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 287.259 degrees
+Declination:     5.579 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0652 07    0106:55
+2011 May 30 (150) 0652 11    2011 May 30 (150) 0715 26    0023:15
+2011 May 30 (150) 0715 31    2011 May 30 (150) 1126 17    0250:46
+2011 May 30 (150) 1126 40    2011 May 30 (150) 1409 28    0162:48
+2011 May 30 (150) 1409 38    2011 May 30 (150) 1533 38    0084:00
+
+Percent = 99.89%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 88
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 288.366 degrees
+Declination:     10.893 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0742 46    0157:34
+2011 May 30 (150) 0742 48    2011 May 30 (150) 1038 58    0176:10
+2011 May 30 (150) 1039 03    2011 May 30 (150) 1107 38    0028:35
+2011 May 30 (150) 1107 52    2011 May 30 (150) 1124 17    0016:25
+2011 May 30 (150) 1124 23    2011 May 30 (150) 1144 04    0019:41
+2011 May 30 (150) 1144 22    2011 May 30 (150) 1533 38    0229:16
+
+Percent = 99.88%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 89
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 300.44 degrees
+Declination:     33.545 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0735 13    0150:01
+2011 May 30 (150) 0735 22    2011 May 30 (150) 0743 21    0007:59
+2011 May 30 (150) 0743 28    2011 May 30 (150) 0853 53    0070:25
+2011 May 30 (150) 0853 59    2011 May 30 (150) 1007 23    0073:24
+2011 May 30 (150) 1007 29    2011 May 30 (150) 1024 45    0017:16
+2011 May 30 (150) 1024 50    2011 May 30 (150) 1101 05    0036:15
+2011 May 30 (150) 1101 13    2011 May 30 (150) 1144 07    0042:54
+2011 May 30 (150) 1144 35    2011 May 30 (150) 1533 38    0229:03
+
+Percent = 99.82%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 90
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 304.914 degrees
+Declination:     40.943 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 1144 10    0398:58
+2011 May 30 (150) 1144 29    2011 May 30 (150) 1533 38    0229:09
+
+Percent = 99.95%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 91
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 306.862 degrees
+Declination:     37.38 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 1101 10    0355:58
+2011 May 30 (150) 1101 19    2011 May 30 (150) 1144 10    0042:51
+2011 May 30 (150) 1144 33    2011 May 30 (150) 1533 38    0229:05
+
+Percent = 99.92%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 92
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 307.404 degrees
+Declination:     39.023 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 1024 09    0318:57
+2011 May 30 (150) 1024 21    2011 May 30 (150) 1101 06    0036:45
+2011 May 30 (150) 1101 16    2011 May 30 (150) 1144 13    0042:57
+2011 May 30 (150) 1144 41    2011 May 30 (150) 1533 38    0228:57
+
+Percent = 99.87%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 93
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 310.641 degrees
+Declination:     42.948 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0919 56    0254:44
+2011 May 30 (150) 0920 03    2011 May 30 (150) 0935 55    0015:52
+2011 May 30 (150) 0936 08    2011 May 30 (150) 1011 28    0035:20
+2011 May 30 (150) 1011 35    2011 May 30 (150) 1533 38    0322:03
+
+Percent = 99.93%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 94
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 323.116 degrees
+Declination:     10.139 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 30 (150) 0505 12    2011 May 30 (150) 0934 45    0269:33
+2011 May 30 (150) 0934 56    2011 May 30 (150) 1144 26    0129:30
+2011 May 30 (150) 1145 07    2011 May 30 (150) 1227 51    0042:44
+2011 May 30 (150) 1228 00    2011 May 30 (150) 1310 04    0042:04
+2011 May 30 (150) 1310 10    2011 May 30 (150) 1533 38    0143:28
+
+Percent = 99.82%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 95
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 324.993 degrees
+Declination:     50.239 degrees

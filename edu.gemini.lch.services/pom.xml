@@ -1,0 +1,231 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>lchUmbrella</artifactId>
+        <groupId>edu.gemini.lch</groupId>
+        <version>3.2.3-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <name>LCH Services Module</name>
+    <artifactId>services</artifactId>
+    <version>3.2.3-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <!-- Build a test jar so that simulator classes can be used in web app for testing -->
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>2.2</version>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>test-jar</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>org.ow2.asm</groupId>
+            <artifactId>asm</artifactId>
+            <version>5.0.3</version>
+        </dependency>
+
+        <!-- ODB access -->
+        <dependency>
+            <groupId>edu.gemini.odb</groupId>
+            <artifactId>browser-client</artifactId>
+            <version>3.2.3-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.odb</groupId>
+            <artifactId>browser-api</artifactId>
+            <version>3.2.3-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.lch</groupId>
+            <artifactId>services-model</artifactId>
+            <version>3.2.3-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.odb</groupId>
+            <artifactId>browser-sim</artifactId>
+            <version>3.2.3-SNAPSHOT</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- HORIZONS service -->
+        <dependency>
+            <groupId>edu.gemini.ocs</groupId>
+            <artifactId>edu-gemini-horizons-api_2.11</artifactId>
+            <version>2016001.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.ocs</groupId>
+            <artifactId>edu-gemini-spmodel-core_2.11</artifactId>
+            <version>2016001.1.1</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-httpclient</groupId>
+            <artifactId>commons-httpclient</artifactId>
+            <version>3.1</version>
+        </dependency>
+
+        <!-- JSKY -->
+        <dependency>
+            <groupId>gemini-nocs</groupId>
+            <artifactId>jsky-coords</artifactId>
+            <version>1.0.2</version>
+        </dependency>
+        <dependency>
+            <groupId>gemini-nocs</groupId>
+            <artifactId>jsky-util</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+        <dependency>
+            <groupId>gemini-nocs</groupId>
+            <artifactId>jsky-elevation-plot</artifactId>
+            <version>1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>gemini-nocs</groupId>
+            <artifactId>shared-skycalc</artifactId>
+            <version>1.0.1</version>
+        </dependency>
+
+	<!-- Shared utilities -->
+	<dependency>
+	  <groupId>edu.gemini.ocs</groupId>
+	  <artifactId>edu-gemini-shared-util_2.11</artifactId>
+	  <version>2016001.1.1</version>
+	</dependency>
+	<dependency>
+	  <groupId>edu.gemini.ocs</groupId>
+	  <artifactId>edu-gemini-util-ssl_2.11</artifactId>
+	  <version>2016001.1.1</version>
+	</dependency>
+	
+        <!-- Spring -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${lch.spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${lch.spring.version}</version>
+        </dependency>
+        <dependency>
+            <!-- spring email support is in here -->
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context-support</artifactId>
+            <version>${lch.spring.version}</version>
+        </dependency>
+
+        <!-- XML / JSON support for web services -->
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>2.5.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>2.5.1</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.module</groupId>
+            <artifactId>jackson-module-jaxb-annotations</artifactId>
+            <version>2.4.6</version>
+        </dependency>
+
+        <!-- Apache HTTP Client -->
+        <dependency>
+            <groupId>org.apache.httpcomponents</groupId>
+            <artifactId>httpclient</artifactId>
+            <version>4.2.2</version>
+        </dependency>
+
+        <!-- EPICS -->
+        <dependency>
+            <groupId>edu.gemini.epics</groupId>
+            <artifactId>epics-service</artifactId>
+            <version>0.9.13</version>
+
+            <!-- this comes with some unwanted dependencies which must be excluded -->
+            <exclusions>
+                 <!-- a 2.3.0 version of gwt-user which interferes with the
+                      gwt-maven-plugin used in the web module for compiling additional Vaadin
+                      components, we must exclude this dependency here or the gwt compilation breaks -->
+                <exclusion>
+                    <groupId>edu.gemini.external.osgi.com.google.gwt</groupId>
+                    <artifactId>gwt-user</artifactId>
+                </exclusion>
+                <!-- we also don't want another scala library (version 2.9.1) -->
+	            <exclusion>
+                    <groupId>com.weiglewilczek.scala-lang-osgi</groupId>
+                    <artifactId>scala-library</artifactId>
+                </exclusion>
+            </exclusions>
+
+        </dependency>
+
+
+        <!-- internal -->
+
+        <dependency>
+            <groupId>edu.gemini.lch</groupId>
+            <artifactId>persistence</artifactId>
+            <version>3.2.3-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.lch</groupId>
+            <artifactId>pam-parser</artifactId>
+            <version>3.2.3-SNAPSHOT</version>
+        </dependency>
+
+        <!-- internal test only -->
+        <!-- reuse the test code of the data module -->
+        <dependency>
+            <groupId>edu.gemini.lch</groupId>
+            <artifactId>persistence</artifactId>
+            <version>3.2.3-SNAPSHOT</version>
+            <type>test-jar</type>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- external, jetty server will provide its own implementation -->
+        <dependency>
+            <groupId>javax.mail</groupId>
+            <artifactId>javax.mail-api</artifactId>
+            <version>1.5.4</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>servlet-api</artifactId>
+            <version>2.5</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- external test only dependencies -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${lch.spring.version}</version>
+            <scope>test</scope>
+        </dependency>
+
+    </dependencies>
+
+
+</project>

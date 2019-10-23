@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:mvc="http://www.springframework.org/schema/mvc"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xmlns:jee="http://www.springframework.org/schema/jee"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-4.1.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context-4.1.xsd
+        http://www.springframework.org/schema/mvc
+        http://www.springframework.org/schema/mvc/spring-mvc-4.1.xsd
+        http://www.springframework.org/schema/task
+        http://www.springframework.org/schema/task/spring-task-4.1.xsd
+        http://www.springframework.org/schema/jee
+        http://www.springframework.org/schema/jee/spring-jee.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx-4.1.xsd">
+
+    <!-- GET ENVIRONMENT CONFIGURATION USING JNDI -->
+    <jee:jndi-lookup id="environment"   jndi-name="java:comp/env/ltts/environment"/>
+    <jee:jndi-lookup id="site"          jndi-name="java:comp/env/ltts/site"/>
+
+    <!-- configuring data layer -->
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:ltts.#{environment}.#{site}.properties"/>
+    </bean>
+
+    <import resource="sessionFactory.xml"/>
+
+    <bean id="lchDataSource" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+        <property name="driverClassName" value="org.postgresql.Driver" />
+        <property name="url" value="jdbc:postgresql:${lch.database.name}" />
+        <property name="username" value="${lch.database.user}" />
+        <!--property name="password" value="itac"/-->
+    </bean>
+
+    <bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+        <property name="sessionFactory" ref="sessionFactory"/>
+    </bean>
+    <tx:annotation-driven transaction-manager="transactionManager"/>
+
+    <!-- configuring service layer -->
+    <context:annotation-config/>
+    <context:component-scan base-package="edu.gemini.lch.services">
+        <!-- exclude all beans that need special init parameters or might be replaced by a simulator for development and testing -->
+        <context:exclude-filter type="assignable" expression="edu.gemini.lch.services.impl.SiteServiceImpl"/>
+        <context:exclude-filter type="assignable" expression="edu.gemini.lch.services.impl.EpicsServiceNorthImpl"/>
+        <context:exclude-filter type="assignable" expression="edu.gemini.lch.services.impl.EpicsServiceSouthImpl"/>
+        <context:exclude-filter type="assignable" expression="edu.gemini.lch.services.impl.LtcsServiceImpl"/>
+        <context:exclude-filter type="assignable" expression="edu.gemini.lch.services.impl.LtcsServiceAlternativeImpl"/>
+        <!-- exclude all simulators, NOTE: the simulators are only known on the development environment,
+             they are not deployed on qa and production environments -->
+        <context:exclude-filter type="regex" expression="edu\.gemini\.lch\.services\.simulators.*"/>
+    </context:component-scan>
+
+    <!-- manually create beans with special init parameters or have different implementations -->
+    <bean id="siteService" class="edu.gemini.lch.services.impl.SiteServiceImpl">
+        <constructor-arg name="site"        ref="site"/>
+        <constructor-arg name="environment" ref="environment"/>
+        <constructor-arg name="version"     value="${ltts.version}"/>
+    </bean>
+    <bean id="epicsService" class="${lch.services.epics.implementation}"/>
+    <bean id="ltcsService" class="${lch.services.ltcs.implementation}"/>
+
+    <!-- this has to come after component-scan and will activate @Scheduled and @Async annotations -->
+    <task:annotation-driven executor="taskExecutor" scheduler="taskScheduler"/>
+    <task:executor id="taskExecutor" pool-size="10"/>
+    <task:scheduler id="taskScheduler" pool-size="10"/>
+
+    <!-- User fasterxml which provides support for XML and JSON. -->
+    <bean id="jaxbAnnotationInspector" class="com.fasterxml.jackson.module.jaxb.JaxbAnnotationIntrospector" />
+
+    <bean id="jacksonObjectMapper" class="com.fasterxml.jackson.databind.ObjectMapper">
+        <property name="annotationIntrospector" ref="jaxbAnnotationInspector" />
+    </bean>
+
+    <mvc:annotation-driven>
+        <mvc:message-converters>
+            <bean class="org.springframework.http.converter.json.MappingJackson2HttpMessageConverter">
+                <property name="objectMapper" ref="jacksonObjectMapper"/>
+                <property name="supportedMediaTypes">
+                    <list>
+                        <bean class="org.springframework.http.MediaType">
+                            <constructor-arg index="0" value="application"/>
+                            <constructor-arg index="1" value="json"/>
+                            <constructor-arg index="2" value="UTF-8"/>
+                        </bean>
+                    </list>
+                </property>
+            </bean>
+        </mvc:message-converters>
+    </mvc:annotation-driven>
+
+    <bean id="odbBrowser" class="edu.gemini.odb.browser.OdbBrowserImpl"/>
+
+    <!-- mail sender for email service -->
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl"
+          p:host="${lch.mailserver.host}"
+          p:port="${lch.mailserver.port}"/>
+
+</beans>

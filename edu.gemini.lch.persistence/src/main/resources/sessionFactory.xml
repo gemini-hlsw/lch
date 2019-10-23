@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.1.xsd">
+
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="lchDataSource" />
+		<property name="annotatedClasses">
+			<list>
+                <value>edu.gemini.lch.model.LaserNight</value>
+                <value>edu.gemini.lch.model.SimpleLaserNight</value>
+                <value>edu.gemini.lch.model.ScienceObservation</value>
+                <value>edu.gemini.lch.model.EngineeringObservation</value>
+                <value>edu.gemini.lch.model.LaserRunEvent</value>
+                <value>edu.gemini.lch.model.EventFile</value>
+                <value>edu.gemini.lch.model.SiderealTarget</value>
+                <value>edu.gemini.lch.model.NonSiderealTarget</value>
+                <value>edu.gemini.lch.model.EngTargetTemplate</value>
+                <value>edu.gemini.lch.model.EngineeringTarget</value>
+                <value>edu.gemini.lch.model.AzElLaserTarget</value>
+                <value>edu.gemini.lch.model.RaDecLaserTarget</value>
+                <value>edu.gemini.lch.model.PropagationWindow</value>
+                <value>edu.gemini.lch.model.BlanketClosure</value>
+                <value>edu.gemini.lch.configuration.Configuration</value>
+                <value>edu.gemini.lch.configuration.ConfigurationValue</value>
+                <value>edu.gemini.lch.model.Holiday</value>
+            </list>
+		</property>
+		<property name="hibernateProperties">
+			<props>
+				<prop key="hibernate.dialect">org.hibernate.dialect.PostgreSQL82Dialect</prop>
+				<prop key="hibernate.show_sql">false</prop>
+
+                <!-- CONNECTION POOL (Make sure C3P0 is used) -->
+                <!--prop key="hibernate.connection.provider_class">org.hibernate.connection.C3P0ConnectionProvider</prop>
+                <prop key="hibernate.c3p0.min_size">5</prop>
+                <prop key="hibernate.c3p0.max_size">20</prop>
+                <prop key="hibernate.c3p0.timeout">300</prop>
+                <prop key="hibernate.c3p0.max_statements">50</prop>
+                <prop key="hibernate.c3p0.idle_test_period">3000</prop-->
+
+                <!-- CACHE -->
+                <prop key="hibernate.cache.region.factory_class">org.hibernate.cache.ehcache.EhCacheRegionFactory</prop>
+                <!-- how to set config file for cache with Hibernate4 ? -->
+                <!--prop key="net.sf.ehcache.configurationResourceName">/ehcache.xml</prop-->
+                <prop key="hibernate.cache.use_second_level_cache">true</prop>
+                <prop key="hibernate.cache.use_query_cache">true</prop>
+                <prop key="hibernate.generate_statistics">true</prop>
+                <prop key="hibernate.cache.use_structured_entries">true</prop>
+
+                <!-- no validator available yet -->
+                <prop key="javax.persistence.validation.mode">none</prop>
+
+
+            </props>
+		</property>
+	</bean>
+
+</beans>

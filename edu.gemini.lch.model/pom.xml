@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <artifactId>lchUmbrella</artifactId>
+        <groupId>edu.gemini.lch</groupId>
+        <version>3.2.3-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <name>LTTS Internal Data Model</name>
+    <artifactId>model</artifactId>
+    <version>3.2.3-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <dependencies>
+        <!-- check if there is a javax package (not eclipse) -->
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>javax.persistence</artifactId>
+            <version>2.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Hibernate -->
+        <!-- should be replaced? have as few dependencies as possible! -->
+        <!-- only needed for where annotation which seems not to be part of JPA2.0 -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${lch.hibernate.version}</version>
+        </dependency>
+        <!-- JODA Time -->
+        <dependency>
+            <groupId>joda-time</groupId>
+            <artifactId>joda-time</artifactId>
+            <version>2.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.joda</groupId>
+            <artifactId>joda-convert</artifactId>
+            <version>1.2</version>
+        </dependency>
+
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>${lch.log4j.version}</version>
+        </dependency>
+
+        <!-- should be replaced? have as few dependencies as possible! -->
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
+    </dependencies>
+
+</project>

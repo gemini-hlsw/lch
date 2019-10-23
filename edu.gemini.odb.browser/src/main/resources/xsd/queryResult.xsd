@@ -1,0 +1,246 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           jaxb:version="2.0"
+           elementFormDefault="qualified">
+
+    <xs:element name="queryResult">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:annotation>
+                    <xs:appinfo>
+                        <jaxb:property name="ProgramsNode"/>
+                    </xs:appinfo>
+                </xs:annotation>
+                <xs:element name="programs" type="programsNode"/>
+            </xs:sequence>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="programsNode">
+        <xs:sequence>
+            <xs:annotation>
+                <xs:appinfo>
+                    <jaxb:property name="Programs"/>
+                </xs:appinfo>
+            </xs:annotation>
+            <xs:element name="program" type="program" minOccurs="0" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="program">
+        <xs:sequence>
+            <xs:element name="semester" type="xs:string"/>
+            <xs:element name="title" type="xs:string"/>
+            <xs:element name="reference" type="xs:string"/>
+            <xs:element name="active" type="xs:string"/>
+            <xs:element name="completed" type="xs:string"/>
+            <xs:sequence>
+                <xs:annotation>
+                    <xs:appinfo>
+                        <jaxb:property name="InvestigatorsNode"/>
+                    </xs:appinfo>
+                </xs:annotation>
+                <xs:element name="investigators" type="investigatorsNode" minOccurs="0"/>
+            </xs:sequence>
+            <xs:element name="notifyPi" type="xs:string" minOccurs="0"/> <!-- keep working with older service version, make mandatory later -->
+            <xs:element name="rollover" type="xs:string" minOccurs="0"/> <!-- keep working with older service version, make mandatory later -->
+            <xs:element name="abstrakt" type="xs:string" minOccurs="0"/>
+            <xs:element name="scienceBand" type="xs:string" minOccurs="0"/>
+            <xs:element name="supportPartner" type="xs:string" minOccurs="0"/>
+            <xs:sequence>
+                <xs:annotation>
+                    <xs:appinfo>
+                        <jaxb:property name="PartnersNode"/>
+                    </xs:appinfo>
+                </xs:annotation>
+                <xs:element name="partners" type="partnersNode" minOccurs="0"/>
+            </xs:sequence>
+            <xs:element name="ngoEmail" type="xs:string" minOccurs="0"/>
+            <xs:element name="contactScientistEmail" type="xs:string" minOccurs="0"/>
+            <xs:element name="tooStatus" type="xs:string" minOccurs="0"/>
+            <xs:element name="thesis" type="xs:string" minOccurs="0"/>
+            <xs:element name="proprietaryMonths" type="xs:string" minOccurs="0"/>
+            <xs:element name="allocatedTime" type="xs:string" minOccurs="0"/>
+            <xs:element name="remainingTime" type="xs:string" minOccurs="0"/>
+            <xs:sequence>
+                <xs:annotation>
+                    <xs:appinfo>
+                        <jaxb:property name="ObservationsNode"/>
+                    </xs:appinfo>
+                </xs:annotation>
+                <xs:element name="observations" type="observationsNode" minOccurs="0"/>
+            </xs:sequence>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="investigatorsNode">
+        <xs:sequence>
+            <xs:annotation>
+                <xs:appinfo>
+                    <jaxb:property name="Investigators"/>
+                </xs:appinfo>
+            </xs:annotation>
+            <xs:element name="investigator" type="investigator" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="investigator">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="email" type="xs:string" default="" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="pi" type="xs:boolean" use="optional"/>
+    </xs:complexType>
+
+    <xs:complexType name="partnersNode">
+        <xs:sequence>
+            <xs:annotation>
+                <xs:appinfo>
+                    <jaxb:property name="Partners"/>
+                </xs:appinfo>
+            </xs:annotation>
+            <xs:element name="partner" type="partner" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="partner">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="hoursAllocated" type="xs:double"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="observationsNode">
+        <xs:sequence>
+            <xs:annotation>
+                <xs:appinfo>
+                    <jaxb:property name="Observations"/>
+                </xs:appinfo>
+            </xs:annotation>
+            <xs:element name="observation" type="observation" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="observation">
+        <xs:sequence>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="obsClass" type="xs:string"/>
+            <xs:element name="id" type="xs:string"/>
+            <xs:element name="status" type="xs:string"/>
+            <xs:element name="tooPriority" type="xs:string"/>
+            <xs:element name="instrument" type="xs:string"/>
+            <xs:element name="ao" type="xs:string"/>
+            <xs:element name="conditions" type="conditions" minOccurs="0"/>
+            <xs:sequence>
+                <xs:annotation>
+                    <xs:appinfo>
+                        <jaxb:property name="TargetsNode"/>
+                    </xs:appinfo>
+                </xs:annotation>
+                <xs:element name="targets" type="targetsNode" minOccurs="0"/>
+            </xs:sequence>
+            <xs:sequence>
+                <xs:annotation>
+                    <xs:appinfo>
+                        <jaxb:property name="ObsLogNode"/>
+                    </xs:appinfo>
+                </xs:annotation>
+                <xs:element name="obsLog" type="obsLogNode" minOccurs="0"/>
+            </xs:sequence>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="obsLogNode">
+        <xs:sequence>
+            <xs:annotation>
+                <xs:appinfo>
+                    <jaxb:property name="ObsLog"/>
+                </xs:appinfo>
+            </xs:annotation>
+            <xs:element name="dataset" type="obsLogRecord" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="obsLogRecord">
+        <xs:sequence>
+            <xs:element name="id" type="xs:string"/>
+            <xs:element name="record" type="xs:string"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="targetsNode">
+        <xs:sequence>
+            <xs:choice minOccurs="0" maxOccurs="unbounded">
+                <xs:annotation>
+                    <xs:appinfo>
+                        <jaxb:property name="Targets"/>
+                    </xs:appinfo>
+                </xs:annotation>
+                <xs:element name="sidereal" type="sidereal"/>
+                <xs:element name="nonSidereal" type="nonSidereal"/>
+            </xs:choice>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="sidereal">
+        <xs:all>
+            <xs:element name="type" type="xs:string"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="hmsDms" type="hmsDms"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="nonSidereal">
+        <xs:all>
+            <xs:element name="type" type="xs:string"/>
+            <xs:element name="name" type="xs:string"/>
+            <xs:element name="horizonsObjectId" type="xs:string"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="hmsDms">
+        <xs:all>
+            <xs:element name="ra" type="xs:string"/>
+            <xs:element name="dec" type="xs:string"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="conditions">
+        <xs:all>
+            <xs:annotation>
+                <xs:appinfo>
+                    <jaxb:property name="TimingWindowsNode"/>
+                </xs:appinfo>
+            </xs:annotation>
+            <xs:element name="timingWindows" type="timingWindowsNode" minOccurs="0"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="timingWindowsNode">
+        <xs:sequence>
+            <xs:annotation>
+                <xs:appinfo>
+                    <jaxb:property name="TimingWindows"/>
+                </xs:appinfo>
+            </xs:annotation>
+            <xs:element name="timingWindow" type="timingWindow" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <xs:complexType name="timingWindow">
+        <xs:all>
+            <xs:element name="time" type="xs:string"/>
+            <xs:element name="duration" type="xs:string"/>
+            <xs:element name="repeats" type="timingWindowRepeats" minOccurs="0"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="timingWindowRepeats">
+        <xs:all>
+            <xs:element name="times" type="xs:string" minOccurs="0"/>
+            <xs:element name="period" type="xs:string"/>
+        </xs:all>
+    </xs:complexType>
+
+</xs:schema>

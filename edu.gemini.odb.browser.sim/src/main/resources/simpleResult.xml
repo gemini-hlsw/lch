@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<queryResult>
+    <programs>
+        <program>
+            <semester>2012B</semester>
+            <title>The Title</title>
+            <reference>GN-2012B-Q-1</reference>
+            <active>Yes</active>
+            <completed>No</completed>
+            <observations>
+                <observation>
+                    <name>Observation Name</name>
+                    <id>GN-2012B-Q-1-12</id>
+                    <status>In Review</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>NIRI</instrument>
+                    <ao>Altair + LGS</ao>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 1271</name>
+                            <hmsDms>
+                                <ra>3:19:11.271</ra>
+                                <dec>41:21:12.09</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>User (1)</type>
+                            <name>Mrk 607</name>
+                            <hmsDms>
+                                <ra>3:24:48.706</ra>
+                                <dec>-03:02:32.28</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+            </observations>
+        </program>
+        <program>
+            <semester>2012B</semester>
+            <title>The Other Title</title>
+            <reference>GN-2012B-Q-2</reference>
+            <active>Yes</active>
+            <completed>No</completed>
+            <observations>
+                <observation>
+                    <name>Other Observation Name</name>
+                    <id>GN-2012B-Q-2-12</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>NIRI</instrument>
+                    <ao>Altair + LGS</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+                                <time>2012-08-04 09:00:00 UTC</time>
+                                <duration>3:49</duration>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <nonSidereal>
+                            <type>Base</type>
+                            <name>Jupiter</name>
+                            <horizonsObjectId>MajorBody_599</horizonsObjectId>
+                        </nonSidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>GuideStar</name>
+                            <hmsDms>
+                                <ra>3:24:48.706</ra>
+                                <dec>-03:02:32.28</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>Other Observation Name</name>
+                    <id>GN-2012B-Q-2-13</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>NIRI</instrument>
+                    <ao>Altair + LGS</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+                                <time>2012-08-05 10:00:00 UTC</time>
+                                <duration>1:30</duration>
+                                <repeats>
+                                    <times>1000</times>
+                                    <period>24:00</period>
+                                </repeats>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <nonSidereal>
+                            <type>Base</type>
+                            <name>Jupiter</name>
+                            <horizonsObjectId>MajorBody_599</horizonsObjectId>
+                        </nonSidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>GuideStar</name>
+                            <hmsDms>
+                                <ra>3:24:48.706</ra>
+                                <dec>-03:02:32.28</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+            </observations>
+        </program>
+    </programs>
+</queryResult>

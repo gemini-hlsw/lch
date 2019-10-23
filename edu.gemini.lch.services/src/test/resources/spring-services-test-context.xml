@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:task="http://www.springframework.org/schema/task"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans-3.2.xsd
+        http://www.springframework.org/schema/context  
+        http://www.springframework.org/schema/context/spring-context-3.2.xsd
+        http://www.springframework.org/schema/task
+        http://www.springframework.org/schema/task/spring-task-3.2.xsd">
+
+    <import resource="spring-data-test-context.xml"/>
+
+    <!-- loading configuration properties depending on environment and site -->
+    <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
+        <property name="location" value="classpath:ltts.development.north.properties"/>
+    </bean>
+
+
+    <context:annotation-config/>
+    <context:component-scan base-package="edu.gemini.lch.services">
+        <!-- exclude site service because it needs to be passed some parameters for creation -->
+        <context:exclude-filter type="assignable" expression="edu.gemini.lch.services.impl.SiteServiceImpl"/>
+        <!-- exclude all services that need to be replaced with a simulator -->
+        <context:exclude-filter type="assignable" expression="edu.gemini.lch.services.impl.EpicsServiceImpl"/>
+        <context:exclude-filter type="assignable" expression="edu.gemini.lch.services.impl.LtcsServiceImpl"/>
+        <context:exclude-filter type="assignable" expression="edu.gemini.lch.services.impl.LtcsServiceAlternativeImpl"/>
+        <context:exclude-filter type="assignable" expression="edu.gemini.lch.services.impl.EmailServiceImpl"/>
+        <context:exclude-filter type="assignable" expression="edu.gemini.lch.services.impl.HorizonsServiceImpl"/>
+        <context:exclude-filter type="assignable" expression="edu.gemini.lch.services.impl.JSpOCCommunicatorServiceImpl"/>
+        <!-- exclude all simulators, they are configured below in order to replace some of the "real" services  -->
+        <context:exclude-filter type="regex" expression="edu\.gemini\.lch\.services\.simulators.*"/>
+    </context:component-scan>
+
+    <!-- site service needs to be configured from the outside because it is meant to be configured according to
+         the environment we're running in, provide some dummy values for a test GN test environment -->
+    <bean id="siteService" class="edu.gemini.lch.services.impl.SiteServiceImpl">
+        <constructor-arg name="site"        value="north"/>
+        <constructor-arg name="environment" value="test"/>
+        <constructor-arg name="version"     value="test"/>
+    </bean>
+
+    <!-- replace all services that interface with the outside world with simulators to facilitate testing -->
+    <bean id="epicsService" class="edu.gemini.lch.services.simulators.EpicsServiceSimulator"/>
+    <bean id="ltcsService" class="edu.gemini.lch.services.simulators.LtcsServiceSimulator"/>
+    <bean id="horizonsService" class="edu.gemini.lch.services.simulators.HorizonsServiceSimulator"/>
+    <bean id="emailService" class="edu.gemini.lch.services.simulators.EmailServiceSimulator"/>
+    <bean id="jspocService" class="edu.gemini.lch.services.simulators.JSpOCCommunicatorServiceSimulator"/>
+    <bean id="odbBrowser" class="edu.gemini.odb.browser.OdbBrowserSimulator"/>
+
+    <!-- activate the test implementation for manual upload tests to dedicated test folders on space-track.org -->
+    <!--bean id="jspocService" class="edu.gemini.lch.services.impl.JSpOCCommunicatorServiceTestImpl"/-->
+
+    <!-- the real GN horizons service (used for some tests checking the interface with horizons for real) -->
+    <bean id="horizonsServiceReal" class="edu.gemini.lch.services.impl.HorizonsServiceImpl"/>
+
+
+    <!-- this has to come after component-scan and will activate @Scheduled and @Async annotations -->
+    <!-- needed for scheduler service -->
+    <task:annotation-driven executor="taskExecutor" scheduler="taskScheduler"/>
+    <task:executor id="taskExecutor" pool-size="10"/>
+    <task:scheduler id="taskScheduler" pool-size="10"/>
+
+    <!-- mail sender for email service -->
+    <bean id="mailSender" class="org.springframework.mail.javamail.JavaMailSenderImpl"
+          p:host="${lch.mailserver.host}"
+          p:port="${lch.mailserver.port}"/>
+
+</beans> 

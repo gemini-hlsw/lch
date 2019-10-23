@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<query>
+    <program>
+        <semester>2012B</semester>
+        <title>*</title>
+        <reference>GN*</reference>
+        <active>*</active>
+        <completed>*</completed>
+    </program>
+    <observation>
+        <name>*</name>
+        <status>Phase2|For Review|In Review|For Activation|On Hold|Ready|Ongoing</status>
+        <tooPriority>*</tooPriority>
+        <instrument>*</instrument>
+        <ao>Altair + LGS</ao>
+    </observation>
+</query>

@@ -1,0 +1,354 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
+			     http://maven.apache.org/xsd/maven-4.0.0.xsd">  
+    <parent>
+        <artifactId>lchUmbrella</artifactId>
+        <groupId>edu.gemini.lch</groupId>
+        <version>3.2.3-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <name>LCH Web Module</name>
+    <artifactId>web</artifactId>
+    <version>3.2.3-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <properties>
+        <vaadin.version>7.7.6</vaadin.version>
+        <vaadin.plugin.version>${vaadin.version}</vaadin.plugin.version>
+    </properties>
+
+    <profiles>
+        <profile>
+            <id>productionNorth</id>
+            <properties>
+                <ltts.deployment.server>gnltts.hi.gemini.edu</ltts.deployment.server>
+                <ltts.deployment.context>/ltts</ltts.deployment.context>
+            </properties>
+        </profile>
+        <profile>
+            <id>productionSouth</id>
+            <properties>
+                <ltts.deployment.server>gsltts.cl.gemini.edu</ltts.deployment.server>
+                <ltts.deployment.context>/ltts</ltts.deployment.context>
+            </properties>
+        </profile>
+        <profile>
+            <id>qaNorth</id>
+            <properties>
+                <ltts.deployment.server>gnlttstest.hi.gemini.edu</ltts.deployment.server>
+                <ltts.deployment.context>/ltts</ltts.deployment.context>
+            </properties>
+        </profile>
+        <profile>
+            <id>qaSouth</id>
+            <properties>
+                <ltts.deployment.server>gslttstest.cl.gemini.edu</ltts.deployment.server>
+                <ltts.deployment.context>/ltts</ltts.deployment.context>
+            </properties>
+        </profile>
+
+        <!-- profiles for running the webserver -->
+        <profile>
+            <id>north</id>
+            <properties>
+                <ltts.jetty.site>north</ltts.jetty.site>
+            </properties>
+        </profile>
+        <profile>
+            <id>south</id>
+            <properties>
+                <ltts.jetty.site>south</ltts.jetty.site>
+            </properties>
+        </profile>
+    </profiles>
+
+    <build>
+
+        <!--   JETTY  -->
+        <plugins>
+            <plugin>
+                <groupId>org.eclipse.jetty</groupId>
+                <artifactId>jetty-maven-plugin</artifactId>
+                <version>9.2.11.v20150529</version>
+                <configuration>
+                    <scanIntervalSeconds>10</scanIntervalSeconds>
+                    <jvmArgs>-Xms2G</jvmArgs>
+                    <jvmArgs>-Xmx8G</jvmArgs>
+                    <stopPort>1999</stopPort>
+                    <stopKey>aloha</stopKey>
+                    <!-- allow usage of simulators and test classes -->
+                    <useTestScope>true</useTestScope>
+                    <webApp>
+                        <!--overrideDescriptor>/Users/fnussber/override-web.xml</overrideDescriptor-->
+                        <!-- use this to define two jndi values that configure the environment -->
+                        <jettyEnvXml>${basedir}/src/test/resources/webapp/jetty-env-${ltts.jetty.site}.xml</jettyEnvXml>
+                        <!-- NOTE: contextPath seems not to work when running in forked mode! -->
+                        <contextPath>/ltts</contextPath>
+                    </webApp>
+                </configuration>
+                <dependencies>
+                    <!-- mvn plugin jetty does not come with a mail implementation by default -->
+                    <dependency>
+                        <groupId>com.sun.mail</groupId>
+                        <artifactId>javax.mail</artifactId>
+                        <version>1.5.4</version>
+                    </dependency>
+                </dependencies>
+            </plugin>
+
+
+            <plugin>
+                <groupId>com.vaadin</groupId>
+                <artifactId>vaadin-maven-plugin</artifactId>
+                <version>${vaadin.plugin.version}</version>
+                <configuration>
+                    <extraJvmArgs>-Xmx512M -Xss1024k</extraJvmArgs>
+                    <webappDirectory>${basedir}/target/classes/VAADIN/widgetsets</webappDirectory>
+                    <draftCompile>false</draftCompile>
+                    <compileReport>false</compileReport>
+                    <style>OBF</style>
+                    <strict>true</strict>
+                </configuration>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>update-widgetset</goal>
+                            <goal>compile</goal>
+                            <!-- disabled by default to use on-the-fly theme compilation -->
+                            <!-- <goal>compile-theme</goal> -->
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+            <!-- NOTE: this is only done to make vaadin work nicely with spring, it's a little bit overkill
+                 maybe but it allows to share spring beans with vaadin classes using annotations which is -
+                 well, sort of sweet... -->
+            <!-- aspect configuration vaadin & spring -->
+            <!-- see: https://vaadin.com/wiki/-/wiki/Main/Spring%20Integration -->
+            <plugin>
+                <groupId>org.codehaus.mojo</groupId>
+                <artifactId>aspectj-maven-plugin</artifactId>
+                <version>1.0</version>
+                <dependencies>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjrt</artifactId>
+                        <version>1.8.2</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>org.aspectj</groupId>
+                        <artifactId>aspectjtools</artifactId>
+                        <version>1.8.2</version>
+                    </dependency>
+                </dependencies>
+                <executions>
+                    <execution>
+                        <goals>
+                            <goal>compile</goal>
+                            <goal>test-compile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                <configuration>
+                    <aspectLibraries>
+                        <aspectLibrary>
+                            <groupId>org.springframework</groupId>
+                            <artifactId>spring-aspects</artifactId>
+                        </aspectLibrary>
+                    </aspectLibraries>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+
+
+            <!-- REMOTE DEPLOYMENT -->
+            <plugin>
+                <groupId>org.codehaus.cargo</groupId>
+                <artifactId>cargo-maven2-plugin</artifactId>
+                <version>1.4.14</version>
+                <configuration>
+                    <container>
+                        <containerId>jetty9x</containerId>
+                        <type>remote</type>
+                    </container>
+                    <configuration>
+                        <type>runtime</type>
+                        <properties>
+                            <cargo.hostname>${ltts.deployment.server}</cargo.hostname>
+                            <cargo.servlet.port>8080</cargo.servlet.port>
+                            <!--cargo.remote.username>someusername</cargo.remote.username-->
+                            <!--cargo.remote.password>somepassword</cargo.remote.password-->
+                        </properties>
+                    </configuration>
+
+                    <deployer>
+                        <type>remote</type>
+                    </deployer>
+
+                    <deployables>
+                        <deployable>
+                            <groupId>edu.gemini.lch</groupId>
+                            <artifactId>web</artifactId>
+                            <type>war</type>
+                            <properties>
+                                <context>${ltts.deployment.context}</context>
+                            </properties>
+                        </deployable>
+                    </deployables>
+                </configuration>
+            </plugin>
+
+        </plugins>
+    </build>
+
+    <dependencies>
+        <dependency>
+            <groupId>edu.gemini.lch</groupId>
+            <artifactId>services</artifactId>
+            <version>3.2.3-SNAPSHOT</version>
+        </dependency>
+        <!-- reuse the test code of the services module (simulators) -->
+        <dependency>
+            <groupId>edu.gemini.lch</groupId>
+            <artifactId>persistence</artifactId>
+            <version>3.2.3-SNAPSHOT</version>
+            <type>test-jar</type>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.lch</groupId>
+            <artifactId>services</artifactId>
+            <version>3.2.3-SNAPSHOT</version>
+            <type>test-jar</type>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- VAADIN -->
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-server</artifactId>
+            <version>${vaadin.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-push</artifactId>
+            <version>${vaadin.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-client</artifactId>
+            <version>${vaadin.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-client-compiler</artifactId>
+            <version>${vaadin.version}</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>com.vaadin</groupId>
+            <artifactId>vaadin-themes</artifactId>
+            <version>${vaadin.version}</version>
+        </dependency>
+        <!-- Vaadin add-ons -->
+        <dependency>
+            <groupId>org.vaadin.addons</groupId>
+            <artifactId>stylecalendar</artifactId>
+            <version>2.1.0</version>
+        </dependency>
+        <dependency>
+            <groupId>org.vaadin.addon</groupId>
+            <artifactId>confirmdialog</artifactId>
+            <version>2.1.2</version>
+        </dependency>
+
+        <!-- ASPECT CONFIGURATION -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aspects</artifactId>
+            <version>${lch.spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-aop</artifactId>
+            <version>${lch.spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjrt</artifactId>
+            <version>1.8.2</version>
+        </dependency>
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjtools</artifactId>
+            <version>1.8.2</version>
+        </dependency>
+        <dependency>
+            <groupId>javax.cache</groupId>
+            <artifactId>cache-api</artifactId>
+            <version>1.0.0</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-validator-annotation-processor</artifactId>
+            <version>4.1.0.Final</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>${lch.spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-oxm</artifactId>
+            <version>${lch.spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-webmvc</artifactId>
+            <version>${lch.spring.version}</version>
+        </dependency>
+
+        <!-- Spring Security -->
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-config</artifactId>
+            <version>${lch.spring.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-web</artifactId>
+            <version>${lch.spring.security.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.security</groupId>
+            <artifactId>spring-security-ldap</artifactId>
+            <version>${lch.spring.security.version}</version>
+        </dependency>
+
+
+        <!-- needed for spring commons multipart resolver -->
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.2</version>
+        </dependency>
+        <!-- needed for spring sommons multipart resolver -->
+        <dependency>
+            <groupId>commons-fileupload</groupId>
+            <artifactId>commons-fileupload</artifactId>
+            <version>1.3</version>
+        </dependency>
+
+    </dependencies>
+
+</project>

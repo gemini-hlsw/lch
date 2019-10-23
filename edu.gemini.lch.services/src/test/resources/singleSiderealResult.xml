@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<queryResult>
+    <programs>
+        <program>
+            <semester>2012B</semester>
+            <title>The Title</title>
+            <reference>GN-2012B-Q-1</reference>
+            <active>Yes</active>
+            <completed>No</completed>
+            <observations>
+                <observation>
+                    <name>Observation Name</name>
+                    <id>GN-2012B-Q-1-12</id>
+                    <status>In Review</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>NIRI</instrument>
+                    <ao>Altair + LGS</ao>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 1271</name>
+                            <hmsDms>
+                                <ra>3:19:11.271</ra>
+                                <dec>41:21:12.09</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>Altair AOWFS</type>
+                            <name>Mrk 607</name>
+                            <hmsDms>
+                                <ra>3:19:11.271</ra>
+                                <dec>41:21:12.09</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+            </observations>
+        </program>
+    </programs>
+</queryResult>

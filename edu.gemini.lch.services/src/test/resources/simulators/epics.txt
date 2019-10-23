@@ -1,0 +1,38 @@
+# EpicsServiceSimulator input file
+# NOTE: colons in keys have to be escaped with \
+
+
+#  - - TIME - -
+
+# use the next two lines to set an exact date and time
+#tcs\:date=2013-05-20
+#tcs\:UTC=16:00:00.0
+
+# use the next two lines (or a combination with the ones above)
+# if you want to use the current system date and time
+tcs\:date=today
+tcs\:UTC=now
+
+
+# - - POSITION - -
+
+# LTTS will pick either closest AzEl or RaDec target, so if you want LTTS to use a particular RaDec target
+# (or use no target at all) make sure to set currentAz and currentEl to something that does not match an AzEl
+# target in the database and set telescopeRA and telescopeDec to what you need (and vice versa).
+
+# these are the relevant "current" positions used to find closest target
+tcs\:currentAz=20.0
+tcs\:currentEl=90.0
+tcs\:telescopeRA=180.0
+tcs\:telescopeDec=0.0
+
+# these values are displayed but not really relevant when it comes to how LTTS picks
+# the closest target and the relevant windows
+tcs\:demandRA=12:00:00.0
+tcs\:demandDec=+00:00:00.0
+
+
+# - - LASER - -
+
+# set laser state, relevant values are: "SKY", "LASER SHUTTER", "BDM"
+lis\:lasPropProc.VALA=SKY

@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+
+    <parent>
+        <artifactId>lchUmbrella</artifactId>
+        <groupId>edu.gemini.lch</groupId>
+        <version>3.2.3-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <name>LCH Configuration</name>
+    <artifactId>configuration</artifactId>
+    <version>3.2.3-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+    <dependencies>
+
+        <dependency>
+            <groupId>edu.gemini.lch</groupId>
+            <artifactId>model</artifactId>
+            <version>3.2.3-SNAPSHOT</version>
+        </dependency>
+
+        <!-- check if there is a javax package (not eclipse) -->
+        <dependency>
+            <groupId>org.eclipse.persistence</groupId>
+            <artifactId>javax.persistence</artifactId>
+            <version>2.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- Hibernate -->
+        <!-- should be replaced? have as few dependencies as possible! -->
+        <!-- only needed for where annotation which seems not to be part of JPA2.0 -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-annotations</artifactId>
+            <version>3.5.6-Final</version>
+            <scope>provided</scope>
+        </dependency>
+
+        <!-- should be replaced? have as few dependencies as possible! -->
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.6</version>
+        </dependency>
+    </dependencies>
+
+</project>

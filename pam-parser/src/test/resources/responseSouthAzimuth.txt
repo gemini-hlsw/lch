@@ -1,0 +1,735 @@
+		Classification: UNCLASSIFIED
+
+UNITED STATES STATEGIC COMMAND LASER CLEARINGHOUSE (LCH) TIME WINDOWS REPORT
+
+Date:    2011 Apr 20 22:59:28
+From:    JSpOC/SBM
+To:      Requester
+Subject: LCH Authorized Shoot (Open) Windows
+
+
+1. The attached information contains the coordinated and approved
+   spatial parameters
+
+      (a) Authorized Shoot (Open) Windows
+
+   During Authorized Shoot Windows, the laser owner-operator (O/O) is authorized
+   to operate the approved system laser in accordance with the Source/Target
+   geometry definitions contained in this report.
+
+2. The laser O/O may perform Hybrid Predictive Avoidance (HPA) during Authorized
+   Shoot Windows, if previously certified in writing by USSTRATCOM to do so.
+
+3. Any deviation from this authorization must be immediately reported
+   to the Laser Clearinghouse/SBM at: Commercial 805-605-6546,6547. DSN=275-(xxxx).
+
+4. See below for comments specific to this mission.
+
+5. If you have any questions, please don't hesitate to contact LCH/SBM at
+   the above listed phone numbers.
+
+JSpOC/SBM
+VANDENBERG Air Force Base
+VAFB, CA 93437
+
+
+
+Mission ID:                      Gemini South_589nm_50W_.884urad_76MHz_11110225928_P
+Laser Owner/Operator:            Requester
+Report Date/Time (UTC):          2011 Apr 20 22:59:28
+Mission Name:                    Gemini South_589nm_50W_.884urad_76MHz
+Mission Start Date/Time (UTC):   2011 Apr 21 22:30:56
+Mission Stop  Date/Time (UTC):   2011 Apr 22 10:55:27
+Mission Duration   (HH:MM:SS):   12:24:31
+Type of Windows in this report:  Authorized Shoot (Open) Windows
+Comment:                         None
+Number of Targets:               29
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 Apr 21 (111) 2230 56    2011 Apr 21 (111) 2256 36    0025:40
+2011 Apr 21 (111) 2256 45    2011 Apr 22 (112) 1055 27    0718:42
+
+Percent = 99.98%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Fixed Azimuth/Elevation
+Azimuth:   0.0 degrees
+Elevation: 90.0 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 Apr 21 (111) 2230 56    2011 Apr 22 (112) 0108 51    0157:55
+2011 Apr 22 (112) 0108 56    2011 Apr 22 (112) 0154 04    0045:08
+2011 Apr 22 (112) 0154 10    2011 Apr 22 (112) 0251 17    0057:07
+2011 Apr 22 (112) 0251 21    2011 Apr 22 (112) 0349 24    0058:03
+2011 Apr 22 (112) 0349 36    2011 Apr 22 (112) 1055 27    0425:51
+
+Percent = 99.94%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Fixed Azimuth/Elevation
+Azimuth:   0.0 degrees
+Elevation: 80.0 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 Apr 21 (111) 2230 56    2011 Apr 22 (112) 0326 50    0295:54
+2011 Apr 22 (112) 0326 53    2011 Apr 22 (112) 0413 03    0046:10
+2011 Apr 22 (112) 0413 06    2011 Apr 22 (112) 1055 27    0402:21
+
+Percent = 99.99%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Fixed Azimuth/Elevation
+Azimuth:   90.0 degrees
+Elevation: 80.0 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 Apr 21 (111) 2230 56    2011 Apr 22 (112) 0051 22    0140:26
+2011 Apr 22 (112) 0051 26    2011 Apr 22 (112) 0424 08    0212:42
+2011 Apr 22 (112) 0424 12    2011 Apr 22 (112) 1055 27    0391:15
+
+Percent = 99.98%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Fixed Azimuth/Elevation
+Azimuth:   180.0 degrees
+Elevation: 80.0 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 Apr 21 (111) 2230 56    2011 Apr 21 (111) 2346 08    0075:12
+2011 Apr 21 (111) 2346 13    2011 Apr 22 (112) 0153 49    0127:36
+2011 Apr 22 (112) 0153 54    2011 Apr 22 (112) 0201 29    0007:35
+2011 Apr 22 (112) 0201 31    2011 Apr 22 (112) 0414 04    0132:33
+2011 Apr 22 (112) 0414 07    2011 Apr 22 (112) 0414 09    0000:02
+2011 Apr 22 (112) 0414 14    2011 Apr 22 (112) 0502 11    0047:57
+2011 Apr 22 (112) 0502 23    2011 Apr 22 (112) 1055 27    0353:04
+
+Percent = 99.93%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Fixed Azimuth/Elevation
+Azimuth:   270.0 degrees
+Elevation: 80.0 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 Apr 21 (111) 2230 56    2011 Apr 22 (112) 0233 52    0242:56
+2011 Apr 22 (112) 0233 56    2011 Apr 22 (112) 0326 53    0052:57
+2011 Apr 22 (112) 0326 57    2011 Apr 22 (112) 0917 11    0350:14
+2011 Apr 22 (112) 0917 14    2011 Apr 22 (112) 0926 13    0008:59
+2011 Apr 22 (112) 0926 19    2011 Apr 22 (112) 1055 27    0089:08
+
+Percent = 99.96%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Fixed Azimuth/Elevation
+Azimuth:   0.0 degrees
+Elevation: 70.0 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 Apr 21 (111) 2230 56    2011 Apr 22 (112) 0301 24    0270:28
+2011 Apr 22 (112) 0301 28    2011 Apr 22 (112) 1055 27    0473:59
+
+Percent = 99.99%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Fixed Azimuth/Elevation
+Azimuth:   90.0 degrees
+Elevation: 70.0 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 Apr 21 (111) 2230 56    2011 Apr 21 (111) 2315 38    0044:42
+2011 Apr 21 (111) 2315 42    2011 Apr 21 (111) 2359 41    0043:59
+2011 Apr 21 (111) 2359 44    2011 Apr 22 (112) 0415 14    0255:30
+2011 Apr 22 (112) 0415 17    2011 Apr 22 (112) 0503 37    0048:20
+2011 Apr 22 (112) 0503 46    2011 Apr 22 (112) 1055 27    0351:41
+
+Percent = 99.96%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Fixed Azimuth/Elevation
+Azimuth:   180.0 degrees
+Elevation: 70.0 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 Apr 21 (111) 2230 56    2011 Apr 22 (112) 0100 59    0150:03
+2011 Apr 22 (112) 0101 01    2011 Apr 22 (112) 0201 29    0060:28
+2011 Apr 22 (112) 0201 35    2011 Apr 22 (112) 0314 11    0072:36
+2011 Apr 22 (112) 0314 15    2011 Apr 22 (112) 0340 52    0026:37
+2011 Apr 22 (112) 0341 11    2011 Apr 22 (112) 0646 31    0185:20
+2011 Apr 22 (112) 0646 35    2011 Apr 22 (112) 1055 27    0248:52
+
+Percent = 99.92%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Fixed Azimuth/Elevation
+Azimuth:   270.0 degrees
+Elevation: 70.0 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 Apr 21 (111) 2230 56    2011 Apr 22 (112) 0047 01    0136:05
+2011 Apr 22 (112) 0047 06    2011 Apr 22 (112) 0247 01    0119:55
+2011 Apr 22 (112) 0247 03    2011 Apr 22 (112) 0637 31    0230:28
+2011 Apr 22 (112) 0643 35    2011 Apr 22 (112) 0656 13    0012:38
+2011 Apr 22 (112) 0656 18    2011 Apr 22 (112) 1055 27    0239:09
+
+Percent = 99.16%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Fixed Azimuth/Elevation
+Azimuth:   0.0 degrees
+Elevation: 60.0 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 Apr 21 (111) 2230 56    2011 Apr 21 (111) 2232 34    0001:38
+2011 Apr 21 (111) 2232 38    2011 Apr 22 (112) 0928 37    0655:59
+2011 Apr 22 (112) 0929 01    2011 Apr 22 (112) 1055 27    0086:26
+
+Percent = 99.94%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Fixed Azimuth/Elevation
+Azimuth:   90.0 degrees
+Elevation: 60.0 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 Apr 21 (111) 2230 56    2011 Apr 22 (112) 0259 50    0268:54
+2011 Apr 22 (112) 0259 53    2011 Apr 22 (112) 0310 00    0010:07
+2011 Apr 22 (112) 0310 04    2011 Apr 22 (112) 1055 27    0465:23
+
+Percent = 99.98%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Fixed Azimuth/Elevation
+Azimuth:   180.0 degrees
+Elevation: 60.0 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 Apr 21 (111) 2230 56    2011 Apr 21 (111) 2321 58    0051:02
+2011 Apr 21 (111) 2322 02    2011 Apr 21 (111) 2329 14    0007:12
+2011 Apr 21 (111) 2329 18    2011 Apr 22 (112) 0324 43    0235:25
+2011 Apr 22 (112) 0324 50    2011 Apr 22 (112) 1048 07    0443:17
+2011 Apr 22 (112) 1048 11    2011 Apr 22 (112) 1055 27    0007:16
+
+Percent = 99.96%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Fixed Azimuth/Elevation
+Azimuth:   270.0 degrees
+Elevation: 60.0 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 Apr 21 (111) 2230 56    2011 Apr 21 (111) 2345 06    0074:10
+2011 Apr 21 (111) 2345 11    2011 Apr 22 (112) 0829 39    0524:28
+2011 Apr 22 (112) 0829 45    2011 Apr 22 (112) 1055 27    0145:42
+
+Percent = 99.98%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Fixed Azimuth/Elevation
+Azimuth:   0.0 degrees
+Elevation: 50.0 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 Apr 21 (111) 2230 56    2011 Apr 21 (111) 2301 03    0030:07
+2011 Apr 21 (111) 2301 10    2011 Apr 22 (112) 0056 46    0115:36
+2011 Apr 22 (112) 0056 50    2011 Apr 22 (112) 0216 27    0079:37
+2011 Apr 22 (112) 0216 42    2011 Apr 22 (112) 0538 49    0202:07
+2011 Apr 22 (112) 0538 56    2011 Apr 22 (112) 0628 06    0049:10
+2011 Apr 22 (112) 0628 11    2011 Apr 22 (112) 1036 12    0248:01
+2011 Apr 22 (112) 1036 17    2011 Apr 22 (112) 1055 27    0019:10
+
+Percent = 99.90%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Fixed Azimuth/Elevation
+Azimuth:   90.0 degrees
+Elevation: 50.0 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 Apr 21 (111) 2230 56    2011 Apr 22 (112) 0200 45    0209:49
+2011 Apr 22 (112) 0200 52    2011 Apr 22 (112) 0343 39    0102:47
+2011 Apr 22 (112) 0344 03    2011 Apr 22 (112) 1055 27    0431:24
+
+Percent = 99.93%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Fixed Azimuth/Elevation
+Azimuth:   180.0 degrees
+Elevation: 50.0 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 Apr 21 (111) 2230 56    2011 Apr 22 (112) 0222 45    0231:49
+2011 Apr 22 (112) 0222 49    2011 Apr 22 (112) 0253 09    0030:20
+2011 Apr 22 (112) 0253 11    2011 Apr 22 (112) 0613 07    0199:56
+2011 Apr 22 (112) 0613 32    2011 Apr 22 (112) 0905 25    0171:53
+2011 Apr 22 (112) 0905 28    2011 Apr 22 (112) 1017 04    0071:36
+2011 Apr 22 (112) 1017 10    2011 Apr 22 (112) 1055 27    0038:17
+
+Percent = 99.91%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Fixed Azimuth/Elevation
+Azimuth:   270.0 degrees
+Elevation: 50.0 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 Apr 21 (111) 2230 56    2011 Apr 21 (111) 2236 18    0005:22
+2011 Apr 21 (111) 2236 38    2011 Apr 22 (112) 0054 50    0138:12
+2011 Apr 22 (112) 0054 55    2011 Apr 22 (112) 0115 16    0020:21
+2011 Apr 22 (112) 0115 21    2011 Apr 22 (112) 0203 01    0047:40
+2011 Apr 22 (112) 0203 07    2011 Apr 22 (112) 0916 39    0433:32
+2011 Apr 22 (112) 0917 36    2011 Apr 22 (112) 1016 41    0059:05
+2011 Apr 22 (112) 1016 48    2011 Apr 22 (112) 1055 27    0038:39
+
+Percent = 99.78%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Fixed Azimuth/Elevation
+Azimuth:   0.0 degrees
+Elevation: 40.0 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 Apr 21 (111) 2230 56    2011 Apr 21 (111) 2358 20    0087:24
+2011 Apr 21 (111) 2358 25    2011 Apr 22 (112) 0108 10    0069:45
+2011 Apr 22 (112) 0108 19    2011 Apr 22 (112) 0223 43    0075:24
+2011 Apr 22 (112) 0223 48    2011 Apr 22 (112) 0241 49    0018:01
+2011 Apr 22 (112) 0241 54    2011 Apr 22 (112) 0301 34    0019:40
+2011 Apr 22 (112) 0301 38    2011 Apr 22 (112) 0337 40    0036:02
+2011 Apr 22 (112) 0337 46    2011 Apr 22 (112) 0503 56    0086:10
+2011 Apr 22 (112) 0503 59    2011 Apr 22 (112) 1055 27    0351:28
+
+Percent = 99.92%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Fixed Azimuth/Elevation
+Azimuth:   90.0 degrees
+Elevation: 40.0 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 Apr 21 (111) 2230 56    2011 Apr 21 (111) 2318 08    0047:12
+2011 Apr 21 (111) 2318 12    2011 Apr 22 (112) 0200 25    0162:13
+2011 Apr 22 (112) 0200 40    2011 Apr 22 (112) 0329 50    0089:10
+2011 Apr 22 (112) 0330 07    2011 Apr 22 (112) 0344 18    0014:11
+2011 Apr 22 (112) 0344 25    2011 Apr 22 (112) 0547 00    0122:35
+2011 Apr 22 (112) 0547 09    2011 Apr 22 (112) 0654 27    0067:18
+2011 Apr 22 (112) 0654 31    2011 Apr 22 (112) 0709 18    0014:47
+2011 Apr 22 (112) 0709 24    2011 Apr 22 (112) 0752 20    0042:56
+2011 Apr 22 (112) 0752 27    2011 Apr 22 (112) 0818 17    0025:50
+2011 Apr 22 (112) 0818 25    2011 Apr 22 (112) 0913 16    0054:51
+2011 Apr 22 (112) 0913 24    2011 Apr 22 (112) 1055 27    0102:03
+
+Percent = 99.81%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Fixed Azimuth/Elevation
+Azimuth:   180.0 degrees
+Elevation: 40.0 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 Apr 21 (111) 2230 56    2011 Apr 21 (111) 2302 26    0031:30
+2011 Apr 21 (111) 2302 30    2011 Apr 22 (112) 0408 49    0306:19
+2011 Apr 22 (112) 0408 53    2011 Apr 22 (112) 0510 01    0061:08
+2011 Apr 22 (112) 0510 06    2011 Apr 22 (112) 0622 28    0072:22
+2011 Apr 22 (112) 0622 31    2011 Apr 22 (112) 0702 23    0039:52
+2011 Apr 22 (112) 0702 33    2011 Apr 22 (112) 1048 54    0226:21
+2011 Apr 22 (112) 1048 59    2011 Apr 22 (112) 1055 27    0006:28
+
+Percent = 99.93%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Fixed Azimuth/Elevation
+Azimuth:   270.0 degrees
+Elevation: 40.0 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 Apr 21 (111) 2230 56    2011 Apr 22 (112) 0202 23    0211:27
+2011 Apr 22 (112) 0202 28    2011 Apr 22 (112) 0439 45    0157:17
+2011 Apr 22 (112) 0439 52    2011 Apr 22 (112) 0643 34    0123:42
+2011 Apr 22 (112) 0643 39    2011 Apr 22 (112) 0906 44    0143:05
+2011 Apr 22 (112) 0906 52    2011 Apr 22 (112) 1055 27    0108:35
+
+Percent = 99.94%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Fixed Azimuth/Elevation
+Azimuth:   0.0 degrees
+Elevation: 30.0 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 Apr 21 (111) 2230 56    2011 Apr 22 (112) 0020 10    0109:14
+2011 Apr 22 (112) 0020 14    2011 Apr 22 (112) 0348 59    0208:45
+2011 Apr 22 (112) 0349 04    2011 Apr 22 (112) 0404 12    0015:08
+2011 Apr 22 (112) 0404 18    2011 Apr 22 (112) 0550 38    0106:20
+2011 Apr 22 (112) 0550 41    2011 Apr 22 (112) 0729 48    0099:07
+2011 Apr 22 (112) 0729 50    2011 Apr 22 (112) 0729 53    0000:03
+2011 Apr 22 (112) 0729 59    2011 Apr 22 (112) 0904 35    0094:36
+2011 Apr 22 (112) 0904 39    2011 Apr 22 (112) 1053 38    0108:59
+2011 Apr 22 (112) 1053 45    2011 Apr 22 (112) 1055 27    0001:42
+
+Percent = 99.92%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Fixed Azimuth/Elevation
+Azimuth:   90.0 degrees
+Elevation: 30.0 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 Apr 21 (111) 2230 56    2011 Apr 22 (112) 0200 07    0209:11
+2011 Apr 22 (112) 0200 16    2011 Apr 22 (112) 0244 57    0044:41
+2011 Apr 22 (112) 0245 03    2011 Apr 22 (112) 1055 27    0490:24
+
+Percent = 99.97%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Fixed Azimuth/Elevation
+Azimuth:   180.0 degrees
+Elevation: 30.0 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 Apr 21 (111) 2230 56    2011 Apr 22 (112) 0054 35    0143:39
+2011 Apr 22 (112) 0054 44    2011 Apr 22 (112) 0404 27    0189:43
+2011 Apr 22 (112) 0404 53    2011 Apr 22 (112) 0450 00    0045:07
+2011 Apr 22 (112) 0450 08    2011 Apr 22 (112) 0525 33    0035:25
+2011 Apr 22 (112) 0525 39    2011 Apr 22 (112) 0545 31    0019:52
+2011 Apr 22 (112) 0545 35    2011 Apr 22 (112) 0612 24    0026:49
+2011 Apr 22 (112) 0612 36    2011 Apr 22 (112) 0804 07    0111:31
+2011 Apr 22 (112) 0804 12    2011 Apr 22 (112) 0917 10    0072:58
+2011 Apr 22 (112) 0917 16    2011 Apr 22 (112) 1024 12    0066:56
+2011 Apr 22 (112) 1024 17    2011 Apr 22 (112) 1055 27    0031:10
+
+Percent = 99.82%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Fixed Azimuth/Elevation
+Azimuth:   270.0 degrees
+Elevation: 30.0 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 Apr 21 (111) 2230 56    2011 Apr 22 (112) 0054 41    0143:45
+2011 Apr 22 (112) 0054 46    2011 Apr 22 (112) 0226 49    0092:03
+2011 Apr 22 (112) 0227 01    2011 Apr 22 (112) 0311 01    0044:00
+2011 Apr 22 (112) 0311 10    2011 Apr 22 (112) 0457 04    0105:54
+2011 Apr 22 (112) 0457 15    2011 Apr 22 (112) 0548 16    0051:01
+2011 Apr 22 (112) 0548 25    2011 Apr 22 (112) 0634 23    0045:58
+2011 Apr 22 (112) 0634 32    2011 Apr 22 (112) 1013 26    0218:54
+2011 Apr 22 (112) 1013 29    2011 Apr 22 (112) 1015 00    0001:31
+2011 Apr 22 (112) 1015 14    2011 Apr 22 (112) 1034 29    0019:15
+2011 Apr 22 (112) 1034 39    2011 Apr 22 (112) 1055 27    0020:48
+
+Percent = 99.82%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Fixed Azimuth/Elevation
+Azimuth:   0.0 degrees
+Elevation: 20.0 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 Apr 21 (111) 2230 56    2011 Apr 21 (111) 2328 57    0058:01
+2011 Apr 21 (111) 2329 01    2011 Apr 22 (112) 0109 54    0100:53
+2011 Apr 22 (112) 0110 02    2011 Apr 22 (112) 0302 49    0112:47
+2011 Apr 22 (112) 0302 59    2011 Apr 22 (112) 0611 44    0188:45
+2011 Apr 22 (112) 0611 49    2011 Apr 22 (112) 0902 57    0171:08
+2011 Apr 22 (112) 0903 03    2011 Apr 22 (112) 1055 27    0112:24
+
+Percent = 99.93%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Fixed Azimuth/Elevation
+Azimuth:   90.0 degrees
+Elevation: 20.0 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 Apr 21 (111) 2230 56    2011 Apr 21 (111) 2317 59    0047:03
+2011 Apr 21 (111) 2318 05    2011 Apr 21 (111) 2325 07    0007:02
+2011 Apr 21 (111) 2325 15    2011 Apr 22 (112) 0150 44    0145:29
+2011 Apr 22 (112) 0150 52    2011 Apr 22 (112) 0247 16    0056:24
+2011 Apr 22 (112) 0247 23    2011 Apr 22 (112) 0331 58    0044:35
+2011 Apr 22 (112) 0332 06    2011 Apr 22 (112) 0359 25    0027:19
+2011 Apr 22 (112) 0359 36    2011 Apr 22 (112) 0410 01    0010:25
+2011 Apr 22 (112) 0410 27    2011 Apr 22 (112) 0443 27    0033:00
+2011 Apr 22 (112) 0443 35    2011 Apr 22 (112) 0618 46    0095:11
+2011 Apr 22 (112) 0619 12    2011 Apr 22 (112) 0723 46    0064:34
+2011 Apr 22 (112) 0723 52    2011 Apr 22 (112) 1055 27    0211:35
+
+Percent = 99.74%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Fixed Azimuth/Elevation
+Azimuth:   180.0 degrees
+Elevation: 20.0 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 Apr 21 (111) 2230 56    2011 Apr 21 (111) 2231 38    0000:42
+2011 Apr 21 (111) 2232 22    2011 Apr 22 (112) 0328 20    0295:58
+2011 Apr 22 (112) 0328 26    2011 Apr 22 (112) 0354 03    0025:37
+2011 Apr 22 (112) 0354 20    2011 Apr 22 (112) 0425 06    0030:46
+2011 Apr 22 (112) 0425 12    2011 Apr 22 (112) 0646 09    0140:57
+2011 Apr 22 (112) 0646 15    2011 Apr 22 (112) 1055 27    0249:12
+
+Percent = 99.82%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Fixed Azimuth/Elevation
+Azimuth:   270.0 degrees
+Elevation: 20.0 degrees
+

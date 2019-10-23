@@ -1,0 +1,87 @@
+/* This application has been ported from Vaadin 6 to Vaadin 7 and builds on the legacy css files. */
+@import "../reindeer/legacy-styles.css";
+
+.stylecalendar .preparation {
+    background-color: rgb(180,180,180);
+}
+
+.stylecalendar .prmsent {
+    background-color: rgb(255,178,102);
+}
+
+.stylecalendar .pamreceived {
+    background-color: rgb(0,204,0);
+}
+
+.stylecalendar .inactive {
+    background-color: rgb(255,255,255);
+}
+
+.v-menubar-menuitem-menuRight {
+    position: absolute;
+    right: 25px;
+    float: right;
+    top: 20;
+}
+
+.v-formlayout-captioncell {
+    text-align: left;
+    font-weight: bold;
+}
+
+.v-panel-content-countdown > div {
+    color: White;
+    font-weight: bold;
+    background: transparent;
+}
+
+.v-panel-content-inactive {
+    background-color: Grey;
+}
+.v-panel-content-ok {
+   background-color: DarkGreen;
+}
+.v-panel-content-warn {
+   background-color: DarkOrange;
+}
+.v-panel-content-alarm {
+   background-color: Red;
+}
+
+.v-label-bigfont {
+    line-height: 80px;
+    font-size: 25pt;
+    text-align: center;
+}
+
+.v-table .v-table-cell-content-ok {
+    color: White;
+    font-weight: bold;
+    background-color: DarkGreen;
+}
+.v-table .v-table-cell-content-warn {
+    color: White;
+    font-weight: bold;
+    background-color: DarkOrange;
+}
+.v-table .v-table-cell-content-alarm {
+    color: White;
+    font-weight: bold;
+    background-color: Red;
+}
+
+/*  ====== horizontal option group ===== */
+
+/* horizontal option group */
+.v-select-optiongroup-horizontal .v-select-option {
+    display: inline-block;
+}
+/* Avoid wrapping if the layout is too tight */
+.v-select-optiongroup-horizontal {
+    white-space: nowrap;
+}
+/* Some extra spacing is needed */
+.v-select-optiongroup-horizontal .v-select-option.v-radiobutton {
+    padding-right: 10px;
+}
+

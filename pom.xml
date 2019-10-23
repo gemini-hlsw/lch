@@ -1,0 +1,257 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <groupId>edu.gemini.lch</groupId>
+    <artifactId>lchUmbrella</artifactId>
+    <packaging>pom</packaging>
+    <version>3.2.3-SNAPSHOT</version>
+    <name>Laser Clearing House Umbrella Module</name>
+
+    <modules>
+        <module>web</module>
+        <module>edu.gemini.lch.configuration</module>
+        <module>edu.gemini.lch.model</module>
+        <module>edu.gemini.odb.browser</module>
+        <module>edu.gemini.odb.browser.sim</module>
+        <module>edu.gemini.odb.browser.client</module>
+        <module>edu.gemini.lch.persistence</module>
+        <module>edu.gemini.lch.services</module>
+        <module>edu.gemini.lch.services.model</module>
+        <module>pam-parser</module>
+    </modules>
+
+    <scm>
+        <connection>scm:svn:http://source.gemini.edu/software/lch/trunk/</connection>
+        <developerConnection>scm:svn:http://source.gemini.edu/software/lch/trunk/</developerConnection>
+        <url>http://source.gemini.edu/software/lch/trunk/</url>
+    </scm>
+
+
+    <properties>
+        <!-- Global encoding -->
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+        <!-- VERSION DEFINITIONS -->
+        <lch.hibernate.version>4.1.6.Final</lch.hibernate.version>
+        <lch.spring.version>4.1.6.RELEASE</lch.spring.version>
+        <lch.spring.security.version>4.0.1.RELEASE</lch.spring.security.version>
+        <lch.commons.version>2.5</lch.commons.version>
+        <lch.log4j.version>1.2.17</lch.log4j.version>
+
+        <!-- format is mandatory if we want to use timestamps; seems a bug keeps us from using maven.build.timestamp
+             with filtering wrapping it in another property (ltts.timestamp) solves this issue -->
+        <maven.build.timestamp.format>yyyy/MM/dd HH:mm</maven.build.timestamp.format>
+        <ltts.timestamp>${maven.build.timestamp}</ltts.timestamp>
+    </properties>
+
+    <build>
+        <!-- turn filtering on for properties files in resource directory; make sure that no other files are filtered! -->
+        <resources>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                    <include>*.properties</include>
+                    <include>*context.xml</include>
+                </includes>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <filtering>false</filtering>
+                <excludes>
+                  <exclude>*.properties</exclude>
+                  <exclude>*context.xml</exclude>
+                </excludes>
+            </resource>
+        </resources>
+        <!-- turn filtering on for properties files in test resource directory; make sure that no other files are filtered! -->
+        <testResources>
+            <testResource>
+                <directory>src/test/resources</directory>
+                <filtering>true</filtering>
+                <includes>
+                  <include>*.properties</include>
+                  <include>*context.xml</include>
+                </includes>
+            </testResource>
+            <testResource>
+                <directory>src/test/resources</directory>
+                <filtering>false</filtering>
+                <excludes>
+                  <exclude>*.properties</exclude>
+                  <exclude>*context.xml</exclude>
+                </excludes>
+            </testResource>
+        </testResources>
+
+        <!-- define plugin versions -->
+        <pluginManagement>
+        </pluginManagement>
+
+        <!-- define and configure plugins -->
+        <plugins>
+            <!-- set java version to 1.8 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.1</version>
+                <configuration>
+                    <source>1.8</source>
+                    <target>1.8</target>
+                </configuration>
+            </plugin>
+            <plugin>
+                <groupId>org.scala-tools</groupId>
+                <artifactId>maven-scala-plugin</artifactId>
+                <version>2.15.2</version>
+                <executions>
+                    <execution>
+                        <id>compile</id>
+                        <phase>process-resources</phase>
+                        <goals>
+                            <goal>compile</goal>
+                        </goals>
+                    </execution>
+                    <execution>
+                        <id>testCompile</id>
+                        <phase>process-test-resources</phase>
+                        <goals>
+                            <goal>testCompile</goal>
+                        </goals>
+                    </execution>
+                </executions>
+            </plugin>
+
+	  <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-surefire-plugin</artifactId>
+            <version>2.19.1</version>
+          </plugin>
+
+            <!-- == OSGi BUNDLE MANAGEMENT == -->
+            <!-- Configure the maven-bundle-plugin to create OSGi bundles if needed.
+                 NOTE: To keep things simple and easy we follow the convention that all classes that
+                 are below the "internal" package are private and export everything else.
+            -->
+            <plugin>
+                <groupId>org.apache.felix</groupId>
+                <artifactId>maven-bundle-plugin</artifactId>
+                <version>2.5.3</version>
+                <extensions>true</extensions>
+                <configuration>
+                    <instructions>
+                        <Bundle-SymbolicName>${project.artifactId}</Bundle-SymbolicName>
+                        <Private-Package>${bundle.namespace}.internal.*</Private-Package>
+                        <Export-Package>!${bundle.namespace}.internal.*,${bundle.namespace}.*;version="${project.version}"</Export-Package>
+                    </instructions>
+                </configuration>
+            </plugin>
+            <!-- == END OF OSGi BUNDLE MANAGEMENT == -->
+
+        </plugins>
+
+
+    </build>
+
+    <!-- project wide dependencies -->
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.12</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${lch.spring.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-core</artifactId>
+            <version>1.9.0</version>
+            <scope>test</scope>
+        </dependency>
+
+        <!-- SCALA -->
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-library</artifactId>
+            <version>2.11.8</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scala-lang</groupId>
+            <artifactId>scala-compiler</artifactId>
+            <version>2.11.8</version>
+        </dependency>
+
+<!--
+Can't find for some reason
+        <dependency>
+            <groupId>org.scalaz</groupId>
+            <artifactId>scalaz-core</artifactId>
+            <version>7.2.17</version>
+        </dependency>
+        <dependency>
+            <groupId>org.scalaz</groupId>
+            <artifactId>scalaz-effect</artifactId>
+            <version>7.2.17</version>
+        </dependency>
+-->
+
+        <!-- AOP dependency -->
+        <dependency>
+            <groupId>cglib</groupId>
+            <artifactId>cglib</artifactId>
+            <version>2.2.2</version>
+        </dependency>
+    </dependencies>
+
+    <profiles>
+
+        <!-- Define profiles for different environments -->
+        <profile>
+            <id>development</id>
+            <activation><activeByDefault>true</activeByDefault></activation>
+            <properties>
+                <lch.default.database.user>lch</lch.default.database.user>
+                <lch.test.database.name>lch_test</lch.test.database.name>
+                <lch.development.database.name>lch_dev</lch.development.database.name>
+            </properties>
+        </profile>
+    </profiles>
+
+    <repositories>
+        <!-- gemini repositories -->
+        <repository>
+            <!-- Maven central mirror -->
+            <id>edu.gemini.mirror</id>
+            <url>http://sbfswgosxdev-mp1.cl.gemini.edu:8081/artifactory/repository</url>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
+            <!-- Repository of other local dependencies stored locally -->
+            <id>edu.gemini.ext-releases-local</id>
+            <url>http://sbfosxdev-mp1.cl.gemini.edu:8081/artifactory/ext-releases-local</url>
+        </repository>
+        <repository>
+            <!-- Repository of other local dependencies stored locally -->
+            <id>edu.gemini.libs-releases-local</id>
+            <url>http://sbfosxdev-mp1.cl.gemini.edu:8081/artifactory/libs-release</url>
+        </repository>
+        <!-- VAADIN ADD-ONS -->
+        <repository>
+            <id>vaadin-addons</id>
+            <url>http://maven.vaadin.com/vaadin-addons</url>
+        </repository>
+    </repositories>
+
+
+</project>

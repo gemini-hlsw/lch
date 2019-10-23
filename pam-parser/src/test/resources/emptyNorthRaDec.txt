@@ -1,0 +1,47 @@
+		Classification: UNCLASSIFIED
+
+UNITED STATES STATEGIC COMMAND LASER CLEARINGHOUSE (LCH) TIME WINDOWS REPORT
+
+Date:    2011 May 28 10:44:28
+From:    JSpOC/SBM
+To:      Requester
+Subject: LCH Authorized Shoot (Open) Windows
+
+
+1. The attached information contains the coordinated and approved
+   spatial parameters
+
+      (a) Authorized Shoot (Open) Windows
+
+   During Authorized Shoot Windows, the laser owner-operator (O/O) is authorized
+   to operate the approved system laser in accordance with the Source/Target
+   geometry definitions contained in this report.
+
+2. The laser O/O may perform Hybrid Predictive Avoidance (HPA) during Authorized
+   Shoot Windows, if previously certified in writing by USSTRATCOM to do so.
+
+3. Any deviation from this authorization must be immediately reported
+   to the Laser Clearinghouse/SBM at: Commercial 805-605-6546,6547. DSN=275-(xxxx).
+
+4. See below for comments specific to this mission.
+
+5. If you have any questions, please don't hesitate to contact LCH/SBM at
+   the above listed phone numbers.
+
+JSpOC/SBM
+VANDENBERG Air Force Base
+VAFB, CA 93437
+
+
+
+Mission ID:                      Gemini North_589nm_14W_.65urad_100kHz_11148104428_P
+Laser Owner/Operator:            Requester
+Report Date/Time (UTC):          2011 May 28 10:44:28
+Mission Name:                    Gemini North_589nm_14W_.65urad_100kHz
+Mission Start Date/Time (UTC):   2011 May 30 05:05:12
+Mission Stop  Date/Time (UTC):   2011 May 30 15:33:38
+Mission Duration   (HH:MM:SS):   10:28:25
+Type of Windows in this report:  Authorized Shoot (Open) Windows
+Comment:                         None
+Number of Targets:               0
+

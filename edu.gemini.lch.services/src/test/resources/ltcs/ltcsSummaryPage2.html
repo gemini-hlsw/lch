@@ -1,0 +1,207 @@
+
+<META HTTP-EQUIV="CACHE-CONTROL" CONTENT="NO-CACHE">
+<META HTTP-EQUIV="PRAGMA" CONTENT="NO-CACHE">
+<META HTTP-EQUIV="Refresh" CONTENT="2;URL=status_and_alarm.php">
+
+<html>
+<head>
+    <title>LTCS - Status & Alarms Summary</title>
+    <style>
+        a {text-decoration: none}
+    </style>
+</head>
+<body bgcolor="#B8F2B8" text="#000000"
+      LINK=\"#0000FF\" VLINK=\"#0000FF\" ALINK=\"#0000FF\">
+<center>
+    <h2><i>Status & Alarms Summary</i></h2>
+    <h4><i>Last Updated:  20 Aug 2013 22:05:08</i></h4>
+</center>
+<hr/>
+
+<!-- The main table -->
+<table frame="box" align="center">
+    <tr height="1" valign="bottom">
+        <td align="center"><b><i>Observatories</i></b></td>
+        <td align="center"><b><i>Lasers</i></b></td>
+    </tr>
+    <tr height="1">
+        <td rowspan="5">
+            <!-- The observatories table -->
+            <table border="1">
+                <tr>
+                    <td align="center"><b><i></b></i></td>
+                    <td align="center"><b><i>URL<br/>State</b></i></td>
+                    <td align="center"><b><i>OVR<br/>State</b></i></td>
+                    <td align="center"><b><i>Laser<br/>Sensitive</b></i></td>
+                </tr>
+                <tr>
+                    <td align="right"><b><i>
+                        CFHT              </i></b></td>
+                    <td align="center" bgcolor="#64FF01"><i>OK</i></td>
+                    <td align="center" bgcolor="#64FF01"><i>NO</i></td>
+                    <td align="center" bgcolor="#64FF01"><i>YES</i></td>
+                </tr>
+                <tr>
+                    <td align="right"><b><i>
+                        GEMINI              </i></b></td>
+                    <td align="center" bgcolor="#64FF01"><i>OK</i></td>
+                    <td align="center" bgcolor="#64FF01"><i>NO</i></td>
+                    <td align="center" bgcolor="#64FF01"><i>YES</i></td>
+                </tr>
+                <tr>
+                    <td align="right"><b><i>
+                        IRTF              </i></b></td>
+                    <td align="center" bgcolor="#64FF01"><i>OK</i></td>
+                    <td align="center" bgcolor="#64FF01"><i>NO</i></td>
+                    <td align="center" bgcolor="#87ADCC"><i>NO</i></td>
+                </tr>
+                <tr>
+                    <td align="right"><b><i>
+                        KECK1              </i></b></td>
+                    <td align="center" bgcolor="#64FF01"><i>OK</i></td>
+                    <td align="center" bgcolor="#64FF01"><i>NO</i></td>
+                    <td align="center" bgcolor="#64FF01"><i>YES</i></td>
+                </tr>
+                <tr>
+                    <td align="right"><b><i>
+                        KECK2              </i></b></td>
+                    <td align="center" bgcolor="#64FF01"><i>OK</i></td>
+                    <td align="center" bgcolor="#64FF01"><i>NO</i></td>
+                    <td align="center" bgcolor="#64FF01"><i>YES</i></td>
+                </tr>
+                <tr>
+                    <td align="right"><b><i>
+                        SUBARU              </i></b></td>
+                    <td align="center" bgcolor="#64FF01"><i>OK</i></td>
+                    <td align="center" bgcolor="#64FF01"><i>NO</i></td>
+                    <td align="center" bgcolor="#87ADCC"><i>NO</i></td>
+                </tr>
+                <tr>
+                    <td align="right"><b><i>
+                        UH2.2M              </i></b></td>
+                    <td align="center" bgcolor="#FFFE00"><i>STALE</i></td>
+                    <td align="center" bgcolor="#64FF01"><i>NO</i></td>
+                    <td align="center" bgcolor="#FFFE00"><i>NO</i></td>
+                </tr>
+            </table>
+        </td>
+        <td valign="top">
+            <!-- The Lasers table -->
+            <table border="1" width="100%">
+                <tr>
+                    <td align="center"><b><i></b></i></td>
+                    <td align="center"><b><i>Laser State</i></b></td>
+                    <td align="center"><b><i>Shutter Event<br/>(site,duration)</i></b></td>
+                    <td align="center">
+                        <b><i>Predictions<br/>(number, site list)</i></b>
+                    </td>
+                </tr>
+                <tr>
+                    <td align="left"><b><i>GEMINI</i></b></td>
+                    <td align="center" bgcolor="FFB011"><i>On-Sky</i></td>
+                    <td align="center"><i>None</i></td>
+                    <td align="center"><i>None</i></td>
+                </tr>
+                <tr>
+                    <td align="left"><b><i>KECK1</i></b></td>
+                    <td align="center"><i>Off</i></td>
+                    <td align="center"><i>None</i></td>
+                    <td align="center"><i>None</i></td>
+                </tr>
+                <tr>
+                    <td align="left"><b><i>KECK2</i></b></td>
+                    <td align="center"><i>Off</i></td>
+                    <td align="center"><i>None</i></td>
+                    <td align="center"><i>None</i></td>
+                </tr>
+                <tr>
+                    <td align="left"><b><i>SUBARU</i></b></td>
+                    <td align="center"><i>Off</i></td>
+                    <td align="center"><i>None</i></td>
+                    <td align="center"><i>None</i></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr height="1">
+        <td valign="bottom" align="center"><b><i>Collisions</i></b></td>
+    </tr>
+    <tr>
+        <td valign="top">
+            <!-- The table with the collisions -->
+            <table border="1" align="center" width="100%">
+                <tr>
+                    <td align="center"><b><i>Laser</i></b></td>
+                    <td align="center"><b><i>Scope</i></b></td>
+                    <td align="center"><b><i>Started</i></b></td>
+                    <td align="center"><b><i>Ends</i></b></td>
+                    <td align="center"><b><i>Priority</i></b></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+    <tr height="1">
+        <td valign="bottom" align="center"><b><i> Laser "ON" Preview (Predictions & Collisions)</i></b></td>
+    </tr>
+    <tr>
+        <td valign="top">
+            <!-- The table with the preview data -->
+            <table border="1" align="center" width="100%">
+                <tr>
+                    <td align="center"><b><i>Laser</i></b></td>
+                    <td align="center"><b><i>Scope</i></b></td>
+                    <td align="center"><b><i>Starts</i></b></td>
+                    <td align="center"><b><i>Ends</i></b></td>
+                    <td align="center"><b><i>Priority</i></b></td>
+                </tr>
+            </table>
+        </td>
+    </tr>
+</table>
+
+<!-- The status indicators -->
+<center>
+    <table width="70%"><tr>
+        <td width="165"><b><i>Heartbeat Status</i> : </b></td>
+        <td>
+            <table border="1" width="100%" height="20">
+                <tr>
+                    <td align="center" width="33%" bgcolor="#64FF01">
+                        <i>Collector</i>
+                    </td>
+                    <td align="center" width="33%" bgcolor="#64FF01">
+                        <i>GA_Engine</i>
+                    </td>
+                    <td align="center" width="33%" bgcolor="#64FF01">
+                        <i>Status_Mgr</i>
+                    </td>
+                </tr>
+            </table>
+        </td>
+    </tr></table>
+</center>
+
+<br>
+<center>
+    <form action="/ltcs/ltcscntl.cgi">
+        <input type="submit" name="stop" value="Stop Collector">
+    </form>
+</center>
+
+
+<hr/>
+<!-- The links to all the pages -->
+<a href="main.php"><i>LTCS Main Page</i></a><br>
+<a href="status_and_alarm.php"><i>Status & Alarms Summary</i></a><br>
+<a href="config_selection.php"><i>Configuration</i></a><br>
+<a href="sim_selection.php"><i>Query Tool</i></a><br>
+<a href="telescope_sum_selection.php"><i>Telescope Status</i></a>
+<br>
+<br>
+<address>
+    Gemini version: 4.3.gemini<br>
+    Keck patch level <a href="/ltcs/patches/p22">p22</a><br>
+    Original version from: CARA, W.M. Keck Observatory.<br>
+</address>
+</body>
+</html>

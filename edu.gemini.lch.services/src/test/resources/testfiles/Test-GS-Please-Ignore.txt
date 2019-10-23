@@ -1,0 +1,340 @@
+
+========================================================================================================================
+THIS IS A TEST FILE - PLEASE IGNORE!
+========================================================================================================================
+
+Classification:             Unclassified
+File Name:                  PRM_Gemini North_589nm_14W_884nrad_76MHz_RADEC_20140717.txt
+Message Purpose:            Request for Predictive Avoidance Support
+Message Date/Time (UTC):    2014 Jul 11 (192) 16:00:16
+Type Windows Requested:     Open
+Point of Contact:           Gemini System Support Associate on duty at Mauna Kea summit
+                            (Voice) (808) 974 2650
+                            (Fax) (808) 974 2589
+                            (E-mail) gnlgsops@gemini.edu
+Emergency Phone # at Operations Site: (808) 974 2650
+Remarks: Targets for date  2014 Jul 17 (198) UTC.
+
+MISSION INFORMATION
+---------------------------
+Owner/Operator:               Gemini North Observatory
+Mission Name/Number:          Gemini North_589nm_14W_884nrad_76MHz
+Target Type:                  Right Ascension and Declination
+Location:                     Gemini North Observatory, Mauna Kea, Hawaii, USA
+Start Date/Time (UTC):        2014 Jul 17 (198) 05:04:02
+End Date/Time (UTC):          2014 Jul 17 (198) 15:52:00
+Duration (HH:MM:SS):          10:47:58
+
+LASER INFORMATION
+---------------------------
+Laser:                        Gemini North_589nm_14W_884nrad_76MHz
+
+SOURCE INFORMATION
+------------------------------------
+Method:                       Fixed Point
+Latitude:                     19.8238 degrees N
+Longitude:                    155.4690 degrees W
+Altitude:                     4.2134 km
+
+TARGET INFORMATION
+------------------------------------
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+
+Method:                       Right Ascension and Declination
+Catalog Date:                 J2000
+Right Ascension:              0.000
+Declination:                  0.000
+END OF FILE

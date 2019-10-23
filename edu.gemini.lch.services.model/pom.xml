@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>lchUmbrella</artifactId>
+        <groupId>edu.gemini.lch</groupId>
+        <version>3.2.3-SNAPSHOT</version>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <name>LTTS Services Data Model</name>
+    <artifactId>services-model</artifactId>
+    <version>3.2.3-SNAPSHOT</version>
+
+    <!-- make this an OSGi compliant bundle to be ready for re-use in QPT and CSS -->
+    <packaging>bundle</packaging>
+    <properties>
+        <bundle.symbolicName>edu.gemini.lch.services.model</bundle.symbolicName>
+        <bundle.namespace>edu.gemini.lch.services.model</bundle.namespace>
+    </properties>
+
+    <dependencies>
+    </dependencies>
+
+
+</project>

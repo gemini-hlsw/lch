@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <artifactId>lchUmbrella</artifactId>
+        <groupId>edu.gemini.lch</groupId>
+        <version>3.2.3-SNAPSHOT</version>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <name>LCH Persistence Module</name>
+    <artifactId>persistence</artifactId>
+    <version>3.2.3-SNAPSHOT</version>
+    <packaging>jar</packaging>
+
+
+    <build>
+        <plugins>
+            <plugin>
+              <groupId>org.apache.maven.plugins</groupId>
+              <artifactId>maven-jar-plugin</artifactId>
+              <version>2.2</version>
+              <executions>
+                <execution>
+                  <goals>
+                    <goal>test-jar</goal>
+                  </goals>
+                </execution>
+              </executions>
+            </plugin>
+        </plugins>
+    </build>
+
+    <dependencies>
+    <!-- INTERNAL DEPENDENCIES (Gemini libraries) -->
+        <dependency>
+            <groupId>edu.gemini.lch</groupId>
+            <artifactId>model</artifactId>
+            <version>3.2.3-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>edu.gemini.lch</groupId>
+            <artifactId>configuration</artifactId>
+            <version>3.2.3-SNAPSHOT</version>
+        </dependency>
+
+        <!-- EXTERNAL DEPENDENCIES (3rd party libraries) -->
+        <!-- Hibernate -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>${lch.hibernate.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-ehcache</artifactId>
+            <version>${lch.hibernate.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.4.GA</version>
+        </dependency>
+        <!-- Spring -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${lch.spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>${lch.spring.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>${lch.spring.version}</version>
+        </dependency>
+        <!-- Commons -->
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>1.4</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-lang</groupId>
+            <artifactId>commons-lang</artifactId>
+            <version>2.5</version>
+        </dependency>
+
+        <!-- Logging -->
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-log4j12</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+
+        <!-- Database and Cache -->
+        <dependency>
+            <groupId>postgresql</groupId>
+            <artifactId>postgresql</artifactId>
+            <version>9.1-901.jdbc4</version>
+        </dependency>
+        <!--dependency>
+            <groupId>net.sf.ehcache</groupId>
+            <artifactId>ehcache-core</artifactId>
+            <version>2.2.0</version>
+        </dependency-->
+
+        <dependency>
+            <groupId>edu.gemini.odb</groupId>
+            <artifactId>browser-sim</artifactId>
+            <version>3.2.3-SNAPSHOT</version>
+        </dependency>
+
+        <!-- external test only dependencies -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-test</artifactId>
+            <version>${lch.spring.version}</version>
+            <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.dbunit</groupId>
+            <artifactId>dbunit</artifactId>
+            <version>2.4.7</version>
+        </dependency>
+
+    </dependencies>
+
+        <profiles>
+        <!-- initialise database -->
+        <profile>
+            <id>defaultResetParameters</id>
+            <activation><activeByDefault>true</activeByDefault></activation>
+            <properties>
+                <lch.reset.database.user>${lch.default.database.user}</lch.reset.database.user>
+                <lch.reset.database.name>${lch.test.database.name}</lch.reset.database.name>
+            </properties>
+        </profile>
+
+            <!-- use: "mvn test -DresetWeb=true -PresetDatabase" to reset database for web server -->
+            <profile>
+                <id>webResetParameters</id>
+                <activation><property><name>resetWeb</name></property></activation>
+                <properties>
+                    <lch.reset.database.user>${lch.default.database.user}</lch.reset.database.user>
+                    <lch.reset.database.name>${lch.development.database.name}</lch.reset.database.name>
+                </properties>
+            </profile>
+
+        <profile>
+            <id>resetDatabase</id>
+            <activation><activeByDefault>true</activeByDefault></activation>
+            <build>
+                <plugins>
+                    <plugin>
+                      <groupId>org.codehaus.mojo</groupId>
+                      <artifactId>exec-maven-plugin</artifactId>
+                      <version>1.2</version>
+                        <executions>
+                            <!-- init -->
+                            <execution>
+                                <id>initDatabase</id>
+                                <phase>generate-resources</phase>
+                                <goals><goal>exec</goal></goals>
+                                <configuration>
+                                    <workingDirectory>${basedir}/database</workingDirectory>
+                                    <executable>${basedir}/database/initialize_database.sh</executable>
+                                    <arguments>
+                                        <argument>${lch.reset.database.user}</argument>
+                                        <argument>${lch.reset.database.name}</argument>
+                                    </arguments>
+                                </configuration>
+                            </execution>
+                        </executions>
+                    </plugin>
+                </plugins>
+            </build>
+        </profile>
+    </profiles>
+
+</project>

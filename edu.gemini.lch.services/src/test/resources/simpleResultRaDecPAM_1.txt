@@ -1,0 +1,126 @@
+		Classification: UNCLASSIFIED
+
+UNITED STATES STATEGIC COMMAND LASER CLEARINGHOUSE (LCH) TIME WINDOWS REPORT
+
+Date:    2011 Jun 11 16:52:04
+From:    JSpOC/SBM
+To:      Requester
+Subject: LCH Authorized Shoot (Open) Windows
+
+
+1. The attached information contains the coordinated and approved
+   spatial parameters
+
+      (a) Authorized Shoot (Open) Windows
+
+   During Authorized Shoot Windows, the laser owner-operator (O/O) is authorized
+   to operate the approved system laser in accordance with the Source/Target
+   geometry definitions contained in this report.
+
+2. The laser O/O may perform Hybrid Predictive Avoidance (HPA) during Authorized
+   Shoot Windows, if previously certified in writing by USSTRATCOM to do so.
+
+3. Any deviation from this authorization must be immediately reported
+   to the Laser Clearinghouse/SBM at: Commercial 805-605-6546,6547. DSN=275-(xxxx).
+
+4. See below for comments specific to this mission.
+
+5. If you have any questions, please don't hesitate to contact LCH/SBM at
+   the above listed phone numbers.
+
+JSpOC/SBM
+VANDENBERG Air Force Base
+VAFB, CA 93437
+
+
+
+Mission ID:                      Gemini North_589nm_14W_.65urad_100kHz_11162165204_P
+Laser Owner/Operator:            Requester
+Report Date/Time (UTC):          2013 Jul 22 16:52:04
+Mission Name:                    Gemini North_589nm_14W_.65urad_100kHz
+Mission Start Date/Time (UTC):   2013 Jul 23 05:09:12
+Mission Stop  Date/Time (UTC):   2013 Jul 23 15:32:38
+Mission Duration   (HH:MM:SS):   10:23:26
+Type of Windows in this report:  Authorized Shoot (Open) Windows
+Comment:                         None
+Number of Targets:               3
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2013 Jul 23 (164) 0509 12    2013 Jul 23 (164) 0519 57    0010:45
+2013 Jul 23 (164) 0520 10    2013 Jul 23 (164) 0544 52    0024:42
+2013 Jul 23 (164) 0546 01    2013 Jul 23 (164) 0955 05    0249:04
+2013 Jul 23 (164) 0955 10    2013 Jul 23 (164) 0955 20    0000:10
+2013 Jul 23 (164) 0955 26    2013 Jul 23 (164) 1036 13    0040:47
+2013 Jul 23 (164) 1040 11    2013 Jul 23 (164) 1147 51    0067:40
+2013 Jul 23 (164) 1147 57    2013 Jul 23 (164) 1532 38    0224:41
+
+Percent = 99.10%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 51.203 degrees
+Declination:     -3.042 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2013 Jul 23 (164) 0509 12    2013 Jul 23 (164) 0519 57    0010:45
+2013 Jul 23 (164) 0520 10    2013 Jul 23 (164) 0544 52    0024:42
+2013 Jul 23 (164) 0546 01    2013 Jul 23 (164) 0955 05    0249:04
+2013 Jul 23 (164) 0955 10    2013 Jul 23 (164) 0955 20    0000:10
+2013 Jul 23 (164) 0955 26    2013 Jul 23 (164) 1036 13    0040:47
+2013 Jul 23 (164) 1040 11    2013 Jul 23 (164) 1147 51    0067:40
+2013 Jul 23 (164) 1147 57    2013 Jul 23 (164) 1532 38    0224:41
+
+Percent = 99.10%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 2
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 72.196 degrees
+Declination:     21.634 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2013 Jul 23 (164) 0509 12    2013 Jul 23 (164) 0519 57    0010:45
+2013 Jul 23 (164) 0520 10    2013 Jul 23 (164) 0544 52    0024:42
+2013 Jul 23 (164) 0546 01    2013 Jul 23 (164) 0955 05    0249:04
+2013 Jul 23 (164) 0955 10    2013 Jul 23 (164) 0955 20    0000:10
+2013 Jul 23 (164) 0955 26    2013 Jul 23 (164) 1036 13    0040:47
+2013 Jul 23 (164) 1040 11    2013 Jul 23 (164) 1147 51    0067:40
+2013 Jul 23 (164) 1147 57    2013 Jul 23 (164) 1532 38    0224:41
+
+Percent = 99.10%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 3
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 49.797 degrees
+Declination:     41.353 degrees
+
+

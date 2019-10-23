@@ -1,0 +1,2595 @@
+		Classification: UNCLASSIFIED
+
+UNITED STATES STATEGIC COMMAND LASER CLEARINGHOUSE (LCH) TIME WINDOWS REPORT
+
+Date:    2011 May 17 11:46:13
+From:    JSpOC/SBM
+To:      Requester
+Subject: LCH Authorized Shoot (Open) Windows
+
+
+1. The attached information contains the coordinated and approved
+   spatial parameters
+
+      (a) Authorized Shoot (Open) Windows
+
+   During Authorized Shoot Windows, the laser owner-operator (O/O) is authorized
+   to operate the approved system laser in accordance with the Source/Target
+   geometry definitions contained in this report.
+
+2. The laser O/O may perform Hybrid Predictive Avoidance (HPA) during Authorized
+   Shoot Windows, if previously certified in writing by USSTRATCOM to do so.
+
+3. Any deviation from this authorization must be immediately reported
+   to the Laser Clearinghouse/SBM at: Commercial 805-605-6546,6547. DSN=275-(xxxx).
+
+4. See below for comments specific to this mission.
+
+5. If you have any questions, please don't hesitate to contact LCH/SBM at
+   the above listed phone numbers.
+
+JSpOC/SBM
+VANDENBERG Air Force Base
+VAFB, CA 93437
+
+
+
+Mission ID:                      Gemini South_589nm_50W_.884urad_76MHz_11137114613_P
+Laser Owner/Operator:            Requester
+Report Date/Time (UTC):          2011 May 17 11:46:13
+Mission Name:                    Gemini South_589nm_50W_.884urad_76MHz
+Mission Start Date/Time (UTC):   2011 May 19 22:04:55
+Mission Stop  Date/Time (UTC):   2011 May 20 11:14:28
+Mission Duration   (HH:MM:SS):   13:09:32
+Type of Windows in this report:  Authorized Shoot (Open) Windows
+Comment:                         None
+Number of Targets:               84
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0012 36    0127:41
+2011 May 20 (140) 0012 39    2011 May 20 (140) 0054 37    0041:58
+2011 May 20 (140) 0054 43    2011 May 20 (140) 0415 30    0200:47
+2011 May 20 (140) 0415 38    2011 May 20 (140) 0416 45    0001:07
+2011 May 20 (140) 0417 06    2011 May 20 (140) 0418 40    0001:34
+2011 May 20 (140) 0418 47    2011 May 20 (140) 0433 37    0014:50
+2011 May 20 (140) 0434 07    2011 May 20 (140) 1114 28    0400:21
+
+Percent = 99.84%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 139.519 degrees
+Declination:     -12.095 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0129 03    0204:08
+2011 May 20 (140) 0129 35    2011 May 20 (140) 0227 34    0057:59
+2011 May 20 (140) 0227 40    2011 May 20 (140) 0256 27    0028:47
+2011 May 20 (140) 0256 31    2011 May 20 (140) 0406 26    0069:55
+2011 May 20 (140) 0406 37    2011 May 20 (140) 0444 11    0037:34
+2011 May 20 (140) 0444 49    2011 May 20 (140) 0557 45    0072:56
+2011 May 20 (140) 0558 08    2011 May 20 (140) 0629 40    0031:32
+2011 May 20 (140) 0629 58    2011 May 20 (140) 0828 27    0118:29
+2011 May 20 (140) 0828 38    2011 May 20 (140) 0908 44    0040:06
+2011 May 20 (140) 0908 56    2011 May 20 (140) 0940 12    0031:16
+2011 May 20 (140) 0940 30    2011 May 20 (140) 0940 43    0000:13
+2011 May 20 (140) 0941 01    2011 May 20 (140) 0948 53    0007:52
+2011 May 20 (140) 0949 00    2011 May 20 (140) 1023 37    0034:37
+2011 May 20 (140) 1023 55    2011 May 20 (140) 1114 28    0050:33
+
+Percent = 99.54%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 150.482 degrees
+Declination:     -60.1 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0022 21    0137:26
+2011 May 20 (140) 0022 25    2011 May 20 (140) 0129 04    0066:39
+2011 May 20 (140) 0129 16    2011 May 20 (140) 0227 51    0058:35
+2011 May 20 (140) 0227 56    2011 May 20 (140) 0232 51    0004:55
+2011 May 20 (140) 0232 57    2011 May 20 (140) 0253 58    0021:01
+2011 May 20 (140) 0254 05    2011 May 20 (140) 0256 25    0002:20
+2011 May 20 (140) 0256 41    2011 May 20 (140) 0406 37    0069:56
+2011 May 20 (140) 0406 46    2011 May 20 (140) 0444 09    0037:23
+2011 May 20 (140) 0444 23    2011 May 20 (140) 0537 49    0053:26
+2011 May 20 (140) 0538 00    2011 May 20 (140) 0557 31    0019:31
+2011 May 20 (140) 0558 11    2011 May 20 (140) 0607 10    0008:59
+2011 May 20 (140) 0607 20    2011 May 20 (140) 0701 53    0054:33
+2011 May 20 (140) 0702 34    2011 May 20 (140) 0851 30    0108:56
+2011 May 20 (140) 0851 41    2011 May 20 (140) 0908 15    0016:34
+2011 May 20 (140) 0908 30    2011 May 20 (140) 0920 25    0011:55
+2011 May 20 (140) 0920 41    2011 May 20 (140) 0920 48    0000:07
+2011 May 20 (140) 0921 04    2011 May 20 (140) 0949 28    0028:24
+2011 May 20 (140) 0949 40    2011 May 20 (140) 1114 28    0084:48
+
+Percent = 99.48%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 155.409 degrees
+Declination:     -58.102 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2206 12    0001:17
+2011 May 19 (139) 2206 25    2011 May 19 (139) 2212 59    0006:34
+2011 May 19 (139) 2213 08    2011 May 19 (139) 2229 15    0016:07
+2011 May 19 (139) 2229 20    2011 May 20 (140) 0147 55    0198:35
+2011 May 20 (140) 0148 06    2011 May 20 (140) 0319 20    0091:14
+2011 May 20 (140) 0319 27    2011 May 20 (140) 0408 34    0049:07
+2011 May 20 (140) 0408 40    2011 May 20 (140) 0429 28    0020:48
+2011 May 20 (140) 0429 33    2011 May 20 (140) 0430 34    0001:01
+2011 May 20 (140) 0430 45    2011 May 20 (140) 0439 52    0009:07
+2011 May 20 (140) 0440 03    2011 May 20 (140) 0441 56    0001:53
+2011 May 20 (140) 0444 41    2011 May 20 (140) 1114 28    0389:47
+
+Percent = 99.49%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 156.447 degrees
+Declination:     13.721 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0046 40    0161:45
+2011 May 20 (140) 0046 42    2011 May 20 (140) 0232 16    0105:34
+2011 May 20 (140) 0232 22    2011 May 20 (140) 0256 53    0024:31
+2011 May 20 (140) 0256 57    2011 May 20 (140) 0330 32    0033:35
+2011 May 20 (140) 0330 38    2011 May 20 (140) 0442 34    0071:56
+2011 May 20 (140) 0443 39    2011 May 20 (140) 0556 34    0072:55
+2011 May 20 (140) 0557 22    2011 May 20 (140) 0657 38    0060:16
+2011 May 20 (140) 0658 13    2011 May 20 (140) 0730 58    0032:45
+2011 May 20 (140) 0731 09    2011 May 20 (140) 1114 28    0223:19
+
+Percent = 99.63%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 158.789 degrees
+Declination:     -43.698 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2232 04    0027:09
+2011 May 19 (139) 2232 09    2011 May 20 (140) 0046 25    0134:16
+2011 May 20 (140) 0046 30    2011 May 20 (140) 0149 01    0062:31
+2011 May 20 (140) 0149 04    2011 May 20 (140) 0231 59    0042:55
+2011 May 20 (140) 0232 02    2011 May 20 (140) 0330 49    0058:47
+2011 May 20 (140) 0330 54    2011 May 20 (140) 0401 48    0030:54
+2011 May 20 (140) 0401 50    2011 May 20 (140) 0441 47    0039:57
+2011 May 20 (140) 0442 58    2011 May 20 (140) 1114 28    0391:30
+
+Percent = 99.80%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 160.203 degrees
+Declination:     -35.665 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0256 11    0291:16
+2011 May 20 (140) 0256 14    2011 May 20 (140) 0256 21    0000:07
+2011 May 20 (140) 0256 43    2011 May 20 (140) 0316 26    0019:43
+2011 May 20 (140) 0316 32    2011 May 20 (140) 0423 55    0067:23
+2011 May 20 (140) 0424 05    2011 May 20 (140) 0557 35    0093:30
+2011 May 20 (140) 0558 19    2011 May 20 (140) 0629 01    0030:42
+2011 May 20 (140) 0629 17    2011 May 20 (140) 0638 13    0008:56
+2011 May 20 (140) 0638 20    2011 May 20 (140) 0647 54    0009:34
+2011 May 20 (140) 0648 06    2011 May 20 (140) 0657 27    0009:21
+2011 May 20 (140) 0657 34    2011 May 20 (140) 0702 39    0005:05
+2011 May 20 (140) 0703 11    2011 May 20 (140) 0809 59    0066:48
+2011 May 20 (140) 0810 17    2011 May 20 (140) 0836 05    0025:48
+2011 May 20 (140) 0836 29    2011 May 20 (140) 0907 49    0031:20
+2011 May 20 (140) 0908 13    2011 May 20 (140) 0939 35    0031:22
+2011 May 20 (140) 0939 39    2011 May 20 (140) 0940 01    0000:22
+2011 May 20 (140) 0940 14    2011 May 20 (140) 0948 19    0008:05
+2011 May 20 (140) 0948 41    2011 May 20 (140) 0949 03    0000:22
+2011 May 20 (140) 0949 14    2011 May 20 (140) 1019 22    0030:08
+2011 May 20 (140) 1019 25    2011 May 20 (140) 1114 28    0055:03
+
+Percent = 99.41%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 160.973 degrees
+Declination:     -59.552 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0256 10    0291:15
+2011 May 20 (140) 0256 16    2011 May 20 (140) 0256 21    0000:05
+2011 May 20 (140) 0256 43    2011 May 20 (140) 0316 26    0019:43
+2011 May 20 (140) 0316 32    2011 May 20 (140) 0423 55    0067:23
+2011 May 20 (140) 0424 06    2011 May 20 (140) 0452 36    0028:30
+2011 May 20 (140) 0452 41    2011 May 20 (140) 0557 36    0064:55
+2011 May 20 (140) 0558 19    2011 May 20 (140) 0629 01    0030:42
+2011 May 20 (140) 0629 16    2011 May 20 (140) 0638 12    0008:56
+2011 May 20 (140) 0638 20    2011 May 20 (140) 0647 54    0009:34
+2011 May 20 (140) 0648 06    2011 May 20 (140) 0657 26    0009:20
+2011 May 20 (140) 0657 35    2011 May 20 (140) 0702 41    0005:06
+2011 May 20 (140) 0703 14    2011 May 20 (140) 0809 58    0066:44
+2011 May 20 (140) 0810 18    2011 May 20 (140) 0836 08    0025:50
+2011 May 20 (140) 0836 32    2011 May 20 (140) 0907 48    0031:16
+2011 May 20 (140) 0908 13    2011 May 20 (140) 0939 30    0031:17
+2011 May 20 (140) 0939 41    2011 May 20 (140) 0939 59    0000:18
+2011 May 20 (140) 0940 14    2011 May 20 (140) 0948 19    0008:05
+2011 May 20 (140) 0948 41    2011 May 20 (140) 0949 04    0000:23
+2011 May 20 (140) 0949 10    2011 May 20 (140) 1019 13    0030:03
+2011 May 20 (140) 1019 28    2011 May 20 (140) 1114 28    0055:00
+
+Percent = 99.35%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 161.3 degrees
+Declination:     -59.718 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2205 04    0000:09
+2011 May 19 (139) 2205 10    2011 May 20 (140) 0256 23    0291:13
+2011 May 20 (140) 0256 46    2011 May 20 (140) 0452 42    0115:56
+2011 May 20 (140) 0452 47    2011 May 20 (140) 0538 31    0045:44
+2011 May 20 (140) 0538 41    2011 May 20 (140) 0557 36    0018:55
+2011 May 20 (140) 0558 19    2011 May 20 (140) 0628 43    0030:24
+2011 May 20 (140) 0628 58    2011 May 20 (140) 0638 25    0009:27
+2011 May 20 (140) 0638 30    2011 May 20 (140) 0657 35    0019:05
+2011 May 20 (140) 0657 46    2011 May 20 (140) 0736 03    0038:17
+2011 May 20 (140) 0736 27    2011 May 20 (140) 0754 03    0017:36
+2011 May 20 (140) 0754 04    2011 May 20 (140) 0809 48    0015:44
+2011 May 20 (140) 0810 09    2011 May 20 (140) 0907 23    0057:14
+2011 May 20 (140) 0907 46    2011 May 20 (140) 0948 04    0040:18
+2011 May 20 (140) 0948 26    2011 May 20 (140) 0948 38    0000:12
+2011 May 20 (140) 0948 54    2011 May 20 (140) 1114 28    0085:34
+
+Percent = 99.53%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 166.368 degrees
+Declination:     -58.729 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0256 20    0291:25
+2011 May 20 (140) 0256 42    2011 May 20 (140) 0305 00    0008:18
+2011 May 20 (140) 0305 07    2011 May 20 (140) 0557 45    0172:38
+2011 May 20 (140) 0558 26    2011 May 20 (140) 0703 34    0065:08
+2011 May 20 (140) 0703 51    2011 May 20 (140) 0726 41    0022:50
+2011 May 20 (140) 0726 44    2011 May 20 (140) 0727 01    0000:17
+2011 May 20 (140) 0727 09    2011 May 20 (140) 0736 09    0009:00
+2011 May 20 (140) 0736 38    2011 May 20 (140) 0837 02    0060:24
+2011 May 20 (140) 0837 08    2011 May 20 (140) 1114 28    0157:20
+
+Percent = 99.72%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 168.772 degrees
+Declination:     -61.273 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2215 56    0011:01
+2011 May 19 (139) 2216 03    2011 May 20 (140) 0031 53    0135:50
+2011 May 20 (140) 0032 00    2011 May 20 (140) 0034 13    0002:13
+2011 May 20 (140) 0034 20    2011 May 20 (140) 0242 25    0128:05
+2011 May 20 (140) 0242 46    2011 May 20 (140) 0345 17    0062:31
+2011 May 20 (140) 0345 20    2011 May 20 (140) 0659 53    0194:33
+2011 May 20 (140) 0700 01    2011 May 20 (140) 0708 57    0008:56
+2011 May 20 (140) 0709 17    2011 May 20 (140) 0712 15    0002:58
+2011 May 20 (140) 0712 40    2011 May 20 (140) 0726 12    0013:32
+2011 May 20 (140) 0726 25    2011 May 20 (140) 0738 51    0012:26
+2011 May 20 (140) 0739 03    2011 May 20 (140) 0739 46    0000:43
+2011 May 20 (140) 0739 59    2011 May 20 (140) 1114 28    0214:29
+
+Percent = 99.71%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 180.48 degrees
+Declination:     -18.875 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2336 28    0091:33
+2011 May 19 (139) 2336 33    2011 May 20 (140) 0032 33    0056:00
+2011 May 20 (140) 0032 41    2011 May 20 (140) 0158 21    0085:40
+2011 May 20 (140) 0158 35    2011 May 20 (140) 0242 44    0044:09
+2011 May 20 (140) 0243 03    2011 May 20 (140) 0538 52    0175:49
+2011 May 20 (140) 0539 05    2011 May 20 (140) 0737 39    0118:34
+2011 May 20 (140) 0738 30    2011 May 20 (140) 0807 56    0029:26
+2011 May 20 (140) 0808 18    2011 May 20 (140) 0838 04    0029:46
+2011 May 20 (140) 0838 15    2011 May 20 (140) 1114 28    0156:13
+
+Percent = 99.70%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 187.03 degrees
+Declination:     -34.928 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2205 54    0000:59
+2011 May 19 (139) 2206 00    2011 May 20 (140) 0106 12    0180:12
+2011 May 20 (140) 0106 17    2011 May 20 (140) 0158 51    0052:34
+2011 May 20 (140) 0159 07    2011 May 20 (140) 0315 47    0076:40
+2011 May 20 (140) 0315 52    2011 May 20 (140) 0417 10    0061:18
+2011 May 20 (140) 0417 38    2011 May 20 (140) 0612 44    0115:06
+2011 May 20 (140) 0612 47    2011 May 20 (140) 0701 03    0048:16
+2011 May 20 (140) 0701 31    2011 May 20 (140) 0713 53    0012:22
+2011 May 20 (140) 0714 05    2011 May 20 (140) 0715 39    0001:34
+2011 May 20 (140) 0715 52    2011 May 20 (140) 1114 28    0238:36
+
+Percent = 99.76%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 190.76 degrees
+Declination:     -1.759 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2205 54    0000:59
+2011 May 19 (139) 2206 00    2011 May 20 (140) 0106 12    0180:12
+2011 May 20 (140) 0106 17    2011 May 20 (140) 0158 51    0052:34
+2011 May 20 (140) 0159 07    2011 May 20 (140) 0315 47    0076:40
+2011 May 20 (140) 0315 52    2011 May 20 (140) 0417 10    0061:18
+2011 May 20 (140) 0417 39    2011 May 20 (140) 0701 03    0163:24
+2011 May 20 (140) 0701 32    2011 May 20 (140) 0713 53    0012:21
+2011 May 20 (140) 0714 04    2011 May 20 (140) 0715 39    0001:35
+2011 May 20 (140) 0715 52    2011 May 20 (140) 1114 28    0238:36
+
+Percent = 99.76%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 190.818 degrees
+Declination:     -1.779 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2205 54    0000:59
+2011 May 19 (139) 2206 00    2011 May 20 (140) 0106 12    0180:12
+2011 May 20 (140) 0106 17    2011 May 20 (140) 0158 51    0052:34
+2011 May 20 (140) 0159 07    2011 May 20 (140) 0315 47    0076:40
+2011 May 20 (140) 0315 52    2011 May 20 (140) 0417 10    0061:18
+2011 May 20 (140) 0417 39    2011 May 20 (140) 0701 03    0163:24
+2011 May 20 (140) 0701 32    2011 May 20 (140) 0713 53    0012:21
+2011 May 20 (140) 0714 04    2011 May 20 (140) 0715 39    0001:35
+2011 May 20 (140) 0715 52    2011 May 20 (140) 1114 28    0238:36
+
+Percent = 99.76%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 190.85 degrees
+Declination:     -1.79 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2205 54    0000:59
+2011 May 19 (139) 2206 00    2011 May 20 (140) 0106 12    0180:12
+2011 May 20 (140) 0106 17    2011 May 20 (140) 0158 51    0052:34
+2011 May 20 (140) 0159 07    2011 May 20 (140) 0315 47    0076:40
+2011 May 20 (140) 0315 52    2011 May 20 (140) 0417 10    0061:18
+2011 May 20 (140) 0417 39    2011 May 20 (140) 0701 02    0163:23
+2011 May 20 (140) 0701 32    2011 May 20 (140) 0713 54    0012:22
+2011 May 20 (140) 0714 04    2011 May 20 (140) 0715 39    0001:35
+2011 May 20 (140) 0715 52    2011 May 20 (140) 1114 28    0238:36
+
+Percent = 99.76%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 190.885 degrees
+Declination:     -1.801 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2205 54    0000:59
+2011 May 19 (139) 2206 00    2011 May 20 (140) 0106 12    0180:12
+2011 May 20 (140) 0106 17    2011 May 20 (140) 0158 51    0052:34
+2011 May 20 (140) 0159 07    2011 May 20 (140) 0315 47    0076:40
+2011 May 20 (140) 0315 52    2011 May 20 (140) 0417 10    0061:18
+2011 May 20 (140) 0417 39    2011 May 20 (140) 0701 02    0163:23
+2011 May 20 (140) 0701 32    2011 May 20 (140) 0713 54    0012:22
+2011 May 20 (140) 0714 04    2011 May 20 (140) 0715 39    0001:35
+2011 May 20 (140) 0715 52    2011 May 20 (140) 1114 28    0238:36
+
+Percent = 99.76%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 190.921 degrees
+Declination:     -1.814 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2205 54    0000:59
+2011 May 19 (139) 2206 00    2011 May 20 (140) 0106 11    0180:11
+2011 May 20 (140) 0106 17    2011 May 20 (140) 0158 51    0052:34
+2011 May 20 (140) 0159 07    2011 May 20 (140) 0315 47    0076:40
+2011 May 20 (140) 0315 52    2011 May 20 (140) 0417 10    0061:18
+2011 May 20 (140) 0417 39    2011 May 20 (140) 0701 02    0163:23
+2011 May 20 (140) 0701 33    2011 May 20 (140) 0713 54    0012:21
+2011 May 20 (140) 0714 04    2011 May 20 (140) 0715 39    0001:35
+2011 May 20 (140) 0715 52    2011 May 20 (140) 1114 28    0238:36
+
+Percent = 99.76%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 190.96 degrees
+Declination:     -1.826 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2205 54    0000:59
+2011 May 19 (139) 2206 00    2011 May 20 (140) 0106 11    0180:11
+2011 May 20 (140) 0106 17    2011 May 20 (140) 0158 51    0052:34
+2011 May 20 (140) 0159 07    2011 May 20 (140) 0315 47    0076:40
+2011 May 20 (140) 0315 52    2011 May 20 (140) 0417 11    0061:19
+2011 May 20 (140) 0417 39    2011 May 20 (140) 0701 02    0163:23
+2011 May 20 (140) 0701 33    2011 May 20 (140) 0713 54    0012:21
+2011 May 20 (140) 0714 04    2011 May 20 (140) 0715 39    0001:35
+2011 May 20 (140) 0715 52    2011 May 20 (140) 1114 28    0238:36
+
+Percent = 99.76%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 191.001 degrees
+Declination:     -1.839 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2205 53    0000:58
+2011 May 19 (139) 2205 59    2011 May 20 (140) 0106 11    0180:12
+2011 May 20 (140) 0106 17    2011 May 20 (140) 0158 51    0052:34
+2011 May 20 (140) 0159 07    2011 May 20 (140) 0315 47    0076:40
+2011 May 20 (140) 0315 52    2011 May 20 (140) 0417 11    0061:19
+2011 May 20 (140) 0417 39    2011 May 20 (140) 0701 02    0163:23
+2011 May 20 (140) 0701 33    2011 May 20 (140) 0713 54    0012:21
+2011 May 20 (140) 0714 03    2011 May 20 (140) 0715 40    0001:37
+2011 May 20 (140) 0715 52    2011 May 20 (140) 1114 28    0238:36
+
+Percent = 99.76%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 191.044 degrees
+Declination:     -1.853 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0025 14    0140:19
+2011 May 20 (140) 0025 19    2011 May 20 (140) 0158 13    0092:54
+2011 May 20 (140) 0158 29    2011 May 20 (140) 0242 54    0044:25
+2011 May 20 (140) 0243 09    2011 May 20 (140) 0314 20    0031:11
+2011 May 20 (140) 0314 24    2011 May 20 (140) 0538 35    0144:11
+2011 May 20 (140) 0538 45    2011 May 20 (140) 0600 14    0021:29
+2011 May 20 (140) 0600 47    2011 May 20 (140) 0605 19    0004:32
+2011 May 20 (140) 0605 25    2011 May 20 (140) 0749 55    0104:30
+2011 May 20 (140) 0750 27    2011 May 20 (140) 0849 17    0058:50
+2011 May 20 (140) 0849 37    2011 May 20 (140) 0853 12    0003:35
+2011 May 20 (140) 0853 23    2011 May 20 (140) 0903 38    0010:15
+2011 May 20 (140) 0904 03    2011 May 20 (140) 0910 24    0006:21
+2011 May 20 (140) 0910 34    2011 May 20 (140) 0945 45    0035:11
+2011 May 20 (140) 0946 07    2011 May 20 (140) 0948 14    0002:07
+2011 May 20 (140) 0948 31    2011 May 20 (140) 1114 28    0085:57
+
+Percent = 99.52%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 192.644 degrees
+Declination:     -41.913 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0157 55    0233:00
+2011 May 20 (140) 0158 11    2011 May 20 (140) 0244 51    0046:40
+2011 May 20 (140) 0244 57    2011 May 20 (140) 0313 40    0028:43
+2011 May 20 (140) 0313 42    2011 May 20 (140) 0432 20    0078:38
+2011 May 20 (140) 0432 30    2011 May 20 (140) 0520 36    0048:06
+2011 May 20 (140) 0520 52    2011 May 20 (140) 0602 26    0041:34
+2011 May 20 (140) 0602 31    2011 May 20 (140) 0615 16    0012:45
+2011 May 20 (140) 0615 25    2011 May 20 (140) 0709 00    0053:35
+2011 May 20 (140) 0709 11    2011 May 20 (140) 0750 48    0041:37
+2011 May 20 (140) 0751 12    2011 May 20 (140) 0857 49    0066:37
+2011 May 20 (140) 0857 56    2011 May 20 (140) 0913 32    0015:36
+2011 May 20 (140) 0913 44    2011 May 20 (140) 0927 50    0014:06
+2011 May 20 (140) 0928 08    2011 May 20 (140) 1024 49    0056:41
+2011 May 20 (140) 1025 26    2011 May 20 (140) 1043 54    0018:28
+2011 May 20 (140) 1044 30    2011 May 20 (140) 1044 33    0000:03
+2011 May 20 (140) 1044 56    2011 May 20 (140) 1114 28    0029:32
+
+Percent = 99.51%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 193.421 degrees
+Declination:     -60.366 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0030 04    0145:09
+2011 May 20 (140) 0030 11    2011 May 20 (140) 0139 56    0069:45
+2011 May 20 (140) 0140 02    2011 May 20 (140) 0158 05    0018:03
+2011 May 20 (140) 0158 21    2011 May 20 (140) 0314 02    0075:41
+2011 May 20 (140) 0314 07    2011 May 20 (140) 0538 19    0144:12
+2011 May 20 (140) 0538 32    2011 May 20 (140) 0614 16    0035:44
+2011 May 20 (140) 0614 27    2011 May 20 (140) 0620 57    0006:30
+2011 May 20 (140) 0621 03    2011 May 20 (140) 0627 18    0006:15
+2011 May 20 (140) 0627 30    2011 May 20 (140) 0750 21    0082:51
+2011 May 20 (140) 0750 50    2011 May 20 (140) 1114 28    0203:38
+
+Percent = 99.78%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 194.02 degrees
+Declination:     -50.071 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2230 43    0025:48
+2011 May 19 (139) 2230 50    2011 May 19 (139) 2233 35    0002:45
+2011 May 19 (139) 2233 38    2011 May 20 (140) 0000 01    0086:23
+2011 May 20 (140) 0000 06    2011 May 20 (140) 0242 37    0162:31
+2011 May 20 (140) 0242 43    2011 May 20 (140) 0253 49    0011:06
+2011 May 20 (140) 0253 59    2011 May 20 (140) 0417 33    0083:34
+2011 May 20 (140) 0417 55    2011 May 20 (140) 0701 11    0163:16
+2011 May 20 (140) 0701 52    2011 May 20 (140) 0712 20    0010:28
+2011 May 20 (140) 0712 33    2011 May 20 (140) 0723 25    0010:52
+2011 May 20 (140) 0723 29    2011 May 20 (140) 0733 00    0009:31
+2011 May 20 (140) 0733 39    2011 May 20 (140) 0739 15    0005:36
+2011 May 20 (140) 0739 31    2011 May 20 (140) 0740 32    0001:01
+2011 May 20 (140) 0740 39    2011 May 20 (140) 0741 49    0001:10
+2011 May 20 (140) 0741 58    2011 May 20 (140) 0806 23    0024:25
+2011 May 20 (140) 0806 33    2011 May 20 (140) 1114 28    0187:55
+
+Percent = 99.59%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 197.884 degrees
+Declination:     -1.351 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2217 49    0012:54
+2011 May 19 (139) 2217 59    2011 May 20 (140) 0158 18    0220:19
+2011 May 20 (140) 0158 30    2011 May 20 (140) 0242 53    0044:23
+2011 May 20 (140) 0243 14    2011 May 20 (140) 0252 54    0009:40
+2011 May 20 (140) 0253 04    2011 May 20 (140) 0314 03    0020:59
+2011 May 20 (140) 0314 07    2011 May 20 (140) 0601 06    0166:59
+2011 May 20 (140) 0601 43    2011 May 20 (140) 0612 58    0011:15
+2011 May 20 (140) 0613 25    2011 May 20 (140) 0621 31    0008:06
+2011 May 20 (140) 0621 36    2011 May 20 (140) 0756 06    0094:30
+2011 May 20 (140) 0756 13    2011 May 20 (140) 0853 53    0057:40
+2011 May 20 (140) 0854 00    2011 May 20 (140) 1114 28    0140:28
+
+Percent = 99.70%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 200.558 degrees
+Declination:     -36.818 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0035 09    0150:14
+2011 May 20 (140) 0035 13    2011 May 20 (140) 0036 02    0000:49
+2011 May 20 (140) 0036 07    2011 May 20 (140) 0158 12    0082:05
+2011 May 20 (140) 0158 26    2011 May 20 (140) 0242 58    0044:32
+2011 May 20 (140) 0243 17    2011 May 20 (140) 0252 45    0009:28
+2011 May 20 (140) 0252 55    2011 May 20 (140) 0313 51    0020:56
+2011 May 20 (140) 0313 56    2011 May 20 (140) 0558 34    0164:38
+2011 May 20 (140) 0558 39    2011 May 20 (140) 0600 56    0002:17
+2011 May 20 (140) 0601 03    2011 May 20 (140) 0601 45    0000:42
+2011 May 20 (140) 0601 56    2011 May 20 (140) 0613 09    0011:13
+2011 May 20 (140) 0613 32    2011 May 20 (140) 0613 52    0000:20
+2011 May 20 (140) 0614 03    2011 May 20 (140) 0616 00    0001:57
+2011 May 20 (140) 0616 08    2011 May 20 (140) 0626 51    0010:43
+2011 May 20 (140) 0626 58    2011 May 20 (140) 0750 12    0083:14
+2011 May 20 (140) 0750 25    2011 May 20 (140) 0759 45    0009:20
+2011 May 20 (140) 0759 56    2011 May 20 (140) 0850 03    0050:07
+2011 May 20 (140) 0850 32    2011 May 20 (140) 1014 42    0084:10
+2011 May 20 (140) 1014 56    2011 May 20 (140) 1016 26    0001:30
+2011 May 20 (140) 1016 37    2011 May 20 (140) 1114 28    0057:51
+
+Percent = 99.56%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 201.362 degrees
+Declination:     -43.017 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0033 22    0148:27
+2011 May 20 (140) 0033 38    2011 May 20 (140) 0158 07    0084:29
+2011 May 20 (140) 0158 22    2011 May 20 (140) 0243 05    0044:43
+2011 May 20 (140) 0243 16    2011 May 20 (140) 0252 39    0009:23
+2011 May 20 (140) 0252 47    2011 May 20 (140) 0313 42    0020:55
+2011 May 20 (140) 0313 47    2011 May 20 (140) 0558 42    0164:55
+2011 May 20 (140) 0558 52    2011 May 20 (140) 0601 54    0003:02
+2011 May 20 (140) 0602 05    2011 May 20 (140) 0613 17    0011:12
+2011 May 20 (140) 0613 36    2011 May 20 (140) 0615 50    0002:14
+2011 May 20 (140) 0615 59    2011 May 20 (140) 0750 20    0094:21
+2011 May 20 (140) 0750 42    2011 May 20 (140) 0936 51    0106:09
+2011 May 20 (140) 0936 58    2011 May 20 (140) 0937 18    0000:20
+2011 May 20 (140) 0937 29    2011 May 20 (140) 0946 09    0008:40
+2011 May 20 (140) 0946 22    2011 May 20 (140) 1012 12    0025:50
+2011 May 20 (140) 1012 25    2011 May 20 (140) 1027 56    0015:31
+2011 May 20 (140) 1028 12    2011 May 20 (140) 1029 47    0001:35
+2011 May 20 (140) 1030 11    2011 May 20 (140) 1114 28    0044:17
+
+Percent = 99.56%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 201.402 degrees
+Declination:     -47.561 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0033 22    0148:27
+2011 May 20 (140) 0033 39    2011 May 20 (140) 0158 07    0084:28
+2011 May 20 (140) 0158 22    2011 May 20 (140) 0243 04    0044:42
+2011 May 20 (140) 0243 16    2011 May 20 (140) 0252 39    0009:23
+2011 May 20 (140) 0252 47    2011 May 20 (140) 0313 42    0020:55
+2011 May 20 (140) 0313 47    2011 May 20 (140) 0558 42    0164:55
+2011 May 20 (140) 0558 52    2011 May 20 (140) 0601 54    0003:02
+2011 May 20 (140) 0602 05    2011 May 20 (140) 0613 17    0011:12
+2011 May 20 (140) 0613 36    2011 May 20 (140) 0615 50    0002:14
+2011 May 20 (140) 0615 59    2011 May 20 (140) 0750 20    0094:21
+2011 May 20 (140) 0750 42    2011 May 20 (140) 0936 51    0106:09
+2011 May 20 (140) 0936 57    2011 May 20 (140) 0937 17    0000:20
+2011 May 20 (140) 0937 29    2011 May 20 (140) 0946 09    0008:40
+2011 May 20 (140) 0946 21    2011 May 20 (140) 1012 11    0025:50
+2011 May 20 (140) 1012 24    2011 May 20 (140) 1027 55    0015:31
+2011 May 20 (140) 1028 11    2011 May 20 (140) 1029 47    0001:36
+2011 May 20 (140) 1030 11    2011 May 20 (140) 1114 28    0044:17
+
+Percent = 99.55%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 201.459 degrees
+Declination:     -47.515 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0033 22    0148:27
+2011 May 20 (140) 0033 39    2011 May 20 (140) 0158 07    0084:28
+2011 May 20 (140) 0158 22    2011 May 20 (140) 0243 04    0044:42
+2011 May 20 (140) 0243 17    2011 May 20 (140) 0252 39    0009:22
+2011 May 20 (140) 0252 48    2011 May 20 (140) 0313 42    0020:54
+2011 May 20 (140) 0313 48    2011 May 20 (140) 0558 41    0164:53
+2011 May 20 (140) 0558 51    2011 May 20 (140) 0601 54    0003:03
+2011 May 20 (140) 0602 04    2011 May 20 (140) 0613 17    0011:13
+2011 May 20 (140) 0613 36    2011 May 20 (140) 0615 50    0002:14
+2011 May 20 (140) 0616 00    2011 May 20 (140) 0750 21    0094:21
+2011 May 20 (140) 0750 41    2011 May 20 (140) 0936 49    0106:08
+2011 May 20 (140) 0936 56    2011 May 20 (140) 0937 16    0000:20
+2011 May 20 (140) 0937 28    2011 May 20 (140) 0946 07    0008:39
+2011 May 20 (140) 0946 20    2011 May 20 (140) 1012 09    0025:49
+2011 May 20 (140) 1012 22    2011 May 20 (140) 1027 53    0015:31
+2011 May 20 (140) 1028 09    2011 May 20 (140) 1029 49    0001:40
+2011 May 20 (140) 1030 13    2011 May 20 (140) 1114 28    0044:15
+
+Percent = 99.55%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 201.768 degrees
+Declination:     -47.335 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0033 23    0148:28
+2011 May 20 (140) 0033 40    2011 May 20 (140) 0158 07    0084:27
+2011 May 20 (140) 0158 22    2011 May 20 (140) 0243 05    0044:43
+2011 May 20 (140) 0243 17    2011 May 20 (140) 0252 38    0009:21
+2011 May 20 (140) 0252 48    2011 May 20 (140) 0313 42    0020:54
+2011 May 20 (140) 0313 47    2011 May 20 (140) 0558 42    0164:55
+2011 May 20 (140) 0558 51    2011 May 20 (140) 0601 55    0003:04
+2011 May 20 (140) 0602 05    2011 May 20 (140) 0613 17    0011:12
+2011 May 20 (140) 0613 37    2011 May 20 (140) 0615 50    0002:13
+2011 May 20 (140) 0615 59    2011 May 20 (140) 0750 22    0094:23
+2011 May 20 (140) 0750 41    2011 May 20 (140) 0936 48    0106:07
+2011 May 20 (140) 0936 58    2011 May 20 (140) 0937 16    0000:18
+2011 May 20 (140) 0937 28    2011 May 20 (140) 0946 08    0008:40
+2011 May 20 (140) 0946 20    2011 May 20 (140) 1012 10    0025:50
+2011 May 20 (140) 1012 22    2011 May 20 (140) 1027 53    0015:31
+2011 May 20 (140) 1028 12    2011 May 20 (140) 1029 51    0001:39
+2011 May 20 (140) 1030 16    2011 May 20 (140) 1114 28    0044:12
+
+Percent = 99.54%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 201.931 degrees
+Declination:     -47.545 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2238 09    0033:14
+2011 May 19 (139) 2238 13    2011 May 20 (140) 0104 51    0146:38
+2011 May 20 (140) 0104 56    2011 May 20 (140) 0158 22    0053:26
+2011 May 20 (140) 0158 25    2011 May 20 (140) 0241 41    0043:16
+2011 May 20 (140) 0241 46    2011 May 20 (140) 0242 56    0001:10
+2011 May 20 (140) 0243 17    2011 May 20 (140) 0252 54    0009:37
+2011 May 20 (140) 0253 02    2011 May 20 (140) 0601 12    0188:10
+2011 May 20 (140) 0601 48    2011 May 20 (140) 0613 01    0011:13
+2011 May 20 (140) 0613 28    2011 May 20 (140) 0613 36    0000:08
+2011 May 20 (140) 0613 47    2011 May 20 (140) 0616 13    0002:26
+2011 May 20 (140) 0616 22    2011 May 20 (140) 0840 58    0144:36
+2011 May 20 (140) 0841 21    2011 May 20 (140) 0909 05    0027:44
+2011 May 20 (140) 0909 19    2011 May 20 (140) 0914 38    0005:19
+2011 May 20 (140) 0914 58    2011 May 20 (140) 1114 28    0119:30
+
+Percent = 99.61%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 204.168 degrees
+Declination:     -37.248 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2232 48    0027:53
+2011 May 19 (139) 2232 53    2011 May 20 (140) 0003 14    0090:21
+2011 May 20 (140) 0003 18    2011 May 20 (140) 0104 57    0061:39
+2011 May 20 (140) 0105 02    2011 May 20 (140) 0241 45    0096:43
+2011 May 20 (140) 0241 51    2011 May 20 (140) 0242 55    0001:04
+2011 May 20 (140) 0243 14    2011 May 20 (140) 0252 59    0009:45
+2011 May 20 (140) 0253 06    2011 May 20 (140) 0601 29    0188:23
+2011 May 20 (140) 0601 55    2011 May 20 (140) 0612 58    0011:03
+2011 May 20 (140) 0613 23    2011 May 20 (140) 0613 29    0000:06
+2011 May 20 (140) 0613 39    2011 May 20 (140) 0616 21    0002:42
+2011 May 20 (140) 0616 27    2011 May 20 (140) 0841 16    0144:49
+2011 May 20 (140) 0841 40    2011 May 20 (140) 1114 28    0152:48
+
+Percent = 99.71%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 204.181 degrees
+Declination:     -33.962 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2234 42    0029:47
+2011 May 19 (139) 2234 49    2011 May 19 (139) 2242 46    0007:57
+2011 May 19 (139) 2242 51    2011 May 19 (139) 2242 54    0000:03
+2011 May 19 (139) 2243 03    2011 May 20 (140) 0241 51    0238:48
+2011 May 20 (140) 0241 57    2011 May 20 (140) 0242 57    0001:00
+2011 May 20 (140) 0243 08    2011 May 20 (140) 0601 20    0198:12
+2011 May 20 (140) 0601 26    2011 May 20 (140) 0604 41    0003:15
+2011 May 20 (140) 0604 47    2011 May 20 (140) 0612 55    0008:08
+2011 May 20 (140) 0613 14    2011 May 20 (140) 0621 47    0008:33
+2011 May 20 (140) 0621 53    2011 May 20 (140) 0739 00    0077:07
+2011 May 20 (140) 0739 31    2011 May 20 (140) 0756 31    0017:00
+2011 May 20 (140) 0756 38    2011 May 20 (140) 0854 26    0057:48
+2011 May 20 (140) 0854 37    2011 May 20 (140) 0932 40    0038:03
+2011 May 20 (140) 0932 42    2011 May 20 (140) 1114 28    0101:46
+
+Percent = 99.73%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 204.3 degrees
+Declination:     -29.851 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2238 09    0033:14
+2011 May 19 (139) 2238 11    2011 May 20 (140) 0104 50    0146:39
+2011 May 20 (140) 0104 55    2011 May 20 (140) 0241 41    0096:46
+2011 May 20 (140) 0241 46    2011 May 20 (140) 0242 56    0001:10
+2011 May 20 (140) 0243 17    2011 May 20 (140) 0252 54    0009:37
+2011 May 20 (140) 0253 01    2011 May 20 (140) 0558 19    0185:18
+2011 May 20 (140) 0558 24    2011 May 20 (140) 0601 13    0002:49
+2011 May 20 (140) 0601 49    2011 May 20 (140) 0613 02    0011:13
+2011 May 20 (140) 0613 28    2011 May 20 (140) 0613 36    0000:08
+2011 May 20 (140) 0613 46    2011 May 20 (140) 0616 13    0002:27
+2011 May 20 (140) 0616 22    2011 May 20 (140) 0840 56    0144:34
+2011 May 20 (140) 0841 20    2011 May 20 (140) 0909 04    0027:44
+2011 May 20 (140) 0909 18    2011 May 20 (140) 0914 39    0005:21
+2011 May 20 (140) 0915 00    2011 May 20 (140) 1114 28    0119:28
+
+Percent = 99.61%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 204.518 degrees
+Declination:     -37.345 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2243 21    0038:26
+2011 May 19 (139) 2243 27    2011 May 20 (140) 0243 00    0239:33
+2011 May 20 (140) 0243 13    2011 May 20 (140) 0558 04    0194:51
+2011 May 20 (140) 0558 13    2011 May 20 (140) 0601 44    0003:31
+2011 May 20 (140) 0602 16    2011 May 20 (140) 0613 05    0010:49
+2011 May 20 (140) 0613 19    2011 May 20 (140) 0613 25    0000:06
+2011 May 20 (140) 0613 30    2011 May 20 (140) 0616 25    0002:55
+2011 May 20 (140) 0616 33    2011 May 20 (140) 0710 57    0054:24
+2011 May 20 (140) 0711 09    2011 May 20 (140) 1114 28    0243:19
+
+Percent = 99.79%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 208.117 degrees
+Declination:     -32.443 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2218 42    0013:47
+2011 May 19 (139) 2218 50    2011 May 20 (140) 0243 03    0264:13
+2011 May 20 (140) 0243 24    2011 May 20 (140) 0613 13    0209:49
+2011 May 20 (140) 0613 36    2011 May 20 (140) 0711 48    0058:12
+2011 May 20 (140) 0712 01    2011 May 20 (140) 0741 49    0029:48
+2011 May 20 (140) 0741 56    2011 May 20 (140) 0850 52    0068:56
+2011 May 20 (140) 0851 04    2011 May 20 (140) 0856 30    0005:26
+2011 May 20 (140) 0856 42    2011 May 20 (140) 0936 06    0039:24
+2011 May 20 (140) 0936 17    2011 May 20 (140) 0936 36    0000:19
+2011 May 20 (140) 0936 44    2011 May 20 (140) 1114 28    0097:44
+
+Percent = 99.76%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 210.84 degrees
+Declination:     -41.378 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2233 43    0028:48
+2011 May 19 (139) 2233 46    2011 May 20 (140) 0035 45    0121:59
+2011 May 20 (140) 0035 49    2011 May 20 (140) 0104 22    0028:33
+2011 May 20 (140) 0104 28    2011 May 20 (140) 0243 08    0098:40
+2011 May 20 (140) 0243 26    2011 May 20 (140) 0431 36    0108:10
+2011 May 20 (140) 0431 39    2011 May 20 (140) 0540 40    0069:01
+2011 May 20 (140) 0540 46    2011 May 20 (140) 0613 20    0032:34
+2011 May 20 (140) 0613 45    2011 May 20 (140) 0840 04    0146:19
+2011 May 20 (140) 0840 22    2011 May 20 (140) 0912 28    0032:06
+2011 May 20 (140) 0912 38    2011 May 20 (140) 1031 13    0078:35
+2011 May 20 (140) 1031 32    2011 May 20 (140) 1114 28    0042:56
+
+Percent = 99.76%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 211.817 degrees
+Declination:     -48.297 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2220 46    0015:51
+2011 May 19 (139) 2220 57    2011 May 20 (140) 0157 45    0216:48
+2011 May 20 (140) 0158 03    2011 May 20 (140) 0252 05    0054:02
+2011 May 20 (140) 0252 16    2011 May 20 (140) 0431 04    0098:48
+2011 May 20 (140) 0431 10    2011 May 20 (140) 0432 06    0000:56
+2011 May 20 (140) 0432 16    2011 May 20 (140) 0537 49    0065:33
+2011 May 20 (140) 0538 00    2011 May 20 (140) 0659 49    0081:49
+2011 May 20 (140) 0659 58    2011 May 20 (140) 0705 54    0005:56
+2011 May 20 (140) 0706 19    2011 May 20 (140) 0751 06    0044:47
+2011 May 20 (140) 0751 21    2011 May 20 (140) 0824 32    0033:11
+2011 May 20 (140) 0824 38    2011 May 20 (140) 1023 40    0119:02
+2011 May 20 (140) 1024 04    2011 May 20 (140) 1049 43    0025:39
+2011 May 20 (140) 1050 01    2011 May 20 (140) 1114 28    0024:27
+
+Percent = 99.65%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 213.29 degrees
+Declination:     -65.34 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2220 57    0016:02
+2011 May 19 (139) 2221 12    2011 May 20 (140) 0034 14    0133:02
+2011 May 20 (140) 0034 30    2011 May 20 (140) 0103 59    0029:29
+2011 May 20 (140) 0104 03    2011 May 20 (140) 0613 33    0309:30
+2011 May 20 (140) 0613 55    2011 May 20 (140) 0700 06    0046:11
+2011 May 20 (140) 0700 13    2011 May 20 (140) 0839 36    0099:23
+2011 May 20 (140) 0839 52    2011 May 20 (140) 0926 21    0046:29
+2011 May 20 (140) 0926 31    2011 May 20 (140) 1030 46    0064:15
+2011 May 20 (140) 1031 00    2011 May 20 (140) 1114 28    0043:28
+
+Percent = 99.78%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 218.908 degrees
+Declination:     -56.62 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2223 27    0018:32
+2011 May 19 (139) 2223 52    2011 May 19 (139) 2244 34    0020:42
+2011 May 19 (139) 2244 42    2011 May 19 (139) 2245 30    0000:48
+2011 May 19 (139) 2245 32    2011 May 19 (139) 2322 14    0036:42
+2011 May 19 (139) 2322 19    2011 May 19 (139) 2332 39    0010:20
+2011 May 19 (139) 2333 09    2011 May 20 (140) 0025 20    0052:11
+2011 May 20 (140) 0028 56    2011 May 20 (140) 0033 10    0004:14
+2011 May 20 (140) 0033 15    2011 May 20 (140) 0043 39    0010:24
+2011 May 20 (140) 0046 18    2011 May 20 (140) 0220 17    0093:59
+2011 May 20 (140) 0222 49    2011 May 20 (140) 0514 17    0171:28
+2011 May 20 (140) 0514 23    2011 May 20 (140) 0529 39    0015:16
+2011 May 20 (140) 0529 48    2011 May 20 (140) 0530 06    0000:18
+2011 May 20 (140) 0530 07    2011 May 20 (140) 0725 46    0115:39
+2011 May 20 (140) 0729 34    2011 May 20 (140) 0740 04    0010:30
+2011 May 20 (140) 0740 30    2011 May 20 (140) 0742 01    0001:31
+2011 May 20 (140) 0742 24    2011 May 20 (140) 0753 43    0011:19
+2011 May 20 (140) 0754 19    2011 May 20 (140) 0830 45    0036:26
+2011 May 20 (140) 0831 00    2011 May 20 (140) 0910 44    0039:44
+2011 May 20 (140) 0910 52    2011 May 20 (140) 0912 38    0001:46
+2011 May 20 (140) 0916 32    2011 May 20 (140) 1114 28    0117:56
+
+Percent = 97.49%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 223.406 degrees
+Declination:     0.014 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2221 16    0016:21
+2011 May 19 (139) 2221 29    2011 May 20 (140) 0243 14    0261:45
+2011 May 20 (140) 0243 36    2011 May 20 (140) 0322 16    0038:40
+2011 May 20 (140) 0322 20    2011 May 20 (140) 0324 18    0001:58
+2011 May 20 (140) 0324 23    2011 May 20 (140) 0613 32    0169:09
+2011 May 20 (140) 0613 43    2011 May 20 (140) 0631 42    0017:59
+2011 May 20 (140) 0631 50    2011 May 20 (140) 0700 25    0028:35
+2011 May 20 (140) 0700 31    2011 May 20 (140) 0851 22    0110:51
+2011 May 20 (140) 0851 41    2011 May 20 (140) 0928 06    0036:25
+2011 May 20 (140) 0928 29    2011 May 20 (140) 1114 28    0105:59
+
+Percent = 99.77%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 224.133 degrees
+Declination:     -45.064 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2221 17    0016:22
+2011 May 19 (139) 2221 29    2011 May 20 (140) 0243 14    0261:45
+2011 May 20 (140) 0243 36    2011 May 20 (140) 0322 17    0038:41
+2011 May 20 (140) 0322 19    2011 May 20 (140) 0324 18    0001:59
+2011 May 20 (140) 0324 24    2011 May 20 (140) 0613 32    0169:08
+2011 May 20 (140) 0613 41    2011 May 20 (140) 0631 41    0018:00
+2011 May 20 (140) 0631 50    2011 May 20 (140) 0700 26    0028:36
+2011 May 20 (140) 0700 32    2011 May 20 (140) 0851 21    0110:49
+2011 May 20 (140) 0851 42    2011 May 20 (140) 0928 04    0036:22
+2011 May 20 (140) 0928 29    2011 May 20 (140) 1114 28    0105:59
+
+Percent = 99.76%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 224.199 degrees
+Declination:     -44.653 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0243 18    0278:23
+2011 May 20 (140) 0243 31    2011 May 20 (140) 0349 20    0065:49
+2011 May 20 (140) 0349 24    2011 May 20 (140) 0512 49    0083:25
+2011 May 20 (140) 0512 53    2011 May 20 (140) 0631 31    0078:38
+2011 May 20 (140) 0631 49    2011 May 20 (140) 0700 34    0028:45
+2011 May 20 (140) 0700 41    2011 May 20 (140) 0851 33    0110:52
+2011 May 20 (140) 0851 51    2011 May 20 (140) 0927 42    0035:51
+2011 May 20 (140) 0928 23    2011 May 20 (140) 1114 28    0106:05
+
+Percent = 99.78%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 226.367 degrees
+Declination:     -38.96 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0109 39    0184:44
+2011 May 20 (140) 0109 48    2011 May 20 (140) 0512 53    0243:05
+2011 May 20 (140) 0512 58    2011 May 20 (140) 0541 27    0028:29
+2011 May 20 (140) 0541 32    2011 May 20 (140) 0631 28    0049:56
+2011 May 20 (140) 0631 47    2011 May 20 (140) 0700 37    0028:50
+2011 May 20 (140) 0700 44    2011 May 20 (140) 0927 39    0146:55
+2011 May 20 (140) 0928 18    2011 May 20 (140) 1114 28    0106:10
+
+Percent = 99.82%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 227.408 degrees
+Declination:     -36.752 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0109 39    0184:44
+2011 May 20 (140) 0109 45    2011 May 20 (140) 0243 21    0093:36
+2011 May 20 (140) 0243 30    2011 May 20 (140) 0512 50    0149:20
+2011 May 20 (140) 0512 55    2011 May 20 (140) 0631 30    0078:35
+2011 May 20 (140) 0631 49    2011 May 20 (140) 0700 35    0028:46
+2011 May 20 (140) 0700 43    2011 May 20 (140) 0851 38    0110:55
+2011 May 20 (140) 0851 55    2011 May 20 (140) 0927 44    0035:49
+2011 May 20 (140) 0928 23    2011 May 20 (140) 1114 28    0106:05
+
+Percent = 99.78%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 227.989 degrees
+Declination:     -38.152 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0014 42    0129:47
+2011 May 20 (140) 0014 48    2011 May 20 (140) 0034 32    0019:44
+2011 May 20 (140) 0034 37    2011 May 20 (140) 0109 34    0034:57
+2011 May 20 (140) 0109 47    2011 May 20 (140) 0338 33    0148:46
+2011 May 20 (140) 0338 40    2011 May 20 (140) 0549 44    0131:04
+2011 May 20 (140) 0549 47    2011 May 20 (140) 0631 31    0041:44
+2011 May 20 (140) 0631 49    2011 May 20 (140) 0700 40    0028:51
+2011 May 20 (140) 0700 42    2011 May 20 (140) 0851 47    0111:05
+2011 May 20 (140) 0852 04    2011 May 20 (140) 0927 57    0035:53
+2011 May 20 (140) 0928 20    2011 May 20 (140) 1105 21    0097:01
+2011 May 20 (140) 1105 37    2011 May 20 (140) 1114 28    0008:51
+
+Percent = 99.77%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 232.027 degrees
+Declination:     -36.889 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2229 26    0024:31
+2011 May 19 (139) 2229 31    2011 May 19 (139) 2247 37    0018:06
+2011 May 19 (139) 2247 46    2011 May 19 (139) 2324 00    0036:14
+2011 May 19 (139) 2324 01    2011 May 20 (140) 0715 16    0471:15
+2011 May 20 (140) 0715 25    2011 May 20 (140) 1114 28    0239:03
+
+Percent = 99.95%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 238.029 degrees
+Declination:     -28.574 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2247 37    0042:42
+2011 May 19 (139) 2247 40    2011 May 20 (140) 0044 19    0116:39
+2011 May 20 (140) 0044 25    2011 May 20 (140) 0101 19    0016:54
+2011 May 20 (140) 0101 24    2011 May 20 (140) 0250 07    0108:43
+2011 May 20 (140) 0250 12    2011 May 20 (140) 0715 17    0265:05
+2011 May 20 (140) 0715 25    2011 May 20 (140) 1114 28    0239:03
+
+Percent = 99.94%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 239.553 degrees
+Declination:     -28.375 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2232 12    0027:17
+2011 May 19 (139) 2232 22    2011 May 20 (140) 0243 32    0251:10
+2011 May 20 (140) 0243 50    2011 May 20 (140) 0448 17    0124:27
+2011 May 20 (140) 0448 27    2011 May 20 (140) 0613 48    0085:21
+2011 May 20 (140) 0614 01    2011 May 20 (140) 0631 53    0017:52
+2011 May 20 (140) 0632 12    2011 May 20 (140) 0823 21    0111:09
+2011 May 20 (140) 0823 30    2011 May 20 (140) 0928 36    0065:06
+2011 May 20 (140) 0929 06    2011 May 20 (140) 1028 13    0059:07
+2011 May 20 (140) 1028 23    2011 May 20 (140) 1114 28    0046:05
+
+Percent = 99.75%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 241.969 degrees
+Declination:     -54.051 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0109 26    0184:31
+2011 May 20 (140) 0109 37    2011 May 20 (140) 0647 36    0337:59
+2011 May 20 (140) 0647 45    2011 May 20 (140) 0852 00    0124:15
+2011 May 20 (140) 0852 18    2011 May 20 (140) 1114 28    0142:10
+
+Percent = 99.92%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 242.143 degrees
+Declination:     -39.099 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2232 07    0027:12
+2011 May 19 (139) 2232 17    2011 May 20 (140) 0001 19    0089:02
+2011 May 20 (140) 0001 28    2011 May 20 (140) 0004 59    0003:31
+2011 May 20 (140) 0005 02    2011 May 20 (140) 0243 33    0158:31
+2011 May 20 (140) 0243 51    2011 May 20 (140) 0448 19    0124:28
+2011 May 20 (140) 0448 28    2011 May 20 (140) 0613 49    0085:21
+2011 May 20 (140) 0614 02    2011 May 20 (140) 0631 54    0017:52
+2011 May 20 (140) 0632 12    2011 May 20 (140) 0928 37    0176:25
+2011 May 20 (140) 0929 07    2011 May 20 (140) 1028 09    0059:02
+2011 May 20 (140) 1028 22    2011 May 20 (140) 1114 28    0046:06
+
+Percent = 99.74%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 243.317 degrees
+Declination:     -54.215 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2235 46    0030:51
+2011 May 19 (139) 2235 56    2011 May 20 (140) 0001 25    0085:29
+2011 May 20 (140) 0001 36    2011 May 20 (140) 0035 23    0033:47
+2011 May 20 (140) 0035 27    2011 May 20 (140) 0431 47    0236:20
+2011 May 20 (140) 0431 55    2011 May 20 (140) 0537 03    0065:08
+2011 May 20 (140) 0537 07    2011 May 20 (140) 0537 58    0000:51
+2011 May 20 (140) 0538 06    2011 May 20 (140) 0613 48    0035:42
+2011 May 20 (140) 0614 08    2011 May 20 (140) 0631 58    0017:50
+2011 May 20 (140) 0632 16    2011 May 20 (140) 0707 01    0034:45
+2011 May 20 (140) 0707 21    2011 May 20 (140) 0928 45    0141:24
+2011 May 20 (140) 0929 11    2011 May 20 (140) 1041 37    0072:26
+2011 May 20 (140) 1041 58    2011 May 20 (140) 1114 28    0032:30
+
+Percent = 99.68%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 244.679 degrees
+Declination:     -57.938 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2248 25    0043:30
+2011 May 19 (139) 2248 39    2011 May 20 (140) 0000 47    0072:08
+2011 May 20 (140) 0000 58    2011 May 20 (140) 0001 57    0000:59
+2011 May 20 (140) 0002 04    2011 May 20 (140) 0109 08    0067:04
+2011 May 20 (140) 0109 23    2011 May 20 (140) 0243 38    0094:15
+2011 May 20 (140) 0244 03    2011 May 20 (140) 0249 19    0005:16
+2011 May 20 (140) 0249 23    2011 May 20 (140) 0448 54    0119:31
+2011 May 20 (140) 0448 59    2011 May 20 (140) 0536 41    0047:42
+2011 May 20 (140) 0536 46    2011 May 20 (140) 0545 52    0009:06
+2011 May 20 (140) 0545 57    2011 May 20 (140) 0928 47    0222:50
+2011 May 20 (140) 0928 58    2011 May 20 (140) 1114 28    0105:30
+
+Percent = 99.78%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 251.538 degrees
+Declination:     -47.017 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0243 45    0278:50
+2011 May 20 (140) 0243 59    2011 May 20 (140) 0449 10    0125:11
+2011 May 20 (140) 0449 20    2011 May 20 (140) 0536 32    0047:12
+2011 May 20 (140) 0536 37    2011 May 20 (140) 0545 43    0009:06
+2011 May 20 (140) 0545 46    2011 May 20 (140) 0759 41    0133:55
+2011 May 20 (140) 0759 47    2011 May 20 (140) 0822 41    0022:54
+2011 May 20 (140) 0822 50    2011 May 20 (140) 0833 02    0010:12
+2011 May 20 (140) 0833 08    2011 May 20 (140) 1028 50    0115:42
+2011 May 20 (140) 1029 01    2011 May 20 (140) 1034 27    0005:26
+2011 May 20 (140) 1034 35    2011 May 20 (140) 1114 28    0039:53
+
+Percent = 99.85%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 253.544 degrees
+Declination:     -41.825 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2227 22    0022:27
+2011 May 19 (139) 2227 32    2011 May 19 (139) 2233 08    0005:36
+2011 May 19 (139) 2233 13    2011 May 19 (139) 2246 11    0012:58
+2011 May 19 (139) 2246 19    2011 May 20 (140) 0054 26    0128:07
+2011 May 20 (140) 0054 35    2011 May 20 (140) 0247 58    0113:23
+2011 May 20 (140) 0248 02    2011 May 20 (140) 0449 21    0121:19
+2011 May 20 (140) 0449 25    2011 May 20 (140) 0521 22    0031:57
+2011 May 20 (140) 0521 25    2011 May 20 (140) 0536 28    0015:03
+2011 May 20 (140) 0536 33    2011 May 20 (140) 0759 45    0143:12
+2011 May 20 (140) 0759 51    2011 May 20 (140) 0822 36    0022:45
+2011 May 20 (140) 0822 45    2011 May 20 (140) 0832 58    0010:13
+2011 May 20 (140) 0833 04    2011 May 20 (140) 0924 36    0051:32
+2011 May 20 (140) 0924 39    2011 May 20 (140) 1028 44    0064:05
+2011 May 20 (140) 1028 55    2011 May 20 (140) 1034 31    0005:36
+2011 May 20 (140) 1034 42    2011 May 20 (140) 1114 28    0039:46
+
+Percent = 99.80%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 253.897 degrees
+Declination:     -39.467 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2213 13    0008:18
+2011 May 19 (139) 2213 22    2011 May 19 (139) 2217 06    0003:44
+2011 May 19 (139) 2217 21    2011 May 19 (139) 2224 16    0006:55
+2011 May 19 (139) 2224 27    2011 May 19 (139) 2226 18    0001:51
+2011 May 19 (139) 2226 27    2011 May 19 (139) 2246 20    0019:53
+2011 May 19 (139) 2246 28    2011 May 19 (139) 2311 06    0024:38
+2011 May 19 (139) 2311 13    2011 May 20 (140) 0149 07    0157:54
+2011 May 20 (140) 0149 12    2011 May 20 (140) 0247 56    0058:44
+2011 May 20 (140) 0248 05    2011 May 20 (140) 0449 26    0121:21
+2011 May 20 (140) 0449 35    2011 May 20 (140) 0759 44    0190:09
+2011 May 20 (140) 0759 55    2011 May 20 (140) 0822 31    0022:36
+2011 May 20 (140) 0822 40    2011 May 20 (140) 0832 53    0010:13
+2011 May 20 (140) 0833 03    2011 May 20 (140) 1028 37    0115:34
+2011 May 20 (140) 1028 49    2011 May 20 (140) 1034 40    0005:51
+2011 May 20 (140) 1034 50    2011 May 20 (140) 1114 28    0039:38
+
+Percent = 99.72%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 256.178 degrees
+Declination:     -37.982 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2228 43    0023:48
+2011 May 19 (139) 2228 53    2011 May 20 (140) 0046 06    0137:13
+2011 May 20 (140) 0046 10    2011 May 20 (140) 0143 14    0057:04
+2011 May 20 (140) 0143 19    2011 May 20 (140) 0202 53    0019:34
+2011 May 20 (140) 0202 58    2011 May 20 (140) 0247 57    0044:59
+2011 May 20 (140) 0248 03    2011 May 20 (140) 0449 33    0121:30
+2011 May 20 (140) 0449 40    2011 May 20 (140) 0510 17    0020:37
+2011 May 20 (140) 0510 21    2011 May 20 (140) 0759 45    0169:24
+2011 May 20 (140) 0759 58    2011 May 20 (140) 0822 28    0022:30
+2011 May 20 (140) 0822 35    2011 May 20 (140) 0832 52    0010:17
+2011 May 20 (140) 0833 01    2011 May 20 (140) 0834 30    0001:29
+2011 May 20 (140) 0834 35    2011 May 20 (140) 1028 33    0113:58
+2011 May 20 (140) 1028 43    2011 May 20 (140) 1034 46    0006:03
+2011 May 20 (140) 1034 57    2011 May 20 (140) 1114 28    0039:31
+
+Percent = 99.80%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 258.423 degrees
+Declination:     -37.098 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0109 01    0184:06
+2011 May 20 (140) 0109 05    2011 May 20 (140) 0243 47    0094:42
+2011 May 20 (140) 0244 14    2011 May 20 (140) 0556 26    0192:12
+2011 May 20 (140) 0556 34    2011 May 20 (140) 0604 13    0007:39
+2011 May 20 (140) 0604 21    2011 May 20 (140) 0707 40    0063:19
+2011 May 20 (140) 0707 59    2011 May 20 (140) 0759 29    0051:30
+2011 May 20 (140) 0759 42    2011 May 20 (140) 0834 51    0035:09
+2011 May 20 (140) 0834 55    2011 May 20 (140) 1041 05    0126:10
+2011 May 20 (140) 1041 20    2011 May 20 (140) 1114 28    0033:08
+
+Percent = 99.79%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 261.178 degrees
+Declination:     -48.512 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2250 46    0045:51
+2011 May 19 (139) 2250 55    2011 May 19 (139) 2325 43    0034:48
+2011 May 19 (139) 2325 51    2011 May 20 (140) 0108 55    0103:04
+2011 May 20 (140) 0109 08    2011 May 20 (140) 0243 47    0094:39
+2011 May 20 (140) 0244 13    2011 May 20 (140) 0436 26    0112:13
+2011 May 20 (140) 0436 32    2011 May 20 (140) 0556 29    0079:57
+2011 May 20 (140) 0556 37    2011 May 20 (140) 0604 16    0007:39
+2011 May 20 (140) 0604 24    2011 May 20 (140) 0707 37    0063:13
+2011 May 20 (140) 0707 56    2011 May 20 (140) 0759 27    0051:31
+2011 May 20 (140) 0759 40    2011 May 20 (140) 0834 54    0035:14
+2011 May 20 (140) 0834 58    2011 May 20 (140) 0929 01    0054:03
+2011 May 20 (140) 0929 07    2011 May 20 (140) 1041 06    0071:59
+2011 May 20 (140) 1041 23    2011 May 20 (140) 1114 28    0033:05
+
+Percent = 99.71%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 261.204 degrees
+Declination:     -49.939 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0243 47    0278:52
+2011 May 20 (140) 0244 15    2011 May 20 (140) 0556 26    0192:11
+2011 May 20 (140) 0556 34    2011 May 20 (140) 0604 13    0007:39
+2011 May 20 (140) 0604 21    2011 May 20 (140) 0707 40    0063:19
+2011 May 20 (140) 0707 59    2011 May 20 (140) 0759 29    0051:30
+2011 May 20 (140) 0759 42    2011 May 20 (140) 0834 51    0035:09
+2011 May 20 (140) 0834 55    2011 May 20 (140) 1041 05    0126:10
+2011 May 20 (140) 1041 20    2011 May 20 (140) 1114 28    0033:08
+
+Percent = 99.80%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 261.318 degrees
+Declination:     -48.449 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0243 47    0278:52
+2011 May 20 (140) 0244 15    2011 May 20 (140) 0436 33    0112:18
+2011 May 20 (140) 0436 35    2011 May 20 (140) 0556 26    0079:51
+2011 May 20 (140) 0556 34    2011 May 20 (140) 0604 13    0007:39
+2011 May 20 (140) 0604 21    2011 May 20 (140) 0707 40    0063:19
+2011 May 20 (140) 0707 59    2011 May 20 (140) 0759 29    0051:30
+2011 May 20 (140) 0759 42    2011 May 20 (140) 0834 51    0035:09
+2011 May 20 (140) 0834 55    2011 May 20 (140) 1041 05    0126:10
+2011 May 20 (140) 1041 20    2011 May 20 (140) 1114 28    0033:08
+
+Percent = 99.80%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 261.323 degrees
+Declination:     -48.467 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0243 47    0278:52
+2011 May 20 (140) 0244 15    2011 May 20 (140) 0436 33    0112:18
+2011 May 20 (140) 0436 35    2011 May 20 (140) 0556 26    0079:51
+2011 May 20 (140) 0556 34    2011 May 20 (140) 0604 13    0007:39
+2011 May 20 (140) 0604 21    2011 May 20 (140) 0707 40    0063:19
+2011 May 20 (140) 0707 59    2011 May 20 (140) 0759 29    0051:30
+2011 May 20 (140) 0759 42    2011 May 20 (140) 0834 51    0035:09
+2011 May 20 (140) 0834 55    2011 May 20 (140) 1041 05    0126:10
+2011 May 20 (140) 1041 20    2011 May 20 (140) 1114 28    0033:08
+
+Percent = 99.80%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 261.348 degrees
+Declination:     -48.451 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2357 03    0112:08
+2011 May 19 (139) 2357 10    2011 May 20 (140) 0008 55    0011:45
+2011 May 20 (140) 0009 02    2011 May 20 (140) 0046 51    0037:49
+2011 May 20 (140) 0047 00    2011 May 20 (140) 0450 03    0243:03
+2011 May 20 (140) 0450 08    2011 May 20 (140) 0505 23    0015:15
+2011 May 20 (140) 0505 25    2011 May 20 (140) 0555 55    0050:30
+2011 May 20 (140) 0556 03    2011 May 20 (140) 0759 55    0123:52
+2011 May 20 (140) 0800 06    2011 May 20 (140) 0822 10    0022:04
+2011 May 20 (140) 0822 16    2011 May 20 (140) 0852 38    0030:22
+2011 May 20 (140) 0852 46    2011 May 20 (140) 0936 56    0044:10
+2011 May 20 (140) 0937 12    2011 May 20 (140) 1028 12    0051:00
+2011 May 20 (140) 1028 22    2011 May 20 (140) 1114 28    0046:06
+
+Percent = 99.81%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 262.794 degrees
+Declination:     -29.95 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0111 58    0187:03
+2011 May 20 (140) 0112 07    2011 May 20 (140) 0122 11    0010:04
+2011 May 20 (140) 0122 22    2011 May 20 (140) 0136 49    0014:27
+2011 May 20 (140) 0136 57    2011 May 20 (140) 0156 14    0019:17
+2011 May 20 (140) 0156 22    2011 May 20 (140) 0206 19    0009:57
+2011 May 20 (140) 0206 27    2011 May 20 (140) 0238 17    0031:50
+2011 May 20 (140) 0238 28    2011 May 20 (140) 0243 03    0004:35
+2011 May 20 (140) 0243 07    2011 May 20 (140) 0257 51    0014:44
+2011 May 20 (140) 0258 00    2011 May 20 (140) 0314 12    0016:12
+2011 May 20 (140) 0314 20    2011 May 20 (140) 0355 27    0041:07
+2011 May 20 (140) 0355 33    2011 May 20 (140) 0436 26    0040:53
+2011 May 20 (140) 0436 43    2011 May 20 (140) 0521 00    0044:17
+2011 May 20 (140) 0521 05    2011 May 20 (140) 0534 37    0013:32
+2011 May 20 (140) 0534 45    2011 May 20 (140) 0645 15    0070:30
+2011 May 20 (140) 0645 26    2011 May 20 (140) 0740 53    0055:27
+2011 May 20 (140) 0741 22    2011 May 20 (140) 0801 16    0019:54
+2011 May 20 (140) 0801 26    2011 May 20 (140) 0823 53    0022:27
+2011 May 20 (140) 0824 06    2011 May 20 (140) 0920 06    0056:00
+2011 May 20 (140) 0920 11    2011 May 20 (140) 1114 28    0114:17
+
+Percent = 99.62%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 263.163 degrees
+Declination:     16.401 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2358 22    0113:27
+2011 May 19 (139) 2358 48    2011 May 20 (140) 0001 54    0003:06
+2011 May 20 (140) 0002 02    2011 May 20 (140) 0103 00    0060:58
+2011 May 20 (140) 0103 04    2011 May 20 (140) 0539 13    0276:09
+2011 May 20 (140) 0539 23    2011 May 20 (140) 0555 54    0016:31
+2011 May 20 (140) 0555 59    2011 May 20 (140) 0601 12    0005:13
+2011 May 20 (140) 0601 25    2011 May 20 (140) 0603 39    0002:14
+2011 May 20 (140) 0603 47    2011 May 20 (140) 1028 07    0264:20
+2011 May 20 (140) 1028 14    2011 May 20 (140) 1114 28    0046:14
+
+Percent = 99.83%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 266.414 degrees
+Declination:     -29.01 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2358 22    0113:27
+2011 May 19 (139) 2358 48    2011 May 20 (140) 0001 54    0003:06
+2011 May 20 (140) 0002 02    2011 May 20 (140) 0103 00    0060:58
+2011 May 20 (140) 0103 04    2011 May 20 (140) 0539 13    0276:09
+2011 May 20 (140) 0539 23    2011 May 20 (140) 0555 54    0016:31
+2011 May 20 (140) 0555 59    2011 May 20 (140) 0601 12    0005:13
+2011 May 20 (140) 0601 25    2011 May 20 (140) 0603 39    0002:14
+2011 May 20 (140) 0603 48    2011 May 20 (140) 1028 07    0264:19
+2011 May 20 (140) 1028 14    2011 May 20 (140) 1114 28    0046:14
+
+Percent = 99.83%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 266.479 degrees
+Declination:     -29.086 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0126 47    0201:52
+2011 May 20 (140) 0126 54    2011 May 20 (140) 0128 08    0001:14
+2011 May 20 (140) 0128 15    2011 May 20 (140) 0228 28    0060:13
+2011 May 20 (140) 0228 33    2011 May 20 (140) 0248 17    0019:44
+2011 May 20 (140) 0248 29    2011 May 20 (140) 0537 00    0168:31
+2011 May 20 (140) 0537 07    2011 May 20 (140) 0539 22    0002:15
+2011 May 20 (140) 0539 33    2011 May 20 (140) 0555 47    0016:14
+2011 May 20 (140) 0555 52    2011 May 20 (140) 0601 17    0005:25
+2011 May 20 (140) 0601 33    2011 May 20 (140) 0603 32    0001:59
+2011 May 20 (140) 0603 40    2011 May 20 (140) 0825 55    0142:15
+2011 May 20 (140) 0826 02    2011 May 20 (140) 0852 44    0026:42
+2011 May 20 (140) 0852 57    2011 May 20 (140) 1009 51    0076:54
+2011 May 20 (140) 1010 07    2011 May 20 (140) 1027 56    0017:49
+2011 May 20 (140) 1028 06    2011 May 20 (140) 1114 28    0046:22
+
+Percent = 99.74%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 267.025 degrees
+Declination:     -24.777 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2227 36    0022:41
+2011 May 19 (139) 2227 42    2011 May 19 (139) 2244 45    0017:03
+2011 May 19 (139) 2244 59    2011 May 19 (139) 2247 28    0002:29
+2011 May 19 (139) 2247 36    2011 May 19 (139) 2250 53    0003:17
+2011 May 19 (139) 2251 13    2011 May 19 (139) 2336 05    0044:52
+2011 May 19 (139) 2336 19    2011 May 20 (140) 0034 18    0057:59
+2011 May 20 (140) 0034 26    2011 May 20 (140) 0045 25    0010:59
+2011 May 20 (140) 0045 31    2011 May 20 (140) 0202 17    0076:46
+2011 May 20 (140) 0202 24    2011 May 20 (140) 0243 56    0041:32
+2011 May 20 (140) 0244 24    2011 May 20 (140) 0247 42    0003:18
+2011 May 20 (140) 0247 45    2011 May 20 (140) 0435 26    0107:41
+2011 May 20 (140) 0435 30    2011 May 20 (140) 0604 07    0088:37
+2011 May 20 (140) 0604 13    2011 May 20 (140) 0707 53    0063:40
+2011 May 20 (140) 0708 10    2011 May 20 (140) 1040 54    0212:44
+2011 May 20 (140) 1041 10    2011 May 20 (140) 1114 28    0033:18
+
+Percent = 99.67%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 267.146 degrees
+Declination:     -45.316 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2356 15    0111:20
+2011 May 19 (139) 2356 25    2011 May 20 (140) 0026 04    0029:39
+2011 May 20 (140) 0026 07    2011 May 20 (140) 0046 28    0020:21
+2011 May 20 (140) 0046 37    2011 May 20 (140) 0601 02    0314:25
+2011 May 20 (140) 0601 15    2011 May 20 (140) 0603 49    0002:34
+2011 May 20 (140) 0603 56    2011 May 20 (140) 0826 16    0142:20
+2011 May 20 (140) 0826 24    2011 May 20 (140) 0937 16    0070:52
+2011 May 20 (140) 0937 31    2011 May 20 (140) 1026 46    0049:15
+2011 May 20 (140) 1026 50    2011 May 20 (140) 1114 28    0047:38
+
+Percent = 99.85%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 268.456 degrees
+Declination:     -34.79 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0537 09    0452:14
+2011 May 20 (140) 0537 14    2011 May 20 (140) 0539 36    0002:22
+2011 May 20 (140) 0539 47    2011 May 20 (140) 0601 25    0021:38
+2011 May 20 (140) 0601 40    2011 May 20 (140) 0603 21    0001:41
+2011 May 20 (140) 0603 31    2011 May 20 (140) 0825 44    0142:13
+2011 May 20 (140) 0825 49    2011 May 20 (140) 0852 50    0027:01
+2011 May 20 (140) 0853 06    2011 May 20 (140) 1027 44    0094:38
+2011 May 20 (140) 1027 50    2011 May 20 (140) 1114 28    0046:38
+
+Percent = 99.86%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 269.255 degrees
+Declination:     -18.989 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2251 29    0046:34
+2011 May 19 (139) 2251 43    2011 May 19 (139) 2309 41    0017:58
+2011 May 19 (139) 2309 44    2011 May 19 (139) 2312 10    0002:26
+2011 May 19 (139) 2312 19    2011 May 20 (140) 0140 06    0147:47
+2011 May 20 (140) 0140 14    2011 May 20 (140) 0244 00    0063:46
+2011 May 20 (140) 0244 29    2011 May 20 (140) 0245 11    0000:42
+2011 May 20 (140) 0245 15    2011 May 20 (140) 0411 29    0086:14
+2011 May 20 (140) 0411 35    2011 May 20 (140) 0707 58    0176:23
+2011 May 20 (140) 0708 13    2011 May 20 (140) 0826 37    0078:24
+2011 May 20 (140) 0826 45    2011 May 20 (140) 0841 24    0014:39
+2011 May 20 (140) 0841 31    2011 May 20 (140) 1040 50    0119:19
+2011 May 20 (140) 1041 07    2011 May 20 (140) 1114 28    0033:21
+
+Percent = 99.75%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 269.755 degrees
+Declination:     -44.272 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0051 58    0167:03
+2011 May 20 (140) 0052 07    2011 May 20 (140) 0228 55    0096:48
+2011 May 20 (140) 0228 58    2011 May 20 (140) 0601 19    0212:21
+2011 May 20 (140) 0601 33    2011 May 20 (140) 0603 30    0001:57
+2011 May 20 (140) 0603 33    2011 May 20 (140) 0852 52    0169:19
+2011 May 20 (140) 0853 02    2011 May 20 (140) 1009 44    0076:42
+2011 May 20 (140) 1009 58    2011 May 20 (140) 1027 48    0017:50
+2011 May 20 (140) 1027 55    2011 May 20 (140) 1114 28    0046:33
+
+Percent = 99.87%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 271.042 degrees
+Declination:     -22.485 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0106 52    0181:57
+2011 May 20 (140) 0107 01    2011 May 20 (140) 0139 21    0032:20
+2011 May 20 (140) 0139 31    2011 May 20 (140) 0221 30    0041:59
+2011 May 20 (140) 0221 35    2011 May 20 (140) 0256 35    0035:00
+2011 May 20 (140) 0256 49    2011 May 20 (140) 0406 08    0069:19
+2011 May 20 (140) 0406 21    2011 May 20 (140) 0520 00    0073:39
+2011 May 20 (140) 0520 07    2011 May 20 (140) 0532 14    0012:07
+2011 May 20 (140) 0532 18    2011 May 20 (140) 0750 48    0138:30
+2011 May 20 (140) 0751 01    2011 May 20 (140) 0853 00    0061:59
+2011 May 20 (140) 0853 16    2011 May 20 (140) 1027 25    0094:09
+2011 May 20 (140) 1027 35    2011 May 20 (140) 1049 23    0021:48
+2011 May 20 (140) 1049 29    2011 May 20 (140) 1114 28    0024:59
+
+Percent = 99.77%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 274.706 degrees
+Declination:     -13.816 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0116 54    0191:59
+2011 May 20 (140) 0117 02    2011 May 20 (140) 0228 05    0071:03
+2011 May 20 (140) 0228 11    2011 May 20 (140) 0239 10    0010:59
+2011 May 20 (140) 0239 16    2011 May 20 (140) 0256 32    0017:16
+2011 May 20 (140) 0256 38    2011 May 20 (140) 0323 56    0027:18
+2011 May 20 (140) 0324 09    2011 May 20 (140) 0519 54    0115:45
+2011 May 20 (140) 0520 03    2011 May 20 (140) 0750 52    0150:49
+2011 May 20 (140) 0751 02    2011 May 20 (140) 0852 58    0061:56
+2011 May 20 (140) 0853 12    2011 May 20 (140) 1049 43    0116:31
+2011 May 20 (140) 1049 49    2011 May 20 (140) 1114 28    0024:39
+
+Percent = 99.84%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 275.002 degrees
+Declination:     -17.092 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0106 20    0181:25
+2011 May 20 (140) 0106 28    2011 May 20 (140) 0138 56    0032:28
+2011 May 20 (140) 0139 00    2011 May 20 (140) 0210 00    0031:00
+2011 May 20 (140) 0210 07    2011 May 20 (140) 0256 22    0046:15
+2011 May 20 (140) 0256 35    2011 May 20 (140) 0449 45    0113:10
+2011 May 20 (140) 0449 53    2011 May 20 (140) 0519 52    0029:59
+2011 May 20 (140) 0519 56    2011 May 20 (140) 0532 27    0012:31
+2011 May 20 (140) 0532 30    2011 May 20 (140) 1035 56    0303:26
+2011 May 20 (140) 1036 04    2011 May 20 (140) 1114 28    0038:24
+
+Percent = 99.88%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 277.925 degrees
+Declination:     -19.117 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0149 27    0224:32
+2011 May 20 (140) 0149 36    2011 May 20 (140) 0210 58    0021:22
+2011 May 20 (140) 0211 04    2011 May 20 (140) 0232 44    0021:40
+2011 May 20 (140) 0236 06    2011 May 20 (140) 0328 43    0052:37
+2011 May 20 (140) 0328 58    2011 May 20 (140) 0412 29    0043:31
+2011 May 20 (140) 0414 36    2011 May 20 (140) 0448 55    0034:19
+2011 May 20 (140) 0449 02    2011 May 20 (140) 0749 20    0180:18
+2011 May 20 (140) 0750 56    2011 May 20 (140) 0915 46    0084:50
+2011 May 20 (140) 0916 09    2011 May 20 (140) 1046 20    0090:11
+2011 May 20 (140) 1046 29    2011 May 20 (140) 1106 05    0019:36
+2011 May 20 (140) 1106 27    2011 May 20 (140) 1114 28    0008:01
+
+Percent = 98.91%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 279.625 degrees
+Declination:     5.496 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0201 41    0236:46
+2011 May 20 (140) 0201 45    2011 May 20 (140) 0424 17    0142:32
+2011 May 20 (140) 0425 27    2011 May 20 (140) 0449 29    0024:02
+2011 May 20 (140) 0449 35    2011 May 20 (140) 0556 23    0066:48
+2011 May 20 (140) 0556 32    2011 May 20 (140) 0853 10    0176:38
+2011 May 20 (140) 0853 25    2011 May 20 (140) 1114 28    0141:03
+
+Percent = 99.78%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 281.317 degrees
+Declination:     -9.387 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2226 53    0021:58
+2011 May 19 (139) 2227 04    2011 May 20 (140) 0109 07    0162:03
+2011 May 20 (140) 0109 45    2011 May 20 (140) 0340 16    0150:31
+2011 May 20 (140) 0340 18    2011 May 20 (140) 0509 12    0088:54
+2011 May 20 (140) 0509 15    2011 May 20 (140) 0558 08    0048:53
+2011 May 20 (140) 0558 19    2011 May 20 (140) 0559 07    0000:48
+2011 May 20 (140) 0559 28    2011 May 20 (140) 0614 08    0014:40
+2011 May 20 (140) 0614 32    2011 May 20 (140) 0632 23    0017:51
+2011 May 20 (140) 0632 41    2011 May 20 (140) 0929 13    0176:32
+2011 May 20 (140) 0929 37    2011 May 20 (140) 1012 10    0042:33
+2011 May 20 (140) 1012 24    2011 May 20 (140) 1022 17    0009:53
+2011 May 20 (140) 1022 38    2011 May 20 (140) 1114 28    0051:50
+
+Percent = 99.61%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 282.211 degrees
+Declination:     -65.172 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0228 18    0263:23
+2011 May 20 (140) 0228 27    2011 May 20 (140) 0430 59    0122:32
+2011 May 20 (140) 0435 00    2011 May 20 (140) 0853 19    0258:19
+2011 May 20 (140) 0853 34    2011 May 20 (140) 1042 54    0109:20
+2011 May 20 (140) 1045 53    2011 May 20 (140) 1114 28    0028:35
+
+Percent = 99.06%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 285.481 degrees
+Declination:     -4.358 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 19 (139) 2230 13    0025:18
+2011 May 19 (139) 2230 19    2011 May 19 (139) 2252 04    0021:45
+2011 May 19 (139) 2252 14    2011 May 19 (139) 2333 47    0041:33
+2011 May 19 (139) 2334 02    2011 May 20 (140) 0031 57    0057:55
+2011 May 20 (140) 0032 06    2011 May 20 (140) 0035 25    0003:19
+2011 May 20 (140) 0035 37    2011 May 20 (140) 0109 22    0033:45
+2011 May 20 (140) 0110 03    2011 May 20 (140) 0130 59    0020:56
+2011 May 20 (140) 0131 08    2011 May 20 (140) 0246 55    0075:47
+2011 May 20 (140) 0247 07    2011 May 20 (140) 0410 47    0083:40
+2011 May 20 (140) 0410 52    2011 May 20 (140) 0434 40    0023:48
+2011 May 20 (140) 0434 46    2011 May 20 (140) 0450 58    0016:12
+2011 May 20 (140) 0451 08    2011 May 20 (140) 0504 10    0013:02
+2011 May 20 (140) 0504 16    2011 May 20 (140) 0523 28    0019:12
+2011 May 20 (140) 0523 35    2011 May 20 (140) 0559 17    0035:42
+2011 May 20 (140) 0559 31    2011 May 20 (140) 0600 10    0000:39
+2011 May 20 (140) 0600 28    2011 May 20 (140) 0614 15    0013:47
+2011 May 20 (140) 0614 34    2011 May 20 (140) 0929 16    0194:42
+2011 May 20 (140) 0929 39    2011 May 20 (140) 1012 22    0042:43
+2011 May 20 (140) 1012 35    2011 May 20 (140) 1022 08    0009:33
+2011 May 20 (140) 1022 28    2011 May 20 (140) 1114 28    0052:00
+
+Percent = 99.46%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 287.578 degrees
+Declination:     -59.99 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0147 00    0222:05
+2011 May 20 (140) 0147 09    2011 May 20 (140) 0208 13    0021:04
+2011 May 20 (140) 0208 19    2011 May 20 (140) 0405 21    0117:02
+2011 May 20 (140) 0405 36    2011 May 20 (140) 0630 45    0145:09
+2011 May 20 (140) 0630 52    2011 May 20 (140) 0751 29    0080:37
+2011 May 20 (140) 0751 40    2011 May 20 (140) 1009 12    0137:32
+2011 May 20 (140) 1009 21    2011 May 20 (140) 1038 52    0029:31
+2011 May 20 (140) 1038 58    2011 May 20 (140) 1040 02    0001:04
+2011 May 20 (140) 1040 14    2011 May 20 (140) 1101 01    0020:47
+2011 May 20 (140) 1101 05    2011 May 20 (140) 1114 28    0013:23
+
+Percent = 99.83%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 292.506 degrees
+Declination:     -17.629 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0343 57    0339:02
+2011 May 20 (140) 0344 06    2011 May 20 (140) 0351 10    0007:04
+2011 May 20 (140) 0351 15    2011 May 20 (140) 0413 04    0021:49
+2011 May 20 (140) 0413 11    2011 May 20 (140) 0425 01    0011:50
+2011 May 20 (140) 0425 07    2011 May 20 (140) 0439 38    0014:31
+2011 May 20 (140) 0439 45    2011 May 20 (140) 0445 01    0005:16
+2011 May 20 (140) 0445 08    2011 May 20 (140) 0508 52    0023:44
+2011 May 20 (140) 0510 41    2011 May 20 (140) 0939 14    0268:33
+2011 May 20 (140) 0939 20    2011 May 20 (140) 1106 07    0086:47
+2011 May 20 (140) 1107 50    2011 May 20 (140) 1114 28    0006:38
+
+Percent = 99.45%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 311.818 degrees
+Declination:     0.317 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0523 03    0438:08
+2011 May 20 (140) 0523 44    2011 May 20 (140) 0557 23    0033:39
+2011 May 20 (140) 0557 33    2011 May 20 (140) 0644 50    0047:17
+2011 May 20 (140) 0644 57    2011 May 20 (140) 0644 59    0000:02
+2011 May 20 (140) 0645 01    2011 May 20 (140) 0752 13    0067:12
+2011 May 20 (140) 0752 24    2011 May 20 (140) 0938 42    0106:18
+2011 May 20 (140) 0938 51    2011 May 20 (140) 1008 50    0029:59
+2011 May 20 (140) 1008 57    2011 May 20 (140) 1114 28    0065:31
+
+Percent = 99.82%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 312.054 degrees
+Declination:     -19.849 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2011 May 19 (139) 2204 55    2011 May 20 (140) 0526 56    0442:01
+2011 May 20 (140) 0527 07    2011 May 20 (140) 0601 21    0034:14
+2011 May 20 (140) 0602 19    2011 May 20 (140) 0608 46    0006:27
+2011 May 20 (140) 0609 01    2011 May 20 (140) 0740 47    0091:46
+2011 May 20 (140) 0744 02    2011 May 20 (140) 1011 42    0147:40
+2011 May 20 (140) 1011 47    2011 May 20 (140) 1020 50    0009:03
+2011 May 20 (140) 1021 00    2011 May 20 (140) 1114 28    0053:28
+
+Percent = 99.38%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  30.2408 degrees S
+Longitude: 70.7367 degrees W
+Altitude:  2.722 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 333.319 degrees
+Declination:     -1.768 degrees
+

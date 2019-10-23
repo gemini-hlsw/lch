@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:jaxb="http://java.sun.com/xml/ns/jaxb"
+           xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           jaxb:version="2.0"
+           elementFormDefault="qualified">
+
+    <xs:element name="query">
+        <xs:complexType>
+            <xs:all>
+                <xs:element name="program" type="programParameters" minOccurs="0"/>
+                <xs:element name="observation" type="observationParameters" minOccurs="0"/>
+            </xs:all>
+        </xs:complexType>
+    </xs:element>
+
+    <xs:complexType name="programParameters">
+        <xs:all>
+            <xs:element name="semester" type="xs:string" minOccurs="0"/>
+            <xs:element name="title" type="xs:string" minOccurs="0"/>
+            <xs:element name="reference" type="xs:string" minOccurs="0"/>
+            <xs:element name="active" type="xs:string" minOccurs="0"/>
+            <xs:element name="completed" type="xs:string" minOccurs="0"/>
+            <xs:element name="notifyPi" type="xs:string" minOccurs="0"/>
+            <xs:element name="rollover" type="xs:string" minOccurs="0"/>
+        </xs:all>
+    </xs:complexType>
+
+    <xs:complexType name="observationParameters">
+        <xs:all>
+            <xs:element name="name" type="xs:string" minOccurs="0"/>
+            <xs:element name="status" type="xs:string" minOccurs="0"/>
+            <xs:element name="tooPriority" type="xs:string" minOccurs="0"/>
+            <xs:element name="instrument" type="xs:string" minOccurs="0"/>
+            <xs:element name="ao" type="xs:string" minOccurs="0"/>
+        </xs:all>
+    </xs:complexType>
+
+</xs:schema>
