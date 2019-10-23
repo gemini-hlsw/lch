@@ -1,0 +1,11 @@
+target
+.classpath
+.project
+.settings
+.idea
+**/*.swp
+**/*.iml
+**/*.iws
+**/*.ipr
+.idea/
+edu.gemini.lch.services/src/main/scala/edu/gemini/lch/services/impl/JSpOCCredentials.scala
