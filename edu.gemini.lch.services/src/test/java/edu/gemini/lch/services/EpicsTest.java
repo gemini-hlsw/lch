@@ -20,7 +20,7 @@ public class EpicsTest {
     @Ignore
     @Test
     public void goEpics() throws Exception {
-        EpicsService epicsService = new EpicsService("10.2.2.255");
+        EpicsService epicsService = new EpicsService("10.2.2.255", 60000);
         epicsService.startService();
         assert epicsService.isContextAvailable();
 
