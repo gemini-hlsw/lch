@@ -1,29 +1,24 @@
 language: java
-
 scala:
- - 2.11.8
-
+- 2.11.8
 jdk:
-  - openjdk8
-
+- openjdk8
 addons:
-  - postgresql: "9.6"
-  
+- postgresql: '9.6'
 env:
   global:
-    - secure: "RdZfbzf5Oja9oVLCvl7Ej+j9DpRPM4OFZ3pP+TYPqQ1DVfrhA2W2AjpYt8QVXeagVCFbJu48Og/sImkoQnkgh8+/7IGPnX29weEFsHZhf8FA1E7Gf1o1HU5YhJuCOsNOR9xG+1tRHR/+gKOwP1VyGugUhrSwNOuYGOr6yQ1JYfU="
-    - secure: "ezhPWkY6EjHsQnqRSEghdsmkzbeB4tBiekfNTH+5E6TmO9qiplasJELa8Bqvpmnl7nCjFFn1BrFBsdxCRyApIiPxxV8KAE3w1whmNGsYdYvNFJo9xqs0BG5CEDIqnT78LstSJVFFKwytLB8Fus1dN17LbV/80+iIx1iJkoSVc7k="
+  - secure: lETHqjbNApWROCb5dmg5q46UEF7zEtO0d1rbvNhuOUqUbb/vCboH3SN5B7fV2MRBPxAwHAyCHcl7QGL+isWFID2HRvTMnsDe3VU77JRwzrs4HrB4N1kESQ/ryoLwienuhKvzmud900iIPksT1rzf57P9PwG0XWYjqcHu6Gqi4TsRTRhviU0b5lJtUj41cDfimFoDqczaWs+vO+6IDCU+2vyjKjPh0awdVffOXPvYmo8W2jDbpxmAlHtuKDuFUQYc3zW+2eyU/tU0F9IMX4SlPqr8Bxb5KQz9qFHm+789ZoLjwMyy8qjSz6PIY6A7HOBUsM5Gj1w2dhW487hdMFLOTnxdnD9oQq5DV/s8Hv/mOYzUNhxcZC13D+XZaA+aiUR4ToiQSx+4mKpBXPwXRoTXy1iAF0H6oHgLXxJ8ZknvDIZkSPa8GIKOkNUi7i9o3yH6QJv4ATT/cUkUct5DSWJpmhX37pLGn6PuF0t2yNo4NMQn9ZfY0Sd+qglRRTAUqb+V2kuL2iDBdcaea+rqi94SZp3QiR9PpCluPEZECxIlmDREoR2p0tPfoFM/alPYSz0abdT3qce+Mwwf+oWg7CWtDvjmH+YT9tJlFzn4jcA8rVPC1efN2qOwqosTcRUbfhf95LWDA503Jdp/6td6mEfqq+3xcLoSAyRii8nrRodTG2Y=
+  - secure: tRkXoW9qmPFTZOM5MG42L3OzuFPQ564PsVaTpR/0swFcImYqW3Je/3EOaD2ZjDVShZZQ/m+U4do047st4ZljdI9fDDBcMB59sBm186smDUWbwN2dbWcMSSgULPjAEgH8lS9Z+c5pmOtUagruPL4SSNEjAZtnOtE2Hh8lODVhCniCsL7x/Zb5eXM+O9XFrgvs2CZtGSI3Sm+op5D99QIUFMstpXQdpsUatX49Km1Yo+ysrLsBEZty3ovIBJ38KgAjxCJGuYbk5dF8mUTNJxs5ERvLERbUIvyvwkxTSB4nIt+z5YMdsAId7uY8Ix6/Q4M/+3bRasbZ7ZmTwfGkTxzBolBkyw3hu9u2a9XhA55hmfxBVrsBeh4GJLJXVgH43soHKJ0was+Mch+saa9GLGPvVkBPR1E4u3IeBH2PDlxfVqXQy4T4apgCp04gnwzFRDu0MhKLPHyEgHNQ9sFW2W28DFDb99A+iBr3T7MVl4nWij7ftOnUmXRJM3NXRZhVwJRKjRqUsmKd+0EsuAiuk9R4Dkya6BaWaXpres9XnsFILJfitOUvB5PsKomtxoS9CCN5eIag+yvwOE7tjiigbhRKketAhb9E/P8lsFPoH1xka/SACLmKOERTZMvSVsK0EYqCC7byLVyAFUfRa1GBT0hg8IXmXuFTReecjUYs1rUmdcE=
 
 before_script:
-  - svn --username $SVN_USERNAME --password $SVN_PASSWORD --non-interactive co http://source.gemini.edu/software/lch-credentials $TRAVIS_BUILD_DIR/lch-credentials
-  - ls $TRAVIS_BUILD_DIR
-  - bash $TRAVIS_BUILD_DIR/lch-credentials/trunk/link.sh -v $TRAVIS_BUILD_DIR
-  - psql -c "create user lch"; -U postgres
-  - psql -c "create database lch_test;" -U postgres
-  - psql -c "grant all privileges on database lch_test to lch;" -U postgres
-  - psql -c "create database lch_dev;" -U postgres
-  - psql -c "grant all privileges on database lch_dev to lch;" -U postgres
-
+- svn --username $SVN_USERNAME --password $SVN_PASSWORD --non-interactive co http://source.gemini.edu/software/lch-credentials
+  $TRAVIS_BUILD_DIR/lch-credentials
+- ls $TRAVIS_BUILD_DIR
+- bash $TRAVIS_BUILD_DIR/lch-credentials/trunk/link.sh -v $TRAVIS_BUILD_DIR
+- psql -c "create user lch"; -U postgres
+- psql -c "create database lch_test;" -U postgres
+- psql -c "grant all privileges on database lch_test to lch;" -U postgres
+- psql -c "create database lch_dev;" -U postgres
+- psql -c "grant all privileges on database lch_dev to lch;" -U postgres
 script:
-  - mvn -U clean install -B
-#  - mvn test -U -B --projects web,pam-parser
+- mvn -U clean install -B
