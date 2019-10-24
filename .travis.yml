@@ -29,5 +29,5 @@ before_script:
 
 script:
   - mvn -U clean install -B
-  - mvn test -B --projects web,pam-parser
+#  - mvn test -U -B --projects web,pam-parser
 
