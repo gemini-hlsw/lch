@@ -227,24 +227,15 @@ Can't find for some reason
     </profiles>
 
     <repositories>
-        <!-- gemini repositories -->
+      <!-- gemini repositories -->
         <repository>
-            <!-- Maven central mirror -->
-            <id>edu.gemini.mirror</id>
-            <url>http://sbfswgosxdev-mp1.cl.gemini.edu:8081/artifactory/repository</url>
-            <snapshots>
-                <enabled>false</enabled>
-            </snapshots>
+          <!--<id>Gemini Development</id>-->
+	  <id>edu.gemini.mirror</id>
+          <url>https://github.com/gemini-hlsw/maven-repo/raw/master/releases</url>
         </repository>
-        <repository>
-            <!-- Repository of other local dependencies stored locally -->
-            <id>edu.gemini.ext-releases-local</id>
-            <url>http://sbfosxdev-mp1.cl.gemini.edu:8081/artifactory/ext-releases-local</url>
-        </repository>
-        <repository>
-            <!-- Repository of other local dependencies stored locally -->
-            <id>edu.gemini.libs-releases-local</id>
-            <url>http://sbfosxdev-mp1.cl.gemini.edu:8081/artifactory/libs-release</url>
+	<repository>
+            <id>central</id>
+            <url>http://repo1.maven.org/maven2</url>
         </repository>
         <!-- VAADIN ADD-ONS -->
         <repository>
