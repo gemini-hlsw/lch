@@ -30,4 +30,3 @@ before_script:
 script:
   - mvn -U clean install -B
 #  - mvn test -U -B --projects web,pam-parser
-
