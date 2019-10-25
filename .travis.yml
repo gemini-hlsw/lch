@@ -18,22 +18,24 @@ env:
   - secure: OmSUG9KOX0alh5IqZCeKzQBrlayMD1qcwLajVkcw1fUB2QFwLdppiEKSQqZNUeKjIC/srPXn3w8D72yRbq3NIiiigcOMdBbcgcq46W4P4XODQDQtMR7DWrmIvrLVNeXHgG0w2UYEdyqWXcj7L/ubTBE706OJGMioZjBHHbIVCMJHFc/TcjprKfTpCs4bkBEKRaBeAN4jF9dpnLvIEClxzne3ktJ+zCVbOSXQO2jgylr9IS2WVeAUOzMCJ31fW+Y+5jWMo5Vh3cEGp0pw3DB3sDVJKQpuKIgm2wl6C8fjr83ZuNmQhgM8/26udSHe8eqdakGmf1mFrKqUvoRmGXyqJz4buToGcwX6IzvB5vCeXTtNU7+pOxdfg3YZv5Bbe6pvgx2V473fHmhTgc+HKcWpAsdFDtWeAjFM9Suj+8ibkxwQQ/rjSbqpGCFI1fEEOXh7p4Rhw1FebZK+8oATNr1U/WNrCg2UdDd6+QhMWurqsw0M8elIND6ISfmrEFRo2iuk449MUEpoNYDoQuup8/Wf081s+jECqxq+JEG3zkQJsO/YgEZQwXtUQL8ciTRn2sBC5/SKoqXm7mj3mPydWSGBaURsaX2qx05sGoCSvo6Un/CeDpdnfirdlnzAsCGDut9bB9y0BtYMFkyS/KYATsVH8z2oliyTRACjnpbatpNazs4=
 
 before_script:
-- if [ $TRAVIS_SECURE_ENV_VARS == true ]; then echo "TRAVIS_SECURE_ENV_VARS == true,
-  svn download"; svn --username $SVN_USERNAME --password $SVN_PASSWORD --non-interactive
-  co http://source.gemini.edu/software/lch-credentials $TRAVIS_BUILD_DIR/lch-credentials;
-  ls $TRAVIS_BUILD_DIR; bash $TRAVIS_BUILD_DIR/lch-credentials/trunk/link.sh -v $TRAVIS_BUILD_DIR;
-  ls -al $TRAVIS_BUILD_DIR/edu.gemini.lch.services/src/main/scala/edu/gemini/lch/services/impl/JSpOCCredentials.scala
+- if [ $TRAVIS_SECURE_ENV_VARS == true ]; then
+  echo "TRAVIS_SECURE_ENV_VARS == true";
+  svn download"; svn --username $SVN_USERNAME --password $SVN_PASSWORD --non-interactive co http://source.gemini.edu/software/lch-credentials $TRAVIS_BUILD_DIR/lch-credentials;
+  ls $TRAVIS_BUILD_DIR;
+  bash $TRAVIS_BUILD_DIR/lch-credentials/trunk/link.sh -v $TRAVIS_BUILD_DIR;
+  ls -al $TRAVIS_BUILD_DIR/edu.gemini.lch.services/src/main/scala/edu/gemini/lch/services/impl/JSpOCCredentials.scala;
   fi
 - if [ $TRAVIS_SECURE_ENV_VARS == false ]; then echo "TRAVIS_SECURE_ENV_VARS == false";
-  cp $TRAVIS_BUILD_DIR/edu.gemini.lch.services/src/main/scala/edu/gemini/lch/services/impl/JSpOCCredentials.scala
-  $TRAVIS_BUILD_DIR/edu.gemini.lch.services/src/main/scala/edu/gemini/lch/services/impl/JSpOCCredentials.scala;
+  cp $TRAVIS_BUILD_DIR/edu.gemini.lch.services/src/main/scala/edu/gemini/lch/services/impl/JSpOCCredentials.scala $TRAVIS_BUILD_DIR/edu.gemini.lch.services/src/main/scala/edu/gemini/lch/services/impl/JSpOCCredentials.scala;
   fi
-- echo "FILE: $TRAVIS_BUILD_DIR/edu/gemini/lch.services/src/main/scala/edu/gemini/lch/services/impl/JSpOCCredentials.scala"
-- echo "LS:"
-- ls -al $TRAVIS_BUILD_DIR/edu.gemini.lch.services/src/main/scala/edu/gemini/lch/services/impl
-- echo "DONE LS."
-- if [[ -f "$TRAVIS_BUILD_DIR/edu.gemini.lch.services/src/main/scala/edu/gemini/lch/services/impl/JSpOCCredentials.scala"
-  ]]; then echo "Credentials exist"; else echo "Credentials do not exist"; fi
+- echo "FILE: $TRAVIS_BUILD_DIR/edu/gemini/lch.services/src/main/scala/edu/gemini/lch/services/impl/JSpOCCredentials.scala";
+- echo "LS:";
+- ls -al $TRAVIS_BUILD_DIR/edu.gemini.lch.services/src/main/scala/edu/gemini/lch/services/impl;
+- echo "DONE LS.";
+- if [[ -f "$TRAVIS_BUILD_DIR/edu.gemini.lch.services/src/main/scala/edu/gemini/lch/services/impl/JSpOCCredentials.scala" ]]; then
+  echo "Credentials exist";
+  else echo "Credentials do not exist";
+  fi
 - psql -c "create user lch"; -U postgres
 - psql -c "create database lch_test;" -U postgres
 - psql -c "grant all privileges on database lch_test to lch;" -U postgres
@@ -41,4 +43,4 @@ before_script:
 - psql -c "grant all privileges on database lch_dev to lch;" -U postgres
 
 script:
-- mvn -U clean install -B
+- mvn -U -B clean install
