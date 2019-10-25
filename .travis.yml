@@ -36,7 +36,7 @@ before_script:
   echo "Credentials exist";
   else echo "Credentials do not exist";
   fi
-- psql -c "create user lch"; -U postgres
+- psql -c "create user lch;" -U postgres
 - psql -c "create database lch_test;" -U postgres
 - psql -c "grant all privileges on database lch_test to lch;" -U postgres
 - psql -c "create database lch_dev;" -U postgres
