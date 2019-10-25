@@ -36,11 +36,12 @@ before_script:
   else echo "Credentials do not exist";
   fi
 - cp "$TRAVIS_BUILD_DIR/lch-credentials/trunk/edu.gemini.lch.services/src/main/scala/edu/gemini/lch/services/impl/JSpOCCredentials.scala" "$TRAVIS_BUILD_DIR/edu.gemini.lch.services/src/main/scala/edu/gemini/lch/services/impl/JSpOCCredentials.scala"
-- psql -c "create user lch;" -U postgres
-- psql -c "create database lch_test;" -U postgres
-- psql -c "grant all privileges on database lch_test to lch;" -U postgres
-- psql -c "create database lch_dev;" -U postgres
-- psql -c "grant all privileges on database lch_dev to lch;" -U postgres
+- psql -c 'create databasea travis_ci_test;' -U postgres
+- psql -c 'create user lch;' -U postgres
+- psql -c 'create database lch_test;' -U postgres
+- psql -c 'grant all privileges on database lch_test to lch;' -U postgres
+- psql -c 'create database lch_dev;' -U postgres
+- psql -c 'grant all privileges on database lch_dev to lch;' -U postgres
 
 script:
 - echo "TRAVIS_SECURE_ENV_VARS: $TRAVIS_SECURE_ENV_VARS"
