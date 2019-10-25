@@ -1,11 +1,18 @@
+.DS_Store
+.svn/
+*~
+
 target
 .classpath
 .project
 .settings
 .idea
+app/**/idea
 **/*.swp
 **/*.iml
 **/*.iws
 **/*.ipr
 .idea/
+
+# Credentials
 edu.gemini.lch.services/src/main/scala/edu/gemini/lch/services/impl/JSpOCCredentials.scala

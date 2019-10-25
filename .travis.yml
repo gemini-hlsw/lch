@@ -1,32 +1,37 @@
 language: java
 
 scala:
- - 2.11.8
+- 2.11.12
 
 jdk:
-  - openjdk8
+- openjdk8
+
+services:
+- postgresql
 
 addons:
-  - postgresql: "9.6"
-  
+- postgresql: '9.6'
+
 env:
   global:
-    - secure: "RdZfbzf5Oja9oVLCvl7Ej+j9DpRPM4OFZ3pP+TYPqQ1DVfrhA2W2AjpYt8QVXeagVCFbJu48Og/sImkoQnkgh8+/7IGPnX29weEFsHZhf8FA1E7Gf1o1HU5YhJuCOsNOR9xG+1tRHR/+gKOwP1VyGugUhrSwNOuYGOr6yQ1JYfU="
-    - secure: "ezhPWkY6EjHsQnqRSEghdsmkzbeB4tBiekfNTH+5E6TmO9qiplasJELa8Bqvpmnl7nCjFFn1BrFBsdxCRyApIiPxxV8KAE3w1whmNGsYdYvNFJo9xqs0BG5CEDIqnT78LstSJVFFKwytLB8Fus1dN17LbV/80+iIx1iJkoSVc7k="
+  - secure: fxg2Dgl4iv9RDxHMir/tk/iMpymKpIfF58xmSuI/ZsnmlD2GqLQG2q9SynWAd+k8pL2Ar0kpHfLIi6PkaGZFJiPWcfhbE8NJa8gCNnvTlzOcudBuo0zuMbz/Chb7rvHsmaTEmoXgDG2iwBGb8ehK1Ha6MZLBV19bxSe77F6sEJUu0bkRy1hXLFggjRHtY/Du8tpr4VERsN60bdB0XfcItMrK4dQ3dKcqmFQnWbSn/SInEJVYzfORYvrODhKLkMPo+XjlFyr4ZPNBOIelEM0XtllZQbr2+7Y60wHwrFf3RLqF59/Uhtx1eAb95PrrlKOJp1xEY78SDhUTw4qkW45wKbnvnZabFKQIkIs2kk+LscwsPYWTZjtrtsXtXJIa97RXbJ7tMBaZ0PPfKEKpbj0hAh1tSyT3gbjoKthkVZYwWg7/Prwy9gCfosD8AkCQHLVFBz4A+1XcFYIRlVa5MNgG7rlwMRBZaVNFjY/+3KRk47GrQWYJvf0ITMW8DfxVV+jz4HnuP4V6v/Cy0KCTwvRAoovUSyLDvoYvBAl+KcKiwaUFn8eUHV2ydZrrU6uT4CZz0NQTG5ciBicfIrH+KT/G0r7PPS5IjK81lQc9lwcmwbVgtxigRCCd5lDJkYHgenCHgbCPFut5iKkeiQ+ttFf0JuBOwkY/1GngxuDGsWsV4VU=
+  - secure: OmSUG9KOX0alh5IqZCeKzQBrlayMD1qcwLajVkcw1fUB2QFwLdppiEKSQqZNUeKjIC/srPXn3w8D72yRbq3NIiiigcOMdBbcgcq46W4P4XODQDQtMR7DWrmIvrLVNeXHgG0w2UYEdyqWXcj7L/ubTBE706OJGMioZjBHHbIVCMJHFc/TcjprKfTpCs4bkBEKRaBeAN4jF9dpnLvIEClxzne3ktJ+zCVbOSXQO2jgylr9IS2WVeAUOzMCJ31fW+Y+5jWMo5Vh3cEGp0pw3DB3sDVJKQpuKIgm2wl6C8fjr83ZuNmQhgM8/26udSHe8eqdakGmf1mFrKqUvoRmGXyqJz4buToGcwX6IzvB5vCeXTtNU7+pOxdfg3YZv5Bbe6pvgx2V473fHmhTgc+HKcWpAsdFDtWeAjFM9Suj+8ibkxwQQ/rjSbqpGCFI1fEEOXh7p4Rhw1FebZK+8oATNr1U/WNrCg2UdDd6+QhMWurqsw0M8elIND6ISfmrEFRo2iuk449MUEpoNYDoQuup8/Wf081s+jECqxq+JEG3zkQJsO/YgEZQwXtUQL8ciTRn2sBC5/SKoqXm7mj3mPydWSGBaURsaX2qx05sGoCSvo6Un/CeDpdnfirdlnzAsCGDut9bB9y0BtYMFkyS/KYATsVH8z2oliyTRACjnpbatpNazs4=
 
 before_script:
-  - if [ $TRAVIS_SECURE_ENV_VARS == true ]; then
-    svn --username $SVN_USERNAME --password $SVN_PASSWORD --non-interactive co http://source.gemini.edu/software/lch-credentials $TRAVIS_BUILD_DIR/lch-credentials;
-    ls $TRAVIS_BUILD_DIR;
-    bash $TRAVIS_BUILD_DIR/lch-credentials/trunk/link.sh -v $TRAVIS_BUILD_DIR;
-    fi
-
-  - psql -c "create user lch"; -U postgres
-  - psql -c "create database lch_test;" -U postgres
-  - psql -c "grant all privileges on database lch_test to lch;" -U postgres
-  - psql -c "create database lch_dev;" -U postgres
-  - psql -c "grant all privileges on database lch_dev to lch;" -U postgres
+- if [ $TRAVIS_SECURE_ENV_VARS == true ]; then
+  svn --username $SVN_USERNAME --password $SVN_PASSWORD --non-interactive co http://source.gemini.edu/software/lch-credentials $TRAVIS_BUILD_DIR/lch-credentials;
+  bash $TRAVIS_BUILD_DIR/lch-credentials/trunk/link.sh -v $TRAVIS_BUILD_DIR;
+  fi
+- psql -c 'create database travis_ci_test;' -U postgres
+- psql -c 'create user lch;' -U postgres
+- psql -c 'create database lch_test;' -U postgres
+- psql -c 'grant all privileges on database lch_test to lch;' -U postgres
+- psql -c 'create database lch_dev;' -U postgres
+- psql -c 'grant all privileges on database lch_dev to lch;' -U postgres
 
 script:
-  - mvn -U clean install -B
-  - mvn test -U -B --projects web,pam-parser
+- if [[ -f "$TRAVIS_BUILD_DIR/edu.gemini.lch.services/src/main/scala/edu/gemini/lch/services/impl/JSpOCCredentials.scala" ]]; then
+  echo "Credentials exist";
+  else echo "Credentials do not exist";
+  fi
+#- mvn -U -B clean install
