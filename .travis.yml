@@ -1,7 +1,7 @@
 language: java
 
 scala:
-- 2.11.8
+- 2.11.12
 
 jdk:
 - openjdk8
@@ -24,9 +24,6 @@ before_script:
   bash $TRAVIS_BUILD_DIR/lch-credentials/trunk/link.sh -v $TRAVIS_BUILD_DIR;
   ls -al $TRAVIS_BUILD_DIR/edu.gemini.lch.services/src/main/scala/edu/gemini/lch/services/impl/JSpOCCredentials.scala;
   fi
-- if [ $TRAVIS_SECURE_ENV_VARS == false ]; then
-  cp $TRAVIS_BUILD_DIR/edu.gemini.lch.services/src/main/scala/edu/gemini/lch/services/impl/JSpOCCredentials.scala $TRAVIS_BUILD_DIR/edu.gemini.lch.services/src/main/scala/edu/gemini/lch/services/impl/JSpOCCredentials.scala;
-  fi
 - echo "FILE: $TRAVIS_BUILD_DIR/edu/gemini/lch.services/src/main/scala/edu/gemini/lch/services/impl/JSpOCCredentials.scala";
 - echo "LS:";
 - ls -al $TRAVIS_BUILD_DIR/edu.gemini.lch.services/src/main/scala/edu/gemini/lch/services/impl;
@@ -36,7 +33,7 @@ before_script:
   else echo "Credentials do not exist";
   fi
 - cp "$TRAVIS_BUILD_DIR/lch-credentials/trunk/edu.gemini.lch.services/src/main/scala/edu/gemini/lch/services/impl/JSpOCCredentials.scala" "$TRAVIS_BUILD_DIR/edu.gemini.lch.services/src/main/scala/edu/gemini/lch/services/impl/JSpOCCredentials.scala"
-- psql -c 'create databasea travis_ci_test;' -U postgres
+- psql -c 'create database travis_ci_test;' -U postgres
 - psql -c 'create user lch;' -U postgres
 - psql -c 'create database lch_test;' -U postgres
 - psql -c 'grant all privileges on database lch_test to lch;' -U postgres
@@ -47,4 +44,8 @@ script:
 - echo "TRAVIS_SECURE_ENV_VARS: $TRAVIS_SECURE_ENV_VARS"
 - echo "CREDENTIALS:"
 - ls -al $TRAVIS_BUILD_DIR/edu.gemini.lch.services/src/main/scala/edu/gemini/lch/services/impl/JSpOCCredentials.scala
+- if [[ -f "$TRAVIS_BUILD_DIR/edu.gemini.lch.services/src/main/scala/edu/gemini/lch/services/impl/JSpOCCredentials.scala" ]]; then
+  echo "Credentials exist";
+  else echo "Credentials do not exist";
+  fi
 - mvn -U -B clean install
