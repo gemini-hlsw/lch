@@ -10,18 +10,27 @@ services:
 - postgresql
 
 addons:
-- postgresql: '9.6'
+ - postgresql: '9.6'
 
 env:
   global:
-  - secure: fxg2Dgl4iv9RDxHMir/tk/iMpymKpIfF58xmSuI/ZsnmlD2GqLQG2q9SynWAd+k8pL2Ar0kpHfLIi6PkaGZFJiPWcfhbE8NJa8gCNnvTlzOcudBuo0zuMbz/Chb7rvHsmaTEmoXgDG2iwBGb8ehK1Ha6MZLBV19bxSe77F6sEJUu0bkRy1hXLFggjRHtY/Du8tpr4VERsN60bdB0XfcItMrK4dQ3dKcqmFQnWbSn/SInEJVYzfORYvrODhKLkMPo+XjlFyr4ZPNBOIelEM0XtllZQbr2+7Y60wHwrFf3RLqF59/Uhtx1eAb95PrrlKOJp1xEY78SDhUTw4qkW45wKbnvnZabFKQIkIs2kk+LscwsPYWTZjtrtsXtXJIa97RXbJ7tMBaZ0PPfKEKpbj0hAh1tSyT3gbjoKthkVZYwWg7/Prwy9gCfosD8AkCQHLVFBz4A+1XcFYIRlVa5MNgG7rlwMRBZaVNFjY/+3KRk47GrQWYJvf0ITMW8DfxVV+jz4HnuP4V6v/Cy0KCTwvRAoovUSyLDvoYvBAl+KcKiwaUFn8eUHV2ydZrrU6uT4CZz0NQTG5ciBicfIrH+KT/G0r7PPS5IjK81lQc9lwcmwbVgtxigRCCd5lDJkYHgenCHgbCPFut5iKkeiQ+ttFf0JuBOwkY/1GngxuDGsWsV4VU=
-  - secure: OmSUG9KOX0alh5IqZCeKzQBrlayMD1qcwLajVkcw1fUB2QFwLdppiEKSQqZNUeKjIC/srPXn3w8D72yRbq3NIiiigcOMdBbcgcq46W4P4XODQDQtMR7DWrmIvrLVNeXHgG0w2UYEdyqWXcj7L/ubTBE706OJGMioZjBHHbIVCMJHFc/TcjprKfTpCs4bkBEKRaBeAN4jF9dpnLvIEClxzne3ktJ+zCVbOSXQO2jgylr9IS2WVeAUOzMCJ31fW+Y+5jWMo5Vh3cEGp0pw3DB3sDVJKQpuKIgm2wl6C8fjr83ZuNmQhgM8/26udSHe8eqdakGmf1mFrKqUvoRmGXyqJz4buToGcwX6IzvB5vCeXTtNU7+pOxdfg3YZv5Bbe6pvgx2V473fHmhTgc+HKcWpAsdFDtWeAjFM9Suj+8ibkxwQQ/rjSbqpGCFI1fEEOXh7p4Rhw1FebZK+8oATNr1U/WNrCg2UdDd6+QhMWurqsw0M8elIND6ISfmrEFRo2iuk449MUEpoNYDoQuup8/Wf081s+jECqxq+JEG3zkQJsO/YgEZQwXtUQL8ciTRn2sBC5/SKoqXm7mj3mPydWSGBaURsaX2qx05sGoCSvo6Un/CeDpdnfirdlnzAsCGDut9bB9y0BtYMFkyS/KYATsVH8z2oliyTRACjnpbatpNazs4=
+  - secure: ji7CJ/J6ljZQ8rm0HsBMA8UuRT943xFEMApoxH7y6kF6aBswROAA1kYf+OL7pvMH8Dr1RlCBE7RZFQDwWC+7i9LN8VOeuSx5k/5e8afKxI03qctx9nFm2lM0hnAzyhCF8cPhG+b3r+dq98jSgpyCA1vYIhXNqK/vpPIv60VSSEWRTcBhNEdhC8UlEH6B7qqGqO4B311Xr/Qlphxblvf4xiSI9vKYNFGBUqgyxtbIYDRSS3F+KN0r/qBKm2aY84am/o7VYbE6g0OPFU3/SfhIBzZp2RgXdAVCaSRRw8dfco6CCugCgo4O8Vm400khDFOGi2ukkhgkmjH0Li/sPOIzFugj8tNtsT2bolt4hSxJ8FzXepsyq2KWKDnCaf/xX9BaQZJJSlhh3vbAL/3MtiZvQ5m+zQ6RDv8LfRd/ubGYtNP5RWxqlY6/6H3I5Oz7Q7TVb5Wp7rNmr48cdvjJWQ2prdNesAiIqrRw6OxiTxfU+EXn8lVUdv5kJmI4gUGHGcw2CpXQykhIQSPo3Y0BwJCTmU7V6Po+h/WOrn3e4rQe1Iwq28LSM9afSGL9QDqDpAYMi5znE+xqFsGwbUEDiS5uMJnKO3YTq3fyYCzJLbWxQYG0yMWUyW3ACSfyYeAkcxFv2O+j2AJgQVi8osrPK5yzr5AgODn0gBIi3+mSwpKpoHU=
+  - secure: eiQO0U1IG2HxSZnyrbJQ/+e1tcCBisOr7JUN90dHYTSE6619xV49hUkwXXEPVXG2NNEbBvqmRJd5CeYvJH6t2Ku2Za3WpaBpA+Ln9OxjfRZei+k5EUdbbgjwjnDVjHi2C+WZolNwNOXSMKGTirhWi6u0kugbY50ENByS6jBle9SQsdxx73rqtKJNCpAm65DSR0KzxadP1NoATpe21KDFjxlgTaLrSdWR6ZwD6EShOzD6XyT73znZqm8NqWfT8k0pNfaNuAxhb+EJciEaWDzXrMDs4XySY/ebMJKTXjtHvQDnQ5aLWEG0plb3aRlfidXnU2cHztpUdSK+NUZOwz0Ze8VGldPRZm2QS1HRxHoCPSdrbLmU+8UpLIsC965TqYxnR20bCs5g4RSXZ1eaxK/E3f3WsTQHgmHfKPAFs5gpbdiIV65KdRgqQkL3iF9BDx1e9prU0BWbU8k4t371KY1ZX88jfddD09LWa8AEg9bzoWHGAKeJUozqwh4n6ePXvMDjIqOelLclPW6NfE0XbLEJhZSZKc6y8JbgwQwAnjyloQO7fakHNHp68XL03k3vVGwh5U8izNFJbIXTGXYfiTc54CnTN5buoQPfqwEHTiNK2IK9dnhQADXTsDe7wNE2LgWBZ1F5vHbx39899Wgk30WKck/MEjEWxgPD+NSR6kyBBHQ=
 
 before_script:
+- echo "TRAVIS_SECURE_ENV_VARS=$TRAVIS_SECURE_ENV_BARS"
+- echo "TRAVIS_BUILD_DIR=$TRAVIS_BUILD_DIR"
+- echo "SVN_USERNAME=$SVN_USERNAME"
 - if [ $TRAVIS_SECURE_ENV_VARS == true ]; then
-  svn --username $SVN_USERNAME --password $SVN_PASSWORD --non-interactive co http://source.gemini.edu/software/lch-credentials $TRAVIS_BUILD_DIR/lch-credentials;
-  bash $TRAVIS_BUILD_DIR/lch-credentials/trunk/link.sh -v $TRAVIS_BUILD_DIR;
-  fi
+    svn --username $SVN_USERNAME --password $SVN_PASSWORD --non-interactive co http://source.gemini.edu/software/lch-credentials $TRAVIS_BUILD_DIR/lch-credentials;
+    ls $TRAVIS_BUILD_DIR;
+    bash $TRAVIS_BUILD_DIR/lch-credentials/trunk/link.sh -v $TRAVIS_BUILD_DIR;
+    fi
+  - if [ $TRAVIS_SECURE_ENV_VARS == false ]; then
+    cp $TRAVIS_BUILD_DIR/project/OcsCredentials.scala.template $TRAVIS_BUILD_DIR/project/OcsCredentials.scala;
+    fi
+
+- psql -Upostgres
 - psql -c 'create database travis_ci_test;' -U postgres
 - psql -c 'create user lch;' -U postgres
 - psql -c 'create database lch_test;' -U postgres
@@ -30,8 +39,10 @@ before_script:
 - psql -c 'grant all privileges on database lch_dev to lch;' -U postgres
 
 script:
-- if [[ -f "$TRAVIS_BUILD_DIR/edu.gemini.lch.services/src/main/scala/edu/gemini/lch/services/impl/JSpOCCredentials.scala" ]]; then
-  echo "Credentials exist";
-  else echo "Credentials do not exist";
-  fi
-#- mvn -U -B clean install
+- echo "TRAVIS_SECURE_ENV_VARS=$TRAVIS_SECURE_ENV_BARS"
+- echo "TRAVIS_BUILD_DIR=$TRAVIS_BUILD_DIR"
+- echo "SVN_USERNAME=$SVN_USERNAME: 
+- echo "Running TRAVIS script."
+- if [[ -f "$TRAVIS_BUILD_DIR/edu.gemini.lch.services/src/main/scala/edu/gemini/lch/services/impl/JSpOCCredentials.scala"
+  ]]; then echo "Credentials exist"; else echo "Credentials do not exist"; fi
+- mvn -U -B clean install
