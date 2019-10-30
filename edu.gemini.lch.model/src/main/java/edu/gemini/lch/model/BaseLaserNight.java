@@ -1,10 +1,7 @@
 package edu.gemini.lch.model;
 
-import org.joda.time.DateTime;
-import org.joda.time.Duration;
-
 import javax.persistence.*;
-import java.util.*;
+import java.time.*;
 
 @MappedSuperclass
 public abstract class BaseLaserNight {
@@ -18,16 +15,16 @@ public abstract class BaseLaserNight {
     private Site site;
 
     @Column(name = "starts")
-    private Date start;
+    private Instant start;
 
     @Column(name = "ends")
-    private Date end;
+    private Instant end;
 
     @Column
-    private Date latestPrmSent;
+    private Instant latestPrmSent;
 
     @Column
-    private Date latestPamReceived;
+    private Instant latestPamReceived;
 
     public Long getId() {
         return id;
@@ -37,57 +34,52 @@ public abstract class BaseLaserNight {
         return site;
     }
 
-    public DateTime getStart() {
-        return new DateTime(start);
+    public ZonedDateTime getStart() {
+        return ZonedDateTime.ofInstant(start, ZoneId.systemDefault());
     }
 
-    public DateTime getEnd() {
-        return new DateTime(end);
+    public ZonedDateTime getEnd() {
+        return ZonedDateTime.ofInstant(end, ZoneId.systemDefault());
     }
 
     public boolean hasPrmSent() {
         return latestPrmSent != null;
     }
 
-    public DateTime getLatestPrmSent() {
-        return new DateTime(latestPrmSent);
+    public ZonedDateTime getLatestPrmSent() {
+        return ZonedDateTime.ofInstant(latestPrmSent, ZoneId.systemDefault());
     }
 
-    public void setLatestPrmSent(DateTime latestPrmSent) {
-        this.latestPrmSent = latestPrmSent.toDate();
+    public void setLatestPrmSent(Instant latestPrmSent) {
+        this.latestPrmSent = latestPrmSent;
     }
 
     public boolean hasPamReceived() {
         return latestPamReceived != null;
     }
 
-    public DateTime getLatestPamReceived() {
-        return new DateTime(latestPamReceived);
+    public ZonedDateTime getLatestPamReceived() {
+        return ZonedDateTime.ofInstant(latestPamReceived, ZoneId.systemDefault());
     }
 
-    public void setLatestPamReceived(DateTime latestPamReceived) {
-        this.latestPamReceived = latestPamReceived.toDate();
+    public void setLatestPamReceived(Instant latestPamReceived) {
+        this.latestPamReceived = latestPamReceived;
     }
 
     public Duration getDuration() {
-        return new Duration(getStart(), getEnd());
+        return Duration.between(getStart(), getEnd());
     }
 
-    /**
-     * Returns true if the time passed as parameter is inside the night, i.e. time is in [start, end)
-     * @param time
-     * @return
-     */
-    public Boolean covers(DateTime time) {
+    public Boolean covers(ZonedDateTime time) {
         return (!getStart().isAfter(time) && getEnd().isAfter(time));
     }
 
-    public BaseLaserNight(Site site, DateTime start, DateTime end) {
+    BaseLaserNight(Site site, ZonedDateTime start, ZonedDateTime end) {
         this.site = site;
-        this.start = start.toDate();
-        this.end = end.toDate();
+        this.start = start.toInstant();
+        this.end = end.toInstant();
     }
 
     // empty constructor needed by hibernate
-    public BaseLaserNight() {}
+    BaseLaserNight() {}
 }

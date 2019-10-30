@@ -1,8 +1,7 @@
 package edu.gemini.lch.model;
 
-import org.joda.time.DateTime;
-
 import javax.persistence.*;
+import java.time.ZonedDateTime;
 
 /**
  * Named queries for blanket closures.
@@ -29,14 +28,14 @@ public class BlanketClosure extends ShutteringWindow {
 
     // -- blanket closures need a setter to allow them being edited through the GUI
     // (keeping them immutable would mean to have to delete them and insert a new one, works, but editing is simpler)
-    public void setStart(DateTime start) {
-        this.start = start.toDate();
+    public void setStart(ZonedDateTime start) {
+        this.start = start.toInstant();
     }
-    public void setEnd(DateTime end) {
-        this.end = end.toDate();
+    public void setEnd(ZonedDateTime end) {
+        this.end = end.toInstant();
     }
 
-    public BlanketClosure(DateTime start, DateTime end) {
+    public BlanketClosure(ZonedDateTime start, ZonedDateTime end) {
         super(start, end);
     }
 

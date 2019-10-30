@@ -1,9 +1,11 @@
 package edu.gemini.lch.model;
 
 import org.apache.commons.lang.Validate;
-import org.joda.time.DateTime;
 
 import javax.persistence.*;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.*;
 
 /**
@@ -49,19 +51,19 @@ public abstract class LaserTarget {
     protected Double degrees2;
 
     @Column
-    protected Date risesAboveHorizon;
+    protected Instant risesAboveHorizon;
 
     @Column
-    protected Date risesAboveLimit;
+    protected Instant risesAboveLimit;
 
     @Column
-    protected Date setsBelowLimit;
+    protected Instant setsBelowLimit;
 
     @Column
-    protected Date setsBelowHorizon;
+    protected Instant setsBelowHorizon;
 
     @Column
-    protected Date windowsTimestamp;
+    protected Instant windowsTimestamp;
 
     @OneToMany(fetch = FetchType.EAGER, cascade = CascadeType.ALL, orphanRemoval = true)
     @JoinColumn(name = "target_id")
@@ -92,12 +94,12 @@ public abstract class LaserTarget {
         return degrees2;
     }
 
-    public DateTime getSetTime() {
-        return new DateTime(setsBelowHorizon);
+    public ZonedDateTime getSetTime() {
+        return ZonedDateTime.ofInstant(setsBelowHorizon, ZoneId.systemDefault());
     }
 
-    public DateTime getRiseTime() {
-        return new DateTime(risesAboveHorizon);
+    public ZonedDateTime getRiseTime() {
+        return ZonedDateTime.ofInstant(risesAboveHorizon, ZoneId.systemDefault());
     }
 
     public Visibility getVisibility() {
@@ -126,7 +128,6 @@ public abstract class LaserTarget {
 
     /**
      * Checks if the windows for this laser target have been updated.
-     * @return
      */
     public Boolean hasWindowsTimestamp() {
         return this.windowsTimestamp != null;
@@ -135,10 +136,9 @@ public abstract class LaserTarget {
 
     /**
      * Gets the timestamp of the most recent PRM report that caused the windows of this laser target to be updated.
-     * @return
      */
-    public DateTime getWindowsTimestamp() {
-        return new DateTime(this.windowsTimestamp);
+    public ZonedDateTime getWindowsTimestamp() {
+        return ZonedDateTime.ofInstant(this.windowsTimestamp, ZoneId.systemDefault());
     }
 
     /**
@@ -146,8 +146,8 @@ public abstract class LaserTarget {
      * to be udpated.
      * @param timestamp
      */
-    public void setWindowsTimestamp(final DateTime timestamp) {
-        this.windowsTimestamp = timestamp.toDate();
+    public void setWindowsTimestamp(final ZonedDateTime timestamp) {
+        this.windowsTimestamp = timestamp.toInstant();
     }
 
     /**
@@ -177,28 +177,25 @@ public abstract class LaserTarget {
 
     /**
      * Calculates the distance between the given coordinates and this laser target.
-     * @param c1
-     * @param c2
-     * @return
      */
     public Double distanceTo(final Double c1, final Double c2) {
         // cos(A) = sin(dec1)sin(dec2) + cos(dec1)cos(dec2)cos(ra1-ra2)
 
         // convert degrees to radians
-        final Double ra1  = this.degrees1*2.0*Math.PI/360.0;
-        final Double dec1 = this.degrees2*2.0*Math.PI/360.0;
-        final Double ra2  = c1*2.0*Math.PI/360.0;
-        final Double dec2 = c2*2.0*Math.PI/360.0;
+        final double ra1  = this.degrees1*2.0*Math.PI/360.0;
+        final double dec1 = this.degrees2*2.0*Math.PI/360.0;
+        final double ra2  = c1*2.0*Math.PI/360.0;
+        final double dec2 = c2*2.0*Math.PI/360.0;
 
         // do the math
-        final Double u = Math.sin(dec1)*Math.sin(dec2);
-        final Double v = Math.cos(dec1)*Math.cos(dec2);
-        final Double w = Math.cos(ra1-ra2);
+        final double u = Math.sin(dec1)*Math.sin(dec2);
+        final double v = Math.cos(dec1)*Math.cos(dec2);
+        final double w = Math.cos(ra1-ra2);
         // limit u+v*w to the valid range for acos [-1..1], acos(1.0000002) will yield NaN for example!
-        final Double s = Math.max(-1.0, Math.min(1.0, u + (v * w)));
-        final Double r = Math.acos(s);
+        final double s = Math.max(-1.0, Math.min(1.0, u + (v * w)));
+        final double r = Math.acos(s);
         // fast fail if we don't get the math right
-        Validate.isTrue(r != Double.NaN);
+        Validate.isTrue(!Double.isNaN(r));
 
         // convert result in radians back to degrees
         return (r*360.0)/(2.0*Math.PI);
@@ -206,13 +203,9 @@ public abstract class LaserTarget {
 
     /**
      * Finds the target that is closest to the given position.
-     * @param targets
-     * @param c1
-     * @param c2
-     * @param <T>
-     * @return
      */
     public static <T extends LaserTarget> T getClosestTo(final Collection<T> targets, final Double c1, final Double c2) {
+
         T closest = null;
         for (T t : targets) {
             if (closest == null || closest.distanceTo(c1, c2) > t.distanceTo(c1, c2)) {

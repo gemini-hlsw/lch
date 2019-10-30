@@ -15,8 +15,6 @@ import java.util.*;
         )
 })
 
-/**
- */
 @Entity
 @Table(name = "lch_observations")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
@@ -42,7 +40,6 @@ public abstract class Observation {
 
     /**
      * Gets the unique database id for this object.
-     * @return
      */
     public Long getId() {
         return id;
@@ -50,7 +47,6 @@ public abstract class Observation {
 
     /**
      * Gets the observation id for this observation, e.g. GN-2012B-Q-23-34.
-     * @return
      */
     public String getObservationId() {
         return observationId;
@@ -59,30 +55,27 @@ public abstract class Observation {
     /**
      * Returns the list of targets for this observation.
      * Add or remove targets from this collection to change the actual data in the database.
-     * @return
      */
     public Set<ObservationTarget> getTargets() {
         return targets;
     }
 
     public ObservationTarget getScienceTarget() {
-        for (ObservationTarget target : getTargets()) {
-            if (target.isScience()) {
-                return target;
-            }
-        }
-        throw new RuntimeException("observation must have a science target");
+        return getTargets()
+                .stream()
+                .filter(ObservationTarget::isScience)
+                .findAny()
+                .orElseThrow(() -> new RuntimeException("observation must have a science target"));
     }
 
     /**
      * Returns an unmodifiable list of the targets sorted by their type: first the base (science), then the
      * guide stars and user types in alphabetical order, similar types are sorted by their database id to
      * guarantee same ordering every time the data is displayed.
-     * @return
      */
     public List<ObservationTarget> getTargetsSortedByType() {
         List<ObservationTarget> sortedTargets = new ArrayList<>(targets);
-        Collections.sort(sortedTargets, (t0, t1) -> {
+        sortedTargets.sort((t0, t1) -> {
             if (t0.getType().equals(t1.getType())) {
                 if (t0.getId() == null || t1.getId() == null) {
                     // note: if objects haven't been persisted yet their ids will be null; in order
@@ -105,10 +98,9 @@ public abstract class Observation {
     /**
      * Returns an unmodifiable list of laser targets for this observation.
      * The laser targets are sorted by their types: base first, then guide stars, then user types.
-     * @return
      */
     public List<LaserTarget> getLaserTargetsSortedByType() {
-        List laserTargets = new ArrayList<LaserTarget>();
+        List<LaserTarget> laserTargets = new ArrayList<>();
         for (ObservationTarget t : getTargetsSortedByType()) {
             laserTargets.add(t.getLaserTarget());
         }

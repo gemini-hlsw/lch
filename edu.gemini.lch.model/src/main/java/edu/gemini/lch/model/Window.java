@@ -1,11 +1,12 @@
 package edu.gemini.lch.model;
 
 import org.apache.commons.lang.Validate;
-import org.joda.time.DateTime;
-import org.joda.time.Duration;
-import org.joda.time.Interval;
 
 import javax.persistence.*;
+import java.time.Duration;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.*;
 
 /**
@@ -20,35 +21,35 @@ public abstract class Window implements Comparable<Window> {
     private Long id;
 
     @Column(name = "starts")
-    protected Date start;
+    protected Instant start;
 
     @Column(name = "ends")
-    protected Date end;
+    protected Instant end;
 
-    public Window(DateTime start, DateTime end) {
+    public Window(ZonedDateTime start, ZonedDateTime end) {
         Validate.isTrue(start.isBefore(end));
-        this.start = start.toDate();
-        this.end = end.toDate();
+        this.start = start.toInstant();
+        this.end = end.toInstant();
     }
 
     public Long getId() {
         return id;
     }
 
-    public DateTime getStart() {
-        return new DateTime(start);
+    public ZonedDateTime getStart() {
+        return ZonedDateTime.ofInstant(start, ZoneId.systemDefault());
     }
 
-    public DateTime getEnd() {
-        return new DateTime(end);
+    public ZonedDateTime getEnd() {
+        return ZonedDateTime.ofInstant(end, ZoneId.systemDefault());
     }
 
     public Duration getDuration() {
-        return new Duration(getStart(), getEnd());
+        return Duration.between(getStart(), getEnd());
     }
 
     public Interval getInterval() {
-        return new Interval(getStart(), getEnd());
+        return new Interval(getStart().toInstant(), getEnd().toInstant());
     }
 
     /**
@@ -56,7 +57,7 @@ public abstract class Window implements Comparable<Window> {
      * @param time
      * @return
      */
-    public Boolean contains(DateTime time) {
+    public Boolean contains(ZonedDateTime time) {
         return (!getStart().isAfter(time) && getEnd().isAfter(time));
     }
 
@@ -105,11 +106,11 @@ public abstract class Window implements Comparable<Window> {
         return result;
     }
 
-    protected static <T extends Window> T createWindow(DateTime start, DateTime end, Class clazz) {
+    protected static <T extends Window> T createWindow(ZonedDateTime start, ZonedDateTime end, Class clazz) {
         try {
             T newT = (T) clazz.newInstance();
-            newT.start = start.toDate();
-            newT.end = end.toDate();
+            newT.start = start.toInstant();
+            newT.end = end.toInstant();
             return newT;
         } catch (Exception e) {
             throw new RuntimeException(e);

@@ -1,7 +1,6 @@
 package edu.gemini.lch.model;
 
-import org.joda.time.DateTime;
-
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
@@ -11,7 +10,7 @@ import java.util.List;
  * They are currently not persisted but created on the fly.
  */
 public class ShutteringWindow extends Window {
-    public ShutteringWindow(DateTime start, DateTime end) {
+    public ShutteringWindow(ZonedDateTime start, ZonedDateTime end) {
         super(start, end);
     }
 

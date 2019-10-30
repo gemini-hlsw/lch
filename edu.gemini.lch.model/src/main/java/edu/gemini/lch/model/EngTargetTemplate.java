@@ -2,8 +2,6 @@ package edu.gemini.lch.model;
 
 import javax.persistence.*;
 
-/**
- */
 @NamedQueries({
         /*
             Named query to get all engineering targets of a site.

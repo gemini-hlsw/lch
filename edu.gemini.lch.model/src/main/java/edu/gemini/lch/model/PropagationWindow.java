@@ -2,8 +2,7 @@ package edu.gemini.lch.model;
 
 import javax.persistence.*;
 
-import org.joda.time.DateTime;
-
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -20,9 +19,6 @@ import java.util.List;
         )
 })
 
-/**
- *
- */
 @Entity
 @Table(name = "lch_windows")
 public class PropagationWindow extends Window {
@@ -32,7 +28,7 @@ public class PropagationWindow extends Window {
     private Long targetId;
 
 
-    public PropagationWindow(DateTime start, DateTime end) {
+    public PropagationWindow(ZonedDateTime start, ZonedDateTime end) {
         super(start, end);
     }
 
