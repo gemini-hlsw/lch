@@ -2,18 +2,22 @@ package edu.gemini.lch.services.timeline
 
 import edu.gemini.lch.model._
 import edu.gemini.lch.services.ModelFactory
-import org.joda.time._
 
 import scala.collection.JavaConversions._
 import java.awt.image.BufferedImage
 import java.awt._
+
 import javax.imageio.ImageIO
 import java.io.ByteArrayOutputStream
 import java.awt.font.FontRenderContext
+import java.time.{Period, ZonedDateTime}
+
 import jsky.coords.WorldCoords
+
 import scala.Some
 import scala.List
-import java.util.Date
+import java.util.{Date, TimeZone}
+
 import jsky.plot.util.SkyCalc
 
 /**
@@ -21,35 +25,35 @@ import jsky.plot.util.SkyCalc
  */
 case class TimeLineImage(
     night: LaserNight,
-    imageStart: DateTime,
-    imageEnd: DateTime,
+    imageStart: ZonedDateTime,
+    imageEnd: ZonedDateTime,
     width: Int = 800,
     imgHeight: Int = 10,
     target: Option[LaserTarget] = None,
-    text: Option[(Int, DateTimeZone)] = None,
-    now: Option[DateTime] = None,
+    text: Option[(Int, TimeZone)] = None,
+    now: Option[ZonedDateTime] = None,
     buffers: Option[(Period, Period)] = None,
     drawElevationLine: Boolean = false) {
 
   def this(night: LaserNight) =
     this(
       night,
-      night.getStart.withMinuteOfHour(0).withSecondOfMinute(0).withMillisOfSecond(0),
-      night.getEnd.plusHours(1).withMinuteOfHour(0).withSecondOfMinute(0).withMillisOfSecond(0))
+      night.getStart.withMinute(0).withSecond(0).withNano(0),
+      night.getEnd.plusHours(1).withMinute(0).withSecond(0).withMillis(0))
 
   def withTarget(target: LaserTarget) =
     copy(target = Some(target))
 
-  def withTimes(imageStart: DateTime, imageEnd: DateTime) =
+  def withTimes(imageStart: ZonedDateTime, imageEnd: ZonedDateTime) =
     copy(imageStart = imageStart, imageEnd = imageEnd)
 
   def withDimensions(width: Int, height: Int) =
     copy(width = width, imgHeight = height)
 
-  def withText(zone: DateTimeZone, fontSize: Int) =
+  def withText(zone: TimeZone, fontSize: Int) =
     copy(text = Some((fontSize, zone)))
 
-  def withNowMarker(now: DateTime) =
+  def withNowMarker(now: ZonedDateTime) =
     copy(now = Some(now))
 
   def withBuffers(bufferBefore: Period, bufferAfter: Period) =
@@ -62,7 +66,7 @@ case class TimeLineImage(
   val fontHeight = if (text.isDefined) text.get._1 + 2 else 0
   val height = if (imgHeight - fontHeight > 0) imgHeight - fontHeight else 1
   val imageDurationInSeconds = new Duration(imageStart, imageEnd).getStandardSeconds
-  val spacers = calcSpacers(new DateTime(imageStart.getMillis - imageStart.getMillis % spacing))
+  val spacers = calcSpacers(new ZonedDateTime(imageStart.getMillis - imageStart.getMillis % spacing))
   val imagePixelsPerSecond = (width.toDouble - spacers.length*2) / imageDurationInSeconds.toDouble
 
 

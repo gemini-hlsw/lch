@@ -30,8 +30,6 @@ public class Factory implements BeanFactoryAware  {
 
     /**
      * Creates a fully wired targets collector.
-     * @param night
-     * @return
      */
     public TargetsCollector createTargetsCollector(LaserNight night) {
         return (TargetsCollector) beanFactory.getBean("targetsCollector", night);
@@ -39,8 +37,6 @@ public class Factory implements BeanFactoryAware  {
 
     /**
      * Creates a fully wired template engine for the given night.
-     * @param night
-     * @return
      */
     public TemplateEngine createTemplateEngine(LaserNight night) {
         return (TemplateEngine) beanFactory.getBean("templateEngine", night);
@@ -48,8 +44,6 @@ public class Factory implements BeanFactoryAware  {
 
     /**
      * Creates a fully wired template engine for the given date.
-     * @param date
-     * @return
      */
     public TemplateEngine createTemplateEngine(DateTime date) {
         return (TemplateEngine) beanFactory.getBean("templateEngine", date);
@@ -57,9 +51,6 @@ public class Factory implements BeanFactoryAware  {
 
     /**
      * Creates a fully wired PRM file creator for RaDec files.
-     * @param night
-     * @param maxTargets
-     * @return
      */
     public PrmFile.RaDec createPrmFileRaDec(LaserNight night, Integer maxTargets) {
         return (PrmFile.RaDec) beanFactory.getBean("prmFileRaDec", night, maxTargets);
@@ -67,9 +58,6 @@ public class Factory implements BeanFactoryAware  {
 
     /**
      * Creates a fully wired PRM file creator for AzEl files.
-     * @param night
-     * @param maxTargets
-     * @return
      */
     public PrmFile.AzEl createPrmFileAzEl(LaserNight night, Integer maxTargets) {
         return (PrmFile.AzEl) beanFactory.getBean("prmFileAzEl", night, maxTargets);
@@ -77,7 +65,6 @@ public class Factory implements BeanFactoryAware  {
 
     /**
      * Creates a fully wired updater for laser nights.
-     * @return
      */
     public LaserNightUpdater createUpdater() {
         return (LaserNightUpdater) beanFactory.getBean("laserNightUpdater");

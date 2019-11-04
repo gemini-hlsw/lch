@@ -11,8 +11,9 @@ import edu.gemini.lch.model.LaserNight;
 import edu.gemini.lch.model.LaserRunEvent;
 import edu.gemini.lch.web.app.components.TimeZoneSelector;
 import edu.gemini.lch.web.app.util.TimeFormatter;
-import org.joda.time.DateTimeZone;
 import org.springframework.util.StringUtils;
+
+import java.time.ZoneId;
 
 /**
  */
@@ -25,7 +26,7 @@ public final class HistoryTable extends Panel implements TimeZoneSelector.Listen
 
     public HistoryTable(NightWindow parent) {
         this.parent = parent;
-        this.timeFormatter = new TimeFormatter(DateTimeZone.UTC);
+        this.timeFormatter = new TimeFormatter(ZoneId.of("UTC"));
 
         this.container = new BeanContainer<>(LaserRunEvent.class);
         this.container.setBeanIdProperty("id");
@@ -55,9 +56,9 @@ public final class HistoryTable extends Panel implements TimeZoneSelector.Listen
     }
 
     @Override
-    public void updateTimeZone(DateTimeZone zone) {
+    public void updateTimeZone(ZoneId zoneId) {
         // update the time formatter and then refresh all rows to update the displayed values
-        timeFormatter = new TimeFormatter(zone);
+        timeFormatter = new TimeFormatter(zoneId);
         table.refreshRowCache();
     }
 

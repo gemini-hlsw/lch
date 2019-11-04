@@ -10,8 +10,10 @@ import gov.aps.jca.Channel;
 import gov.aps.jca.JCALibrary;
 import org.apache.commons.lang.Validate;
 import org.apache.log4j.Logger;
-import org.joda.time.DateTime;
 
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.*;
 import java.util.concurrent.ConcurrentHashMap;
 
@@ -28,18 +30,15 @@ public class EpicsConnector implements EpicsClient, EpicsService.Connector {
 
     private edu.gemini.epics.EpicsService epicsService;
     private EpicsObserver observer;
-    private DateTime lastUpdate;
+    private ZonedDateTime lastUpdate;
 
     /**
      * Channel names starting with "tcs:" are changed to "tc1:" in case we are in simulation mode.
-     * @param readChannels
-     * @param writeChannels
-     * @param useTcsSimulation
      */
     public EpicsConnector(Map<String, Object> readChannels, String[] writeChannels, Boolean useTcsSimulation) {
 
         // timestamp of last update and sim mode
-        this.lastUpdate = new DateTime(0);
+        this.lastUpdate = ZonedDateTime.ofInstant(Instant.MIN, ZoneId.systemDefault());
         this.useTcsSimulation = useTcsSimulation;
 
         // configure read channels including their default values, translate tcs: to tc1: if needed (simulation)
@@ -58,7 +57,7 @@ public class EpicsConnector implements EpicsClient, EpicsService.Connector {
     public Boolean isConnected() {
         // we should get multiple updates every second (e.g. the time signal), so if we
         // don't get anything for more than 10 seconds we can assume something is wrong...
-        return lastUpdate.isAfter(DateTime.now().minusSeconds(10));
+        return lastUpdate.isAfter(ZonedDateTime.now().minusSeconds(10));
     }
 
     public Boolean usesTcsSimulator() {
@@ -135,7 +134,7 @@ public class EpicsConnector implements EpicsClient, EpicsService.Connector {
         }
     }
 
-    public DateTime getLastUpdate() {
+    public ZonedDateTime getLastUpdate() {
         return lastUpdate;
     }
 
@@ -143,7 +142,7 @@ public class EpicsConnector implements EpicsClient, EpicsService.Connector {
     @Override public <T> void valueChanged(String channel, List<T> values) {
         if (values != null && !values.isEmpty()) {
             readChannels.put(channel, values.get(0));
-            lastUpdate = DateTime.now();
+            lastUpdate = ZonedDateTime.now();
         }
     }
 
@@ -166,8 +165,6 @@ public class EpicsConnector implements EpicsClient, EpicsService.Connector {
     /**
      * Reads the most recent value we've received for the given channel.
      * Channel names starting with "tcs:" are changed to "tc1:" in case we are in simulation mode.
-     * @param channelName
-     * @return
      */
     @Override public Object readValue(String channelName) {
         // use getAliasChannelName to translate name to simulation name (tcs: -> tc1:) if needed
@@ -177,8 +174,6 @@ public class EpicsConnector implements EpicsClient, EpicsService.Connector {
     /**
      * Write a value value to a channel.
      * Channel names starting with "tcs:" are changed to "tc1:" in case we are in simulation mode.
-     * @param channelName
-     * @param value
      */
     @Override public void writeValue(String channelName, Object value) {
         // use getAliasChannelName to translate name to simulation name (tcs: -> tc1:) if needed
@@ -209,8 +204,6 @@ public class EpicsConnector implements EpicsClient, EpicsService.Connector {
      * This is a bit of a hack, but it seemed to be the easiest way to do it so that only this low level is
      * impacted and the higher levels can always use the same EPICS channel names, regardless whether they
      * access the simulator or the actual telescope.
-     * @param channelName
-     * @return
      */
     private String getAliasChannelName(String channelName) {
         if (useTcsSimulation && channelName.startsWith("tcs:")) {
@@ -219,7 +212,5 @@ public class EpicsConnector implements EpicsClient, EpicsService.Connector {
             return channelName;
         }
     }
-
-
 }
 

@@ -7,8 +7,10 @@ import jsky.coords.SiteDesc;
 import jsky.plot.ElevationPlotUtil;
 import jsky.plot.SunRiseSet;
 import jsky.plot.util.SkyCalc;
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
+
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.util.Date;
 
 /**
  * A factory for creating model objects that are not straight forward to create.
@@ -20,22 +22,17 @@ public class ModelFactory {
 
     /**
      * Creates a laser night for the given date (in local time of the site).
-     * @param site
-     * @param day
-     * @return
      */
-    public static LaserNight createNight(Site site, DateTime day) {
-        SunRiseSet sunCalc = createSunCalculator(site, day.withTimeAtStartOfDay());
-        DateTime sunsetUTC  = new DateTime(sunCalc.getSunset(),  DateTimeZone.UTC);
-        DateTime sunriseUTC = new DateTime(sunCalc.getSunrise(), DateTimeZone.UTC);
+    public static LaserNight createNight(Site site, ZonedDateTime day) {
+        SunRiseSet sunCalc = createSunCalculator(site, day.toLocalDate().atStartOfDay(site.getZoneId()));
+        ZonedDateTime sunsetUTC  = ZonedDateTime.ofInstant(sunCalc.getSunset().toInstant(), ZoneId.systemDefault());
+        ZonedDateTime sunriseUTC = ZonedDateTime.ofInstant(sunCalc.getSunrise().toInstant(), ZoneId.systemDefault());
         return new LaserNight(site, sunsetUTC, sunriseUTC);
     }
 
     /**
      * Creates a sky calculator which can be used to calculate altitudes of objects in the sky
      * for a site and time.
-     * @param site
-     * @return
      */
     public static SkyCalc createSkyCalculator(Site site) {
         return new SkyCalc(getSiteDescForSite(site));
@@ -44,8 +41,6 @@ public class ModelFactory {
     /**
      * Creates a sun calculator which can be used to calculate sunrise and sunset and twilight times
      * for a night.
-     * @param night
-     * @return
      */
     public static SunRiseSet createSunCalculator(BaseLaserNight night) {
         return createSunCalculator(night.getSite(), night.getStart());
@@ -54,17 +49,16 @@ public class ModelFactory {
     /**
      * Creates a sun calculator which can be used to calculate sunrise and sunset and twilight times
      * for a given site and day.
-     * @param site
-     * @param day
-     * @return
      */
-    public static SunRiseSet createSunCalculator(Site site, DateTime day)  {
-        DateTime date = day.withTimeAtStartOfDay();
-        DateTimeZone localTimeZone = site.getTimeZone();
-        DateTime dayLOC = new DateTime(date.getYear(), date.getMonthOfYear(), date.getDayOfMonth(), 12, 0, 0, localTimeZone);
-        DateTime dayUTC = new DateTime(dayLOC, DateTimeZone.UTC);
+    public static SunRiseSet createSunCalculator(Site site, ZonedDateTime day)  {
+        // TODO-JODA: Translate this? We need ZoneID instead of TimeZone?
+        ZoneId localZoneId = site.getZoneId();
+        ZonedDateTime date = day.toLocalDate().atStartOfDay(localZoneId);
+        ZonedDateTime dayLOC = ZonedDateTime.of(date.getYear(), date.getMonthValue(), date.getDayOfMonth(), 12, 0, 0, 0, localZoneId);
+        ZonedDateTime dayUTC = ZonedDateTime.ofInstant(dayLOC.toInstant(), ZoneId.systemDefault());
         // IMPORTANT: Use local time noon for creation of SunRiseSet object or it will not yield expected results!
-        return new SunRiseSet(dayUTC.toDate(), getSiteDescForSite(site));
+        // TODO-JODA: External library. Need to use Date.
+        return new SunRiseSet(Date.from(dayUTC.toInstant()), getSiteDescForSite(site));
     }
 
     // ============= private helpers

@@ -18,6 +18,7 @@ import org.springframework.scheduling.annotation.Scheduled;
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
+import java.time.ZonedDateTime;
 import java.util.*;
 
 /**
@@ -70,7 +71,7 @@ public abstract class EpicsServiceImpl implements edu.gemini.lch.services.EpicsS
     }
 
     /** {@inheritDoc} */
-    @Override public DateTime getTime() {
+    @Override public ZonedDateTime getTime() {
         String timeString = connector.readValue(EPICS_DATE) + " " + connector.readValue(EPICS_UTC);
         return formatUTC.parseDateTime(timeString);
     }

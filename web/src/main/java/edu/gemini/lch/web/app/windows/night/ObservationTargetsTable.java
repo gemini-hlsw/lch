@@ -5,19 +5,17 @@ import com.vaadin.ui.Label;
 import com.vaadin.ui.UI;
 import edu.gemini.lch.model.*;
 import edu.gemini.lch.web.app.util.CoordFormatter;
-import org.joda.time.DateTimeZone;
 
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.List;
 
-/**
- */
 public abstract class ObservationTargetsTable extends TargetsTable {
 
     public static class Science extends ObservationTargetsTable {
 
-        public Science(DateTimeZone selectedZone) {
+        public Science(ZoneId selectedZone) {
             super(
                     selectedZone,
                     new String[]{"state", "observationId", "target", "targetType", "c1hms", "c2dms", "c1deg", "c2deg", "lra", "ldec", "lradeg", "ldecdeg", "above", "below", "timeline"},
@@ -49,7 +47,7 @@ public abstract class ObservationTargetsTable extends TargetsTable {
 
         public AzEl() {
             super(
-                    DateTimeZone.UTC,
+                    ZoneId.systemDefault(),
                     new String[]{"state", "observationId", "target", "targetType", "c1deg", "c2deg", "lradeg", "ldecdeg", "timeline"},
                     new String[]{"State", "Observation Id", "Target", "Type", "Az\u00B0", "El\u00B0", "LT Az\u00B0", "LT El\u00B0", ""},
                     new String[]{}
@@ -63,7 +61,7 @@ public abstract class ObservationTargetsTable extends TargetsTable {
     public static final class RaDec extends ObservationTargetsTable {
         public RaDec() {
             super(
-                    DateTimeZone.UTC,
+                    ZoneId.systemDefault(),
                     new String[]{"state", "observationId", "target", "targetType", "c1hms", "c2dms", "c1deg", "c2deg", "lra", "ldec", "lradeg", "ldecdeg", "above", "below", "timeline"},
                     new String[]{"State", "Observation Id", "Target", "Type", "Ra", "Dec", "Ra\u00B0", "Dec\u00B0", "LT Ra", "LT Dec", "LT Ra\u00B0", "LT Dec\u00B0", "After", "Before", ""},
                     new String[]{"c1deg", "c2deg", "lradeg", "ldecdeg"}
@@ -74,7 +72,7 @@ public abstract class ObservationTargetsTable extends TargetsTable {
         }
     }
 
-    protected ObservationTargetsTable(DateTimeZone zone, String[] visibleColumns, String[] columnNames, String[] collapsedColumns) {
+    protected ObservationTargetsTable(ZoneId zone, String[] visibleColumns, String[] columnNames, String[] collapsedColumns) {
         super(zone, visibleColumns, columnNames, collapsedColumns);
         init(ObservationBean.class);
     }

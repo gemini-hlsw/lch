@@ -39,8 +39,6 @@ public class EmailReader {
 
     /**
      * Connects to a mail server using imap as the protocol.
-     * @param user
-     * @param password
      * @throws MessagingException
      */
     public void connect(final String user, final String password) throws MessagingException {
@@ -69,7 +67,6 @@ public class EmailReader {
 
     /**
      * Gets the next message (according to sent timestamp) from the current pending batch of messages.
-     * @return
      * @throws MessagingException
      */
     public Message getNextMessage() throws MessagingException {
@@ -87,8 +84,6 @@ public class EmailReader {
 
     /**
      * Gets all attachments of interest from the given message (LCH PRM files).
-     * @param message
-     * @return
      * @throws MessagingException
      * @throws IOException
      */
@@ -202,5 +197,4 @@ public class EmailReader {
             }
         }
     }
-
 }

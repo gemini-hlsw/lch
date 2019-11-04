@@ -9,8 +9,8 @@ import edu.gemini.lch.model.ObservationTarget;
 import edu.gemini.lch.model.PropagationWindow;
 import edu.gemini.lch.web.app.util.CoordFormatter;
 import edu.gemini.lch.web.app.util.TimeFormatter;
-import org.joda.time.Duration;
 
+import java.time.Duration;
 import java.util.Collection;
 
 /**

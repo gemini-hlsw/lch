@@ -1,15 +1,16 @@
 package edu.gemini.lch.services.internal.collector;
 
 import edu.gemini.odb.browser.*;
-import org.joda.time.DateTime;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
+
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 
 import static org.junit.Assert.assertTrue;
 import static org.junit.Assert.assertFalse;
@@ -20,13 +21,13 @@ import static org.junit.Assert.assertFalse;
 @ContextConfiguration(locations = {"/spring-services-test-context.xml"})
 public class ConstraintsCheckerTest {
 
-    private static final DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss").withZoneUTC();
+    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").withZone(ZoneId.systemDefault())
 
-    private static final DateTime before  = formatter.parseDateTime("2012-08-05 10:00:00");
-    private static final DateTime start   = formatter.parseDateTime("2012-08-05 11:00:00");
-    private static final DateTime between = formatter.parseDateTime("2012-08-05 12:00:00");
-    private static final DateTime end     = formatter.parseDateTime("2012-08-05 13:00:00");
-    private static final DateTime after   = formatter.parseDateTime("2012-08-05 14:00:00");
+    private static final ZonedDateTime before  = ZonedDateTime.parse("2012-08-05 10:00:00", formatter);
+    private static final ZonedDateTime start   = ZonedDateTime.parse("2012-08-05 11:00:00", formatter);
+    private static final ZonedDateTime between = ZonedDateTime.parse("2012-08-05 12:00:00", formatter);
+    private static final ZonedDateTime end     = ZonedDateTime.parse("2012-08-05 13:00:00", formatter);
+    private static final ZonedDateTime after   = ZonedDateTime.parse("2012-08-05 14:00:00", formatter);
 
     @Resource
     ConstraintsChecker constraintsChecker;

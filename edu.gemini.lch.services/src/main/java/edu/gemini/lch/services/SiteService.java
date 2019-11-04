@@ -2,7 +2,8 @@ package edu.gemini.lch.services;
 
 import edu.gemini.lch.model.Site;
 import edu.gemini.shared.skycalc.Angle;
-import org.joda.time.DateTimeZone;
+
+import java.util.TimeZone;
 
 /**
  * A service that deals with site related issues.
@@ -53,7 +54,7 @@ public interface SiteService {
     /**
      * Gets the time zone of this site.
      */
-    DateTimeZone getSiteTimeZone();
+    TimeZone getSiteTimeZone();
 
     /**
      * Gets the latitude of the site.

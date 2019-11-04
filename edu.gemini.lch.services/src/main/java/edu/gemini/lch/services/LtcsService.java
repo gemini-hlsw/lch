@@ -1,7 +1,6 @@
 package edu.gemini.lch.services;
 
-import org.joda.time.DateTime;
-
+import java.time.ZonedDateTime;
 import java.util.List;
 
 /**
@@ -11,7 +10,6 @@ public interface LtcsService {
 
     /**
      * Gets a snapshot of the most recent LTCS status.
-     * @return
      */
     Snapshot getSnapshot();
 
@@ -31,7 +29,6 @@ public interface LtcsService {
 
         /**
          * Gets a sorted list of upcoming laser collisions, sort order is start time ascending.
-         * @return
          */
         List<Collision> getCollisions();
     }
@@ -39,9 +36,9 @@ public interface LtcsService {
     interface Collision extends Comparable<Collision> {
         String getObservatory();
         String getPriority();
-        DateTime getStart();
-        DateTime getEnd();
+        ZonedDateTime getStart();
+        ZonedDateTime getEnd();
         Boolean geminiHasPriority();
-        Boolean contains(DateTime time);
+        Boolean contains(ZonedDateTime time);
     }
 }

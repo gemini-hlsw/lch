@@ -2,7 +2,8 @@ package edu.gemini.lch.services;
 
 import edu.gemini.shared.skycalc.Angle;
 import jsky.coords.WorldCoords;
-import org.joda.time.DateTime;
+
+import java.time.ZonedDateTime;
 
 /**
  * This service listens to some EPICS channels which are relevant for LTTS and allows to either get the most recent
@@ -12,49 +13,41 @@ public interface EpicsService {
 
     /**
      * Get latest snapshot of EPICS values.
-     * @return
      */
     Snapshot getSnapshot();
 
     /**
      * Current time (UTC).
-     * @return
      */
-    DateTime getTime();
+    ZonedDateTime getTime();
 
     /**
      * Gets the current azimuth angle.
-     * @return
      */
     Angle getCurrentAz();
 
     /**
      * Gets the current elevation angle.
-     * @return
      */
     Angle getCurrentEl();
 
     /**
      * Current RA/DEC position.
-     * @return
      */
     WorldCoords getCurrentRaDec();
 
     /**
      * Demanded RA/DEC position.
-     * @return
      */
     WorldCoords getDemandRaDec();
 
     /**
      * Current laser status.
-     * @return
      */
     String getLaserStatus();
 
     /**
      * Checks if laser is on sky.
-     * @return
      */
     Boolean isOnSky();
 
@@ -89,7 +82,6 @@ public interface EpicsService {
 
     /**
      * Returns true if tcs simulation is used ("tc1:" channels instead of "tcs:").
-     * @return
      */
     Boolean usesTcsSimulator();
 
@@ -98,7 +90,7 @@ public interface EpicsService {
      */
     interface Snapshot {
         Boolean isConnected();
-        DateTime getTime();
+        ZonedDateTime getTime();
         Angle getCurrentAz();
         Angle getCurrentEl();
         WorldCoords getCurrentRaDec();
@@ -115,7 +107,7 @@ public interface EpicsService {
         void disconnect();
         Boolean isConnected();
         Boolean usesTcsSimulator();
-        DateTime getLastUpdate();
+        ZonedDateTime getLastUpdate();
         Object readValue(String name);
         void writeValue(String name, Object value);
     }

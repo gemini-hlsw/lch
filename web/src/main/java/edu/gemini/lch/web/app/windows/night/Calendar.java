@@ -6,17 +6,21 @@ import com.vaadin.ui.themes.Reindeer;
 import edu.gemini.lch.model.SimpleLaserNight;
 import edu.gemini.lch.services.LaserNightService;
 import edu.gemini.lch.web.app.components.TimeZoneSelector;
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.vaadin.risto.stylecalendar.DateOptionsGenerator;
 import org.vaadin.risto.stylecalendar.StyleCalendar;
 
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.time.temporal.ChronoUnit;
 import java.util.*;
 
 
 /**
+ * VAADIN: therefor must use Date.
  */
 @Configurable(preConstruction = true)
 public final class Calendar extends Panel implements TimeZoneSelector.Listener {
@@ -29,8 +33,8 @@ public final class Calendar extends Panel implements TimeZoneSelector.Listener {
     private final Component header;
 
     private List<SimpleLaserNight> laserNights;
-    private DateTimeZone currentTimeZone;
-    private DateTime currentDate;
+    private ZoneId currentZoneId;
+    private ZonedDateTime currentDate;
 
     public Calendar() {
         final Button prevYear  = new Button("<<");
@@ -41,7 +45,7 @@ public final class Calendar extends Panel implements TimeZoneSelector.Listener {
         header = new Label();
         header.setStyleName(Reindeer.LABEL_H2);
 
-        currentTimeZone = DateTimeZone.UTC;
+        currentZoneId = ZoneId.of("UTC");
         listeners = new HashSet<>();
         laserNights = getLaserNightsForCurrentMonth();
 
@@ -53,7 +57,7 @@ public final class Calendar extends Panel implements TimeZoneSelector.Listener {
         calendar.setDateOptionsGenerator(new MyDateOptionsGenerator());
         calendar.addValueChangeListener((Property.ValueChangeEvent event) -> {
             Date selected = (Date) event.getProperty().getValue();
-            SimpleLaserNight night = findNight(selected);
+            SimpleLaserNight night = findNight(selected.toInstant());
             if (night != null) {
                 for (DayChangeListener listener : listeners) {
                     listener.setNight(night.getId());
@@ -95,21 +99,23 @@ public final class Calendar extends Panel implements TimeZoneSelector.Listener {
 
     }
 
-    public void setShowingDate(DateTime date) {
-        calendar.setShowingDate(date.toDate());
+    public void setShowingDate(ZonedDateTime date) {
+        // VAADIN: Needs Date
+        calendar.setShowingDate(Date.from(date.toInstant()));
     }
 
     public void addListener(DayChangeListener listener) {
         listeners.add(listener);
     }
 
-    private SimpleLaserNight findNight(Date day) {
+    private SimpleLaserNight findNight(Instant day) {
         // unfortunately we can not set the time zone of the calendar component
         // therefore we have to translate the day into a day of the current time zone first
-        DateTime date = new DateTime(day);
-        DateTime localDate = new DateTime(date.getYear(), date.getMonthOfYear(), date.getDayOfMonth(), 12, 0, currentTimeZone).withTimeAtStartOfDay();
+        // TODO-JODA: Has to be a better way to do this. https://stackoverflow.com/questions/30293748/java-time-equivalent-of-joda-time-withtimeatstartofday-get-first-moment-of-t
+        ZonedDateTime date = ZonedDateTime.ofInstant(day, ZoneId.systemDefault());
+        ZonedDateTime localDate = ZonedDateTime.of(date.getYear(), date.getMonthValue(), date.getDayOfMonth(), 12, 0, 0, 0, currentZoneId).truncatedTo(ChronoUnit.DAYS);
         for (SimpleLaserNight night : laserNights) {
-            DateTime dateNight = night.getStart().withZone(currentTimeZone).withTimeAtStartOfDay();
+            ZonedDateTime dateNight = night.getStart().withZoneSameInstant(currentZoneId).truncatedTo(ChronoUnit.DAYS);
             if (localDate.equals(dateNight)) {
                 return night;
             }
@@ -118,30 +124,32 @@ public final class Calendar extends Panel implements TimeZoneSelector.Listener {
     }
 
     @Override
-    public void updateTimeZone(DateTimeZone zone) {
+    public void updateTimeZone(ZoneId zoneId) {
         laserNights = getLaserNightsForCurrentMonth();
-        currentTimeZone = zone;
+        currentZoneId = zoneId;
         setShowingDate(currentDate);
         markAsDirtyRecursive();
     }
 
+    // VAADIN: Need to use Date
     private class MyStyleCalendar extends StyleCalendar {
         @Override
         public void setShowingDate(Date date) {
-            currentDate = new DateTime(date, currentTimeZone);
+            currentDate = ZonedDateTime.ofInstant(date.toInstant(), currentZoneId);
             laserNights = getLaserNightsForCurrentMonth();
-            header.setCaption(currentDate.toString("MMMM yyyy"));
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("MMMM yyyyy");
+            header.setCaption(currentDate.format(formatter));
 
             // TODO: check if this can be done a bit more elegantly
             // since we can not set the time zone of the component we need to fake the date we want to show by "mapping" the current date to the default time zone of the JVM
-            DateTimeZone defaultZone = DateTimeZone.forTimeZone(TimeZone.getDefault());
-            DateTime showDate = new DateTime(currentDate.getYear(), currentDate.getMonthOfYear(), currentDate.getDayOfMonth(), 12, 0, defaultZone);
-            super.setShowingDate(showDate.toDate());
+            ZoneId defaultZone =TimeZone.getDefault().toZoneId();
+            ZonedDateTime showDate = ZonedDateTime.of(currentDate.getYear(), currentDate.getMonthValue(), currentDate.getDayOfMonth(), 12, 0, 0, 0, defaultZone);
+            super.setShowingDate(Date.from(showDate.toInstant()));
         }
     }
 
     private List<SimpleLaserNight> getLaserNightsForCurrentMonth() {
-        DateTime d = (currentDate == null) ? DateTime.now() : currentDate;
+        ZonedDateTime d = (currentDate == null) ? ZonedDateTime.now() : currentDate;
         return laserNightService.getShortLaserNights(d.minusMonths(1), d.plusMonths(1));
     }
 
@@ -151,12 +159,12 @@ public final class Calendar extends Panel implements TimeZoneSelector.Listener {
         public String getStyleName(Date date, StyleCalendar styleCalendar) {
             // days that don't belong to the shown month are displayed but not clickable
             // in order not to confuse everybody don't show any information to keep people from clicking on them
-            if ((date.getMonth()+1) != currentDate.getMonthOfYear()) {
+            if ((date.getMonth()+1) != currentDate.getMonthValue()) {
                 return "inactive";
             }
 
             // now do the real stuff
-            SimpleLaserNight night = findNight(date);
+            SimpleLaserNight night = findNight(date.toInstant());
             if (night != null) {
                 if (night.hasPamReceived()) {
                     return "pamreceived";
@@ -173,14 +181,15 @@ public final class Calendar extends Panel implements TimeZoneSelector.Listener {
         public String getTooltip(Date date, StyleCalendar styleCalendar) {
             // days that don't belong to the shown month are displayed but not clickable
             // in order not to confuse everybody don't show any information to keep people from clicking on them
-            if ((date.getMonth()+1) != currentDate.getMonthOfYear()) {
+            if ((date.getMonth()+1) != currentDate.getMonthValue()) {
                 return "";
             }
 
             // now do the real stuff
-            SimpleLaserNight night = findNight(date);
+            SimpleLaserNight night = findNight(date.toInstant());
             if (night != null) {
-                String jDay = night.getStart().toDateTime(DateTimeZone.UTC).toString("D");
+                DateTimeFormatter formatter = DateTimeFormatter.ofPattern("D");
+                String jDay = formatter.format(ZonedDateTime.ofInstant(night.getStart().toInstant(), ZoneId.of("UTC")));
                 if (night.hasPamReceived()) {
                     return "UTC JDay " + jDay + ": PAMs received from LCH.";
                 } else if (night.hasPrmSent()) {

@@ -19,10 +19,6 @@ import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
-import org.joda.time.Duration;
-import org.joda.time.Period;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 import scala.util.Try;
@@ -32,6 +28,8 @@ import java.io.ByteArrayInputStream;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.ParseException;
+import java.time.Duration;
+import java.time.ZonedDateTime;
 import java.util.*;
 
 /**
@@ -743,7 +741,7 @@ public class LaserNightServiceImpl implements LaserNightService {
 
             // if there is a laser night continue processing the response
             addAndReplacePropagationWindows(night, response);
-            night.setLatestPamReceived(DateTime.now());
+            night.setLatestPamReceived(ZonedDateTime.now());
             saveOrUpdate(night);
 
             // return the id of the night this part belongs to
@@ -751,8 +749,6 @@ public class LaserNightServiceImpl implements LaserNightService {
 
         // catch checked exceptions and rethrow as runtime exc. in order to rollback transaction
         } catch (IOException e) {
-            throw new RuntimeException(e);
-        } catch (ParseException e) {
             throw new RuntimeException(e);
         }
     }
@@ -782,10 +778,10 @@ public class LaserNightServiceImpl implements LaserNightService {
 
         int offsetMinutes = 5;
         int durationSeconds = 1;
-        Duration interval = Duration.standardMinutes(15);
+        Duration interval = Duration.ofMinutes(15);
         for (LaserTarget t : targets) {
-            Duration offset = Duration.standardMinutes(offsetMinutes);
-            Duration duration = Duration.standardSeconds(durationSeconds);
+            Duration offset = Duration.ofMinutes(offsetMinutes);
+            Duration duration = Duration.ofSeconds(durationSeconds);
             List<PropagationWindow> trgWin = createTestWindows(night.getStart(), offset, duration, interval, night.getEnd());
 
             // create fake target for response
@@ -804,16 +800,16 @@ public class LaserNightServiceImpl implements LaserNightService {
             durationSeconds = ((durationSeconds + 2) % 60);
         }
 
-        Response fakeResponse = new Response(fakeTargets, fakeWindows, night.getSite(), DateTime.now(), night.getStart(), night.getEnd());
+        Response fakeResponse = new Response(fakeTargets, fakeWindows, night.getSite(), ZonedDateTime.now(), night.getStart(), night.getEnd());
         addAndReplacePropagationWindows(night, fakeResponse);
     }
 
-    private List<PropagationWindow> createTestWindows(DateTime start, Duration offset, Duration duration, Duration interval, DateTime end) {
+    private List<PropagationWindow> createTestWindows(ZonedDateTime start, Duration offset, Duration duration, Duration interval, ZonedDateTime end) {
         List<PropagationWindow> windows = new ArrayList<>();
-        DateTime time = start;
+        ZonedDateTime time = start;
         while (time.isBefore(end)) {
-            DateTime windowStart = time.plus(offset);
-            DateTime windowEnd = windowStart.plus(interval).minus(duration);
+            ZonedDateTime windowStart = time.plus(offset);
+            ZonedDateTime windowEnd = windowStart.plus(interval).minus(duration);
             PropagationWindow window = new PropagationWindow(windowStart, windowEnd);
             windows.add(window);
             time = time.plus(interval);
@@ -835,7 +831,7 @@ public class LaserNightServiceImpl implements LaserNightService {
      * @param day
      * @return
      */
-    private QueryResult getTestScienceQueryResult(DateTime day) {
+    private QueryResult getTestScienceQueryResult(ZonedDateTime day) {
         return getQueryResult(day, Configuration.Value.TEST_SCIENCE_QUERY);
     }
 
@@ -844,11 +840,11 @@ public class LaserNightServiceImpl implements LaserNightService {
      * @param day
      * @return
      */
-    private QueryResult getEngineeringQueryResult(DateTime day) {
+    private QueryResult getEngineeringQueryResult(ZonedDateTime day) {
         return getQueryResult(day, Configuration.Value.ENGINEERING_QUERY);
     }
 
-    private QueryResult getQueryResult(DateTime day, Configuration.Value type) {
+    private QueryResult getQueryResult(ZonedDateTime day, Configuration.Value type) {
         TemplateEngine engine = factory.createTemplateEngine(day);
         // TODO: change interface so that we can pass URL and list of query paramters down to ODB
         String url = configurationService.getString(Configuration.Value.ODB_URL);

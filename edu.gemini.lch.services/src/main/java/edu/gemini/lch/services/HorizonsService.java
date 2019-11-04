@@ -15,9 +15,6 @@ public interface HorizonsService {
 
     /**
      * Gets all positions for the target with the given object id over the course of a night.
-     * @param night
-     * @param queryString
-     * @return
      */
     List<WorldCoords> getCoordinates(LaserNight night, HorizonsDesignation horizonsDesignation);
 

@@ -1,13 +1,9 @@
 package edu.gemini.lch.web.app.util;
 
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
-import org.joda.time.Duration;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.PeriodFormatter;
-import org.joda.time.format.PeriodFormatterBuilder;
+import sun.lwawt.macosx.CSystemTray;
 
+import java.time.*;
+import java.time.format.DateTimeFormatter;
 import java.util.Date;
 
 
@@ -16,6 +12,7 @@ import java.util.Date;
  */
 public final class TimeFormatter {
 
+    // TODO-JODA: There is no PeriodFormatter
     private static final PeriodFormatter periodFormatter = new PeriodFormatterBuilder()
             .printZeroAlways()
             .minimumPrintedDigits(2)
@@ -35,51 +32,52 @@ public final class TimeFormatter {
     private final DateTimeFormatter dateAndTimeFormatter;
     private final DateTimeFormatter dateAndTimeLongFormatter;
 
-    public TimeFormatter(DateTimeZone timeZone) {
-        timeFormatter = DateTimeFormat.forPattern("HH:mm").withZone(timeZone);
-        timeLongFormatter = DateTimeFormat.forPattern("HH:mm:ss").withZone(timeZone);
-        dateAndTimeFormatter = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm").withZone(timeZone);
-        dateAndTimeLongFormatter = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss").withZone(timeZone);
+    public TimeFormatter(ZoneId zoneId) {
+        timeFormatter = DateTimeFormatter.ofPattern("HH:mm").withZone(zoneId);
+        timeLongFormatter = DateTimeFormatter.ofPattern("HH:mm:ss").withZone(zoneId);
+        dateAndTimeFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm").withZone(zoneId);
+        dateAndTimeLongFormatter = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").withZone(zoneId);
     }
 
-    public String asTime(Date date) {
-        return asTime(new DateTime(date));
+    public String asTime(Instant instant) {
+        return asTime(ZonedDateTime.ofInstant(instant, ZoneId.systemDefault()));
     }
 
-    public String asTime(DateTime dateTime) {
-        return timeFormatter.print(dateTime);
+    public String asTime(ZonedDateTime dateTime) {
+        return timeFormatter.format(dateTime);
     }
 
-    public String asTimeLong(DateTime dateTime) {
-        return timeLongFormatter.print(dateTime);
+    public String asTimeLong(ZonedDateTime dateTime) {
+        return timeLongFormatter.format(dateTime);
     }
 
-    public DateTime fromTimeLong(String string) {
-        return timeLongFormatter.parseDateTime(string);
+    public ZonedDateTime fromTimeLong(String string) {
+        return ZonedDateTime.parse(string, timeLongFormatter);
     }
 
-    public DateTime fromDateAndTime(String string) {
-        return dateAndTimeFormatter.parseDateTime(string);
+    public ZonedDateTime fromDateAndTime(String string) {
+        return ZonedDateTime.parse(string, dateAndTimeFormatter);
     }
 
-    public String asDateAndTime(DateTime dateTime) {
-        return dateAndTimeFormatter.print(dateTime);
+    public String asDateAndTime(ZonedDateTime dateTime) {
+        return dateAndTimeFormatter.format(dateTime);
     }
 
-    public String asDateAndTimeLong(DateTime dateTime) {
-        return dateAndTimeLongFormatter.print(dateTime);
+    public String asDateAndTimeLong(ZonedDateTime dateTime) {
+        return dateAndTimeLongFormatter.format(dateTime);
     }
 
-    public static String asDuration(Date start, Date end) {
-        return asDuration(new DateTime(start), new DateTime(end));
+    public static String asDuration(Instant start, Instant end) {
+        return asDuration(ZonedDateTime.ofInstant(start, ZoneId.systemDefault()), ZonedDateTime.ofInstant(end, ZoneId.systemDefault()));
     }
 
-    public static String asDuration(DateTime start, DateTime end) {
-        return asDuration(new Duration(start, end));
+    public static String asDuration(ZonedDateTime start, ZonedDateTime end) {
+        return asDuration(Duration.between(start, end));
     }
 
+    // TODO-JODA: There is no formatter for duration.
     public static String asDuration(Duration duration) {
-        return periodFormatter.print(duration.toPeriod());
+        return periodFormatter.format(duration.toPeriod());
     }
 
 

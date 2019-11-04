@@ -6,10 +6,12 @@ import com.vaadin.ui.*;
 import com.vaadin.ui.themes.Reindeer;
 import edu.gemini.lch.services.SiteService;
 import edu.gemini.lch.web.app.components.TimeZoneSelector;
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
+
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * A component for displaying a clock and a time zone selector.
@@ -71,28 +73,31 @@ public class Clock extends Panel {
         timeZoneSelector.removeListener(listener);
     }
 
-    public DateTimeZone getSelectedTimeZone() {
+    public ZoneId getSelectedZoneId() {
         return timeZoneSelector.getSelectedZone();
     }
 
-    public DateTimeZone getDeselectedTimeZone() {
-        return timeZoneSelector.getSelectedZone() == DateTimeZone.UTC ? DateTimeZone.getDefault() : DateTimeZone.UTC;
+    public ZoneId getDeselectedTimeZone() {
+        return timeZoneSelector.getSelectedZone() == ZoneId.of("UTC") ? ZoneId.systemDefault() : ZoneId.of("UTC");
     }
 
     public void update() {
-        DateTime nowLocal = new DateTime();
-        DateTime nowUTC = new DateTime(DateTimeZone.UTC);
-        utcDate.setValue("<b>"+nowUTC.toString("yyyy-MM-dd (D)")+"</b>");
-        utcTime.setValue(nowUTC.toString("HH:mm:ss"));
-        localDate.setValue("<b>"+nowLocal.toString("yyyy-MM-dd (D)")+"</b>");
-        localTime.setValue(nowLocal.toString("HH:mm:ss"));
+        ZonedDateTime nowLocal = ZonedDateTime.now();
+        ZonedDateTime nowUTC = ZonedDateTime.now(ZoneId.of("UTC"));
+
+        DateTimeFormatter formatter1 = DateTimeFormatter.ofPattern("yyyy-MM-dd (D)");
+        utcDate.setValue("<b>"+formatter1.format(nowUTC)+"</b>");
+        DateTimeFormatter formatter2 = DateTimeFormatter.ofPattern("HH:mm:ss");
+        utcTime.setValue(formatter2.format(nowUTC));
+        localDate.setValue("<b>"+formatter1.format(nowLocal)+"</b>");
+        localTime.setValue(formatter2.format(nowLocal));
     }
 
     private Embedded getLocalFlag() {
         switch(siteService.getSite()) {
             case NORTH: return new Embedded(null, new ThemeResource("img/Hawaii-Flag-icon.png"));
             case SOUTH: return new Embedded(null, new ThemeResource("img/Chile-Flag-icon.png"));
-            default: throw new IllegalArgumentException("unknonw site");
+            default: throw new IllegalArgumentException("unknown site");
         }
     }
 

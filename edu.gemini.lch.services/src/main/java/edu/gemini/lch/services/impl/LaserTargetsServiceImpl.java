@@ -9,14 +9,14 @@ import edu.gemini.lch.services.timeline.TimeLineImage;
 import edu.gemini.lch.services.timeline.TimeLineHeader;
 import org.hibernate.Query;
 import org.hibernate.SessionFactory;
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
-import org.joda.time.Period;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.Resource;
+import java.time.Period;
+import java.time.ZonedDateTime;
 import java.util.List;
+import java.util.TimeZone;
 
 /**
  */
@@ -38,8 +38,7 @@ public class LaserTargetsServiceImpl implements LaserTargetsService {
         Query q = sessionFactory.getCurrentSession().
                 getNamedQuery(LaserTarget.QUERY_FIND_BY_ID).
                 setLong("id", targetId);
-        LaserTarget target = (LaserTarget) q.uniqueResult();
-        return target;
+        return (LaserTarget) q.uniqueResult();
     }
 
 // TODO: next methods might become obsolete when controller for web servicse uses the cached values instead...
@@ -110,7 +109,7 @@ public class LaserTargetsServiceImpl implements LaserTargetsService {
 
     @Override
     @Transactional(readOnly = true)
-    public byte[] getImageHeader(LaserNight night, Integer width, DateTime start, DateTime end, DateTimeZone zone) {
+    public byte[] getImageHeader(LaserNight night, Integer width, ZonedDateTime start, ZonedDateTime end, TimeZone zone) {
         TimeLineHeader header = new TimeLineHeader(start, end, width, 16, zone);
         return header.getAsBytes();
     }
@@ -118,7 +117,7 @@ public class LaserTargetsServiceImpl implements LaserTargetsService {
 
     @Override
     @Transactional(readOnly = true)
-    public byte[] getImage(LaserNight night, LaserTarget target, Integer width, Integer height, DateTime start, DateTime end) {
+    public byte[] getImage(LaserNight night, LaserTarget target, Integer width, Integer height, ZonedDateTime start, ZonedDateTime end) {
         Period before = Period.seconds(configurationService.getInteger(Configuration.Value.LIS_BUFFER_BEFORE_SHUTTER_WINDOW));
         Period after = Period.seconds(configurationService.getInteger(Configuration.Value.LIS_BUFFER_AFTER_SHUTTER_WINDOW));
         TimeLineImage image =
@@ -132,7 +131,7 @@ public class LaserTargetsServiceImpl implements LaserTargetsService {
 
     @Override
     @Transactional(readOnly = true)
-    public byte[] getImage(LaserNight night, LaserTarget target,  Integer width, Integer height, DateTime start, DateTime end, DateTime now, DateTimeZone zone) {
+    public byte[] getImage(LaserNight night, LaserTarget target,  Integer width, Integer height, ZonedDateTime start, ZonedDateTime end, ZonedDateTime now, TimeZone zone) {
         Period before = Period.seconds(configurationService.getInteger(Configuration.Value.LIS_BUFFER_BEFORE_SHUTTER_WINDOW));
         Period after = Period.seconds(configurationService.getInteger(Configuration.Value.LIS_BUFFER_AFTER_SHUTTER_WINDOW));
         TimeLineImage image =
@@ -149,7 +148,7 @@ public class LaserTargetsServiceImpl implements LaserTargetsService {
 
     @Override
     @Transactional(readOnly = true)
-    public byte[] getImage(LaserNight night, Integer width, Integer height, DateTime start, DateTime end, DateTime now, DateTimeZone zone) {
+    public byte[] getImage(LaserNight night, Integer width, Integer height, ZonedDateTime start, ZonedDateTime end, ZonedDateTime now, TimeZone zone) {
         Period before = Period.seconds(configurationService.getInteger(Configuration.Value.LIS_BUFFER_BEFORE_SHUTTER_WINDOW));
         Period after = Period.seconds(configurationService.getInteger(Configuration.Value.LIS_BUFFER_AFTER_SHUTTER_WINDOW));
         TimeLineImage image =

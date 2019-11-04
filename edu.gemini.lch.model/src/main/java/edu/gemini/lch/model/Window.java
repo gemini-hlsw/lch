@@ -106,9 +106,10 @@ public abstract class Window implements Comparable<Window> {
         return result;
     }
 
+    @SuppressWarnings("unchecked")
     protected static <T extends Window> T createWindow(ZonedDateTime start, ZonedDateTime end, Class clazz) {
         try {
-            T newT = (T) clazz.newInstance();
+            T newT = (T) clazz.getDeclaredConstructor().newInstance();
             newT.start = start.toInstant();
             newT.end = end.toInstant();
             return newT;

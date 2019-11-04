@@ -13,10 +13,12 @@ import edu.gemini.lch.web.app.components.EditDialogWindow;
 import edu.gemini.lch.web.app.components.TimeZoneSelector;
 import edu.gemini.lch.web.app.util.TimeFormatter;
 import org.apache.commons.lang.Validate;
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
+
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.temporal.ChronoUnit;
 
 /**
  * A table for displaying and editing engineering targets.
@@ -40,7 +42,7 @@ public final class BlanketClosuresTable extends Panel implements EditDialogWindo
 
     public BlanketClosuresTable(final NightWindow parent) {
         this.parent = parent;
-        this.timeFormatter = new TimeFormatter(DateTimeZone.UTC);
+        this.timeFormatter = new TimeFormatter(ZoneId.of("UTC"));
 
         this.container = new BeanContainer<>(BlanketClosure.class);
         this.container.setBeanIdProperty("id");
@@ -84,9 +86,9 @@ public final class BlanketClosuresTable extends Panel implements EditDialogWindo
     }
 
     @Override
-    public void updateTimeZone(final DateTimeZone zone) {
+    public void updateTimeZone(final ZoneId zoneId) {
         // update the time formatter and then refresh all rows to update the displayed values
-        timeFormatter = new TimeFormatter(zone);
+        timeFormatter = new TimeFormatter(zoneId);
         table.refreshRowCache();
     }
 
@@ -139,8 +141,8 @@ public final class BlanketClosuresTable extends Panel implements EditDialogWindo
 
     private void endNow(final Object itemId) {
         final BlanketClosure closure = container.getItem(itemId).getBean();
-        if (closure.getStart().isBeforeNow() && closure.getEnd().isAfterNow()) {
-            closure.setEnd(DateTime.now());
+        if (closure.getStart().isBefore(ZonedDateTime.now()) && closure.getEnd().isAfter(ZonedDateTime.now())) {
+            closure.setEnd(ZonedDateTime.now());
             laserNightService.updateClosure(night, closure);
             parent.setNight(night.getId());
         }
@@ -193,8 +195,8 @@ public final class BlanketClosuresTable extends Panel implements EditDialogWindo
             setSizeFull();
 
             this.night = night;
-            final DateTime start = mapToNight(DateTime.now().withSecondOfMinute(0).withMillisOfSecond(0));
-            final DateTime end   = mapToNight(start.plusMinutes(1));
+            final ZonedDateTime start = mapToNight(ZonedDateTime.now().withSecond(0).withNano(0));
+            final ZonedDateTime end   = mapToNight(start.plusMinutes(1));
 
             startTime = new TextField();
             startTime.setValue(timeFormatter.asTimeLong(start));
@@ -213,21 +215,21 @@ public final class BlanketClosuresTable extends Panel implements EditDialogWindo
             setImmediate(true);
         }
 
-        void setStartTime(final DateTime startTime) {
+        void setStartTime(final ZonedDateTime startTime) {
             this.startTime.setValue(timeFormatter.asTimeLong(startTime));
         }
-        void setEndTime(final DateTime endTime) {
+        void setEndTime(final ZonedDateTime endTime) {
             this.endTime.setValue(timeFormatter.asTimeLong(endTime));
         }
 
-        DateTime getStartTime() {
+        ZonedDateTime getStartTime() {
             try {
                 return mapToNight(timeFormatter.fromTimeLong(startTime.getValue()));
             } catch (IllegalArgumentException e) {
                 return night.getStart();
             }
         }
-        DateTime getEndTime() {
+        ZonedDateTime getEndTime() {
             try {
                 return mapToNight(timeFormatter.fromTimeLong(endTime.getValue()));
             } catch (IllegalArgumentException e) {
@@ -235,17 +237,17 @@ public final class BlanketClosuresTable extends Panel implements EditDialogWindo
             }
         }
 
-        private DateTime mapToNight(final DateTime time) {
-            final DateTime time2 = night.getStart().toDateTime(time.getZone());
-            final DateTime mapped = time2.withTime(time.getHourOfDay(), time.getMinuteOfHour(), time.getSecondOfMinute(), 0);
-            final DateTime result;
-            if (mapped.isBefore(night.getStart())) {
-                result = mapped.plusDays(1);
+        private ZonedDateTime mapToNight(final ZonedDateTime time) {
+            final ZonedDateTime time2 = ZonedDateTime.ofInstant(night.getStart().toInstant(), time.getZone());
+            final ZonedDateTime mapped2 = time2.withHour(time.getHour()).withMinute(time.getMinute()).withSecond(time.getSecond()).withNano(0);
+            final ZonedDateTime result;
+            if (mapped2.isBefore(night.getStart())) {
+                result = mapped2.plusDays(1);
             } else {
-                result = mapped;
+                result = mapped2;
             }
-            Validate.isTrue(result.isAfter(night.getStart().withTimeAtStartOfDay()));
-            Validate.isTrue(result.isBefore(night.getEnd().withTimeAtStartOfDay().plusDays(1)));
+            Validate.isTrue(result.isAfter(night.getStart().truncatedTo(ChronoUnit.DAYS)));
+            Validate.isTrue(result.isBefore(night.getEnd().truncatedTo(ChronoUnit.DAYS).plusDays(1)));
             return result;
         }
 

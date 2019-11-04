@@ -2,10 +2,11 @@ package edu.gemini.lch.web.app.components;
 
 import com.vaadin.shared.ui.datefield.Resolution;
 import com.vaadin.ui.*;
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
 
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.Date;
+import java.util.TimeZone;
 
 /**
  */
@@ -16,20 +17,19 @@ public class DateDialogWindow extends Window implements Button.ClickListener {
     private final DateDialogListener listener;
     private final Button okButton;
 
-    public DateDialogWindow(String caption, DateTimeZone timeZone, DateDialogListener listener) {
-        this(caption, timeZone, listener, false);
+    public DateDialogWindow(String caption, ZoneId zoneId, DateDialogListener listener) {
+        this(caption, zoneId, listener, false);
     }
 
-    protected DateDialogWindow(String caption, DateTimeZone timeZone, DateDialogListener listener, boolean includeEndField) {
+    protected DateDialogWindow(String caption, ZoneId zoneId, DateDialogListener listener, boolean includeEndField) {
         this.listener = listener;
-
         startDate = new InlineDateField() {{
-            setTimeZone(timeZone.toTimeZone());
+            setTimeZone(TimeZone.getTimeZone(zoneId));
             setValue(new Date());
             setResolution(Resolution.DAY);
         }};
         endDate = new InlineDateField() {{
-            setTimeZone(timeZone.toTimeZone());
+            setTimeZone(TimeZone.getTimeZone(zoneId));
             setValue(new Date());
             setResolution(Resolution.DAY);
         }};
@@ -38,7 +38,7 @@ public class DateDialogWindow extends Window implements Button.ClickListener {
 
         final Form form = new Form() {{
             setCaption("Select a date.");
-            setDescription("The time zone is " + timeZone.getID());
+            setDescription("The time zone is " + TimeZone.getTimeZone(zoneId).getID());
             addField("startDate", startDate);
             if (includeEndField) {
                 addField("endDate", endDate);
@@ -66,8 +66,8 @@ public class DateDialogWindow extends Window implements Button.ClickListener {
         UI.getCurrent().addWindow(this);
     }
 
-    public DateTime getDate() {
-        return new DateTime(startDate.getValue());
+    public ZonedDateTime getDate() {
+        return ZonedDateTime.ofInstant(startDate.getValue().toInstant(), ZoneId.systemDefault());
     }
 
     @Override

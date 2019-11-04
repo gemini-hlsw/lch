@@ -2,14 +2,13 @@ package edu.gemini.lch.services.resources;
 
 import edu.gemini.lch.services.LaserNightService;
 import edu.gemini.lch.services.model.*;
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 /**
@@ -19,7 +18,7 @@ import java.util.*;
 @RequestMapping(value="/test/nights")
 public class LaserNightTestController {
 
-    private static final DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyyMMdd").withZone(DateTimeZone.UTC);
+    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd").withZone(ZoneId.systemDefault());
 
     @Resource
     private LaserNightService laserNightService;
@@ -27,7 +26,8 @@ public class LaserNightTestController {
     @RequestMapping(value="", method= RequestMethod.GET, produces="application/xml")
     @ResponseBody
     public NightFull getTestNight(@RequestParam(value = "date") String dateString, @RequestParam Boolean full, @RequestParam Double laserLimit) {
-        DateTime date = formatter.parseDateTime(dateString).withTimeAtStartOfDay();
+//        ZonedDateTime date = formatter.parse(dateString).withTimeAtStartOfDay();
+        ZonedDateTime date = ZonedDateTime.parse(dateString, formatter);
 
         Map<Long, edu.gemini.lch.services.model.LaserTarget> laserTargets = new HashMap<>();
         laserTargets.put(10L, new edu.gemini.lch.services.model.LaserTarget(10L, new Coordinates(Coordinates.RADEC,0.,0.)));

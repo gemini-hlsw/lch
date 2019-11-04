@@ -1,19 +1,22 @@
 package edu.gemini.lch.services.impl
 
 import edu.gemini.lch.services.{ConfigurationService, LtcsService}
-import org.joda.time.DateTime
 import org.apache.http.impl.client.{BasicResponseHandler, DefaultHttpClient}
 import org.apache.http.client.methods.HttpGet
 import org.springframework.stereotype.Service
-import javax.annotation.{PostConstruct, Resource, PreDestroy}
+import javax.annotation.{PostConstruct, PreDestroy, Resource}
+
 import scala.xml.{NodeSeq, XML}
-import org.joda.time.format.DateTimeFormat
 import org.springframework.scheduling.annotation.Scheduled
 import org.apache.log4j.Logger
 
 import scala.collection.JavaConversions._
 import edu.gemini.lch.services.LtcsService.Collision
 import java.io.IOException
+import java.time.ZonedDateTime
+import java.time.format.DateTimeFormatter
+import java.time.temporal.TemporalQuery
+
 import edu.gemini.lch.configuration.Configuration
 
 /**
@@ -31,7 +34,7 @@ class LtcsServiceAlternativeImpl extends LtcsService {
 
   @Resource private var configurationService: ConfigurationService = null
 
-  private val timeFormatter = DateTimeFormat.forPattern("HH:mm:ss MMM dd yyyy 'HST'")
+  private val timeFormatter = DateTimeFormatter.ofPattern("HH:mm:ss MMM dd yyyy 'HST'")
   private val httpClient = new DefaultHttpClient
   private val httpHandler = new BasicResponseHandler
 
@@ -45,7 +48,7 @@ class LtcsServiceAlternativeImpl extends LtcsService {
    * Destroys the connection manager.
    * Called by Spring when shutting down the application.
    */
-  @PreDestroy private def destroy {
+  @PreDestroy private def destroy() {
     httpClient.getConnectionManager.shutdown
   }
 
@@ -59,7 +62,7 @@ class LtcsServiceAlternativeImpl extends LtcsService {
    * Updates the snapshot in regular intervals.
    */
   @Scheduled(fixedDelay = 10000)
-  def update {
+  def update() {
     logger.debug("updating ltcs snapshot")
     try {
       val ltcsHost = configurationService getString Configuration.Value.LTCS_URL
@@ -78,9 +81,9 @@ class LtcsServiceAlternativeImpl extends LtcsService {
         val detailsGet = new HttpGet(ltcsHost + "/ltcs/screens/predict_detail.php?laser=GEMINI")
         val detailsPage = httpClient.execute(detailsGet, httpHandler)
         val allCollisionsSorted: Seq[Collision] =
-          (collisions(summaryPage) ++ predictions(detailsPage) ++ previews(summaryPage)) sortBy (_.getStart.getMillis)
+          (collisions(summaryPage) ++ predictions(detailsPage) ++ previews(summaryPage)) sortBy (_.getStart.toInstant.toEpochMilli)
 
-        allCollisionsSorted.map(c => logger.info("-->" + c.getObservatory + " " + c.getStart))
+        allCollisionsSorted.foreach(c => logger.info("-->" + c.getObservatory + " " + c.getStart))
 
         currentStatus = new SnapshotImpl {
           val getMessage = "LTCS up and running."
@@ -148,8 +151,6 @@ class LtcsServiceAlternativeImpl extends LtcsService {
 
   /**
    * Translate summary page table into collisions.
-   * @param table
-   * @return
    */
   private def parseSummaryTable(table: NodeSeq): Seq[LtcsService.Collision] = {
     // take all rows, drop first one (header line) and get rid of collisions that don't involve Gemini as the lasing telescope
@@ -162,7 +163,7 @@ class LtcsServiceAlternativeImpl extends LtcsService {
           col.text.trim                           // take trimmed text of all columns
         }) mkString " "                           // combine values of columns to one string
       })) mkString " ",                           // combine all rows to one string
-      DateTime.now()
+      ZonedDateTime.now()
       )
   }
 
@@ -179,8 +180,6 @@ class LtcsServiceAlternativeImpl extends LtcsService {
   /**
    * Extracts a map with named values from the rows of a collision table.
    * The first column is used as the name, the second column is the value.
-   * @param rows
-   * @return
    */
   private def namedValues(rows: NodeSeq): Map[String, String] =
     rows map (r => {
@@ -190,15 +189,13 @@ class LtcsServiceAlternativeImpl extends LtcsService {
 
   /**
    * Creates a collision from the named value map we scraped from a HTML collision table.
-   * @param values
-   * @return
    */
   private def collisionFromNamedValues(values: Map[String, String]): LtcsService.Collision =
     new CollisionImpl {
-      val getObservatory  = values("Involved Telescope")
-      val getStart        = timeFormatter.parseDateTime(values("Start Time"))
-      val getEnd          = timeFormatter.parseDateTime(values("End Time"))
-      val getPriority     = if (values("Laser Has Priority") equalsIgnoreCase "NO") getObservatory else "GEMINI"   // IS THIS RIGHT???
+      val getObservatory: String = values("Involved Telescope")
+      val getStart: ZonedDateTime = ZonedDateTime.parse(values("Start Time"), timeFormatter)
+      val getEnd: ZonedDateTime = ZonedDateTime.parse(values("End Time"), timeFormatter)
+      val getPriority: String = if (values("Laser Has Priority") equalsIgnoreCase "NO") getObservatory else "GEMINI"
     }
 
     /**
@@ -240,7 +237,7 @@ class LtcsServiceAlternativeImpl extends LtcsService {
    */
   private abstract class CollisionImpl extends LtcsService.Collision {
     override def geminiHasPriority = if (getPriority equalsIgnoreCase "GEMINI") true else false
-    override def contains(time: DateTime) = false
+    override def contains(time: ZonedDateTime) = false
     override def compareTo(other: LtcsService.Collision) = getStart compareTo getEnd
   }
 

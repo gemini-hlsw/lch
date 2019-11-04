@@ -9,9 +9,6 @@ import org.apache.log4j.Logger;
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
-import org.joda.time.Period;
 import org.springframework.context.ApplicationListener;
 import org.springframework.context.event.ContextRefreshedEvent;
 import org.springframework.stereotype.Service;
@@ -19,8 +16,11 @@ import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
+import java.time.Period;
+import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Map;
+import java.util.TimeZone;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -174,7 +174,6 @@ public class ConfigurationServiceImpl implements ConfigurationService, Applicati
 
     /**
      * Called on application startup, will push any actions that need to be done to reflect current configuration.
-     * @param event
      */
     @Transactional(readOnly = true)
     @Override public void onApplicationEvent(ContextRefreshedEvent event) {
@@ -191,7 +190,7 @@ public class ConfigurationServiceImpl implements ConfigurationService, Applicati
 
 
     @Transactional(readOnly = true)
-    private Configuration readConfigurationEntry(Configuration.Value name) {
+    Configuration readConfigurationEntry(Configuration.Value name) {
         LOGGER.log(Level.TRACE, "reading configuration entry from database: " + name);
         Session session = sessionFactory.getCurrentSession();
         Query q = session.
@@ -211,19 +210,13 @@ public class ConfigurationServiceImpl implements ConfigurationService, Applicati
      * to automatically being picked up after a while).
      * Note: Be aware that throwing a runtime exception here will cause the config change transaction to be
      * rolled back, which may or may not be the right thing to do. Deal with exceptions accordingly.
-     * @param value
      */
     private void processChange(Configuration.Value value) {
-        switch (value) {
-            case TIME_ZONE_OFFSET:
-                // changing the time zone offset needs to change the default time zone of the JODA library
-                updateDefaultTimeZone();
-                break;
+        // nothing to do
+        if (value == Configuration.Value.TIME_ZONE_OFFSET) {
+            updateDefaultTimeZone();
 
-                // ** add any other special treatment here **
-
-            default:
-                // nothing to do
+            // ** add any other special treatment here **
         }
     }
 
@@ -232,15 +225,22 @@ public class ConfigurationServiceImpl implements ConfigurationService, Applicati
      */
     private void updateDefaultTimeZone() {
         if (isEmpty(Configuration.Value.TIME_ZONE_OFFSET)) {
-            // make the site's default time zone the current time zone for joda time,
+            // make the site's default time zone the current time zone
+            TimeZone.setDefault(siteService.getSiteTimeZone());
             // this should always be the case for Gemini North and work for Gemini South during most of the year
-            DateTimeZone.setDefault(siteService.getSiteTimeZone());
         } else {
-            // makes a user defined time zone the current time zone for joda time
+            // makes a user defined time zone the current time zone
             // this will be used when Chile is delaying or pulling forward the transition from/to daylight
             // saving time and the JVM is therefore not able to calculate the local times appropriately
-            Integer offset = getInteger(Configuration.Value.TIME_ZONE_OFFSET);
-            DateTimeZone.setDefault(DateTimeZone.forOffsetHours(offset));
+            int offset = getInteger(Configuration.Value.TIME_ZONE_OFFSET);
+//            DateTimeZone.setDefault(DateTimeZone.forOffsetHours(offset));
+//
+//            // TODO-JODA: Not a clue what to do here.
+//            // TODO-JODA: ZoneRules?
+//            // Ideas:
+//            //java.time.zone.ZoneOffsetTransition
+//            //TimeZone.getDefault().setRawOffset();
+//            //TimeZone.setDefault(TimeZone.getDefault().setRawOffset(););
         }
     }
 
@@ -258,10 +258,10 @@ public class ConfigurationServiceImpl implements ConfigurationService, Applicati
         /** A cache entry (value and timestamp). */
         private class Entry {
             final Configuration configuration;
-            final DateTime timestamp;
+            final ZonedDateTime timestamp;
             Entry(Configuration configuration) {
                 this.configuration = configuration;
-                this.timestamp = DateTime.now();
+                this.timestamp = ZonedDateTime.now();
             }
         }
 
@@ -281,7 +281,7 @@ public class ConfigurationServiceImpl implements ConfigurationService, Applicati
             if (map.containsKey(value)) {
                 // we have a configuration stored for this name
                 Entry e = map.get(value);
-                if (e.timestamp.isAfter(DateTime.now().minusSeconds(CACHE_REFRESH_SECONDS))) {
+                if (e.timestamp.isAfter(ZonedDateTime.now().minusSeconds(CACHE_REFRESH_SECONDS))) {
                     // if it is not too old return it
                     return e.configuration;
                 }
@@ -296,7 +296,6 @@ public class ConfigurationServiceImpl implements ConfigurationService, Applicati
 
         /**
          * Removes a value from the cache and forces a reload on next access.
-         * @param value
          */
         void removeValue(Configuration.Value value) {
             map.remove(value);
