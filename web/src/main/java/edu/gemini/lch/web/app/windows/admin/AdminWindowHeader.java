@@ -12,10 +12,11 @@ import edu.gemini.lch.web.app.components.DateDialogWindow;
 import edu.gemini.lch.web.app.components.Header;
 import edu.gemini.lch.web.app.windows.night.NightWindow;
 import org.apache.log4j.Level;
-import org.joda.time.DateTimeZone;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 import org.vaadin.dialogs.ConfirmDialog;
+
+import java.time.ZoneId;
 
 /**
  * The administration window.
@@ -64,7 +65,7 @@ public class AdminWindowHeader extends Header {
     public class CreateTestNightCommand implements MenuBar.Command, DateDialogWindow.DateDialogListener  {
         private DateDialogWindow dialog;
         public void menuSelected(MenuBar.MenuItem selectedItem) {
-            dialog = new DateDialogWindow("Add a Test Laser Day/Night", DateTimeZone.UTC, this);
+            dialog = new DateDialogWindow("Add a Test Laser Day/Night", ZoneId.of("UTC"), this);
         }
         public void okButtonClicked() {
             if (!laserNightService.laserNightExists(dialog.getDate())) {

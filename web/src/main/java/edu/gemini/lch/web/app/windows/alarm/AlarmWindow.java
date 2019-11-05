@@ -14,13 +14,11 @@ import edu.gemini.lch.web.app.util.TimeFormatter;
 import edu.gemini.shared.skycalc.Angle;
 import org.apache.commons.lang.Validate;
 import org.apache.log4j.Logger;
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
-import org.joda.time.Duration;
-import org.joda.time.Interval;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.*;
 
 @Configurable(preConstruction = true)
@@ -87,7 +85,7 @@ public final class AlarmWindow extends VerticalLayout implements View, Scheduler
         timeZoneSelector = new TimeZoneSelector();
         timeZoneSelector.addListener(this);
         // time formatters for UTC and whatever is currently selected (UTC/local)
-        utcTimeFormatter = new TimeFormatter(DateTimeZone.UTC);
+        utcTimeFormatter = new TimeFormatter(ZoneId.of("UTC"));
         timeFormatter = new TimeFormatter(timeZoneSelector.getSelectedZone());
 
         Header header = new AlarmWindowHeader(this);
@@ -230,8 +228,8 @@ public final class AlarmWindow extends VerticalLayout implements View, Scheduler
     }
 
     @Override
-    public void updateTimeZone(final DateTimeZone timeZone) {
-        timeFormatter = new TimeFormatter(timeZone);
+    public void updateZoneId(final ZoneId zoneId) {
+        timeFormatter = new TimeFormatter(zoneId);
     }
 
     @Override
@@ -239,7 +237,7 @@ public final class AlarmWindow extends VerticalLayout implements View, Scheduler
 
         if (getUI() == null) return;
 
-        final DateTime start = DateTime.now();
+        final ZonedDateTime start = ZonedDateTime.now();
 
         // avoid ConcurrentModificationExceptions: changes to components that are initiated by the server
         // need to be synchronized with application object (user session)

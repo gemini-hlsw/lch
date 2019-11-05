@@ -12,13 +12,13 @@ import edu.gemini.shared.util.immutable.Option;
 import edu.gemini.spModel.core.HorizonsDesignation;
 import jsky.coords.WorldCoords;
 import org.apache.log4j.Logger;
-import org.joda.time.DateTime;
-import org.joda.time.Duration;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
+import java.time.Duration;
+import java.time.ZonedDateTime;
 import java.util.*;
 
 /**
@@ -57,13 +57,13 @@ public class TargetsCollector {
         // We want to use the same configuration values throughout the use of this collector object,
         // therefore we read them once after object creation and store them.
 
-        DateTime earliest = night.getStart();
-        DateTime latest = night.getEnd();
+        ZonedDateTime earliest = night.getStart();
+        ZonedDateTime latest = night.getEnd();
 
         double altitude = configurationService.getDouble(Configuration.Value.VISIBILITY_MIN_ALTITUDE);
         this.maxDistance = configurationService.getDouble(Configuration.Value.NEARBY_GROUP_MAX_DISTANCE);
         this.visibilityCalculator = new VisibilityCalculatorImpl(night.getSite(), earliest, latest, altitude);
-        this.minVisibilityDuration = new Duration(configurationService.getInteger(Configuration.Value.VISIBILITY_MIN_DURATION)*60*1000); // duration is in minutes
+        this.minVisibilityDuration = Duration.ofMinutes(configurationService.getInteger(Configuration.Value.VISIBILITY_MIN_DURATION)*60*1000);
 
         // This helper class will keep track of nearby targets and create unique laser targets for them.
         // The laser targets are directly added to the observation targets that use them and will be stored
@@ -251,7 +251,7 @@ public class TargetsCollector {
                                 coordinate.getRaDeg(),
                                 coordinate.getDecDeg());
                 final Visibility visibility = visibilityCalculator.calculateVisibility(coordinate);
-                if (visibility.isVisible() && visibility.getMaxDurationAboveLimit(night).isLongerThan(minVisibilityDuration)) {
+                if (visibility.isVisible() && visibility.getMaxDurationAboveLimit(night).compareTo(minVisibilityDuration) > 0) {
                     laserTargets.addObservationTarget(target, visibility);
                     obsTargets.add(target);
                     LOGGER.debug("Non-sidereal target: Added position " + coordinate + " for target \"" + t.getName() + "\" [" + queryString + "]");
@@ -272,7 +272,7 @@ public class TargetsCollector {
         if (isTooTemplate(o)) {
             return false;
         }
-        if (!constraintsChecker.passesTimeConstraints(o, new DateTime(night.getStart()), new DateTime(night.getEnd()))) {
+        if (!constraintsChecker.passesTimeConstraints(o, night.getStart(), night.getEnd())) {
             return false;
         }
 

@@ -6,7 +6,6 @@ import edu.gemini.lch.services.LaserNightService;
 import edu.gemini.spModel.core.HorizonsDesignation;
 import edu.gemini.spModel.core.HorizonsDesignation$;
 import jsky.coords.WorldCoords;
-import org.joda.time.DateTime;
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -14,6 +13,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
+import java.time.ZonedDateTime;
 import java.util.List;
 
 /**
@@ -33,7 +33,7 @@ public class HorizonsServiceTest {
 
     @Test
     public void canNotLookupUnknown() {
-        LaserNight night = laserNightService.createLaserNight(DateTime.now());
+        LaserNight night = laserNightService.createLaserNight(ZonedDateTime.now());
         // This case really shouldn't happen since the HorizonsDesignation was
         // known to be valid via a past Horizons lookup. However, some ids have
         // changed in the past after the fact.
@@ -48,7 +48,7 @@ public class HorizonsServiceTest {
 
     @Test
     public void canLookupUnique() {
-        LaserNight night = laserNightService.createLaserNight(DateTime.now());
+        LaserNight night = laserNightService.createLaserNight(ZonedDateTime.now());
         final HorizonsDesignation id = HorizonsDesignation.read("AsteroidOld_134340").get();
         List<WorldCoords> coordinates = horizonsServiceReal.getCoordinates(night, id);
         Assert.assertTrue(coordinates.size() > 0);

@@ -17,7 +17,7 @@ public class TimeZoneSelector extends OptionGroup implements Property.ValueChang
     private final Collection<Listener> listeners;
 
     public interface Listener {
-        void updateTimeZone(ZoneId timeZone);
+        void updateZoneId(ZoneId zoneId);
     }
 
     /**
@@ -54,7 +54,7 @@ public class TimeZoneSelector extends OptionGroup implements Property.ValueChang
     @Override public void valueChange(Property.ValueChangeEvent event) {
         ZoneId selectedZone = getSelectedZone();
         for (Listener listener : listeners) {
-            listener.updateTimeZone(selectedZone);
+            listener.updateZoneId(selectedZone);
         }
     }
 
@@ -65,9 +65,9 @@ public class TimeZoneSelector extends OptionGroup implements Property.ValueChang
      */
     public ZoneId getSelectedZone() {
         if ("UTC".equals(getValue())) {
-            return ZoneId.systemDefault();
+            return ZoneId.of("UTC");
         } else {
-            return DateTimeZone.getDefault();
+            return ZoneId.systemDefault();
         }
     }
 }

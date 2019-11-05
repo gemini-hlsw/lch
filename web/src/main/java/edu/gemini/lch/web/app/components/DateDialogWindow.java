@@ -12,6 +12,7 @@ import java.util.TimeZone;
  */
 public class DateDialogWindow extends Window implements Button.ClickListener {
 
+    // VAADIN
     protected final DateField startDate;
     protected final DateField endDate;
     private final DateDialogListener listener;

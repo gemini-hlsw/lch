@@ -29,8 +29,6 @@ public class LaserTargetsCollector {
     /**
      * Adds an observation target and sets its laser target either to an already existing nearby one
      * or creates a new one and uses it for this observation target.
-     * @param obsTarget
-     * @param visibility
      */
     public void addObservationTarget(ObservationTarget obsTarget, Visibility visibility) {
         Group group = getClosestCoveringGroup(obsTarget);

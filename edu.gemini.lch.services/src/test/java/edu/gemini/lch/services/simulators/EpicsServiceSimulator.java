@@ -3,13 +3,14 @@ package edu.gemini.lch.services.simulators;
 import edu.gemini.lch.services.EpicsService;
 import edu.gemini.lch.services.impl.EpicsServiceImpl;
 import org.apache.log4j.Logger;
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
 import java.io.*;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.Map;
 import java.util.Properties;
 import java.util.concurrent.ConcurrentHashMap;
@@ -47,7 +48,7 @@ public class EpicsServiceSimulator extends EpicsServiceImpl {
     public void updateValues() {
 
         try {
-            DateTime now = DateTime.now().withZone(DateTimeZone.UTC);
+            ZonedDateTime now = ZonedDateTime.now().withZoneSameInstant(ZoneId.of("UTC"));
 
             Properties props = new Properties();
             FileInputStream in = new FileInputStream(inputFilePath + File.separator + "epics.txt");
@@ -58,10 +59,12 @@ public class EpicsServiceSimulator extends EpicsServiceImpl {
 
                 // use current date and time if no date and/or time is defined in the text file
                 if (EPICS_UTC.equals(key) && "now".equalsIgnoreCase(value)) {
-                    writeChannel(EPICS_UTC, now.toString("HH:mm:ss.S"));
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss.S");
+                    writeChannel(EPICS_UTC, formatter.format(now));
 
                 } else if (EPICS_DATE.equals(key) && "today".equalsIgnoreCase(value)) {
-                    writeChannel(EPICS_DATE, now.toString("yyyy-MM-dd"));
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd");
+                    writeChannel(EPICS_DATE, formatter.format(now));
 
                 // for all other values (or if UTC and DATE are set) just set the values in the hash map
                 } else if (readChannel((String) key) instanceof Double) {
@@ -133,8 +136,8 @@ public class EpicsServiceSimulator extends EpicsServiceImpl {
         }
 
         @Override
-        public DateTime getLastUpdate() {
-            return DateTime.now();
+        public ZonedDateTime getLastUpdate() {
+            return ZonedDateTime.now();
         }
 
         @Override

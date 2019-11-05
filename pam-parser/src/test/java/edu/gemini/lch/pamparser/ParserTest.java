@@ -2,11 +2,11 @@ package edu.gemini.lch.pamparser;
 
 import edu.gemini.lch.model.PropagationWindow;
 import edu.gemini.lch.model.Site;
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
 import org.junit.Test;
 
 import java.io.InputStream;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 
 import static org.junit.Assert.*;
 
@@ -33,9 +33,8 @@ public class ParserTest {
             // check first window (all times in file from LCH are UT / GMT)
             // start = 2011 May 19 (139) 2204 55  // end = 2011 May 20 (140) 0526 56
             PropagationWindow window = response.getWindowsForTarget(target).get(0);
-            assertEquals(new DateTime(2011, 5, 19, 22, 4, 55, DateTimeZone.UTC), window.getStart().toDateTime(DateTimeZone.UTC));
-            assertEquals(new DateTime(2011, 5, 20, 5, 26, 56, DateTimeZone.UTC), window.getEnd().toDateTime(DateTimeZone.UTC));
-
+            assertEquals(ZonedDateTime.of(2011, 5, 19, 22, 4, 55, 0, ZoneId.of("UTC")), window.getStart().withZoneSameLocal(ZoneId.of("UTC")));
+            assertEquals(ZonedDateTime.of(2011, 5, 20, 5, 26, 56, 0, ZoneId.of("UTC")), window.getEnd().withZoneSameLocal(ZoneId.of("UTC")));
         }
     }
 
@@ -89,9 +88,9 @@ public class ParserTest {
             // check mission start / end from header
             //Mission Start Date/Time (UTC):   2011 May 19 22:04:55
             //Mission Stop  Date/Time (UTC):   2011 May 20 11:14:28
-            assertEquals(new DateTime(2011, 5, 19, 22, 4, 55, DateTimeZone.UTC), response.getMissionStart().toDateTime(DateTimeZone.UTC));
-            assertEquals(new DateTime(2011, 5, 20, 11, 14, 28, DateTimeZone.UTC), response.getMissionEnd().toDateTime(DateTimeZone.UTC));
-            assertEquals(new Integer(139), response.getJDay());
+            assertEquals(ZonedDateTime.of(2011, 5, 19, 22, 4, 55, 0, ZoneId.of("UTC")), response.getMissionStart().withZoneSameLocal(ZoneId.of("UTC")));
+            assertEquals(ZonedDateTime.of(2011, 5, 20, 11, 14, 28, 0, ZoneId.of("UTC")), response.getMissionEnd().withZoneSameLocal(ZoneId.of("UTC")));
+            assertEquals(Integer.valueOf(139), response.getJDay());
             // we expect 84 targets
             assertEquals(84, response.getTargets().size());
         }
@@ -106,9 +105,9 @@ public class ParserTest {
             // check mission start / end from header
             //Mission Start Date/Time (UTC):   2011 May 30 05:05:12
             //Mission Stop  Date/Time (UTC):   2011 May 30 15:33:38
-            assertEquals(new DateTime(2011, 5, 30, 5, 5, 12, DateTimeZone.UTC), response.getMissionStart().toDateTime(DateTimeZone.UTC));
-            assertEquals(new DateTime(2011, 5, 30, 15, 33, 38, DateTimeZone.UTC), response.getMissionEnd().toDateTime(DateTimeZone.UTC));
-            assertEquals(new Integer(150), response.getJDay());
+            assertEquals(ZonedDateTime.of(2011, 5, 30, 5, 5, 12, 0, ZoneId.of("UTC")), response.getMissionStart().withZoneSameLocal(ZoneId.of("UTC")));
+            assertEquals(ZonedDateTime.of(2011, 5, 30, 15, 33, 38, 0, ZoneId.of("UTC")), response.getMissionEnd().withZoneSameLocal(ZoneId.of("UTC")));
+            assertEquals(Integer.valueOf(150), response.getJDay());
             // we expect 95 targets
             assertEquals(95, response.getTargets().size());
         }
@@ -119,7 +118,7 @@ public class ParserTest {
     public void canParseSouthAzimuthFile() throws Exception {
         try (InputStream is = getClass().getResourceAsStream("/responseSouthAzimuth.txt")) {
             Response response = Response.parseResponse(is);
-            assertEquals(new Integer(111), response.getJDay());
+            assertEquals(Integer.valueOf(111), response.getJDay());
             // we expect 29 targets
             assertEquals(29, response.getTargets().size());
         }
@@ -129,7 +128,7 @@ public class ParserTest {
     public void canParseNorthAzimuthFile() throws Exception {
         try (InputStream is = getClass().getResourceAsStream("/responseNorthAzimuth.txt")) {
             Response response = Response.parseResponse(is);
-            assertEquals(new Integer(150), response.getJDay());
+            assertEquals(Integer.valueOf(150), response.getJDay());
             // we expect 1 target
             assertEquals(1, response.getTargets().size());
         }

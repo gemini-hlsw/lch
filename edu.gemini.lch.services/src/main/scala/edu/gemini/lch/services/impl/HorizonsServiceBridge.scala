@@ -3,16 +3,16 @@
 
 package edu.gemini.lch.services.impl
 
+import java.util.Date
+
 import edu.gemini.horizons.api.HorizonsException
 import edu.gemini.horizons.server.backend.HorizonsService2
-import edu.gemini.horizons.server.backend.HorizonsService2.{ HorizonsError, HS2, ParseError, EphemerisEmpty }
+import edu.gemini.horizons.server.backend.HorizonsService2.{EphemerisEmpty, HS2, HorizonsError, ParseError}
 import edu.gemini.lch.model.LaserNight
-import edu.gemini.spModel.core.{ Angle, Coordinates, Ephemeris, HorizonsDesignation, Site }
+import edu.gemini.spModel.core.{Angle, Coordinates, Ephemeris, HorizonsDesignation, Site}
 import jsky.coords.WorldCoords
-import org.joda.time.DateTimeZone
 
 import scala.collection.JavaConverters._
-
 import scalaz._
 import Scalaz._
 
@@ -31,11 +31,12 @@ object HorizonsServiceBridge {
     night:  LaserNight
   ): HS2[Ephemeris] =
 
+    // Emphemeris library uses Date
     HorizonsService2.lookupEphemeris(
       target,
       site,
-      night.getStart.toDateTime(DateTimeZone.UTC).toDate,
-      night.getEnd.toDateTime(DateTimeZone.UTC).toDate,
+      Date.from(night.getStart.toInstant),
+      Date.from(night.getEnd.toInstant),
       MaxElements
     )
 
@@ -51,7 +52,7 @@ object HorizonsServiceBridge {
 
     def toWorldCoords(e: Ephemeris): List[WorldCoords] =
       // Filter points but don't make a gap larger than step size if possible
-      e.toList.unzip._2.sequenceFilter { (a, b) =>
+      e.toList.map(_._2).sequenceFilter { (a, b) =>
         a.angularDistance(b) <= maxStep
       }.map { c =>
         new WorldCoords(c.ra.toDegrees, c.dec.toDegrees)

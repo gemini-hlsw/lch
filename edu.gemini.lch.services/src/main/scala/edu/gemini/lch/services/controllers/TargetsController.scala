@@ -1,14 +1,16 @@
 package edu.gemini.lch.services.controllers
 
+import java.time.{Instant, ZoneId, ZonedDateTime}
+import java.time.format.DateTimeFormatter
+
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation._
 import javax.annotation.Resource
-import org.joda.time.format.DateTimeFormat
-import org.joda.time.{DateTime, DateTimeZone}
+
 import scala.collection.JavaConversions._
 import org.springframework.http.HttpStatus
-import edu.gemini.lch.services.{AlarmService, LaserTargetsService, LaserNightService}
-import edu.gemini.lch.services.model.{LaserTarget => XmlLaserTarget, ShortObservation => ShortObservationTO, ClearanceWindow => ClearanceWindowTO, ShutteringWindow => ShutteringWindowTO, Coordinates}
+import edu.gemini.lch.services.{AlarmService, LaserNightService, LaserTargetsService}
+import edu.gemini.lch.services.model.{Coordinates, ClearanceWindow => ClearanceWindowTO, LaserTarget => XmlLaserTarget, ShortObservation => ShortObservationTO, ShutteringWindow => ShutteringWindowTO}
 
 // aliases
 import ShortObservationTO.{List => ObservationListTO}
@@ -21,7 +23,7 @@ import ShortObservationTO.{List => ObservationListTO}
 @RequestMapping(value=Array("/nights/{nightId}/targets"))
 class TargetsController {
 
-  val formatter = DateTimeFormat.forPattern("yyyy/MM/dd").withZone(DateTimeZone.UTC)
+  val formatter = DateTimeFormatter.ofPattern("yyyy/MM/dd").withZone(ZoneId.of("UTC"))
 
   @Resource
   var laserNightService: LaserNightService = null
@@ -88,16 +90,22 @@ class TargetsController {
     val snapshot = alarmService.getSnapshot
     val night = snapshot.getNight
     val target = snapshot.getTarget
-    val timeZone = if (zone.toUpperCase().equals("UTC")) DateTimeZone.UTC else night.getSite().getTimeZone()
+    val zoneId = if (zone.toUpperCase().equals("UTC")) ZoneId.of("UTC") else night.getSite().getZoneId()
 
 
     if (snapshot.getNight == null) throw new NightNotFound
 
     if (targetId == 0) {
-      laserTargetsService.getImage(night,width, height, new DateTime(start), new DateTime(end), new DateTime(now), timeZone)
+      val start = ZonedDateTime.ofInstant(Instant.ofEpochMilli(start), ZoneId.systemDefault())
+      val end   = ZonedDateTime.ofInstant(Instant.ofEpochMilli(end), ZoneId.systemDefault())
+      val now   = ZonedDateTime.ofInstant(Instant.ofEpochMilli(now), ZoneId.systemDefault())
+      laserTargetsService.getImage(night,width, height, start, end, now, zoneId)
     } else {
       if (target == null) throw new TargetNotFound
-      laserTargetsService.getImage(night, target, width, height, new DateTime(start), new DateTime(end), new DateTime(now), timeZone)
+      laserTargetsService.getImage(night, target, width, height,
+        ZonedDateTime.ofInstant(Instant.ofEpochMilli(start), ZoneId.systemDefault()),
+        ZonedDateTime.ofInstant(Instant.ofEpochMilli(end), ZoneId.systemDefault()),
+        ZonedDateTime.ofInstant(Instant.ofEpochMilli(now), zoneId), zoneId)
     }
 
   }

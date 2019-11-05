@@ -1,13 +1,15 @@
 package edu.gemini.lch.services.controllers
 
+import java.time.{ZoneId, ZonedDateTime}
+import java.time.format.DateTimeFormatter
+
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation._
 import javax.annotation.Resource
-import org.joda.time.format.DateTimeFormat
-import org.joda.time.{DateTime, DateTimeZone}
+
 import scala.collection.JavaConversions._
 import org.springframework.http.HttpStatus
-import edu.gemini.lch.services.{SiteService, LaserNightService}
+import edu.gemini.lch.services.{LaserNightService, SiteService}
 import edu.gemini.lch.model._
 import edu.gemini.lch.services.impl.VisibilityCalculatorImpl
 import org.apache.log4j.Logger
@@ -38,13 +40,13 @@ class NightsController {
 
   val LOGGER = Logger.getLogger(classOf[NightsController])
 
-  val formatter = DateTimeFormat.forPattern("yyyyMMdd").withZone(DateTimeZone.UTC)
+  val formatter = DateTimeFormatter.ofPattern("yyyyMMdd").withZone(ZoneId.of("UTC"))
 
   @Resource var nightService: LaserNightService = null
   @Resource var siteService: SiteService = null
 
-  val longAgo = new DateTime(DateTime.now minusYears 1).withTimeAtStartOfDay()
-  val farAway = new DateTime(DateTime.now plusYears 1).withTimeAtStartOfDay()
+  val longAgo = ZonedDateTime.now().minusYears(1).toLocalDate.atStartOfDay(ZoneId.systemDefault())
+  val farAway = ZonedDateTime.now().plusYears(1).toLocalDate.atStartOfDay(ZoneId.systemDefault())
 
   @RequestMapping(value=Array("", "/"), method=Array(RequestMethod.GET), produces=Array("application/xml", "application/json"))
   @ResponseBody
@@ -84,19 +86,19 @@ class NightsController {
     LOGGER.debug("/nights/"+nightId+"/blanketClosures")
     new BlanketClosureListTO(
       nightService.getBlanketClosures(nightId).
-        map(b => new BlanketClosureTO(b.getStart.toDate, b.getEnd.toDate))
+        map(b => new BlanketClosureTO(b.getStart.toInstant, b.getEnd.toInstant))
     )
   }
 
   def getNightNow() = {
-    val night = nightService.getShortLaserNightCovering(DateTime.now)
+    val night = nightService.getShortLaserNightCovering(ZonedDateTime.now())
     if (night == null) throw new NightNotFoundException
     toShortNightTOs(night)
   }
 
-  def getNights(from: DateTime, to: DateTime) : NightShortListTO =
+  def getNights(from: ZonedDateTime, to: ZonedDateTime) : NightShortListTO =
     new NightShortListTO(
-      nightService.getShortLaserNights(from.withTimeAtStartOfDay(), to.toDateTime.withTimeAtStartOfDay()).
+      nightService.getShortLaserNights(from.toLocalDate.atStartOfDay().atZone(from.getZone), to.toLocalDate.atStartOfDay().atZone(to.getZone)))
         map(n => toShortNightTOs(n)).
         toList
     )

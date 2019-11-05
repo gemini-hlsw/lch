@@ -105,7 +105,6 @@ public class LchApplication extends UI implements ViewChangeListener
 
     /**
      * Gets the applications night window.
-     * @return
      */
     public NightWindow getNightWindow() {
         return nightWindow;

@@ -1,15 +1,15 @@
 package edu.gemini.lch.model;
 
 import org.junit.Assert;
-import org.joda.time.DateTime;
 import org.junit.Test;
 
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
 public class WindowTest {
 
-    final DateTime t = DateTime.now();
+    final ZonedDateTime t = ZonedDateTime.now();
 
     final List<PropagationWindow> p0 = new ArrayList<>();
     final List<PropagationWindow> p1 = new ArrayList<PropagationWindow>() {{

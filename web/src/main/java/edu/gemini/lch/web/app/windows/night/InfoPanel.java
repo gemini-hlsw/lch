@@ -63,7 +63,7 @@ public class InfoPanel extends Panel implements TimeZoneSelector.Listener {
     }
 
     @Override
-    public void updateTimeZone(final ZoneId zone) {
+    public void updateZoneId(final ZoneId zone) {
         // update the time formatter and recalculate all table values..
         timeFormatter = new TimeFormatter(zone);
         night.ifPresent(this::update);

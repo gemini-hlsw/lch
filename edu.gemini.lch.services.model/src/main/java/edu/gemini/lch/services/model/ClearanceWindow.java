@@ -2,16 +2,14 @@ package edu.gemini.lch.services.model;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 
-/**
- */
 @XmlRootElement
 public class ClearanceWindow extends Window {
 
-    public ClearanceWindow(Date start, Date end) {
+    public ClearanceWindow(Instant start, Instant end) {
         super(start, end);
     }
 

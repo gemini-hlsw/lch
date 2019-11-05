@@ -10,12 +10,13 @@ import edu.gemini.lch.services.internal.collector.TargetsCollector;
 import edu.gemini.odb.browser.QueryResult;
 import org.apache.commons.lang.Validate;
 import org.hibernate.SessionFactory;
-import org.joda.time.DateTimeZone;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 import static edu.gemini.lch.model.ObservationTarget.*;
@@ -60,7 +61,6 @@ public class LaserNightUpdater {
 
     /**
      * Marks all laser targets of a night as sent.
-     * @param night
      */
     public static void markAllLaserTargetsAsSent(LaserNight night) {
         for (Observation o : night.getObservations()) {
@@ -76,7 +76,6 @@ public class LaserNightUpdater {
      * Incorporates all added observation targets into the set of targets for this night by changing their state
      * from ADDED to OK. From this moment these observation targets and their laser targets are part of the happy
      * targets family of this night. Only targets with transmitted laser targets can be incorporated.
-     * @param night
      */
     public static void incorporateAddedObservationTargets(LaserNight night) {
         for (Observation o : night.getObservations()) {
@@ -113,11 +112,13 @@ public class LaserNightUpdater {
         // NOTE: in theory this email should also be configurable like other warnings, but I am taking a shortcut here
         // if ever the need arises for having this configurable do it the same way as it is done for other warnings
         if (!collector.getMessages().isEmpty()) {
+            DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyy-MM-dd (DDD) z");
+            night.getStart().withZoneSameInstant(ZoneId.of("UTC"));
             emailService.sendInternalEmail(
-                "LTTS: WARNING: Problems during creation/update of night " + night.getStart().withZone(DateTimeZone.UTC).toString("yyyy-MM-dd (DDD) z"),
+                "LTTS: WARNING: Problems during creation/update of night " + formatter.format(night.getStart().withZoneSameInstant(ZoneId.of("UTC"))),
                 "Problems occurred during the creation/updating process of night\n\n"+
-                "  " + night.getStart().withZone(DateTimeZone.UTC).toString("yyyy-MM-dd (DDD) z")+ "\n" +
-                "  " + night.getStart().toString("yyyy-MM-dd (DDD) z")+ "\n\n" +
+                "  " + formatter.format(night.getStart().withZoneSameInstant(ZoneId.of("UTC")))+ "\n" +
+                "  " + formatter.format(night.getStart())+ "\n\n" +
                 collector.getMessages());
         }
 
@@ -194,8 +195,6 @@ public class LaserNightUpdater {
      * All observation targets of the night for which no target with the same coordinates can be found in the new list
      * will be marked as REMOVED, all targets in the new list for which no target with same coordinates can be found
      * in the list of existing targets will be added to the night and marked as ADDED.
-     * @param oldObs
-     * @param newObs
      */
     private void compareObservations(Observation oldObs, Observation newObs) {
 
@@ -249,8 +248,6 @@ public class LaserNightUpdater {
 
     /**
      * Checks for all new observation targets if they can reuse one of the already existing laser targets.
-     * @param laserTargets
-     * @param observations
      */
     private void recycleLaserTargets(Set<LaserTarget> laserTargets, Set<Observation> observations) {
         for (Observation o : observations) {

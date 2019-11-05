@@ -3,9 +3,9 @@ package edu.gemini.lch.services.model;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 
 /**
  * JAXB annotated value object for sending LTCS collisions to client.
@@ -21,20 +21,20 @@ public class LtcsCollision {
     private String priority;
 
     @XmlElement
-    private Date start;
+    private Instant start;
 
     @XmlElement
-    private Date end;
+    private Instant end;
 
-    public LtcsCollision(String observatory, String priority, Date start, Date end) {
+    public LtcsCollision(String observatory, String priority, Instant start, Instant end) {
         this.observatory = observatory;
         this.priority = priority;
         this.start = start;
         this.end = end;
     }
 
-    public Date getStart() { return start; }
-    public Date getEnd() { return end; }
+    public Instant getStart() { return start; }
+    public Instant getEnd() { return end; }
     public String getObservatory() { return observatory; }
     public String getPriority() { return priority; }
 

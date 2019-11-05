@@ -1,13 +1,14 @@
 package edu.gemini.lch.services.impl;
 
 import edu.gemini.lch.services.LtcsService;
-import org.joda.time.DateTime;
 import org.junit.Test;
 import org.springframework.util.FileCopyUtils;
 import scala.collection.Seq;
 
 import java.io.InputStream;
 import java.io.InputStreamReader;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
@@ -22,20 +23,20 @@ public class LtcsServiceTest {
     @Test
     public void canParseEmpty() {
         // test parse method which is not on interface, test it directly
-        assertEquals(0, LtcsServiceImpl.parseCollisions("", DateTime.now()).size());
-        assertEquals(0, LtcsServiceImpl.parseCollisions(" ", DateTime.now()).size());
-        assertEquals(0, LtcsServiceImpl.parseCollisions("NONE", DateTime.now()).size());
+        assertEquals(0, LtcsServiceImpl.parseCollisions("", ZonedDateTime.now()).size());
+        assertEquals(0, LtcsServiceImpl.parseCollisions(" ", ZonedDateTime.now()).size());
+        assertEquals(0, LtcsServiceImpl.parseCollisions("NONE", ZonedDateTime.now()).size());
     }
 
     @Test
     public void canParse() {
         // test parse method which is not on interface, test it directly
         assertEquals(1, LtcsServiceImpl.parseCollisions(
-                "GEMINI UH2.2M 10:47:08 11:19:48 UH2.2M", DateTime.now()).
+                "GEMINI UH2.2M 10:47:08 11:19:48 UH2.2M", ZonedDateTime.now()).
                 size());
         assertEquals(2, LtcsServiceImpl.parseCollisions(
                 "GEMINI UH2.2M 10:47:08 11:19:48 UH2.2M " +
-                        "GEMINI UH2.2M 10:47:08 11:19:48 UH2.2M", DateTime.now()).
+                        "GEMINI UH2.2M 10:47:08 11:19:48 UH2.2M", ZonedDateTime.now()).
                 size());
     }
 
@@ -43,12 +44,16 @@ public class LtcsServiceTest {
     public void skipsNoLgs() {
         // test parse method which is not on interface, test it directly
         assertEquals(0, LtcsServiceImpl.parseCollisions(
-                "GEMINI UH2.2M 10:47:08 11:19:48 NO-LGS", DateTime.now()).
+                "GEMINI UH2.2M 10:47:08 11:19:48 NO-LGS", ZonedDateTime.now()).
                 size());
         assertEquals(1, LtcsServiceImpl.parseCollisions(
                 "GEMINI UH2.2M 10:47:08 11:19:48 NO-LGS " +
-                        "GEMINI UH2.2M 10:47:08 11:19:48 UH2.2M", DateTime.now()).
+                        "GEMINI UH2.2M 10:47:08 11:19:48 UH2.2M", ZonedDateTime.now()).
                 size());
+    }
+
+    private ZonedDateTime startOfDay(ZonedDateTime zdt) {
+        return zdt.toLocalDate().atStartOfDay(ZoneId.systemDefault());
     }
 
     @Test
@@ -57,7 +62,7 @@ public class LtcsServiceTest {
         List<LtcsService.Collision> collisions = LtcsServiceImpl.parseCollisions(
                 "GEMINI 12 12:00:08 12:19:48 UH2.2M " +
                         "GEMINI 10 10:00:08 13:19:48 UH2.2M " +
-                        "GEMINI 11 11:00:08 11:19:48 UH2.2M", DateTime.now().withTimeAtStartOfDay());
+                        "GEMINI 11 11:00:08 11:19:48 UH2.2M", startOfDay(ZonedDateTime.now()));
         assertEquals(3, collisions.size());
         assertEquals("10", collisions.get(0).getObservatory());
         assertEquals("11", collisions.get(1).getObservatory());
@@ -67,12 +72,12 @@ public class LtcsServiceTest {
     @Test
     public void parsesTimesAroundNowProperly() {
         // test parse method which is not on interface, test it directly
-        DateTime nowBetween = new DateTime(2013,1,1,15,0,0);
+        ZonedDateTime nowBetween = ZonedDateTime.of(2013,1,1,15,0,0,0, ZoneId.systemDefault());
         List<LtcsService.Collision> c = LtcsServiceImpl.parseCollisions(
                 "GEMINI UH2.2M 14:50:00 15:10:00 UH2.2M",
                 nowBetween);
-        assertEquals(nowBetween.withTimeAtStartOfDay(), c.get(0).getStart().withTimeAtStartOfDay()); // same day
-        assertEquals(nowBetween.withTimeAtStartOfDay(), c.get(0).getEnd().withTimeAtStartOfDay());   // same day
+        assertEquals(startOfDay(nowBetween), startOfDay(c.get(0).getStart())); // same day
+        assertEquals(startOfDay(nowBetween), startOfDay(c.get(0).getEnd()));   // same day
     }
 
     @Test
@@ -80,24 +85,24 @@ public class LtcsServiceTest {
         // test parse method which is not on interface, test it directly
         // if the collision window is before the current time we move it to the next day
         // (assuming LTCS sends only collision windows in the future)
-        DateTime nowAfter = new DateTime(2013,1,1,16,0,0);
+        ZonedDateTime nowAfter = ZonedDateTime.of(2013,1,1,16,0,0, 0,ZoneId.systemDefault());
         List<LtcsService.Collision> c = LtcsServiceImpl.parseCollisions(
                 "GEMINI UH2.2M 14:50:00 15:10:00 UH2.2M",
                 nowAfter);
-        assertEquals(nowAfter.plusDays(1).withTimeAtStartOfDay(), c.get(0).getStart().withTimeAtStartOfDay()); // next day
-        assertEquals(nowAfter.plusDays(1).withTimeAtStartOfDay(), c.get(0).getEnd().withTimeAtStartOfDay());   // next day
+        assertEquals(startOfDay(nowAfter.plusDays(1)), startOfDay(c.get(0).getStart())); // next day
+        assertEquals(startOfDay(nowAfter.plusDays(1)), startOfDay(c.get(0).getEnd()));   // next day
     }
 
     @Test
     public void parsesTimesAroundMidnightProperly() {
         // test parse method which is not on interface, test it directly
         // if the collision window wraps around midnight end has to be on the next day in the end
-        DateTime now = new DateTime(2013,1,1,18,0,0);
+        ZonedDateTime now = ZonedDateTime.of(2013,1,1,18,0,0,0,ZoneId.systemDefault());
         List<LtcsService.Collision> c = LtcsServiceImpl.parseCollisions(
                 "GEMINI UH2.2M 23:55:00 00:05:00 UH2.2M",
                 now);
-        assertEquals(now.plusDays(0).withTimeAtStartOfDay(), c.get(0).getStart().withTimeAtStartOfDay()); // same day
-        assertEquals(now.plusDays(1).withTimeAtStartOfDay(),  c.get(0).getEnd().withTimeAtStartOfDay());   // next day
+        assertEquals(startOfDay(now.plusDays(0)), startOfDay(c.get(0).getStart())); // same day
+        assertEquals(startOfDay(now.plusDays(1)),  startOfDay(c.get(0).getEnd()));   // next day
     }
 
     @Test

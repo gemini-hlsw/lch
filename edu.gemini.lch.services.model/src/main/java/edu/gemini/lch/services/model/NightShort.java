@@ -2,16 +2,16 @@ package edu.gemini.lch.services.model;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.time.Instant;
 import java.util.ArrayList;
-import java.util.Collection;
-import java.util.Date;
+import java.util.Collection
 
 /**
  */
 @XmlRootElement(name = "night")
 public class NightShort extends Night {
 
-    public NightShort(Long id, String site, Date start, Date end, Date latestPrmSent, Date latestPamReceived) {
+    public NightShort(Long id, String site, Instant start, Instant end, Instant latestPrmSent, Instant latestPamReceived) {
         super(id, site, start, end, latestPrmSent, latestPamReceived);
     }
     // empty constructor needed for JAXB

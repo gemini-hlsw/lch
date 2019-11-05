@@ -56,7 +56,7 @@ public final class HistoryTable extends Panel implements TimeZoneSelector.Listen
     }
 
     @Override
-    public void updateTimeZone(ZoneId zoneId) {
+    public void updateZoneId(ZoneId zoneId) {
         // update the time formatter and then refresh all rows to update the displayed values
         timeFormatter = new TimeFormatter(zoneId);
         table.refreshRowCache();

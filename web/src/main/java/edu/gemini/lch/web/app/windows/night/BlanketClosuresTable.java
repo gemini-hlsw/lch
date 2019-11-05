@@ -86,7 +86,7 @@ public final class BlanketClosuresTable extends Panel implements EditDialogWindo
     }
 
     @Override
-    public void updateTimeZone(final ZoneId zoneId) {
+    public void updateZoneId(final ZoneId zoneId) {
         // update the time formatter and then refresh all rows to update the displayed values
         timeFormatter = new TimeFormatter(zoneId);
         table.refreshRowCache();

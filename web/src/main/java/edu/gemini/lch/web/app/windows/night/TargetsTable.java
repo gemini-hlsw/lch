@@ -106,19 +106,15 @@ public abstract class TargetsTable extends Table implements TimeZoneSelector.Lis
     }
 
     private ZonedDateTime startOfNight(final LaserNight night) {
-        // TODO-JODA: CHECK THIS
         return ZonedDateTime.ofInstant(night.getStart().toInstant(), ZoneId.systemDefault()).withMinute(0).withSecond(0).withNano(0);
-        //return new ZonedDateTime(night.getStart()).withMinuteOfHour(0).withSecondOfMinute(0).withMillisOfSecond(0);
     }
 
     private ZonedDateTime endOfNight(final LaserNight night) {
-        // TODO-JODA: CHECK THIS
         return ZonedDateTime.ofInstant(night.getEnd().toInstant(), ZoneId.systemDefault()).plusHours(1).withMinute(0).withSecond(0).withNano(0);
-        //return new DateTime(night.getEnd()).plusHours(1).withMinuteOfHour(0).withSecondOfMinute(0).withMillisOfSecond(0);
     }
 
     @Override
-    public void updateTimeZone(final ZoneId zone) {
+    public void updateZoneId(final ZoneId zone) {
         night.ifPresent(night -> {
             updateTimeLineHeader(night, zone);
             currentTimeZone = zone;

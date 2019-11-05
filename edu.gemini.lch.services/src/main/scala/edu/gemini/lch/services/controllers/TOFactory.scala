@@ -8,7 +8,6 @@ import jsky.coords.WorldCoords
 
 
 import scala.collection.JavaConversions._
-import org.joda.time.Interval
 
 /**
  * Factory to create transfer objects.
@@ -49,13 +48,13 @@ object TOFactory {
   def toClearanceWindowTOs(windows: List[PropagationWindow]): List[ClearanceWindowTO] =
     windows map {
       w =>
-        new ClearanceWindowTO(w.getStart.toDate, w.getEnd.toDate)
+        new ClearanceWindowTO(w.getStart.toInstant, w.getEnd.toInstant)
     }
 
   def toShutteringWindowTOs(windows: List[ShutteringWindow]): List[ShutteringWindowTO] =
     windows map {
-      case w: BlanketClosure => new ShutteringWindowTO(w.getStart.toDate, w.getEnd.toDate, true)
-      case w: ShutteringWindow => new ShutteringWindowTO(w.getStart.toDate, w.getEnd.toDate, false)
+      case w: BlanketClosure => new ShutteringWindowTO(w.getStart.toInstant, w.getEnd.toInstant, true)
+      case w: ShutteringWindow => new ShutteringWindowTO(w.getStart.toInstant, w.getEnd.toInstant, false)
     }
 
   def toVisibilityTO(night: BaseLaserNight, visibility: Visibility) = {
@@ -65,7 +64,7 @@ object TOFactory {
   }
 
   def toIntervalTO(interval: Interval) =
-    new IntervalTO(interval.getStart.toDate, interval.getEnd.toDate)
+    new IntervalTO(interval.start, interval.end)
 
   def toCoordinatesTO(lt: LaserTarget) =
     lt match {

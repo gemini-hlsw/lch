@@ -124,7 +124,7 @@ public final class Calendar extends Panel implements TimeZoneSelector.Listener {
     }
 
     @Override
-    public void updateTimeZone(ZoneId zoneId) {
+    public void updateZoneId(ZoneId zoneId) {
         laserNights = getLaserNightsForCurrentMonth();
         currentZoneId = zoneId;
         setShowingDate(currentDate);

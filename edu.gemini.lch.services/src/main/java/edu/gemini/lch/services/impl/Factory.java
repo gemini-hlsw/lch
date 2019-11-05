@@ -6,11 +6,12 @@ import edu.gemini.lch.services.util.EmailReader;
 import edu.gemini.lch.services.util.PrmFile;
 import edu.gemini.lch.services.util.TemplateEngine;
 import edu.gemini.lch.services.util.WorkDayCalendar;
-import org.joda.time.DateTime;
 import org.springframework.beans.BeansException;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.beans.factory.BeanFactoryAware;
 import org.springframework.stereotype.Component;
+
+import java.time.ZonedDateTime;
 
 /**
  * Object factory for instantiating objects using the Spring framework in order to make sure that
@@ -45,7 +46,7 @@ public class Factory implements BeanFactoryAware  {
     /**
      * Creates a fully wired template engine for the given date.
      */
-    public TemplateEngine createTemplateEngine(DateTime date) {
+    public TemplateEngine createTemplateEngine(ZonedDateTime date) {
         return (TemplateEngine) beanFactory.getBean("templateEngine", date);
     }
 
