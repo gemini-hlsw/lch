@@ -17,6 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
 import java.time.Period;
+import java.time.ZoneId;
 import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Map;
@@ -212,11 +213,8 @@ public class ConfigurationServiceImpl implements ConfigurationService, Applicati
      * rolled back, which may or may not be the right thing to do. Deal with exceptions accordingly.
      */
     private void processChange(Configuration.Value value) {
-        // nothing to do
         if (value == Configuration.Value.TIME_ZONE_OFFSET) {
             updateDefaultTimeZone();
-
-            // ** add any other special treatment here **
         }
     }
 
@@ -224,24 +222,7 @@ public class ConfigurationServiceImpl implements ConfigurationService, Applicati
      * Updates the default time zone, i.e. the time zone which is used as local time.
      */
     private void updateDefaultTimeZone() {
-        if (isEmpty(Configuration.Value.TIME_ZONE_OFFSET)) {
-            // make the site's default time zone the current time zone
-            TimeZone.setDefault(siteService.getSiteTimeZone());
-            // this should always be the case for Gemini North and work for Gemini South during most of the year
-        } else {
-            // makes a user defined time zone the current time zone
-            // this will be used when Chile is delaying or pulling forward the transition from/to daylight
-            // saving time and the JVM is therefore not able to calculate the local times appropriately
-            int offset = getInteger(Configuration.Value.TIME_ZONE_OFFSET);
-//            DateTimeZone.setDefault(DateTimeZone.forOffsetHours(offset));
-//
-//            // TODO-JODA: Not a clue what to do here.
-//            // TODO-JODA: ZoneRules?
-//            // Ideas:
-//            //java.time.zone.ZoneOffsetTransition
-//            //TimeZone.getDefault().setRawOffset();
-//            //TimeZone.setDefault(TimeZone.getDefault().setRawOffset(););
-        }
+        TimeZone.setDefault(siteService.getSiteTimeZone());
     }
 
     /**
