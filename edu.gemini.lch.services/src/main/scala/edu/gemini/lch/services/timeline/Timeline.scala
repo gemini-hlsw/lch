@@ -8,9 +8,9 @@ import java.util.Date
 object PartType extends Enumeration {
   type PartType = Value
   val
-  Day, CivilTwilight, NauticalTwilight, AstronomicalTwilight, Night,
-  Visible, AboveLimit,
-  Open, Closed = Value
+    Day, CivilTwilight, NauticalTwilight, AstronomicalTwilight, Night,
+    Visible, AboveLimit,
+    Open, Closed = Value
 }
 import PartType._
 
@@ -36,7 +36,6 @@ class Part(t: Set[PartType], int: Interval)  {
   }
 
   /** Gets part of this before other, if any */
-    // TODO-JODA
   def heading(other: Part): Option[Part] =
     if (start.isBefore(other.start)) Some(Part(t, start, other.start)) else None
 
