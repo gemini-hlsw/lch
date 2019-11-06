@@ -17,14 +17,6 @@ public class ConfigurationValue {
 
     private static final String LIST_SEPARATOR = ",";
     private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
-    private static final PeriodFormatter periodFormatter = new
-            PeriodFormatterBuilder().
-            appendHours().
-            appendSeparator(":").
-            appendMinutes().
-            appendSeparator(":").
-            appendSeconds().
-            toFormatter();
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -94,12 +86,12 @@ public class ConfigurationValue {
         return Boolean.parseBoolean(paramValue);
     }
     public Period getAsPeriod() {
-        return Period.parse(paramValue, periodFormatter);
+        return Period.parse(paramValue);
     }
     public List<Period> getAsPeriodList() {
         List<Period> list = new ArrayList<>();
         for (String s : StringUtils.split(paramValue, LIST_SEPARATOR)) {
-            list.add(Period.parse(s.trim(), periodFormatter));
+            list.add(Period.parse(s.trim()));
         }
         return list;
     }

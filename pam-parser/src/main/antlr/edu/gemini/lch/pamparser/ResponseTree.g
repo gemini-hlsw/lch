@@ -95,13 +95,13 @@ window[List<PropagationWindow> list]
 /// The time rule accepts a GMT node and returns an Instant that it constructs by
 /// parsing out the string data. It uses the statically-defined DATE_FORMAT to do this.
 
-time	returns [Date ret]
+time	returns [Instant ret]
 		:	^(DATETIME yyyy=INT mm=MONTH dd=INT hhmm=INT ss=INT)
 			{
 			    // all times are in UTC
 				String date = $yyyy.text + $mm.text + $dd.text + $hhmm.text + $ss.text + "UTC";
 				try {
-					ret = DATE_FORMAT.parse(date);
+					ret = ZonedDateTime.parse(date, DATE_FORMAT).toInstant();
 				} catch (ParseException e) {
 					throw new RecognitionException();
 				}
@@ -111,7 +111,7 @@ time	returns [Date ret]
 			    // all times are in UTC
 				String date = $yyyy.text + $month.text + $dd.text + $hh.text + $mm.text + $ss.text + "UTC";
 				try {
-					ret = DATE_FORMAT.parse(date);
+					ret = ZonedDateTime.parse(date, DATE_FORMAT).toInstant();
 				} catch (ParseException e) {
 					throw new RecognitionException();
 				}
