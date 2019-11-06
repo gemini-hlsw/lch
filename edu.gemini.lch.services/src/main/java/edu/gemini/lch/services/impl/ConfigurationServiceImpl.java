@@ -231,7 +231,7 @@ public class ConfigurationServiceImpl implements ConfigurationService, Applicati
      * the configuration through other channels than just the application administration window (e.g. directly in the
      * database using SQL).
      */
-    private class Cache {
+    private class Cache {d
         private static final int CACHE_REFRESH_SECONDS = 30;
 
         private final Map<Configuration.Value, Entry> map;

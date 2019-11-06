@@ -141,8 +141,9 @@ public final class BlanketClosuresTable extends Panel implements EditDialogWindo
 
     private void endNow(final Object itemId) {
         final BlanketClosure closure = container.getItem(itemId).getBean();
-        if (closure.getStart().isBefore(ZonedDateTime.now()) && closure.getEnd().isAfter(ZonedDateTime.now())) {
-            closure.setEnd(ZonedDateTime.now());
+        ZonedDateTime now = ZonedDateTime.now();
+        if (closure.getStart().isBefore(now) && closure.getEnd().isAfter(now) {
+            closure.setEnd(now);
             laserNightService.updateClosure(night, closure);
             parent.setNight(night.getId());
         }

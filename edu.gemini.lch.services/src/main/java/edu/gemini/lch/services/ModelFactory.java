@@ -51,13 +51,11 @@ public class ModelFactory {
      * for a given site and day.
      */
     public static SunRiseSet createSunCalculator(Site site, ZonedDateTime day)  {
-        // TODO-JODA: Translate this? We need ZoneID instead of TimeZone?
         ZoneId localZoneId = site.getZoneId();
         ZonedDateTime date = day.toLocalDate().atStartOfDay(localZoneId);
         ZonedDateTime dayLOC = ZonedDateTime.of(date.getYear(), date.getMonthValue(), date.getDayOfMonth(), 12, 0, 0, 0, localZoneId);
         ZonedDateTime dayUTC = ZonedDateTime.ofInstant(dayLOC.toInstant(), ZoneId.systemDefault());
-        // IMPORTANT: Use local time noon for creation of SunRiseSet object or it will not yield expected results!
-        // TODO-JODA: External library. Need to use Date.
+        // JSky: needs Date
         return new SunRiseSet(Date.from(dayUTC.toInstant()), getSiteDescForSite(site));
     }
 

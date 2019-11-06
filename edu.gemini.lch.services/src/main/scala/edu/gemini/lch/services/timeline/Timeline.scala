@@ -58,7 +58,7 @@ class Part(t: Set[PartType], int: Interval)  {
 
 object Part {
   def apply(t: Set[PartType], start: ZonedDateTime, end: ZonedDateTime) =
-    new Part(t, Interval(start, end))
+    new Part(t, Interval(start.toInstant, end.toInstant))
   def apply(t: PartType, start: Instant, end: Instant) =
     new Part(Set(t), Interval(ZonedDateTime.ofInstant(start, ZoneId.systemDefault()), ZonedDateTime.ofInstant(end, ZoneId.systemDefault())))
   def apply(t: PartType, start: ZonedDateTime, end: ZonedDateTime) =

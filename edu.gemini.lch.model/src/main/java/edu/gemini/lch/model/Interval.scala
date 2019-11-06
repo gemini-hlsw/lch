@@ -10,7 +10,7 @@ import scala.math.Ordering.Implicits._
  * They have fixed ms duration, i.e. end - start and are not comparable.
  * To compare intervals, you should compare their lengths, i.e. Durations.
  */
-private case class Interval(start: Instant, end: Instant) {
+case class Interval private(start: Instant, end: Instant) {
   def overlaps(other: Interval): Boolean =
       start < other.end && other.start < end
 
@@ -18,7 +18,7 @@ private case class Interval(start: Instant, end: Instant) {
     if (!overlaps(interval)) return null
     val s = if (start > interval.start) start else interval.start
     val e = if (end < interval.end) end else interval.end
-    Interval(s, e)
+    new Interval(s, e)
   }
 
   def contains(instant: Instant): Boolean =
