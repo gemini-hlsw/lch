@@ -8,14 +8,15 @@ import edu.gemini.lch.pamparser.Response;
 import edu.gemini.odb.browser.OdbBrowser;
 import edu.gemini.odb.browser.QueryResult;
 import jsky.plot.SunRiseSet;
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
+
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertFalse;
@@ -33,8 +34,8 @@ public class LaserNightServiceTest extends DatabaseFixture {
     @Test
     public void canCreateLaserNight() throws Exception {
         QueryResult queryResult = odbBrowser.query("simpleResult.xml");
-        DateTime now = new DateTime().plusDays(20);
-        DateTime day = new DateTime(now.getYear(), now.getMonthOfYear(), now.getDayOfMonth(), 12, 0, 0);
+        ZonedDateTime now = ZonedDateTime.now().plusDays(20);
+        ZonedDateTime day = ZonedDateTime.of(now.getYear(), now.getMonthValue(), now.getDayOfMonth(), 12, 0, 0, 0, ZoneId.of("UTC"));
         LaserNight newNight = laserNightService.createAndPopulateLaserNight(day);
 
         // this one lies way in the future, we don't expect it to be populated
@@ -46,8 +47,8 @@ public class LaserNightServiceTest extends DatabaseFixture {
     @Test
     public void canCreateAndPopulateLaserNight() throws Exception {
         QueryResult queryResult = odbBrowser.query("simpleResult.xml");
-        DateTime now = new DateTime().plusDays(1);
-        DateTime day = new DateTime(now.getYear(), now.getMonthOfYear(), now.getDayOfMonth(), 12, 0, 0);
+        ZonedDateTime now = ZonedDateTime.now().plusDays(1);
+        ZonedDateTime day = ZonedDateTime.of(now.getYear(), now.getMonthValue(), now.getDayOfMonth(), 12, 0, 0, 0, ZoneId.of("UTC"));
         LaserNight newNight = laserNightService.createAndPopulateLaserNight(day, queryResult, new QueryResult());
 
         // this one is for tomorrow, we expect it to be populated with targets
@@ -59,7 +60,7 @@ public class LaserNightServiceTest extends DatabaseFixture {
     @Test
     public void canCreateTestNight() throws Exception {
         QueryResult queryResult = odbBrowser.query("simpleResult.xml");
-        LaserNight testNight = laserNightService.createAndPopulateTestLaserNight(DateTime.now(), queryResult, new QueryResult());
+        LaserNight testNight = laserNightService.createAndPopulateTestLaserNight(ZonedDateTime.now(), queryResult, new QueryResult());
         assertTrue(testNight.isTestNight());
         assertTrue(testNight.getLaserTargets().size() > 0);
         for (LaserTarget t : testNight.getRaDecLaserTargets()) {
@@ -71,7 +72,7 @@ public class LaserNightServiceTest extends DatabaseFixture {
     @Test
     public void doesHandlePamFilesCorrectly() throws Exception {
         QueryResult queryResult = odbBrowser.query("simpleResult.xml");
-        DateTime today = new DateTime(2013, 7, 23, 5 , 9, 12, DateTimeZone.UTC);
+        ZonedDateTime today = ZonedDateTime.of(2013, 7, 23, 5 , 9, 12, 0, ZoneId.of("UTC"));
         LaserNight night = laserNightService.createAndPopulateLaserNight(today, queryResult, new QueryResult());
 
         // ------ STEP ONE: Import PAM created at 2013 Jul 22 16:52:04 (Report time stamp)
@@ -121,18 +122,17 @@ public class LaserNightServiceTest extends DatabaseFixture {
         // Make sure that the SunRiseSet calculator object is created properly. It must be fed with the
         // UTC time of 12 noon local time of the date it has to do the calculations for.
 
-        DateTime first = new DateTime(2008,  1,  1, 0, 0, 0, site.getTimeZone());
-        DateTime last  = new DateTime(2014, 12, 31, 0, 0, 0, site.getTimeZone());
+        ZonedDateTime first = ZonedDateTime.of(2008,  1,  1, 0, 0, 0, 0, site.getZoneId());
+        ZonedDateTime last  = ZonedDateTime.of(2014, 12, 31, 0, 0, 0, 0, site.getZoneId());
 
-        DateTime date = first;
+        ZonedDateTime date = first;
         while (date.isBefore(last)) {
 
             // check that we create a sun calculator object that is properly set up for the given site and time
             SunRiseSet calc = ModelFactory.createSunCalculator(site, date);
-            DateTime nextDate = date.plusDays(1).withTimeAtStartOfDay();
-
-            DateTime sunsetDate  = new DateTime(calc.getSunset()).withZone(site.getTimeZone()).withTimeAtStartOfDay();
-            DateTime sunriseDate = new DateTime(calc.getSunrise()).withZone(site.getTimeZone()).withTimeAtStartOfDay();
+            ZonedDateTime nextDate = date.plusDays(1).toLocalDate().atStartOfDay(date.getZone());
+            ZonedDateTime sunsetDate  = ZonedDateTime.ofInstant(calc.getSunset().toInstant(), site.getZoneId()).toLocalDate().atStartOfDay(site.getZoneId());
+            ZonedDateTime sunriseDate  = ZonedDateTime.ofInstant(calc.getSunrise().toInstant(), site.getZoneId()).toLocalDate().atStartOfDay(site.getZoneId());
             assertEquals(date,     sunsetDate);  // sunset must be on same day (local time)
             assertEquals(nextDate, sunriseDate); // sunrise must be on next day (local time)
 

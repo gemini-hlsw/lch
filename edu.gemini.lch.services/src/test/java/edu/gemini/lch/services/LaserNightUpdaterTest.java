@@ -6,8 +6,6 @@ import edu.gemini.lch.model.Observation;
 import edu.gemini.lch.model.ObservationTarget;
 import edu.gemini.odb.browser.OdbBrowser;
 import edu.gemini.odb.browser.QueryResult;
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
@@ -15,12 +13,13 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
 
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
 import static edu.gemini.lch.model.ObservationTarget.State;
 
-/**
- */
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"/spring-services-test-context.xml"})
 public class LaserNightUpdaterTest extends DatabaseFixture {
@@ -33,8 +32,8 @@ public class LaserNightUpdaterTest extends DatabaseFixture {
     @Test
     public void canReplace() throws Exception {
         QueryResult queryResult = odbBrowser.query("simpleResult.xml");
-        DateTime now = new DateTime().plusDays(1);
-        DateTime day = new DateTime(now.getYear(), now.getMonthOfYear(), now.getDayOfMonth(), 12, 0, 0);
+        ZonedDateTime now = ZonedDateTime.now().plusDays(1);
+        ZonedDateTime day = ZonedDateTime.of(now.getYear(), now.getMonth(), now.getDayOfMonth(), 12, 0, 0, 0, ZoneId.of("UTC"));
         LaserNight newNight = laserNightService.createAndPopulateLaserNight(day, queryResult, new QueryResult());
 
         // no prm sent yet, all targets should simply be replaced
@@ -278,7 +277,7 @@ public class LaserNightUpdaterTest extends DatabaseFixture {
     private LaserNight createLaserNightForUpdate(String file) {
         // DO NOT CHANGE THE DATE!
         // Changing the date will impact the test by changing the visibility of targets etc.!
-        DateTime day = new DateTime(2012, 11, 1, 0, 0, DateTimeZone.UTC);
+        ZonedDateTime day = ZonedDateTime.of(2012, 11, 1, 0, 0, 0, 0, ZoneId.of("UTC"));
 
         QueryResult queryResult = odbBrowser.query(file);
         LaserNight night = laserNightService.createAndPopulateLaserNight(day, queryResult, new QueryResult());
