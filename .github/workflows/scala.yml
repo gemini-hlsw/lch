@@ -33,8 +33,11 @@ jobs:
           psql -c 'create database lch_dev;' -U postgres -h 127.0.0.1
           psql -c 'grant all privileges on database lch_dev to lch;' -U postgres -h 127.0.0.1
       - name: Setup credentials
+        env: # Or as an environment variable
+          svn_username: ${{ secrets.SVN_USERNAME }}
+          svn_password: ${{ secrets.SVN_PASSWORD }}
         run: |
-          svn --username ${{ secrets.SVN_USERNAME }} --password ${{ secrets.SVN_PASSWORD }} --non-interactive co http://source.gemini.edu/software/lch-credentials ./lch-credentials
+          svn --username $svn_username --password $svn_password --non-interactive co http://source.gemini.edu/software/lch-credentials ./lch-credentials
           bash ./lch-credentials/trunk/link.sh -v .
       - name: Run tests
         run: mvn -B clean install
