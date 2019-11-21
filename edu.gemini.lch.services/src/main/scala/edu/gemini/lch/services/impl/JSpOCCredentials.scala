@@ -6,10 +6,11 @@ import org.apache.commons.httpclient.UsernamePasswordCredentials
 import scala.collection.immutable.HashMap
 
 object JSpOCCredentials {
-  val gsUserName = System.getenv("GS_USERNAME")
-  val gsPassword = System.getenv("GS_PASSWORD")
-  val gnUserName = System.getenv("GN_USERNAME")
-  val gnPassword = System.getenv("GN_PASSWORD")
+  val gsUserName = Option(System.getenv("GS_USERNAME")).getOrElse("")
+  val gsPassword = Option(System.getenv("GS_PASSWORD")).getOrElse("")
+  val gnUserName = Option(System.getenv("GN_USERNAME")).getOrElse("")
+  val gnPassword = Option(System.getenv("GN_PASSWORD")).getOrElse("")
+
   // The Gemini credentials by site.
   val CredentialsLookup = HashMap[Site, UsernamePasswordCredentials](
     Site.NORTH -> new UsernamePasswordCredentials(gnUserName, gnPassword),
