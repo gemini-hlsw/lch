@@ -13,11 +13,11 @@ options {
 @header {
 	package edu.gemini.lch.pamparser;
 
-	import java.text.SimpleDateFormat;
-	import java.text.ParseException;
+	import java.time.format.DateTimeParseException;
 	import java.time.Instant;
 	import java.time.ZonedDateTime;
 	import java.time.format.DateTimeFormatter;
+	import java.time.ZoneId;
 
     import edu.gemini.lch.pamparser.Target;
     import edu.gemini.lch.pamparser.RaDecTarget;
@@ -27,7 +27,7 @@ options {
 
 @members {
 	// We need a date format to parse the date info from the WINDOW nodes.
-	private static final DateTimeFormatter DATE_FORMAT = DateTimeFormatter.ofPattern("yyyyMMMddHHmmssz");
+	private static final DateTimeFormatter DATE_FORMAT = DateTimeFormatter.ofPattern("yyyyMMMddHHmmssz").withZone(ZoneId.systemDefault());
 }
 
 /// The top-level response rule returns a Response object. It constructs this object and
@@ -102,7 +102,7 @@ time	returns [Instant ret]
 				String date = $yyyy.text + $mm.text + $dd.text + $hhmm.text + $ss.text + "UTC";
 				try {
 					ret = ZonedDateTime.parse(date, DATE_FORMAT).toInstant();
-				} catch (ParseException e) {
+				} catch (DateTimeParseException e) {
 					throw new RecognitionException();
 				}
 			}
@@ -112,7 +112,7 @@ time	returns [Instant ret]
 				String date = $yyyy.text + $month.text + $dd.text + $hh.text + $mm.text + $ss.text + "UTC";
 				try {
 					ret = ZonedDateTime.parse(date, DATE_FORMAT).toInstant();
-				} catch (ParseException e) {
+				} catch (DateTimeParseException e) {
 					throw new RecognitionException();
 				}
 			}
