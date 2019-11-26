@@ -11,8 +11,9 @@ import edu.gemini.lch.model.LaserNight;
 import edu.gemini.lch.web.app.components.TimeZoneSelector;
 import edu.gemini.lch.web.app.util.TimeFormatter;
 import jsky.plot.SunRiseSet;
-import org.joda.time.DateTimeZone;
 
+import java.time.Instant;
+import java.time.ZoneId;
 import java.util.*;
 
 /**
@@ -31,7 +32,7 @@ public class InfoPanel extends Panel implements TimeZoneSelector.Listener {
         infoTable.setSortContainerPropertyId("priority");
 
         night = Optional.empty();
-        timeFormatter = new TimeFormatter(DateTimeZone.UTC);
+        timeFormatter = new TimeFormatter(ZoneId.of("UTC"));
 
         final Label header = new Label("Info");
         header.setStyleName(Reindeer.LABEL_H2);
@@ -62,7 +63,7 @@ public class InfoPanel extends Panel implements TimeZoneSelector.Listener {
     }
 
     @Override
-    public void updateTimeZone(final DateTimeZone zone) {
+    public void updateZoneId(final ZoneId zone) {
         // update the time formatter and recalculate all table values..
         timeFormatter = new TimeFormatter(zone);
         night.ifPresent(this::update);
@@ -70,10 +71,11 @@ public class InfoPanel extends Panel implements TimeZoneSelector.Listener {
 
     private List<NameValueBean> getTimeBeans(final SunRiseSet sunCalc) {
         final List<NameValueBean> beans = new ArrayList<>();
-        beans.add(new NameValueBean("Sunset/Sunrise", getTimeInfo(sunCalc.getSunset(), sunCalc.getSunrise())));
-        beans.add(new NameValueBean("Civil Twilight", getTimeInfo(sunCalc.getCivilTwilightStart(), sunCalc.getCivilTwilightEnd())));
-        beans.add(new NameValueBean("Nautical Twilight", getTimeInfo(sunCalc.getNauticalTwilightStart(), sunCalc.getNauticalTwilightEnd())));
-        beans.add(new NameValueBean("Astronomical Twilight", getTimeInfo(sunCalc.getAstronomicalTwilightStart(), sunCalc.getAstronomicalTwilightEnd())));
+        // JSKY: Must use Date
+        beans.add(new NameValueBean("Sunset/Sunrise", getTimeInfo(sunCalc.getSunset().toInstant(), sunCalc.getSunrise().toInstant())));
+        beans.add(new NameValueBean("Civil Twilight", getTimeInfo(sunCalc.getCivilTwilightStart().toInstant(), sunCalc.getCivilTwilightEnd().toInstant())));
+        beans.add(new NameValueBean("Nautical Twilight", getTimeInfo(sunCalc.getNauticalTwilightStart().toInstant(), sunCalc.getNauticalTwilightEnd().toInstant())));
+        beans.add(new NameValueBean("Astronomical Twilight", getTimeInfo(sunCalc.getAstronomicalTwilightStart().toInstant(), sunCalc.getAstronomicalTwilightEnd().toInstant())));
         return beans;
     }
 
@@ -125,7 +127,7 @@ public class InfoPanel extends Panel implements TimeZoneSelector.Listener {
         return names.toString();
     }
 
-    private String getTimeInfo(final Date start, final Date end) {
+    private String getTimeInfo(final Instant start, final Instant end) {
         return new StringBuilder().
                 append(timeFormatter.asTime(start)).
                 append(" - ").

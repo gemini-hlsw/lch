@@ -1,16 +1,17 @@
 package edu.gemini.lch.services.util
 
+import java.time.{ZoneId, ZonedDateTime}
+
 import org.junit.runner.RunWith
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner
 import org.junit.{Assert, Test}
-import edu.gemini.lch.model.{AzElLaserTarget, Site, LaserNight}
+import edu.gemini.lch.model.{AzElLaserTarget, LaserNight, Site}
 import org.springframework.test.context.ContextConfiguration
-import org.joda.time.{DateTimeZone, DateTime}
 import edu.gemini.lch.services.impl.Factory
 import javax.annotation.Resource
 import edu.gemini.lch.configuration.Configuration
 import edu.gemini.lch.services.LaserNightService
-import edu.gemini.odb.browser.{QueryResult, OdbBrowser}
+import edu.gemini.odb.browser.{OdbBrowser, QueryResult}
 
 /**
  * Test the template engine.
@@ -26,8 +27,8 @@ class TemplateEngineTest {
   @Resource
   var factory: Factory = null
 
-  val nightStart = new DateTime(2012,12,20,18,0,0,DateTimeZone.forID("HST"))
-  val nightEnd   = new DateTime(2012,12,21,6,0,0,DateTimeZone.forID("HST"))
+  val nightStart = ZonedDateTime.of(2012,12,20,18,0,0,0, ZoneId.of("HST"))
+  val nightEnd   = ZonedDateTime.of(2012,12,21,6,0,0,0,ZoneId.of("HST"))
   val night = new LaserNight(Site.NORTH, nightStart, nightEnd)
 
   @Test
@@ -87,7 +88,7 @@ class TemplateEngineTest {
   @Test
   def canUseEngineCreatingPrmFiles: Unit = {
     val queryResult = odbBrowser query "queryResult2012B.xml"
-    val day = new DateTime(2012, 11, 1, 0, 0, DateTimeZone.UTC)
+    val day = ZonedDateTime.of(2012, 11, 1, 0, 0, 0, 0, ZoneId.of("UTC"))
     val night = laserNightService createAndPopulateLaserNight(day, queryResult, new QueryResult())
     val files = laserNightService createRaDecPrmFiles night
 

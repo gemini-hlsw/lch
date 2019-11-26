@@ -1,14 +1,18 @@
 package edu.gemini.lch.services.controllers
 
+import java.time.{ZoneId, ZonedDateTime}
+import java.time.format.DateTimeFormatter
+
 import org.springframework.stereotype.Controller
 import org.springframework.web.bind.annotation._
 import javax.annotation.Resource
 import edu.gemini.lch.services.LtcsService
+
 import scala.collection.JavaConversions._
 import org.springframework.http.HttpStatus
 import edu.gemini.lch.services.model.LtcsCollision
-import org.joda.time.format.DateTimeFormat
 import java.util
+
 import javax.servlet.http.HttpServletResponse
 
 /**
@@ -28,7 +32,7 @@ class LtcsController {
     val status = ltcsService.getSnapshot
     status getError match {
       case LtcsService.Error.NONE => {
-        val collisions = status.getCollisions map {c => new LtcsCollision(c.getObservatory, c.getPriority, c.getStart.toDate, c.getEnd.toDate)}
+        val collisions = status.getCollisions map {c => new LtcsCollision(c.getObservatory, c.getPriority, c.getStart.toInstant, c.getEnd.toInstant)}
         new LtcsCollision.List(collisions)
       }
       case LtcsService.Error.PROCESSES_DOWN => {
@@ -46,10 +50,10 @@ class LtcsController {
   @RequestMapping(value=Array("/collisions/test"), method=Array(RequestMethod.GET), produces=Array("application/xml", "application/json"))
   @ResponseBody
   def queryCollisionsTest() : LtcsCollision.List = {
-    val t = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss").withZoneUTC()
+    val t = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").withZone(ZoneId.of("UTC"))
     val l = new util.ArrayList[LtcsCollision]()
-    l.add(new LtcsCollision("UH2.2", "UH2.2", t.parseDateTime("2013-01-05 06:00:00").toDate, t.parseDateTime("2013-01-05 06:05:00").toDate))
-    l.add(new LtcsCollision("KECK1", "GEMINI", t.parseDateTime("2013-01-05 12:00:00").toDate, t.parseDateTime("2013-01-05 12:05:00").toDate))
+    l.add(new LtcsCollision("UH2.2", "UH2.2", ZonedDateTime.parse("2013-01-05 06:00:00", t).toInstant, ZonedDateTime.parse("2013-01-05 06:05:00", t).toInstant))
+    l.add(new LtcsCollision("KECK1", "GEMINI", ZonedDateTime.parse("2013-01-05 12:00:00", t).toInstant, ZonedDateTime.parse("2013-01-05 12:05:00", t).toInstant))
     new LtcsCollision.List(l)
   }
 

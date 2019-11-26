@@ -2,9 +2,9 @@ package edu.gemini.lch.web.app.components;
 
 import com.vaadin.data.Property;
 import com.vaadin.ui.OptionGroup;
-import org.joda.time.DateTimeZone;
 import org.springframework.beans.factory.annotation.Configurable;
 
+import java.time.ZoneId;
 import java.util.ArrayList;
 import java.util.Collection;
 
@@ -17,7 +17,7 @@ public class TimeZoneSelector extends OptionGroup implements Property.ValueChang
     private final Collection<Listener> listeners;
 
     public interface Listener {
-        void updateTimeZone(DateTimeZone timeZone);
+        void updateZoneId(ZoneId zoneId);
     }
 
     /**
@@ -36,7 +36,6 @@ public class TimeZoneSelector extends OptionGroup implements Property.ValueChang
 
     /**
      * Adds a listener to this selector.
-     * @param listener
      */
     public void addListener(Listener listener) {
         listeners.add(listener);
@@ -44,7 +43,6 @@ public class TimeZoneSelector extends OptionGroup implements Property.ValueChang
 
     /**
      * Removes a listener from this selector.
-     * @param listener
      */
     public void removeListener(Listener listener) {
         listeners.remove(listener);
@@ -52,12 +50,11 @@ public class TimeZoneSelector extends OptionGroup implements Property.ValueChang
 
     /**
      * Property change listener.
-     * @param event
      */
     @Override public void valueChange(Property.ValueChangeEvent event) {
-        DateTimeZone selectedZone = getSelectedZone();
+        ZoneId selectedZone = getSelectedZone();
         for (Listener listener : listeners) {
-            listener.updateTimeZone(selectedZone);
+            listener.updateZoneId(selectedZone);
         }
     }
 
@@ -65,13 +62,12 @@ public class TimeZoneSelector extends OptionGroup implements Property.ValueChang
      * Gets either UTC or the current default time zone depending on user selection.
      * Note that the default time zone is either the site time zone (HST or CSLT) or the manually
      * configured UTC offset time zone. See {@link edu.gemini.lch.services.ConfigurationService} for details.
-     * @return
      */
-    public DateTimeZone getSelectedZone() {
+    public ZoneId getSelectedZone() {
         if ("UTC".equals(getValue())) {
-            return DateTimeZone.UTC;
+            return ZoneId.of("UTC");
         } else {
-            return DateTimeZone.getDefault();
+            return ZoneId.systemDefault();
         }
     }
 }

@@ -1,11 +1,12 @@
 package edu.gemini.lch.services.internal.collector;
 
 import edu.gemini.lch.model.*;
-import org.joda.time.DateTime;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
+
+import java.time.ZonedDateTime;
 
 import static org.junit.Assert.assertEquals;
 import static org.junit.Assert.assertTrue;
@@ -21,7 +22,7 @@ public class LaserTargetsCollectorTest {
     @Test
     public void windowsAreOrdered() {
         RaDecLaserTarget target = new RaDecLaserTarget(null, 0.0, 0.0, Visibility.ALWAYS);
-        DateTime t = DateTime.now();
+        ZonedDateTime t = ZonedDateTime.now();
         target.getPropagationWindows().add(new PropagationWindow(t.plusSeconds(2000), t.plusSeconds(2010)));
         target.getPropagationWindows().add(new PropagationWindow(t.plusSeconds(3000), t.plusSeconds(3010)));
         target.getPropagationWindows().add(new PropagationWindow(t.plusSeconds(1000), t.plusSeconds(1010)));
@@ -29,7 +30,7 @@ public class LaserTargetsCollectorTest {
         target.getPropagationWindows().add(new PropagationWindow(t.plusSeconds(5000), t.plusSeconds(5010)));
 
         // check that propagation windows are ordered (ascending by time)
-        DateTime currentT;
+        ZonedDateTime currentT;
         currentT = t;
         assertEquals(5, target.getPropagationWindows().size());
         for (PropagationWindow w : target.getPropagationWindows()) {

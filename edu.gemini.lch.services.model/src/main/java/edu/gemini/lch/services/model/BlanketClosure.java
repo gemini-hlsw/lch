@@ -3,9 +3,9 @@ package edu.gemini.lch.services.model;
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
 import javax.xml.bind.annotation.XmlType;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 
 /**
  * JAXB annotated value object for sending propagation windows to client.
@@ -15,11 +15,11 @@ import java.util.Date;
 public class BlanketClosure {
 
     @XmlElement
-    public Date start;
+    public Instant start;
     @XmlElement
-    public Date end;
+    public Instant end;
 
-    public BlanketClosure(Date start, Date end) {
+    public BlanketClosure(Instant start, Instant end) {
         this.start = start;
         this.end = end;
     }

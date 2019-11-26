@@ -49,7 +49,7 @@ public class EpicsServiceSouthImpl extends EpicsServiceImpl {
 
     /** {@inheritDoc} */
     @Override public void updateHeartbeat() {
-        Integer value = getTime().getSecondOfDay() % 100;
+        Integer value = getTime().getSecond() % 100;
         writeChannel(EPICS_LIS_HEARTBEAT, value);
         LOGGER.trace("updated LIS heartbeat: " + value);
     }

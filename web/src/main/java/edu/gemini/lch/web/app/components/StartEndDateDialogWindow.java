@@ -1,22 +1,20 @@
 package edu.gemini.lch.web.app.components;
 
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 
-/**
- */
 public class StartEndDateDialogWindow extends DateDialogWindow {
 
-    public StartEndDateDialogWindow(String caption, DateTimeZone timeZone, DateDialogListener listener) {
-        super(caption, timeZone, listener, true);
+    public StartEndDateDialogWindow(String caption, ZoneId zoneId, DateDialogListener listener) {
+        super(caption, zoneId, listener, true);
     }
 
-    public DateTime getStartDate() {
-        return new DateTime(startDate.getValue());
+    public ZonedDateTime getStartDate() {
+        return ZonedDateTime.ofInstant(startDate.getValue().toInstant(), ZoneId.systemDefault());
     }
 
-    public DateTime getEndDate() {
-        return new DateTime(endDate.getValue());
+    public ZonedDateTime getEndDate() {
+        return ZonedDateTime.ofInstant(endDate.getValue().toInstant(), ZoneId.systemDefault());
     }
 
 }

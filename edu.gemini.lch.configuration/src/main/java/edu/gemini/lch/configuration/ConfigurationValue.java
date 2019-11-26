@@ -2,11 +2,10 @@ package edu.gemini.lch.configuration;
 
 import edu.gemini.lch.model.Site;
 import org.apache.commons.lang.StringUtils;
-import org.joda.time.Period;
-import org.joda.time.format.PeriodFormatter;
-import org.joda.time.format.PeriodFormatterBuilder;
 
 import javax.persistence.*;
+import java.time.Period;
+import java.time.format.DateTimeFormatter;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,14 +16,7 @@ import java.util.List;
 public class ConfigurationValue {
 
     private static final String LIST_SEPARATOR = ",";
-    private static final PeriodFormatter periodFormatter = new
-            PeriodFormatterBuilder().
-            appendHours().
-            appendSeparator(":").
-            appendMinutes().
-            appendSeparator(":").
-            appendSeconds().
-            toFormatter();
+    private static final DateTimeFormatter dtf = DateTimeFormatter.ofPattern("HH:mm:ss");
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -94,12 +86,12 @@ public class ConfigurationValue {
         return Boolean.parseBoolean(paramValue);
     }
     public Period getAsPeriod() {
-        return Period.parse(paramValue, periodFormatter);
+        return Period.parse(paramValue);
     }
     public List<Period> getAsPeriodList() {
         List<Period> list = new ArrayList<>();
         for (String s : StringUtils.split(paramValue, LIST_SEPARATOR)) {
-            list.add(Period.parse(s.trim(), periodFormatter));
+            list.add(Period.parse(s.trim()));
         }
         return list;
     }

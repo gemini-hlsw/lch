@@ -1,6 +1,8 @@
 package edu.gemini.lch.services.util
 
-import org.joda.time.{Duration, DateTimeConstants, DateTime}
+import java.time.{DayOfWeek, Duration, ZoneId, ZonedDateTime}
+import java.util.Date
+
 import edu.gemini.lch.model.Holiday
 import org.hibernate.SessionFactory
 import javax.annotation.Resource
@@ -20,62 +22,52 @@ class WorkDayCalendar {
 
   /**
    * Gets the number of standard days between now and the given point in time.
-   * @param end
-   * @return
    */
-  def daysBefore(end: DateTime): Long =
-    daysBetween(DateTime.now, end)
+  def daysBefore(end: ZonedDateTime): Long =
+    daysBetween(ZonedDateTime.now, end)
 
   /**
    * Gets the number of standard days between the given points in time.
-   * @param end
-   * @return
    */
-  def daysBetween(start: DateTime, end: DateTime): Long =
-    (new Duration(start, end)).getStandardDays()
+  def daysBetween(start: ZonedDateTime, end: ZonedDateTime): Long =
+    (Duration.between(start, end)).toDays
 
   /**
    * Gets the number of working days between now and the given point in time.
-   * @param end
-   * @return
    */
-  def workDaysBefore(end: DateTime) : Long =
-    workDaysBetween(DateTime.now, end)
+  def workDaysBefore(end: ZonedDateTime) : Long =
+    workDaysBetween(ZonedDateTime.now, end)
 
   /**
    * Gets the number of working days between the given points in time.
    * Working days are all Mondays to Fridays on which no holidays is observed.
-   * @param start
-   * @param end
-   * @return
    */
-  def workDaysBetween(start: DateTime, end: DateTime) : Long = {
+  def workDaysBetween(start: ZonedDateTime, end: ZonedDateTime) : Long = {
     val days = daysBetween(start, end)      // gets number of standard days
     val weekendDays = weekends(start, end)  // subtract weekend days (Sat/Sun), leaves us with all Mon, Tue, .. Fridays
     val holidayDays = holidays(start, end)  // subtract holidays (observed dates always fall on Mon - Fri)
     scala.math.max(0, days - weekendDays - holidayDays)
   }
 
-  private def weekends(start: DateTime, end: DateTime) : Long =
-    getDays(start, end).count(d => d.getDayOfWeek >= DateTimeConstants.SATURDAY)
+  private def weekends(start: ZonedDateTime, end: ZonedDateTime) : Long =
+    getDays(start, end).count(d => d.getDayOfWeek.compareTo(DayOfWeek.SATURDAY) >= 0)
 
-  private def holidays(start: DateTime, end: DateTime) : Long = {
+  private def holidays(start: ZonedDateTime, end: ZonedDateTime) : Long = {
+    // Hibernate
     val q = sessionFactory.getCurrentSession.getNamedQuery(Holiday.QUERY_FIND_BETWEEN_DATES)
-    q.setTimestamp("first", start.toDate)
-    q.setTimestamp("last", end.toDate)
+    q.setTimestamp("first", Date.from(start.toInstant))
+    q.setTimestamp("last", Date.from(end.toInstant))
     q.list.asInstanceOf[java.util.ArrayList[Holiday]].size()
   }
 
   /**
    * Gets a list with all days from <code>start</code> up to and excluding <code>end</code>.
-   * @param start
-   * @param end
-   * @return
    */
-  def getDays(start: DateTime, end: DateTime) : List[DateTime] =
-    start isBefore end match {
-      case true => List(start) ::: getDays(start.plusDays(1).withTimeAtStartOfDay(), end)
-      case false => List.empty
+  def getDays(start: ZonedDateTime, end: ZonedDateTime) : List[ZonedDateTime] =
+    if (start isBefore end) {
+      List(start) ::: getDays(start.plusDays(1).toLocalDate.atStartOfDay(ZoneId.systemDefault()), end)
+    } else {
+      List.empty
     }
 
 }

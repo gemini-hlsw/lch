@@ -2,9 +2,6 @@ package edu.gemini.lch.model;
 
 import javax.persistence.*;
 
-/**
-
- */
 @Entity
 @DiscriminatorValue("Science")
 public class ScienceObservation extends Observation {

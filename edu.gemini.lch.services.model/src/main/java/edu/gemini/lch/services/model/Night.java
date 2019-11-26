@@ -1,20 +1,18 @@
 package edu.gemini.lch.services.model;
 
 import javax.xml.bind.annotation.XmlElement;
-import java.util.Date;
+import java.time.Instant;
 
-/**
- */
 public class Night {
 
     private Long id;
     private String site;
-    private Date start;
-    private Date end;
-    private Date latestPrmSent;
-    private Date latestPamReceived;
+    private Instant start;
+    private Instant end;
+    private Instant latestPrmSent;
+    private Instant latestPamReceived;
 
-    public Night(Long id, String site, Date start, Date end, Date latestPrmSent, Date latestPamReceived) {
+    public Night(Long id, String site, Instant start, Instant end, Instant latestPrmSent, Instant latestPamReceived) {
         this.id = id;
         this.site = site;
         this.start = start;
@@ -32,20 +30,20 @@ public class Night {
     public void setSite(String site) { this.site = site; }
 
     @XmlElement
-    public Date getStart() { return start; }
-    public void setStart(Date start) { this.start = start; }
+    public Instant getStart() { return start; }
+    public void setStart(Instant start) { this.start = start; }
 
     @XmlElement
-    public Date getEnd() { return end; }
-    public void setEnd(Date end) { this.end = end; }
+    public Instant getEnd() { return end; }
+    public void setEnd(Instant end) { this.end = end; }
 
     @XmlElement
-    public Date getLatestPrmSent() { return latestPrmSent; }
-    public void setLatestPrmSent(Date latestPrmSent) { this.latestPrmSent = latestPrmSent; }
+    public Instant getLatestPrmSent() { return latestPrmSent; }
+    public void setLatestPrmSent(Instant latestPrmSent) { this.latestPrmSent = latestPrmSent; }
 
     @XmlElement
-    public Date getLatestPamReceived() { return latestPamReceived; }
-    public void setLatestPamReceived(Date latestPamReceived) { this.latestPamReceived = latestPamReceived; }
+    public Instant getLatestPamReceived() { return latestPamReceived; }
+    public void setLatestPamReceived(Instant latestPamReceived) { this.latestPamReceived = latestPamReceived; }
 
     // empty constructor needed for JAXB
     public Night() {

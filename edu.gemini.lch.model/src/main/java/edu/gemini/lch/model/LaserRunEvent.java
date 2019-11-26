@@ -1,9 +1,11 @@
 package edu.gemini.lch.model;
 
-import org.joda.time.DateTime;
-
 import javax.persistence.*;
-import java.util.*;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.util.Set;
+import java.util.TreeSet;
 
 /**
  */
@@ -22,13 +24,13 @@ public class LaserRunEvent implements Comparable<LaserRunEvent> {
 
 
     @Column(name = "event_time")
-    private Date time;
+    private Instant time;
 
     @Column(name = "message")
     private String message;
 
     public LaserRunEvent(String message) {
-        this.time = new Date();
+        this.time = Instant.now();
         this.files = new TreeSet<>();
         this.message = message;
     }
@@ -37,8 +39,8 @@ public class LaserRunEvent implements Comparable<LaserRunEvent> {
         return id;
     }
 
-    public DateTime getTime() {
-        return new DateTime(time);
+    public ZonedDateTime getTime() {
+        return ZonedDateTime.ofInstant(time, ZoneId.systemDefault());
     }
 
     public String getMessage() {

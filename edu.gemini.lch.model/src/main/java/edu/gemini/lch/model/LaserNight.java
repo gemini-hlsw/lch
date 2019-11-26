@@ -1,14 +1,10 @@
 package edu.gemini.lch.model;
 
-import org.joda.time.DateTime;
-import org.joda.time.Duration;
-
 import javax.persistence.*;
+import java.time.Duration;
+import java.time.ZonedDateTime;
 import java.util.*;
 
-
-/**
- */
 @NamedQueries({
         /*
             Named query to load a full laser night by its id.
@@ -51,7 +47,7 @@ public class LaserNight extends BaseLaserNight {
 
     private transient TimeZone timeZone;
 
-    public LaserNight(Site site, DateTime start, DateTime end) {
+    public LaserNight(Site site, ZonedDateTime start, ZonedDateTime end) {
         super(site, start, end);
         this.closures = new TreeSet<>();
         this.events = new TreeSet<>();
@@ -188,7 +184,6 @@ public class LaserNight extends BaseLaserNight {
 
     /**
      * Gets the semester this night belongs to, e.g. 2012A.
-     * @return
      */
     public String getSemester() {
         return getSemester(getStart());
@@ -199,17 +194,15 @@ public class LaserNight extends BaseLaserNight {
 
     /**
      * Gets the semester with an offset to the current night.
-     * @param offset
-     * @return
      */
-    public static String getSemester(DateTime day, int offset) {
+    public static String getSemester(ZonedDateTime day, int offset) {
         return getSemester(day.plusMonths(offset * 6));
     }
 
-    public static String getSemester(DateTime day) {
-        if (day.getMonthOfYear() < 2) {
+    public static String getSemester(ZonedDateTime day) {
+        if (day.getMonthValue() < 2) {
             return (day.getYear() - 1) + "B";
-        } else if (day.getMonthOfYear() < 8) {
+        } else if (day.getMonthValue() < 8) {
             return (day.getYear()) + "A";
         } else {
             return (day.getYear()) + "B";
@@ -249,14 +242,9 @@ public class LaserNight extends BaseLaserNight {
     /**
      * Checks if a night contains only test data.
      * Test nights are created for a full 24hrs interval.
-     * @return
      */
     public boolean isTestNight() {
-        if (new Duration(getStart(), getEnd()).toStandardHours().getHours() == 24) {
-            return true;
-        } else {
-            return false;
-        }
+        return Duration.between(getStart(), getEnd()).toHours() == 24;
     }
 
     // empty constructor needed by hibernate

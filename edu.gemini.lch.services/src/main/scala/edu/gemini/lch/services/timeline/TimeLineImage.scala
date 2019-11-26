@@ -2,18 +2,24 @@ package edu.gemini.lch.services.timeline
 
 import edu.gemini.lch.model._
 import edu.gemini.lch.services.ModelFactory
-import org.joda.time._
 
 import scala.collection.JavaConversions._
 import java.awt.image.BufferedImage
 import java.awt._
+
 import javax.imageio.ImageIO
 import java.io.ByteArrayOutputStream
 import java.awt.font.FontRenderContext
+import java.time.format.DateTimeFormatter
+import java.time.temporal.ChronoUnit
+import java.time.{Duration, Instant, Period, ZoneId, ZonedDateTime}
+import java.util.Date
+
 import jsky.coords.WorldCoords
+
 import scala.Some
 import scala.List
-import java.util.Date
+
 import jsky.plot.util.SkyCalc
 
 /**
@@ -21,35 +27,35 @@ import jsky.plot.util.SkyCalc
  */
 case class TimeLineImage(
     night: LaserNight,
-    imageStart: DateTime,
-    imageEnd: DateTime,
+    imageStart: ZonedDateTime,
+    imageEnd: ZonedDateTime,
     width: Int = 800,
     imgHeight: Int = 10,
     target: Option[LaserTarget] = None,
-    text: Option[(Int, DateTimeZone)] = None,
-    now: Option[DateTime] = None,
+    text: Option[(Int, ZoneId)] = None,
+    now: Option[ZonedDateTime] = None,
     buffers: Option[(Period, Period)] = None,
     drawElevationLine: Boolean = false) {
 
   def this(night: LaserNight) =
     this(
       night,
-      night.getStart.withMinuteOfHour(0).withSecondOfMinute(0).withMillisOfSecond(0),
-      night.getEnd.plusHours(1).withMinuteOfHour(0).withSecondOfMinute(0).withMillisOfSecond(0))
+      night.getStart.withMinute(0).withSecond(0).withNano(0),
+      night.getEnd.plusHours(1).withMinute(0).withSecond(0).withNano(0))
 
   def withTarget(target: LaserTarget) =
     copy(target = Some(target))
 
-  def withTimes(imageStart: DateTime, imageEnd: DateTime) =
+  def withTimes(imageStart: ZonedDateTime, imageEnd: ZonedDateTime) =
     copy(imageStart = imageStart, imageEnd = imageEnd)
 
   def withDimensions(width: Int, height: Int) =
     copy(width = width, imgHeight = height)
 
-  def withText(zone: DateTimeZone, fontSize: Int) =
+  def withText(zone: ZoneId, fontSize: Int) =
     copy(text = Some((fontSize, zone)))
 
-  def withNowMarker(now: DateTime) =
+  def withNowMarker(now: ZonedDateTime) =
     copy(now = Some(now))
 
   def withBuffers(bufferBefore: Period, bufferAfter: Period) =
@@ -61,8 +67,9 @@ case class TimeLineImage(
   // do some simple and cheap up front calculations needed for drawing the image
   val fontHeight = if (text.isDefined) text.get._1 + 2 else 0
   val height = if (imgHeight - fontHeight > 0) imgHeight - fontHeight else 1
-  val imageDurationInSeconds = new Duration(imageStart, imageEnd).getStandardSeconds
-  val spacers = calcSpacers(new DateTime(imageStart.getMillis - imageStart.getMillis % spacing))
+  val imageDurationInSeconds = Duration.between(imageStart, imageEnd).getSeconds
+  val sp = ZonedDateTime.ofInstant(Instant.ofEpochMilli(imageStart.toInstant.toEpochMilli - imageStart.toInstant.toEpochMilli % spacing), ZoneId.systemDefault())
+  val spacers = calcSpacers(sp)
   val imagePixelsPerSecond = (width.toDouble - spacers.length*2) / imageDurationInSeconds.toDouble
 
 
@@ -87,8 +94,8 @@ case class TimeLineImage(
     val timeline =
     if (target.isDefined) {
       new Timeline(parts).
-        add((target.get.getVisibility.getVisibleIntervalsDuring(night) map (i => Part(PartType.Visible, i.getStart, i.getEnd))).toList).                //TODO: is there a nicer way to do this? why is toList necessary?
-        add((target.get.getVisibility.getVisibleIntervalsAboveLimitDuring(night) map (i => Part(PartType.AboveLimit, i.getStart, i.getEnd))).toList).
+        add((target.get.getVisibility.getVisibleIntervalsDuring(night) map (i => Part(PartType.Visible, i.start, i.end))).toList).                //TODO: is there a nicer way to do this? why is toList necessary?
+        add((target.get.getVisibility.getVisibleIntervalsAboveLimitDuring(night) map (i => Part(PartType.AboveLimit, i.start, i.end))).toList).
         addPropagationWindows(target.get.getPropagationWindows.toList).
         addShutteringWindows(target.get.getShutteringWindows.toList).
         addBlanketClosures(night.getClosures.toList)
@@ -105,7 +112,7 @@ case class TimeLineImage(
     drawable.fillRect(0, 0, width, imgHeight)
 
     // draw parts
-    val visibleParts = timeline.allParts.filter(p => p.start.isBefore(imageEnd) && p.end.isAfter(imageStart))
+    val visibleParts = timeline.allParts.filter(p => p.start.isBefore(imageEnd.toInstant) && p.end.isAfter(imageStart.toInstant))
     visibleParts.filter(p => !p.types.contains(PartType.Closed)) foreach (p => drawOpen(drawable, p))
     visibleParts.filter(p => p.types.contains(PartType.Closed))  foreach (p => drawClosed(drawable, p))
 
@@ -117,7 +124,7 @@ case class TimeLineImage(
       }
     }
 
-    spacers map (t => drawHourLine(drawable, t))
+    spacers foreach (t => drawHourLine(drawable, t))
     if (now.isDefined) drawNowMarker(drawable, now.get)
     if (text.isDefined) spacers map (t => drawHourText(drawable, t))
 
@@ -141,7 +148,7 @@ case class TimeLineImage(
     drawElevationLine(drawable, c, imageStart.plusMinutes(2), x, y, sky)
   }
 
-  private def drawElevationLine(drawable: Graphics2D, c: WorldCoords, t: DateTime, lastX: Int, lastY: Int, sky: SkyCalc) {
+  private def drawElevationLine(drawable: Graphics2D, c: WorldCoords, t: ZonedDateTime, lastX: Int, lastY: Int, sky: SkyCalc) {
     if (t.isBefore(imageEnd)) {
       val x = timeToX(t)
       val y = elevationToY(c, t, height, sky)
@@ -153,8 +160,9 @@ case class TimeLineImage(
     }
   }
 
-  private def elevationToY(c: WorldCoords, t: DateTime, height: Int, sky: SkyCalc) = {
-    sky.calculate(c, t.toDate)
+  private def elevationToY(c: WorldCoords, t: ZonedDateTime, height: Int, sky: SkyCalc) = {
+    // Skycalc
+    sky.calculate(c, Date.from(t.toInstant))
     (height - sky.getAltitude / 90.0 * height).round.toInt
   }
 
@@ -165,7 +173,7 @@ case class TimeLineImage(
    * Don't draw a solid object in order not to hide the color below.
    * @param t
    */
-  private def drawNowMarker(drawable: Graphics2D, t: DateTime) {
+  private def drawNowMarker(drawable: Graphics2D, t: ZonedDateTime) {
     val x = timeToX(t)
     val upper = new Polygon( Array[Int](x-5, x+5, x), Array[Int](0, 0, 10), 3)
     val lower = new Polygon( Array[Int](x-5, x+5, x), Array[Int](height, height, height-10), 3)
@@ -183,8 +191,8 @@ case class TimeLineImage(
     drawable.draw(lower)
   }
 
-  private def drawHourLine(drawable: Graphics2D, t: DateTime) {
-    if (t.getMinuteOfHour == 0) {
+  private def drawHourLine(drawable: Graphics2D, t: ZonedDateTime) {
+    if (t.getMinute == 0) {
       drawable.setColor(TimeLineImage.COLOR_HOUR_LINES)
     } else {
       drawable.setColor(TimeLineImage.COLOR_TIME_LINES)
@@ -194,7 +202,7 @@ case class TimeLineImage(
 
   private def drawOpen(drawable: Graphics2D, part: Part) {
     drawable.setColor(color(part))
-    fillRect(drawable, part start, part end, 1)
+    fillRect(drawable, part.start, part.end, 1)
   }
 
   private def drawClosed(drawable: Graphics2D, part: Part) {
@@ -218,7 +226,7 @@ case class TimeLineImage(
 
   }
 
-  private def fillRect(drawable: Graphics2D, t0: DateTime, t1: DateTime, minWidth: Int) {
+  private def fillRect(drawable: Graphics2D, t0: ZonedDateTime, t1: ZonedDateTime, minWidth: Int) {
     val x0 = timeToX(t0)
     val x1 = timeToX(t1)
     if (x1 - x0 < minWidth)
@@ -227,11 +235,11 @@ case class TimeLineImage(
         drawable.fillRect(x0, 0, x1 - x0, height)
   }
 
-  private def drawHourText(drawable: Graphics2D, t: DateTime) {
+  private def drawHourText(drawable: Graphics2D, t: ZonedDateTime) {
     val x = timeToX(t)
     val font = new Font("Helvetica", Font.BOLD, text.get._1)
     val ctx = new FontRenderContext(null, true, true)
-    val hour = t.toDateTime(text.get._2).toString("HH:mm")
+    val hour = DateTimeFormatter.ofPattern("HH:mm").format(t)
     val bounds = font.getStringBounds(hour, ctx)
     val x2 = (x + 2 - bounds.getWidth/2).toInt
     // only draw text if it fits on image
@@ -253,19 +261,19 @@ case class TimeLineImage(
     else 60*60*1000
   }
 
-  private def calcSpacers(t: DateTime): List[DateTime] =
+  private def calcSpacers(t: ZonedDateTime): List[ZonedDateTime] =
     if (t.isAfter(imageEnd)) {
       List()
     } else {
-      t :: calcSpacers(t.plusMillis(spacing))
+      t :: calcSpacers(t.plus(spacing, ChronoUnit.MILLIS))
     }
 
 
-  private def timeToX(t: DateTime) =
-    if (t isBefore imageStart) 0
-    else if (t isAfter imageEnd) width
+  private def timeToX(t: ZonedDateTime) =
+    if (t.isBefore(imageStart)) 0
+    else if (t.isAfter(imageEnd)) width
     else {
-      val x = (new Duration(imageStart, t).getStandardSeconds * imagePixelsPerSecond round).toInt
+      val x = (new Duration(imageStart, t).getSeconds * imagePixelsPerSecond round).toInt
       // add additional space for all spacers that are before time t
       x + (spacers.count(st => st.isBefore(t)) * TimeLineImage.HrsIntervalWidth)
     }

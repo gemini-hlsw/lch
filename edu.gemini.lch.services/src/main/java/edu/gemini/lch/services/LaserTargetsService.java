@@ -1,13 +1,11 @@
 package edu.gemini.lch.services;
 
 import edu.gemini.lch.model.*;
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
 
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.List;
 
-/**
- */
 public interface LaserTargetsService {
 
     LaserTarget findById(Long targetId);
@@ -16,9 +14,9 @@ public interface LaserTargetsService {
     List<Observation> getObservations(Long targetId);
     List<PropagationWindow> getPropagationWindows(Long nightId, Long targetId, boolean removeBlanketClosures);
     List<ShutteringWindow> getShutteringWindows(Long nightId, Long targetId, boolean includeBlanketClosures);
-    byte[] getImageHeader(LaserNight night, Integer width, DateTime start, DateTime end, DateTimeZone zone);
-    byte[] getImage(LaserNight night, LaserTarget target, Integer width, Integer height, DateTime start, DateTime end);
-    byte[] getImage(LaserNight night, Integer width, Integer height, DateTime start, DateTime end, DateTime now, DateTimeZone zone);
-    byte[] getImage(LaserNight night, LaserTarget target, Integer width, Integer height, DateTime start, DateTime end, DateTime now, DateTimeZone zone);
+    byte[] getImageHeader(LaserNight night, Integer width, ZonedDateTime start, ZonedDateTime end, ZoneId zone);
+    byte[] getImage(LaserNight night, LaserTarget target, Integer width, Integer height, ZonedDateTime start, ZoneId end);
+    byte[] getImage(LaserNight night, Integer width, Integer height, ZonedDateTime start, ZonedDateTime end, ZonedDateTime now, ZoneId zone);
+    byte[] getImage(LaserNight night, LaserTarget target, Integer width, Integer height, ZonedDateTime start, ZonedDateTime end, ZonedDateTime now, ZoneId zone);
 
 }

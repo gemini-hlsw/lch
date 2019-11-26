@@ -2,22 +2,20 @@ package edu.gemini.lch.services.model;
 
 import javax.xml.bind.annotation.XmlElement;
 import javax.xml.bind.annotation.XmlRootElement;
+import java.time.Instant;
 import java.util.ArrayList;
 import java.util.Collection;
-import java.util.Date;
 
-/**
- */
 @XmlRootElement
 public class ShutteringWindow extends Window {
 
     private boolean isBlanketClosure;
 
-    public ShutteringWindow(Date start, Date end) {
+    public ShutteringWindow(Instant start, Instant end) {
         this(start, end, false);
     }
 
-    public ShutteringWindow(Date start, Date end, boolean isBlanketClosure) {
+    public ShutteringWindow(Instant start, Instant end, boolean isBlanketClosure) {
         super(start, end);
         this.isBlanketClosure = isBlanketClosure;
     }

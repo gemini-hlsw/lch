@@ -1,11 +1,14 @@
 package edu.gemini.lch.model;
 
 import org.apache.commons.lang.Validate;
-import org.joda.time.DateTime;
-import org.joda.time.Duration;
-import org.joda.time.Interval;
 
-import java.util.*;
+import java.time.Duration;
+import java.time.Instant;
+import java.time.ZonedDateTime;
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.List;
+import java.util.Optional;
 
 /**
  * Representation of the visibility of a target during the course of a single laser night.
@@ -16,7 +19,7 @@ import java.util.*;
 public final class Visibility {
 
     public static final Visibility NEVER = new Visibility();
-    public static final Visibility ALWAYS = new Visibility(DateTime.now().minusYears(4000), DateTime.now().plusYears(4000));
+    public static final Visibility ALWAYS = new Visibility(ZonedDateTime.now().minusYears(4000), ZonedDateTime.now().plusYears(4000));
 
     private final Optional<RiseSet> aboveHorizon;
     private final Optional<RiseSet> aboveLimit;
@@ -31,13 +34,13 @@ public final class Visibility {
 
     /**
      * Creates a visibility window for an object that has rise and set times.
-     * @param rises  time the object rises above a given altitiude
+     * @param rises  time the object rises above a given altitude
      * @param sets   time the object sets below a given altitude
      */
-    public Visibility(final DateTime rises, final DateTime sets) {
+    public Visibility(final ZonedDateTime rises, final ZonedDateTime sets) {
         this(
-            Optional.of(new RiseSet(rises.toDate(), sets.toDate())),
-            Optional.of(new RiseSet(rises.toDate(), sets.toDate()))
+            Optional.of(new RiseSet(rises.toInstant(), sets.toInstant())),
+            Optional.of(new RiseSet(rises.toInstant(), sets.toInstant()))
         );
     }
 
@@ -58,32 +61,30 @@ public final class Visibility {
         return aboveLimit.map(rs -> getVisibleIntervalsDuring(night, rs)).orElse(Collections.emptyList());
     }
 
-
     private List<Interval> getVisibleIntervalsDuring(final BaseLaserNight night, final RiseSet rs) {
-
         final List<Interval> intervals = new ArrayList<>();
         if (rs.risesBeforeSets()) {
-            intervals.add(new Interval(rs.rises.getTime(), rs.sets.getTime()));
+            intervals.add(new Interval(rs.rises, rs.sets));
         } else {
-            intervals.add(new Interval(night.getStart().getMillis(), rs.sets.getTime()));
-            intervals.add(new Interval(rs.rises.getTime(), night.getEnd().getMillis()));
+            intervals.add(new Interval(night.getStart().toInstant(), rs.sets));
+            intervals.add(new Interval(rs.rises, night.getEnd().toInstant()));
         }
         return Collections.unmodifiableList(intervals);
     }
 
-    public Optional<Date> getRises() {
+    public Optional<Instant> getRises() {
         return aboveHorizon.map(rs -> rs.rises);
     }
 
-    public Optional<Date> getSets() {
+    public Optional<Instant> getSets() {
         return aboveHorizon.map(rs -> rs.sets);
     }
 
-    public Optional<Date> getRisesAboveLimit() {
+    public Optional<Instant> getRisesAboveLimit() {
         return aboveLimit.map(rs -> rs.rises);
     }
 
-    public Optional<Date> getSetsBelowLimit() {
+    public Optional<Instant> getSetsBelowLimit() {
         return aboveLimit.map(rs -> rs.sets);
     }
 
@@ -94,30 +95,25 @@ public final class Visibility {
     private Duration getMaxDuration(final LaserNight night, final RiseSet rs) {
 
         if (rs.risesBeforeSets()) {
-            return new Duration(rs.rises.getTime(), rs.sets.getTime());
-
+            return Duration.ofMillis(rs.sets.toEpochMilli() - rs.rises.toEpochMilli());
         } else {
-            final Duration d1 = new Duration(night.getStart().getMillis(), rs.sets.getTime());
-            final Duration d2 = new Duration(rs.rises.getTime(), night.getEnd().getMillis());
-            if (d1.isLongerThan(d2)) {
-                return d1;
-            } else {
-                return d2;
-            }
+            final Duration d1 = Duration.ofMillis(night.getStart().toInstant().toEpochMilli() - rs.sets.toEpochMilli());
+            final Duration d2 = Duration.ofMillis(rs.rises.toEpochMilli() - rs.sets.toEpochMilli());
+            return d1.compareTo(d2) > 0 ? d1 : d2;
         }
     }
 
     public final static class RiseSet {
-        final Date rises;
-        final Date sets;
-        public RiseSet(final Date rises, final Date sets) {
+        final Instant rises;
+        final Instant sets;
+        public RiseSet(final Instant rises, final Instant sets) {
             Validate.notNull(rises);
             Validate.notNull(sets);
             this.rises = rises;
             this.sets  = sets;
         }
         boolean risesBeforeSets() {
-            return rises.before(sets);
+            return rises.isBefore(sets);
         }
     }
 }

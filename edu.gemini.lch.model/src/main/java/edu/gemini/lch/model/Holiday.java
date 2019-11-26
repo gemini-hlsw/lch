@@ -1,9 +1,9 @@
 package edu.gemini.lch.model;
 
-import org.joda.time.DateTime;
-
 import javax.persistence.*;
-import java.util.Date;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 
 
 /**
@@ -37,10 +37,10 @@ public class Holiday {
     private String name;
 
     @Column(name = "actual")
-    private Date actual;
+    private Instant actual;
 
     @Column(name = "observed")
-    private Date observed;
+    private Instant observed;
 
     public Long getId() {
         return id;
@@ -50,21 +50,21 @@ public class Holiday {
         return name;
     }
 
-    public DateTime getActualDate() {
-        return new DateTime(actual);
+    public ZonedDateTime getActualDate() {
+        return ZonedDateTime.ofInstant(actual, ZoneId.systemDefault());
     }
 
-    public DateTime getObservedDate() {
-        return new DateTime(observed);
+    public ZonedDateTime getObservedDate() {
+        return ZonedDateTime.ofInstant(observed, ZoneId.systemDefault());
     }
 
     // empty constructor for Hibernate
     public Holiday() {}
 
     // simple constructor for testing
-    public Holiday(DateTime date) {
-        actual = date.toDate();
-        observed = date.toDate();
+    public Holiday(ZonedDateTime date) {
+        actual = date.toInstant();
+        observed = date.toInstant();
     }
 
 }

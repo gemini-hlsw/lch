@@ -3,7 +3,7 @@ package edu.gemini.lch.services.impl;
 import edu.gemini.lch.model.*;
 import edu.gemini.lch.services.AlarmService;
 import edu.gemini.lch.services.LaserNightService;
-import org.joda.time.DateTime;
+
 import org.junit.Assert;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -11,6 +11,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 import javax.annotation.Resource;
+import java.time.ZonedDateTime;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(locations = {"/spring-services-test-context.xml"})
@@ -25,8 +26,8 @@ public class AlarmServiceTest {
     @Test
     public void detectsNightChanges() {
 
-        LaserNight night1 = laserNightService.createLaserNight(DateTime.now());
-        LaserNight night2 = laserNightService.createLaserNight(DateTime.now());
+        LaserNight night1 = laserNightService.createLaserNight(ZonedDateTime.now());
+        LaserNight night2 = laserNightService.createLaserNight(ZonedDateTime.now());
         LaserTarget t1 = new RaDecLaserTarget(night1, (double) 0, (double) 0, Visibility.ALWAYS);
         LaserTarget t2 = new RaDecLaserTarget(night1, (double) 0, (double) 0, Visibility.ALWAYS);
 
@@ -44,7 +45,7 @@ public class AlarmServiceTest {
     @Test
     public void detectsTargetChanges() {
 
-        LaserNight night = laserNightService.createLaserNight(DateTime.now());
+        LaserNight night = laserNightService.createLaserNight(ZonedDateTime.now());
         LaserTarget t1 = new RaDecLaserTarget(night, (double) 0, (double) 0, Visibility.ALWAYS);
         LaserTarget t2 = new RaDecLaserTarget(night, (double) 0, (double) 0, Visibility.ALWAYS);
 

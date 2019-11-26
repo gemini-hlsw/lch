@@ -11,8 +11,6 @@ import edu.gemini.lch.services.internal.collector.TargetsCollector;
 import edu.gemini.odb.browser.QueryResult;
 import edu.gemini.spModel.core.HorizonsDesignation;
 import jsky.coords.WorldCoords;
-import org.joda.time.DateTime;
-import org.joda.time.Duration;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -28,7 +26,11 @@ import javax.xml.bind.JAXBContext;
 import javax.xml.bind.JAXBException;
 import javax.xml.bind.Unmarshaller;
 import java.io.InputStream;
+import java.time.Duration;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 import java.util.Set;
 
@@ -59,12 +61,12 @@ public class TargetsCollectorTest implements BeanFactoryAware {
     @Test
     public void doesCollectVisibleTargets() throws JAXBException {
         // create laser night
-        DateTime start = new DateTime(2012, 9, 1, 18, 0, 0);
-        DateTime end = new DateTime(2012, 9, 2, 6, 0, 0);
+        ZonedDateTime start = ZonedDateTime.of(2012, 9, 1, 18, 0, 0, 0, ZoneId.systemDefault());
+        ZonedDateTime end = ZonedDateTime.of(2012, 9, 2, 6, 0, 0, 0, ZoneId.systemDefault());
         LaserNight night = new LaserNight(Site.NORTH,  start, end);
 
         // set targets collector up with mock visibility calculator
-        Visibility alwaysVisible = new Visibility(new DateTime(night.getStart()), new DateTime(night.getEnd()));
+        Visibility alwaysVisible = new Visibility(night.getStart(), night.getEnd());
         TargetsCollector collector = (TargetsCollector)beanFactory.getBean("targetsCollector", night);
         ReflectionTestUtils.setField(collector, "visibilityCalculator", createMockVisCalc(alwaysVisible));
 
@@ -80,12 +82,14 @@ public class TargetsCollectorTest implements BeanFactoryAware {
     @Test
     public void doesCollectVisibleTwiceTargets() throws JAXBException {
         // create laser night
-        DateTime start = new DateTime(2012, 9, 1, 18, 0, 0);
-        DateTime end = new DateTime(2012, 9, 2, 6, 0, 0);
+        ZonedDateTime start = ZonedDateTime.of(2012, 9, 1, 18, 0, 0, 0, ZoneId.systemDefault());
+        ZonedDateTime end = ZonedDateTime.of(2012, 9, 2, 6, 0, 0, 0, ZoneId.systemDefault());
         LaserNight night = new LaserNight(Site.NORTH,  start, end);
 
         // set targets collector up with mock visibility calculator
-        Visibility visibleTwice = new Visibility(new DateTime(2012,9,2,3,0,0), new DateTime(2012,9,1,22,0,0));
+        Visibility visibleTwice = new Visibility(
+                ZonedDateTime.of(2012,9,2,3,0,0,0,ZoneId.systemDefault()),
+                ZonedDateTime.of(2012,9,1,22,0,0,0,ZoneId.systemDefault()));
         TargetsCollector collector = (TargetsCollector)beanFactory.getBean("targetsCollector", night);
         ReflectionTestUtils.setField(collector, "visibilityCalculator", createMockVisCalc(visibleTwice));
 
@@ -143,10 +147,10 @@ public class TargetsCollectorTest implements BeanFactoryAware {
     public void doesCollectNonSiderealTarget3() throws JAXBException  {
         LaserNight night = createLaserNight();
         // two ephemerides, both visible at start and end of night (rise is after set)
-        DateTime rise1 = night.getEnd().minusMinutes(90);
-        DateTime set1  = night.getStart().plusMinutes(90);
-        DateTime rise2 = night.getEnd().minusMinutes(60);
-        DateTime set2  = night.getStart().plusMinutes(120);
+        ZonedDateTime rise1 = night.getEnd().minusMinutes(90);
+        ZonedDateTime set1  = night.getStart().plusMinutes(90);
+        ZonedDateTime rise2 = night.getEnd().minusMinutes(60);
+        ZonedDateTime set2  = night.getStart().plusMinutes(120);
         TargetsCollector c = collectNonSiderealTarget(night, new Visibility[] {
                 new Visibility(rise1, set1),
                 new Visibility(rise2, set2)
@@ -158,14 +162,14 @@ public class TargetsCollectorTest implements BeanFactoryAware {
         for (ObservationTarget t : o.getTargets()) {
             Visibility v = t.getLaserTarget().getVisibility();
             assertTrue(v.isVisible());
-            assertTrue(v.getRises().get().equals(rise1.toDate()) || v.getRises().get().equals(rise2.toDate()));
-            assertTrue(v.getSets().get().equals(set1.toDate())   || v.getSets().get().equals(set2.toDate()));
+            assertTrue(v.getRises().filter(rise1.toInstant()::equals).isPresent() || v.getRises().filter(rise2.toInstant()::equals).isPresent());
+            assertTrue(v.getSets().filter(set1.toInstant()::equals).isPresent() || v.getSets().filter(set2.toInstant()::equals).isPresent());
         }
     }
 
     private LaserNight createLaserNight() {
-        DateTime start = new DateTime(2012, 9, 1, 18, 0, 0);
-        DateTime end = new DateTime(2012, 9, 2, 6, 0, 0);
+        ZonedDateTime start = ZonedDateTime.of(2012, 9, 1, 18, 0, 0, 0, ZoneId.systemDefault());
+        ZonedDateTime end = ZonedDateTime.of(2012, 9, 2, 6, 0, 0, 0, ZoneId.systemDefault());
         return new LaserNight(Site.NORTH,  start, end);
     }
 
@@ -187,8 +191,8 @@ public class TargetsCollectorTest implements BeanFactoryAware {
     @Test
     public void doesNotCollectInvisibleTargets() throws JAXBException {
 
-        DateTime start = new DateTime(2012, 9, 1, 18, 0, 0);
-        DateTime end = new DateTime(2012, 9, 2, 6, 0, 0);
+        ZonedDateTime start = ZonedDateTime.of(2012, 9, 1, 18, 0, 0, 0, ZoneId.systemDefault());
+        ZonedDateTime end = ZonedDateTime.of(2012, 9, 2, 6, 0, 0, 0, ZoneId.systemDefault());
         LaserNight night = new LaserNight(Site.NORTH,  start, end);
 
         TargetsCollector collector = (TargetsCollector)beanFactory.getBean("targetsCollector", night);
@@ -206,8 +210,8 @@ public class TargetsCollectorTest implements BeanFactoryAware {
     @Ignore
     public void doesWarnAboutUnknownNonSidereal() throws JAXBException {
 
-        DateTime start = new DateTime(2012, 9, 1, 18, 0, 0);
-        DateTime end = new DateTime(2012, 9, 2, 6, 0, 0);
+        ZonedDateTime start = ZonedDateTime.of(2012, 9, 1, 18, 0, 0, 0, ZoneId.systemDefault());
+        ZonedDateTime end = ZonedDateTime.of(2012, 9, 2, 6, 0, 0, 0, ZoneId.systemDefault());
         LaserNight night = new LaserNight(Site.NORTH,  start, end);
 
         TargetsCollector collector = (TargetsCollector)beanFactory.getBean("targetsCollector", night);
@@ -250,10 +254,11 @@ public class TargetsCollectorTest implements BeanFactoryAware {
             this.ephemerides = new EphemerisEntry[visibilities.length];
 
             if (visibilities.length > 0) {
-                Duration between = new Duration(night.getDuration().getMillis() / (visibilities.length));
-                DateTime dateTime = night.getStart();
+                Duration between = Duration.ofMillis(night.getDuration().toMillis() / visibilities.length);
+                ZonedDateTime dateTime = night.getStart();
                 for (int i = 0; i < visibilities.length; i++) {
-                    ephemerides[i] = new EphemerisEntry(dateTime.toDate(), new WorldCoords("0"+i+":00:00", "00:00:00"), .0, .0, .0, .0);
+                    // JSKY
+                    ephemerides[i] = new EphemerisEntry(Date.from(dateTime.toInstant()), new WorldCoords("0"+i+":00:00", "00:00:00"), .0, .0, .0, .0);
                     dateTime = dateTime.plus(between);
                 }
             }

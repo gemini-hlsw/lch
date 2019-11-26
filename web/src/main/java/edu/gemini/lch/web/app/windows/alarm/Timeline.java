@@ -6,9 +6,6 @@ import edu.gemini.lch.model.LaserNight;
 import edu.gemini.lch.services.AlarmService;
 import edu.gemini.lch.services.LaserTargetsService;
 import edu.gemini.lch.web.app.components.TimeZoneSelector;
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
-import org.joda.time.Duration;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 
@@ -17,10 +14,12 @@ import java.awt.image.BufferedImage;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
+import java.time.Duration;
+import java.time.Instant;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.UUID;
 
-/**
- */
 @Configurable(preConstruction = true)
 public final class Timeline extends HorizontalLayout implements TimeZoneSelector.Listener, Button.ClickListener{
 
@@ -33,8 +32,8 @@ public final class Timeline extends HorizontalLayout implements TimeZoneSelector
 
     @Autowired private LaserTargetsService targetsService;
 
-    private DateTime lastUpdate;
-    private DateTimeZone timeZone;
+    private ZonedDateTime lastUpdate;
+    private ZoneId zoneId;
     private final Embedded embedded;
     private Button zoomIn;
     private Button zoomOut;
@@ -46,8 +45,8 @@ public final class Timeline extends HorizontalLayout implements TimeZoneSelector
      * Constructs a timeline object.
      */
     Timeline() {
-        lastUpdate = new DateTime(0);
-        timeZone = DateTimeZone.UTC;
+        lastUpdate = ZonedDateTime.ofInstant(Instant.MIN, ZoneId.systemDefault());
+        zoneId = ZoneId.of("UTC");
         embedded = new Embedded();
         addComponent(embedded);
         addComponent(createButtons());
@@ -79,14 +78,12 @@ public final class Timeline extends HorizontalLayout implements TimeZoneSelector
 
     /**
      * Updates the image that is displayed in the timeline object.
-     * @param browserWidth
-     * @param snapshot
      */
     void update(final Integer browserWidth, final AlarmService.Snapshot snapshot) {
 
         // don't update time line components more often than every two seconds
-        Duration sinceLastUpdate = new Duration(lastUpdate, DateTime.now());
-        if (sinceLastUpdate.getStandardSeconds() < 2) {
+        Duration sinceLastUpdate = Duration.between(lastUpdate, ZonedDateTime.now());
+        if (sinceLastUpdate.getSeconds() < 2) {
             return;
         }
 
@@ -99,19 +96,19 @@ public final class Timeline extends HorizontalLayout implements TimeZoneSelector
         if (snapshot.getNight() != null) {
 
             final LaserNight night = snapshot.getNight();
-            final DateTime now = snapshot.getEpicsSnapshot().getTime();
+            final ZonedDateTime now = snapshot.getEpicsSnapshot().getTime();
 
             // limit zoom level to a reasonable value (max = display whole night, min = zoom in 7 times)
             zoomLevel = Math.min(zoomLevel, getMaxZoomLevel(night, now));
             zoomLevel = Math.max(zoomLevel, 1 / (Math.pow(ZOOM_FACTOR, 7.)));
 
             // calculate start and end times for current zoom level
-            DateTime start = new DateTime(now.minusSeconds((int) (SECONDS_BEFORE * zoomLevel)));
-            DateTime end   = new DateTime(now.plusSeconds((int) (SECONDS_AFTER * zoomLevel)));
+            ZonedDateTime start = ZonedDateTime.now().minusSeconds((int) (SECONDS_BEFORE * zoomLevel));
+            ZonedDateTime end   = ZonedDateTime.now().plusSeconds((int) (SECONDS_AFTER * zoomLevel));
 
             // don't show more than one hour before start and after end of night (earliest, latest)
-            final DateTime earliest = getEarliest(night);
-            final DateTime latest = getLatest(night);
+            final ZonedDateTime earliest = getEarliest(night);
+            final ZonedDateTime latest = getLatest(night);
             if (start.isBefore(earliest)) {
                 start = earliest;
             }
@@ -121,9 +118,9 @@ public final class Timeline extends HorizontalLayout implements TimeZoneSelector
 
             // there we go, all the numbers are calculated, draw the image
             if (snapshot.getTarget() == null) {
-                image = targetsService.getImage(snapshot.getNight(), width, height, start, end, now, timeZone);
+                image = targetsService.getImage(snapshot.getNight(), width, height, start, end, now, zoneId);
             } else {
-                image = targetsService.getImage(snapshot.getNight(), snapshot.getTarget(), width, height, start, end, now, timeZone);
+                image = targetsService.getImage(snapshot.getNight(), snapshot.getTarget(), width, height, start, end, now, zoneId);
             }
 
         } else {
@@ -139,7 +136,7 @@ public final class Timeline extends HorizontalLayout implements TimeZoneSelector
         embedded.setHeight(height, Unit.PIXELS);
 
         // reset last update time
-        lastUpdate = DateTime.now();
+        lastUpdate = ZonedDateTime.now();
 
     }
 
@@ -164,51 +161,43 @@ public final class Timeline extends HorizontalLayout implements TimeZoneSelector
             // setting to max value here, update() will set zoom level to maximum zoom level that makes sense
             zoomLevel = Double.MAX_VALUE;
         }
-        lastUpdate = new DateTime(0);
+        lastUpdate = ZonedDateTime.ofInstant(Instant.MIN, ZoneId.systemDefault());
     }
 
     /**
      * Updates the time zone for displaying times.
-     * @param timeZone
      */
-    @Override public void updateTimeZone(DateTimeZone timeZone) {
-        this.timeZone = timeZone;
+    @Override public void updateZoneId(ZoneId zoneId) {
+        this.zoneId = zoneId;
     }
 
     /**
      * Calculates the earliest time that should be displayed in the image.
      * Used to provide an upper limit for the zoom level.
-     * @param night
-     * @return
      */
-    private DateTime getEarliest(LaserNight night) {
+    private ZonedDateTime getEarliest(LaserNight night) {
         return night.getStart().minusHours(1);
     }
 
     /**
      * Calculates the latest time that should be displayed in the image.
      * Used to provide an upper limit for the zoom level.
-     * @param night
-     * @return
      */
-    private DateTime getLatest(LaserNight night) {
+    private ZonedDateTime getLatest(LaserNight night) {
         return night.getEnd().plusHours(1);
     }
 
     /**
      * Calculates the maximal zoom level that displays the whole night from earliest til latest.
-     * @param night
-     * @param now
-     * @return
      */
-    private Double getMaxZoomLevel(LaserNight night, DateTime now) {
+    private Double getMaxZoomLevel(LaserNight night, ZonedDateTime now) {
         Double zoom = 1.;
-        DateTime start = now;
-        DateTime end   = now;
+        ZonedDateTime start = now;
+        ZonedDateTime end   = now;
         while (start.isAfter(getEarliest(night)) || end.isBefore(getLatest(night))) {
             zoom *= ZOOM_FACTOR;
-            start = new DateTime(now.minusSeconds((int) (SECONDS_BEFORE * zoom)));
-            end   = new DateTime(now.plusSeconds((int) (SECONDS_AFTER * zoom)));
+            start = ZonedDateTime.now().minusSeconds((int) (SECONDS_BEFORE * zoom));
+            end   = ZonedDateTime.now().plusSeconds((int) (SECONDS_AFTER * zoom));
         }
         return zoom;
     }

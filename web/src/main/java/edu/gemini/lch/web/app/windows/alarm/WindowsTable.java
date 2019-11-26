@@ -9,10 +9,10 @@ import edu.gemini.lch.services.EpicsService;
 import edu.gemini.lch.web.app.components.TimeZoneSelector;
 import edu.gemini.lch.web.app.util.TimeFormatter;
 import org.apache.log4j.Logger;
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
-import org.joda.time.Duration;
 
+import java.time.Duration;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.List;
 import java.util.Optional;
 
@@ -30,10 +30,9 @@ abstract class WindowsTable<T extends edu.gemini.lch.model.Window> extends Table
 
     /**
      * Constructs a windows table.
-     * @param clazz
      */
-    WindowsTable(DateTimeZone zone, Class clazz) {
-        timeFormatter = new TimeFormatter(zone);
+    WindowsTable(ZoneId zoneId, Class clazz) {
+        timeFormatter = new TimeFormatter(zoneId);
         container = new BeanItemContainer<>(clazz);
         setContainerDataSource(container);
         addGeneratedColumn("start", (source, itemId, columnId)    -> timeFormatter.asTimeLong(container.getItem(itemId).getBean().getStart()));
@@ -50,16 +49,14 @@ abstract class WindowsTable<T extends edu.gemini.lch.model.Window> extends Table
 
     /**
      * Updates the table with the latest data.
-     * @param snapshot
      */
     abstract void update(AlarmService.Snapshot snapshot);
 
     /**
      * Updates the time zone used for displaying times.
-     * @param timeZone
      */
-    @Override public void updateTimeZone(DateTimeZone timeZone) {
-        timeFormatter = new TimeFormatter(timeZone);
+    @Override public void updateZoneId(ZoneId zoneId) {
+        timeFormatter = new TimeFormatter(zoneId);
         refreshRowCache(); // refresh the table to make new formatter have an effect
     }
 
@@ -68,11 +65,11 @@ abstract class WindowsTable<T extends edu.gemini.lch.model.Window> extends Table
 
         private Optional<PropagationWindow> current;
 
-        Propagation(final DateTimeZone zone) {
+        Propagation(final ZoneId zone) {
             super(zone, PropagationWindow.class);
         }
-        Propagation(final DateTimeZone zone, final EpicsService epicsService, final AlarmService.Snapshot snapshot) {
-            super(zone, PropagationWindow.class);
+        Propagation(final ZoneId zoneId, final EpicsService epicsService, final AlarmService.Snapshot snapshot) {
+            super(zoneId, PropagationWindow.class);
             container.addAll(snapshot.getPropagationWindows());
             setCellStyleGenerator(new CellStyleGenerator(epicsService));
             setPageLength(Math.max(MIN_PAGE_LENGTH, container.size()));
@@ -80,7 +77,7 @@ abstract class WindowsTable<T extends edu.gemini.lch.model.Window> extends Table
 
         /** {@inheritDoc} */
         @Override void update(final AlarmService.Snapshot snapshot) {
-            final DateTime currentTime = snapshot.getEpicsSnapshot().getTime();
+            final ZonedDateTime currentTime = snapshot.getEpicsSnapshot().getTime();
             final Optional<PropagationWindow> cur = container.getItemIds().stream().filter(w -> w.contains(currentTime)).findFirst();
             if (!cur.equals(current)) {
                 // updating client-side tables is very CPU intensive for the browser and should only be done if necessary
@@ -98,7 +95,7 @@ abstract class WindowsTable<T extends edu.gemini.lch.model.Window> extends Table
             }
             /** {@inheritDoc} */
             @Override public String getStyle(final Table table, final Object itemId, final Object propertyId) {
-                DateTime currentTime = epicsService.getTime();
+                ZonedDateTime currentTime = epicsService.getTime();
                 PropagationWindow w = container.getItem(itemId).getBean();
                 if (w.contains(currentTime)) {
                     return "ok";
@@ -114,12 +111,12 @@ abstract class WindowsTable<T extends edu.gemini.lch.model.Window> extends Table
 
         private Optional<ShutteringWindow> current;
 
-        Shuttering(final DateTimeZone zone) {
-            super(zone, ShutteringWindow.class);
+        Shuttering(final ZoneId zoneId) {
+            super(zoneId, ShutteringWindow.class);
         }
 
-        Shuttering(final DateTimeZone zone, final EpicsService epicsService, final AlarmService.Snapshot snapshot) {
-            super(zone, ShutteringWindow.class);
+        Shuttering(final ZoneId zoneId, final EpicsService epicsService, final AlarmService.Snapshot snapshot) {
+            super(zoneId, ShutteringWindow.class);
             current = Optional.empty();
             container.addAll(snapshot.getShutteringWindows());
             setCellStyleGenerator(new CellStyleGenerator(snapshot.getShutteringWindows(), epicsService));
@@ -128,7 +125,7 @@ abstract class WindowsTable<T extends edu.gemini.lch.model.Window> extends Table
 
         /** {@inheritDoc} */
         @Override void update(final AlarmService.Snapshot snapshot) {
-            final DateTime currentTime = snapshot.getEpicsSnapshot().getTime();
+            final ZonedDateTime currentTime = snapshot.getEpicsSnapshot().getTime();
             final Optional<ShutteringWindow> cur = container.getItemIds().stream().filter(w -> w.contains(currentTime)).findFirst();
             if (!cur.equals(current)) {
                 // updating client-side tables is very CPU intensive for the browser and should only be done if necessary
@@ -150,7 +147,7 @@ abstract class WindowsTable<T extends edu.gemini.lch.model.Window> extends Table
 
             public String getStyle(final Table table, final Object itemId, final Object propertyId) {
                 final ShutteringWindow w = container.getItem(itemId).getBean();
-                final DateTime currentTime = epicsService.getTime();
+                final ZonedDateTime currentTime = epicsService.getTime();
                 if (w.contains(currentTime)) {
                     return "alarm";
                 } else if (isNextWindow(w, currentTime)) {
@@ -160,7 +157,7 @@ abstract class WindowsTable<T extends edu.gemini.lch.model.Window> extends Table
                 }
             }
 
-            private Boolean isNextWindow(final ShutteringWindow candidate, final DateTime currentTime) {
+            private Boolean isNextWindow(final ShutteringWindow candidate, final ZonedDateTime currentTime) {
                 for (final ShutteringWindow w : windows) {
                     // if there is a window that covers the current time we don't have an upcoming window
                     if (w.contains(currentTime)) {

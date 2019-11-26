@@ -1,15 +1,18 @@
 package edu.gemini.lch.services;
 
+import edu.gemini.lch.model.Interval;
 import edu.gemini.lch.model.LaserNight;
 import edu.gemini.lch.model.Site;
 import edu.gemini.lch.model.Visibility;
 import edu.gemini.lch.services.impl.VisibilityCalculatorImpl;
 import edu.gemini.odb.browser.HmsDms;
 import jsky.coords.WorldCoords;
-import org.joda.time.*;
 import org.junit.Assert;
 import org.junit.Test;
 
+import java.time.Duration;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.List;
 
 /**
@@ -18,9 +21,9 @@ import java.util.List;
  */
 public class VisibilityCalculatorTest {
 
-    private static final DateTime Day20120824 = new DateTime(2012,  8, 24, 0, 0);
-    private static final DateTime Day20120912 = new DateTime(2012,  9, 12, 0, 0);
-    private static final DateTime Day20121212 = new DateTime(2012, 12, 12, 0, 0);
+    private static final ZonedDateTime Day20120824 = ZonedDateTime.of(2012,  8, 24, 0, 0, 0, 0, ZoneId.systemDefault());
+    private static final ZonedDateTime Day20120912 = ZonedDateTime.of(2012,  9, 12, 0, 0, 0, 0, ZoneId.systemDefault());
+    private static final ZonedDateTime Day20121212 = ZonedDateTime.of(2012, 12, 12, 0, 0, 0, 0, ZoneId.systemDefault());
 
     @Test
     public void checkTargetAt5Hrs() {
@@ -33,10 +36,10 @@ public class VisibilityCalculatorTest {
 
         Assert.assertTrue(v.isVisible());
         Assert.assertEquals(1, visible.size());
-        Assert.assertTrue(new DateTime(visible.get(0).getStart()).isAfter(new DateTime(2012, 8, 25, 0, 36, 0, DateTimeZone.forID("HST"))));
-        Assert.assertTrue(new DateTime(visible.get(0).getStart()).isBefore(new DateTime(2012, 8, 25, 0, 38, 0, DateTimeZone.forID("HST"))));
-        Assert.assertTrue(new DateTime(visible.get(0).getEnd()).isAfter(new DateTime(2012, 8, 25, 6, 3, 0, DateTimeZone.forID("HST"))));
-        Assert.assertTrue(new DateTime(visible.get(0).getEnd()).isBefore(new DateTime(2012, 8, 25, 6, 5, 0, DateTimeZone.forID("HST"))));
+        Assert.assertTrue(visible.get(0).start().isAfter(ZonedDateTime.of(2012, 8, 25, 0, 36, 0, 0, ZoneId.of("HST")).toInstant()));
+        Assert.assertTrue(visible.get(0).start().isBefore(ZonedDateTime.of(2012, 8, 25, 0, 38, 0, 0, ZoneId.of("HST")).toInstant()));
+        Assert.assertTrue(visible.get(0).end().isAfter(ZonedDateTime.of(2012, 8, 25, 6, 3, 0, 0, ZoneId.of("HST")).toInstant()));
+        Assert.assertTrue(visible.get(0).end().isBefore(ZonedDateTime.of(2012, 8, 25, 6, 5, 0, 0, ZoneId.of("HST")).toInstant()));
     }
 
     @Test
@@ -50,10 +53,10 @@ public class VisibilityCalculatorTest {
 
         Assert.assertTrue(v.isVisible());
         Assert.assertEquals(1, visible.size());
-        Assert.assertTrue(new DateTime(visible.get(0).getStart()).isAfter(new DateTime(2012, 8, 25, 5, 33, 0, DateTimeZone.forID("HST"))));
-        Assert.assertTrue(new DateTime(visible.get(0).getStart()).isBefore(new DateTime(2012, 8, 25, 5, 38, 0, DateTimeZone.forID("HST"))));
-        Assert.assertTrue(new DateTime(visible.get(0).getEnd()).isAfter(new DateTime(2012, 8, 25, 6, 3, 0, DateTimeZone.forID("HST"))));
-        Assert.assertTrue(new DateTime(visible.get(0).getEnd()).isBefore(new DateTime(2012, 8, 25, 6, 5, 0, DateTimeZone.forID("HST"))));
+        Assert.assertTrue(visible.get(0).start().isAfter(ZonedDateTime.of(2012, 8, 25, 5, 33, 0, 0,ZoneId.of("HST")).toInstant()));
+        Assert.assertTrue(visible.get(0).start().isBefore(ZonedDateTime.of(2012, 8, 25, 5, 38, 0, 0,ZoneId.of("HST")).toInstant()));
+        Assert.assertTrue(visible.get(0).end().isAfter(ZonedDateTime.of(2012, 8, 25, 6, 3, 0, 0,ZoneId.of("HST")).toInstant()));
+        Assert.assertTrue(visible.get(0).end().isBefore(ZonedDateTime.of(2012, 8, 25, 6, 5, 0, 0,ZoneId.of("HST")).toInstant()));
     }
 
     @Test
@@ -68,10 +71,10 @@ public class VisibilityCalculatorTest {
 
         Assert.assertTrue(v.isVisible());
         Assert.assertEquals(1, visible.size());
-        Assert.assertTrue(new DateTime(visible.get(0).getStart()).isAfter(new DateTime(2012, 8, 24, 18, 41, 0, DateTimeZone.forID("HST"))));
-        Assert.assertTrue(new DateTime(visible.get(0).getStart()).isBefore(new DateTime(2012, 8, 24, 18, 43, 0, DateTimeZone.forID("HST"))));
-        Assert.assertTrue(new DateTime(visible.get(0).getEnd()).isAfter(new DateTime(2012, 8, 24, 23, 30, 0, DateTimeZone.forID("HST"))));
-        Assert.assertTrue(new DateTime(visible.get(0).getEnd()).isBefore(new DateTime(2012, 8, 24, 23, 50, 0, DateTimeZone.forID("HST"))));
+        Assert.assertTrue(visible.get(0).start().isAfter(ZonedDateTime.of(2012, 8, 24, 18, 41, 0, 0,ZoneId.of("HST")).toInstant()));
+        Assert.assertTrue(visible.get(0).start().isBefore(ZonedDateTime.of(2012, 8, 24, 18, 43, 0, 0,ZoneId.of("HST")).toInstant()));
+        Assert.assertTrue(visible.get(0).end().isAfter(ZonedDateTime.of(2012, 8, 24, 23, 30, 0, 0,ZoneId.of("HST")).toInstant()));
+        Assert.assertTrue(visible.get(0).end().isBefore(ZonedDateTime.of(2012, 8, 24, 23, 50, 0, 0,ZoneId.of("HST")).toInstant()));
     }
 
     @Test
@@ -86,10 +89,10 @@ public class VisibilityCalculatorTest {
 
         Assert.assertTrue(v.isVisible());
         Assert.assertEquals(1, visible.size());
-        Assert.assertTrue(new DateTime(visible.get(0).getStart()).isAfter(new DateTime(2012, 9, 13, 1, 13, 0, DateTimeZone.forID("HST"))));
-        Assert.assertTrue(new DateTime(visible.get(0).getStart()).isBefore(new DateTime(2012, 9, 13, 1, 15, 0, DateTimeZone.forID("HST"))));
-        Assert.assertTrue(new DateTime(visible.get(0).getEnd()).isAfter(new DateTime(2012, 9, 13, 6, 8, 0, DateTimeZone.forID("HST"))));
-        Assert.assertTrue(new DateTime(visible.get(0).getEnd()).isBefore(new DateTime(2012, 9, 13, 6, 10, 0, DateTimeZone.forID("HST"))));
+        Assert.assertTrue(visible.get(0).start().isAfter(ZonedDateTime.of(2012, 9, 13, 1, 13, 0, 0,ZoneId.of("HST")).toInstant()));
+        Assert.assertTrue(visible.get(0).start().isBefore(ZonedDateTime.of(2012, 9, 13, 1, 15, 0, 0,ZoneId.of("HST")).toInstant()));
+        Assert.assertTrue(visible.get(0).end().isAfter(ZonedDateTime.of(2012, 9, 13, 6, 8, 0, 0,ZoneId.of("HST")).toInstant()));
+        Assert.assertTrue(visible.get(0).end().isBefore(ZonedDateTime.of(2012, 9, 13, 6, 10, 0, 0,ZoneId.of("HST")).toInstant()));
     }
 
     @Test
@@ -106,10 +109,10 @@ public class VisibilityCalculatorTest {
 
         Assert.assertTrue(v.isVisible());
         Assert.assertEquals(1, visible.size());
-        Assert.assertTrue(new DateTime(visible.get(0).getStart()).isAfter(new DateTime(2012, 9, 13, 1, 13, 0, DateTimeZone.forID("HST"))));
-        Assert.assertTrue(new DateTime(visible.get(0).getStart()).isBefore(new DateTime(2012, 9, 13, 1, 15, 0, DateTimeZone.forID("HST"))));
-        Assert.assertTrue(new DateTime(visible.get(0).getEnd()).isAfter(new DateTime(2012, 9, 13, 6, 8, 0, DateTimeZone.forID("HST"))));
-        Assert.assertTrue(new DateTime(visible.get(0).getEnd()).isBefore(new DateTime(2012, 9, 13, 6, 10, 0, DateTimeZone.forID("HST"))));
+        Assert.assertTrue(visible.get(0).start().isAfter(ZonedDateTime.of(2012, 9, 13, 1, 13, 0, 0,ZoneId.of("HST")).toInstant()));
+        Assert.assertTrue(visible.get(0).start().isBefore(ZonedDateTime.of(2012, 9, 13, 1, 15, 0, 0,ZoneId.of("HST")).toInstant()));
+        Assert.assertTrue(visible.get(0).end().isAfter(ZonedDateTime.of(2012, 9, 13, 6, 8, 0, 0,ZoneId.of("HST")).toInstant()));
+        Assert.assertTrue(visible.get(0).end().isBefore(ZonedDateTime.of(2012, 9, 13, 6, 10, 0, 0,ZoneId.of("HST")).toInstant()));
     }
 
     /**
@@ -142,18 +145,18 @@ public class VisibilityCalculatorTest {
         Assert.assertTrue(v.isVisible());
         Assert.assertEquals(2, visible.size());
 
-        Assert.assertTrue(new DateTime(visible.get(0).getStart()).isAfter(new DateTime(2012, 12, 12, 17, 43, 0, DateTimeZone.forID("HST"))));
-        Assert.assertTrue(new DateTime(visible.get(0).getStart()).isBefore(new DateTime(2012, 12, 12, 17, 45, 0, DateTimeZone.forID("HST"))));
-        Assert.assertTrue(new DateTime(visible.get(0).getEnd()).isAfter(new DateTime(2012, 12, 12, 19, 8, 0, DateTimeZone.forID("HST"))));
-        Assert.assertTrue(new DateTime(visible.get(0).getEnd()).isBefore(new DateTime(2012, 12, 12, 19, 10, 0, DateTimeZone.forID("HST"))));
+        Assert.assertTrue(visible.get(0).start().isAfter(ZonedDateTime.of(2012, 12, 12, 17, 43, 0, 0,ZoneId.of("HST")).toInstant()));
+        Assert.assertTrue(visible.get(0).start().isBefore(ZonedDateTime.of(2012, 12, 12, 17, 45, 0, 0,ZoneId.of("HST")).toInstant()));
+        Assert.assertTrue(visible.get(0).end().isAfter(ZonedDateTime.of(2012, 12, 12, 19, 8, 0, 0,ZoneId.of("HST")).toInstant()));
+        Assert.assertTrue(visible.get(0).end().isBefore(ZonedDateTime.of(2012, 12, 12, 19, 10, 0, 0,ZoneId.of("HST")).toInstant()));
 
-        Assert.assertTrue(new DateTime(visible.get(1).getStart()).isAfter(new DateTime(2012, 12, 13, 6, 36, 0, DateTimeZone.forID("HST"))));
-        Assert.assertTrue(new DateTime(visible.get(1).getStart()).isBefore(new DateTime(2012, 12, 13, 6, 38, 0, DateTimeZone.forID("HST"))));
-        Assert.assertTrue(new DateTime(visible.get(1).getEnd()).isAfter(new DateTime(2012, 12, 13, 6, 47, 0, DateTimeZone.forID("HST"))));
-        Assert.assertTrue(new DateTime(visible.get(1).getEnd()).isBefore(new DateTime(2012, 12, 13, 6, 49, 0, DateTimeZone.forID("HST"))));
+        Assert.assertTrue(visible.get(1).start().isAfter(ZonedDateTime.of(2012, 12, 13, 6, 36, 0, 0,ZoneId.of("HST")).toInstant()));
+        Assert.assertTrue(visible.get(1).start().isBefore(ZonedDateTime.of(2012, 12, 13, 6, 38, 0, 0,ZoneId.of("HST")).toInstant()));
+        Assert.assertTrue(visible.get(1).end().isAfter(ZonedDateTime.of(2012, 12, 13, 6, 47, 0, 0,ZoneId.of("HST")).toInstant()));
+        Assert.assertTrue(visible.get(1).end().isBefore(ZonedDateTime.of(2012, 12, 13, 6, 49, 0, 0,ZoneId.of("HST")).toInstant()));
 
-        Assert.assertTrue(v.getMaxDurationAboveLimit(night).isLongerThan(new Duration(5070*1000-delta)));
-        Assert.assertTrue(v.getMaxDurationAboveLimit(night).isShorterThan(new Duration(5070*1000+delta)));
+        Assert.assertTrue(v.getMaxDurationAboveLimit(night).compareTo(Duration.ofMillis(5070*1000-delta)) > 0);
+        Assert.assertTrue(v.getMaxDurationAboveLimit(night).compareTo(Duration.ofMillis(5070*1000+delta)) < 0);
     }
 
     private VisibilityCalculator createCalculator(LaserNight night, Double altitude) {

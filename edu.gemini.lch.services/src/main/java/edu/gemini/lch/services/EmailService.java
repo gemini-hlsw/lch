@@ -21,30 +21,17 @@ public interface EmailService {
 
     /**
      * Sends a text email.
-     * @param to
-     * @param cc
-     * @param bcc
-     * @param subject
-     * @param text
      */
     void sendEmail(String[] to, String[] cc, String[] bcc, String subject, String text);
 
     /**
      * Sends an email with attachments.
-     * @param to
-     * @param cc
-     * @param bcc
-     * @param subject
-     * @param text
-     * @param files
      */
     void sendEmailWithAttachment(String[] to, String[] cc, String[] bcc, String subject, String text, Collection<PrmFile.File> files);
 
     /**
      * Shortcut for sending an email to the internal email addresses.
      * Used for sending warning and error messages.
-     * @param subject
-     * @param text
      */
     void sendInternalEmail(String subject, String text);
 

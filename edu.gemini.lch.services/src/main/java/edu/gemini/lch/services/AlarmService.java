@@ -3,9 +3,9 @@ package edu.gemini.lch.services;
 
 import edu.gemini.lch.model.*;
 import edu.gemini.shared.skycalc.Angle;
-import org.joda.time.DateTime;
-import org.joda.time.Duration;
 
+import java.time.Duration;
+import java.time.ZonedDateTime;
 import java.util.List;
 
 /**
@@ -63,8 +63,8 @@ public interface AlarmService {
         LaserTarget getTarget();
         List<PropagationWindow> getPropagationWindows();
         List<ShutteringWindow> getShutteringWindows();
-        DateTime getEarliestPropagation();
-        DateTime getLatestPropagation();
+        ZonedDateTime getEarliestPropagation();
+        ZonedDateTime getLatestPropagation();
         List<Observation> getObservations();
         Angle getErrorCone();
         Angle getDistance();

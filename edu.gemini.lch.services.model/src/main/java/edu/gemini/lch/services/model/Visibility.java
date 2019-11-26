@@ -1,8 +1,8 @@
 package edu.gemini.lch.services.model;
 
 import javax.xml.bind.annotation.*;
+import java.time.Instant;
 import java.util.Collections;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -36,13 +36,13 @@ public class Visibility {
     @XmlAccessorType(XmlAccessType.FIELD)
     public static class Interval {
 
-        private Date start;
-        private Date end;
+        private Instant start;
+        private Instant end;
 
-        public Date getStart() { return start; }
-        public Date getEnd() { return end; }
+        public Instant getStart() { return start; }
+        public Instant getEnd() { return end; }
 
-        public Interval(Date start, Date end) {
+        public Interval(Instant start, Instant end) {
             this.start = start;
             this.end = end;
         }

@@ -18,8 +18,6 @@ import org.vaadin.dialogs.ConfirmDialog;
 
 import java.io.ByteArrayInputStream;
 
-/**
- */
 @Configurable(preConstruction = true)
 public class NightWindowHeader extends Header {
 

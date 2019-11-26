@@ -4,8 +4,6 @@ import javax.xml.bind.annotation.*;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- */
 @XmlRootElement
 @XmlType(propOrder = {"id", "coordinates", "visibility", "clearanceWindows", "shutteringWindows"})
 public class LaserTarget {

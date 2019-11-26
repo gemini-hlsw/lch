@@ -13,10 +13,6 @@ import org.apache.http.client.utils.URIBuilder;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.impl.client.DefaultHttpClient;
 import org.apache.log4j.Logger;
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 
@@ -26,10 +22,10 @@ import javax.annotation.Resource;
 import java.net.ConnectException;
 import java.net.URI;
 import java.net.URISyntaxException;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
-import java.util.StringTokenizer;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
+import java.util.*;
 
 /**
  * Service for accessing the LTCS web application to get information about imminent collisions with the
@@ -44,7 +40,7 @@ public class LtcsServiceImpl implements LtcsService {
     private static final Logger LOGGER = Logger.getLogger(LtcsServiceImpl.class);
 
     // LTCS service gives us a time stamp in local time for the next 24hrs
-    private static final DateTimeFormatter timeFormatter = DateTimeFormat.forPattern("HH:mm:ss");
+    private static final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern(("HH:mm:ss");
 
     private static final String PROCESSES_DOWN = "PROCESSES DOWN";
     private static final String BAD_REQUEST = "WRONG INPUT";
@@ -70,7 +66,7 @@ public class LtcsServiceImpl implements LtcsService {
     private void init() {
         // create a http client which will recycle open connections
         httpClient = new DefaultHttpClient();
-        currentStatus = new Snapshot(Collections.EMPTY_LIST);
+        currentStatus = new Snapshot(Collections.emptyList());
     }
 
     @PreDestroy
@@ -137,12 +133,6 @@ public class LtcsServiceImpl implements LtcsService {
 
     /**
      * Creates an URI with all the necessary parameters.
-     * @param url
-     * @param raDegrees
-     * @param decDegrees
-     * @param laserState
-     * @return
-     * @throws URISyntaxException
      */
     private URI createURI(String url, Double raDegrees, Double decDegrees, String laserState) throws URISyntaxException {
         return new URIBuilder(url+"/ltcs/screens/query.php")
@@ -158,8 +148,6 @@ public class LtcsServiceImpl implements LtcsService {
 
     /**
      * Parses the LTCS server response.
-     * @param response
-     * @return
      */
     protected void parseResponse(String response) {
         // LTCS service replies with error states in response without sending appropriate HTTP codes (!= 200),
@@ -178,7 +166,7 @@ public class LtcsServiceImpl implements LtcsService {
             // move it into the future but assume it was in the past and is not important anymore (if this is not
             // the case LTCS will keep sending it and we will get it 2 minutes later..)
             // NOTE: USE SITE LOCAL TIME NOT UTC! TIMES RETURNED BY LTCS ARE LOCAL TIMES!
-            DateTime now = epicsService.getTime().minusMinutes(2).toDateTime(DateTimeZone.getDefault());
+            ZonedDateTime now = epicsService.getTime().minusMinutes(2).withZoneSameInstant(ZoneId.systemDefault());
             currentStatus = new Snapshot(parseCollisions(response, now));
             LOGGER.trace("LTCS status successfully updated, found " + currentStatus.collisions.size() + " collisions");
         }
@@ -186,11 +174,9 @@ public class LtcsServiceImpl implements LtcsService {
 
     /**
      * Parses and returns an unmodifiable list with the collisions from the string response from LTCS.
-     * @param response
-     * @return
      */
     // NOTE: static so it can be used by the alternative implementation..
-    static List<LtcsService.Collision> parseCollisions(String response, DateTime now) {
+    static List<LtcsService.Collision> parseCollisions(String response, ZonedDateTime now) {
 
         // NOTE: responses look as follows
         // a) "GEMINI SUBARU 6:30:23 6:45:15 NO-LGS"
@@ -204,7 +190,7 @@ public class LtcsServiceImpl implements LtcsService {
 
 
         if (response.trim().isEmpty() || response.contains("NONE")) {
-            return Collections.EMPTY_LIST;
+            return Collections.emptyList();
         }
 
         List<LtcsService.Collision> collisions = new ArrayList<>();
@@ -216,8 +202,8 @@ public class LtcsServiceImpl implements LtcsService {
             // get telescope and priority
             String telescope = tokenizer.nextToken();
             // get times from timestamps; use same "NOW" for both timestamps
-            DateTime start   = toDateTime(tokenizer.nextToken(), now);
-            DateTime end     = toDateTime(tokenizer.nextToken(), now);
+            ZonedDateTime start   = toDateTime(tokenizer.nextToken(), now);
+            ZonedDateTime end     = toDateTime(tokenizer.nextToken(), now);
             // get priority
             String priority  = tokenizer.nextToken();
 
@@ -248,10 +234,10 @@ public class LtcsServiceImpl implements LtcsService {
         return Collections.unmodifiableList(collisions);
     }
 
-    private static DateTime toDateTime(String timestamp, DateTime today) {
-        return timeFormatter.parseDateTime(timestamp)
+    private static ZonedDateTime toDateTime(String timestamp, ZonedDateTime today) {
+        return timeFormatter.parse(timestamp, ZonedDateTime::from)
             .withYear(today.getYear())
-            .withMonthOfYear(today.getMonthOfYear())
+            .withMonth(today.getMonthValue())
             .withDayOfMonth(today.getDayOfMonth());
     }
 
@@ -268,7 +254,7 @@ public class LtcsServiceImpl implements LtcsService {
         Snapshot(Error error, String message) {
             this.error = error;
             this.message = message;
-            this.collisions = Collections.EMPTY_LIST;
+            this.collisions = Collections.emptyList();
         }
         Snapshot(List<LtcsService.Collision> collisions) {
             this.error = Error.NONE;
@@ -289,9 +275,9 @@ public class LtcsServiceImpl implements LtcsService {
     private static class Collision implements LtcsService.Collision {
         private final String observatory;
         private final String priority;
-        private final DateTime start;
-        private final DateTime end;
-        Collision(String observatory, String priority, DateTime start, DateTime end) {
+        private final ZonedDateTime start;
+        private final ZonedDateTime end;
+        Collision(String observatory, String priority, ZonedDateTime start, ZonedDateTime end) {
             this.observatory = observatory;
             this.priority = priority;
             this.start = start;
@@ -302,15 +288,15 @@ public class LtcsServiceImpl implements LtcsService {
         @Override
         public String getPriority() { return priority; }
         @Override
-        public DateTime getStart() { return start; }
+        public ZonedDateTime getStart() { return start; }
         @Override
-        public DateTime getEnd() { return end; }
+        public ZonedDateTime getEnd() { return end; }
         @Override
         public int compareTo(LtcsService.Collision other) { return this.getStart().compareTo(other.getStart()); }
         @Override
         public Boolean geminiHasPriority() { return priority.equalsIgnoreCase("GEMINI"); }
         @Override
-        public Boolean contains(DateTime time) {
+        public Boolean contains(ZonedDateTime time) {
             return (!getStart().isAfter(time) && getEnd().isAfter(time));
         }
 

@@ -1,8 +1,7 @@
 package edu.gemini.lch.model;
 
-import org.joda.time.DateTime;
-
 import javax.persistence.*;
+import java.time.ZonedDateTime;
 
 
 /**
@@ -56,7 +55,7 @@ public class SimpleLaserNight extends BaseLaserNight {
     public static final String QUERY_FIND_BY_SITE_ENDING_BEFORE = "SimpleLaserNight.findBySiteEndingBefore";
 
 
-    public SimpleLaserNight(Site site, DateTime start, DateTime end) {
+    public SimpleLaserNight(Site site, ZonedDateTime start, ZonedDateTime end) {
         super(site, start, end);
     }
 

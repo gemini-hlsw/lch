@@ -1,9 +1,6 @@
 package edu.gemini.lch.services.timeline;
 
 import org.apache.log4j.Logger;
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
-import org.joda.time.Duration;
 
 import javax.imageio.ImageIO;
 import java.awt.*;
@@ -12,6 +9,10 @@ import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
+import java.time.Duration;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  */
@@ -23,7 +24,7 @@ public class TimeLineHeader {
 
     private final byte[] imageBytes;
 
-    public TimeLineHeader(DateTime start, DateTime end, Integer width, Integer height, DateTimeZone zone) {
+    public TimeLineHeader(ZonedDateTime start, ZonedDateTime end, Integer width, Integer height, ZoneId zone) {
         this.imageBytes = createImage(start, end, width, height, zone);
     }
 
@@ -35,7 +36,7 @@ public class TimeLineHeader {
         return new ByteArrayInputStream(imageBytes);
     }
 
-    private byte[] createImage(DateTime start, DateTime end, Integer width, Integer height, DateTimeZone zone) {
+    private byte[] createImage(ZonedDateTime start, ZonedDateTime end, Integer width, Integer height, ZoneId zone) {
 
         BufferedImage image = new BufferedImage (width, height, BufferedImage.TYPE_INT_RGB);
         Graphics drawable = image.getGraphics();
@@ -45,12 +46,13 @@ public class TimeLineHeader {
 
         try {
 
-            int hours = (int) new Duration(start, end).getStandardHours();
+            int hours = (int) Duration.between(start, end).toHours();
             double curX = SPACE;
             double hoursX = (width - (hours*SPACE)) / hours;
-            DateTime time = start;
+            ZonedDateTime time = start;
             while (time.isBefore(end)) {
-                String imageName = "timeline-" + time.toDateTime(zone).toString("HHmm") + ".png";
+                final DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("HHmm");
+                String imageName = "timeline-" + timeFormatter.format(time.withZoneSameInstant(zone)) + ".png";
                 InputStream stream = getClass().getResourceAsStream(imageName);
                 BufferedImage headerImage = ImageIO.read(stream);
                 drawable.drawImage(headerImage, (int) (curX + ((hoursX-headerImage.getWidth())/2)), 5, null);

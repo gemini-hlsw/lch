@@ -15,11 +15,10 @@ import edu.gemini.lch.web.app.components.Footer;
 import edu.gemini.lch.web.app.components.Header;
 import edu.gemini.lch.web.app.components.TimeZoneSelector;
 import org.apache.log4j.Logger;
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 
+import java.time.ZonedDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -108,7 +107,7 @@ public class NightWindow extends VerticalLayout implements View, TimeZoneSelecto
         return l;
     }
 
-    public void setNight(DateTime dateTime) {
+    public void setNight(ZonedDateTime dateTime) {
         // fully load laser night
         LaserNight night = laserNightService.loadLaserNight(dateTime);
         setNight(night);

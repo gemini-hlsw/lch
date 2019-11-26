@@ -1,10 +1,12 @@
 package edu.gemini.lch.services.util
 
+import java.time.format.DateTimeFormatter
+import java.time.{Duration, ZoneId, ZonedDateTime}
+
 import collection.mutable
 import java.util.regex.{Matcher, Pattern}
-import edu.gemini.lch.model.{AzElLaserTarget, RaDecLaserTarget, LaserNight}
-import org.joda.time.{DateTimeZone, Duration, DateTime}
-import org.joda.time.format.PeriodFormatterBuilder
+
+import edu.gemini.lch.model.{AzElLaserTarget, LaserNight, RaDecLaserTarget}
 import org.springframework.context.annotation.Scope
 import org.springframework.stereotype.Component
 import edu.gemini.lch.services.ConfigurationService
@@ -18,7 +20,7 @@ import org.apache.log4j.Logger
  */
 @Component
 @Scope("prototype")
-class TemplateEngine(maybeNight: Option[LaserNight], maybeDate: Option[DateTime]) {
+class TemplateEngine(maybeNight: Option[LaserNight], maybeDate: Option[ZonedDateTime]) {
 
   val LOGGER = Logger getLogger classOf[TemplateEngine]
 
@@ -33,19 +35,16 @@ class TemplateEngine(maybeNight: Option[LaserNight], maybeDate: Option[DateTime]
 
   def this()                  { this(None, None) }
   def this(night: LaserNight) { this(Some(night), None) }
-  def this(date: DateTime)    { this(None, Some(date)) }
+  def this(date: ZonedDateTime)    { this(None, Some(date)) }
 
   // Construction code
   {
-    maybeNight map setNight // set night if one has been set in constructor
-    maybeDate map setDate   // set date if one has been set
+    maybeNight.map(setNight) // set night if one has been set in constructor
+    maybeDate.map(setDate)   // set date if one has been set
   }
 
   /**
    * Adds a replacement that will replace all occurrences of <code>key</code> with <code>transformation</code>.
-   * @param key
-   * @param transformation
-   * @return
    */
   def addReplacement(key: String, transformation: String) =
     replacements += key -> {_: Option[String] => transformation }
@@ -53,25 +52,18 @@ class TemplateEngine(maybeNight: Option[LaserNight], maybeDate: Option[DateTime]
   /**
    * Adds a replacement that will replace all occurrences of <code>key</code> with the result of
    * <code>transformation()</code>.
-   * @param key
-   * @param transformation
-   * @return
    */
   def addReplacement(key: String, transformation: Option[String] => String) =
     replacements += key -> transformation
 
   /**
    * Convenience method that returns the filled template defined by a configuration value.
-   * @param configuration
-   * @return
    */
   def fillTemplate(configuration: Configuration.Value) : String =
     fillTemplate(configurationService.getString(configuration))
 
   /**
    * Fills the given template.
-   * @param template
-   * @return
    */
   def fillTemplate(template: String) : String = {
     val sb = new StringBuffer()
@@ -84,13 +76,13 @@ class TemplateEngine(maybeNight: Option[LaserNight], maybeDate: Option[DateTime]
     sb.toString
   }
 
-  def setDate(date: DateTime) = {
+  def setDate(date: ZonedDateTime) = {
     addReplacement("SEMESTER", transformSemester(_, date))
   }
 
   def setNight(night: LaserNight) = {
-    val tz = night.getSite.getTimeZone
-    addReplacement("NOW",                 transformDate(_, DateTime.now, tz))
+    val tz = night.getSite.getZoneId
+    addReplacement("NOW",                 transformDate(_, ZonedDateTime.now, tz))
     addReplacement("NIGHT-START",         transformDate(_, night getStart, tz))
     addReplacement("NIGHT-END",           transformDate(_, night getEnd, tz))
     addReplacement("NIGHT-PRM-SENT",      transformDateNullSafe(_, night getLatestPrmSent, tz))
@@ -121,7 +113,7 @@ class TemplateEngine(maybeNight: Option[LaserNight], maybeDate: Option[DateTime]
     }
   }
 
-  private def transformSemester(template: Option[String], date: DateTime) = {
+  private def transformSemester(template: Option[String], date: ZonedDateTime) = {
     val offset = Integer.parseInt(template.getOrElse("0"))
     LaserNight.getSemester(date, offset)
   }
@@ -131,40 +123,32 @@ class TemplateEngine(maybeNight: Option[LaserNight], maybeDate: Option[DateTime]
 
   /**
    * Checks for <code>null</code> dates before handling them.
-   * @param template
-   * @param date
-   * @return
    */
-  private def transformDateNullSafe(template: Option[String], date: DateTime, localTimeZone: DateTimeZone) =
-    if (date == null) "NULL" else transformDate(template, date, localTimeZone)
+  private def transformDateNullSafe(template: Option[String], date: ZonedDateTime, zoneId: ZoneId) =
+    if (date == null) "NULL" else transformDate(template, date, zoneId)
 
   /**
    * Transforms a date according to the template.
    * If no template is given, the default string representation is printed.
-   * @param template
-   * @param date
-   * @return
    */
-  private def transformDate(template: Option[String], date: DateTime, localTimeZone: DateTimeZone) = {
+  private def transformDate(template: Option[String], date: ZonedDateTime, zoneId: ZoneId) = {
     template match {
       case Some(string) => string split ('_') match {
-        case Array("LOCAL", pattern)  => date.toDateTime(localTimeZone).toString(pattern)
-        case Array(timeZone, pattern) => date.toDateTime(DateTimeZone.forID(timeZone)).toString(pattern)
-        case Array(pattern)           => date.toString(pattern)
+        case Array("LOCAL", pattern)  => DateTimeFormatter.ofPattern(pattern).format(date.withZoneSameLocal(zoneId))
+        case Array(timeZone, pattern) => DateTimeFormatter.ofPattern(pattern).format(date.withZoneSameInstant(ZoneId.of(timeZone)))
+        case Array(pattern)           => DateTimeFormatter.ofPattern(pattern).format(date)
         case _                        => errorString(string)
       }
-      case _ => date.toString()
+      case _ => date.toString
     }
   }
 
   /**
    * Transforms a duration.
    * The template is currently ignored, the output is always formatted as HH:mm:ss.
-   * @param template
-   * @param duration
-   * @return
    */
   private def transformDuration(template: Option[String], duration: Duration) = {
+    // TODO-JODA
     periodFormatter.print(duration.toPeriod)
   }
 
@@ -172,6 +156,7 @@ class TemplateEngine(maybeNight: Option[LaserNight], maybeDate: Option[DateTime]
    * Creates a period formatter.
    */
   private val periodFormatter =
+  // TODO-JODA
     new PeriodFormatterBuilder().
       printZeroAlways.
       minimumPrintedDigits(2).
@@ -181,8 +166,6 @@ class TemplateEngine(maybeNight: Option[LaserNight], maybeDate: Option[DateTime]
 
   /**
    * Creates a string representing a replacement that failed.
-   * @param string
-   * @return
    */
   private def errorString(string: String) = {
     LOGGER error "Could not resolve template '" + string + "'"
@@ -191,9 +174,6 @@ class TemplateEngine(maybeNight: Option[LaserNight], maybeDate: Option[DateTime]
 
   /**
    * Gets the currently defined replacement or an error string if no replacement for a key is defined.
-   * @param key
-   * @param replacement
-   * @return
    */
   private def getReplacement(key: String, replacement: String) =
     replacements getOrElse (key, {_: Option[String] => errorString(replacement)})

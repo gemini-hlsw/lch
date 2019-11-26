@@ -87,7 +87,7 @@ public class EmailServiceImpl implements EmailService {
     /** {@inheritDoc} */
     @Override
     public void sendEmail(String[] to, String[] cc, String[] bcc, String subject, String text) {
-        sendEmailWithAttachment(to, cc, bcc, subject, text, Collections.EMPTY_LIST); // send without attachments
+        sendEmailWithAttachment(to, cc, bcc, subject, text, Collections.emptyList()); // send without attachments
     }
 
     /** {@inheritDoc} */

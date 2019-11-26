@@ -13,10 +13,11 @@ options {
 @header {
 	package edu.gemini.lch.pamparser;
 
-	import java.text.SimpleDateFormat;
-	import java.text.ParseException;
-	import java.util.Date;
-	import org.joda.time.DateTime;
+	import java.time.format.DateTimeParseException;
+	import java.time.Instant;
+	import java.time.ZonedDateTime;
+	import java.time.format.DateTimeFormatter;
+	import java.time.ZoneId;
 
     import edu.gemini.lch.pamparser.Target;
     import edu.gemini.lch.pamparser.RaDecTarget;
@@ -26,7 +27,7 @@ options {
 
 @members {
 	// We need a date format to parse the date info from the WINDOW nodes.
-	private static final SimpleDateFormat DATE_FORMAT = new SimpleDateFormat("yyyyMMMddHHmmssz");
+	private static final DateTimeFormatter DATE_FORMAT = DateTimeFormatter.ofPattern("yyyyMMMddHHmmssz").withZone(ZoneId.systemDefault());
 }
 
 /// The top-level response rule returns a Response object. It constructs this object and
@@ -82,26 +83,26 @@ windows returns [List<PropagationWindow> list]
 		;
 
 /// The window rule accepts a list (passed by the windows rule above) and adds a propagation window
-/// that's constructed based on the start and end times, which are Dates by this point.
+/// that's constructed based on the start and end times, which are Instants by this point.
 
 window[List<PropagationWindow> list]
 		:	^(WINDOW start=time end=time)
 			{
-				list.add(new PropagationWindow(new DateTime(start), new DateTime(end)));
+				list.add(new PropagationWindow(ZonedDateTime.ofInstant(start, ZoneId.systemDefault()), ZonedDateTime.ofInstant(end, ZoneId.systemDefault())));
 			}
 		;
 
-/// The time rule accepys a GMT node and returns a java.util.date that it constructs by
+/// The time rule accepts a GMT node and returns an Instant that it constructs by
 /// parsing out the string data. It uses the statically-defined DATE_FORMAT to do this.
 
-time	returns [Date ret]
+time	returns [Instant ret]
 		:	^(DATETIME yyyy=INT mm=MONTH dd=INT hhmm=INT ss=INT)
 			{
 			    // all times are in UTC
 				String date = $yyyy.text + $mm.text + $dd.text + $hhmm.text + $ss.text + "UTC";
 				try {
-					ret = DATE_FORMAT.parse(date);
-				} catch (ParseException e) {
+					ret = ZonedDateTime.parse(date, DATE_FORMAT).toInstant();
+				} catch (DateTimeParseException e) {
 					throw new RecognitionException();
 				}
 			}
@@ -110,8 +111,8 @@ time	returns [Date ret]
 			    // all times are in UTC
 				String date = $yyyy.text + $month.text + $dd.text + $hh.text + $mm.text + $ss.text + "UTC";
 				try {
-					ret = DATE_FORMAT.parse(date);
-				} catch (ParseException e) {
+					ret = ZonedDateTime.parse(date, DATE_FORMAT).toInstant();
+				} catch (DateTimeParseException e) {
 					throw new RecognitionException();
 				}
 			}

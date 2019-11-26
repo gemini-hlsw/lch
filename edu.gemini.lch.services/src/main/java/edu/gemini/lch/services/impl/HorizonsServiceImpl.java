@@ -1,7 +1,6 @@
 package edu.gemini.lch.services.impl;
 
-import edu.gemini.horizons.api.*;
-import edu.gemini.horizons.server.backend.CgiQueryExecutor;
+import edu.gemini.horizons.api.HorizonsException;
 import edu.gemini.lch.configuration.Configuration;
 import edu.gemini.lch.model.LaserNight;
 import edu.gemini.lch.model.Site;
@@ -11,11 +10,9 @@ import edu.gemini.lch.services.SiteService;
 import edu.gemini.spModel.core.HorizonsDesignation;
 import jsky.coords.WorldCoords;
 import org.apache.log4j.Logger;
-import org.joda.time.DateTimeZone;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
-import java.util.ArrayList;
 import java.util.List;
 
 /**

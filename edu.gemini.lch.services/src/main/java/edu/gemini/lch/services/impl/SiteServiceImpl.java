@@ -4,8 +4,9 @@ import edu.gemini.lch.model.Site;
 import edu.gemini.lch.services.SiteService;
 import edu.gemini.shared.skycalc.Angle;
 import org.apache.log4j.Logger;
-import org.joda.time.DateTimeZone;
 import org.springframework.stereotype.Service;
+
+import java.util.TimeZone;
 
 
 /**
@@ -65,7 +66,7 @@ public class SiteServiceImpl implements SiteService {
     }
 
     /** {@inheritDoc} */
-    @Override public DateTimeZone getSiteTimeZone() {
+    @Override public TimeZone getSiteTimeZone() {
         return site.getTimeZone();
     }
 

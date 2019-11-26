@@ -9,15 +9,14 @@ import jsky.coords.DMS;
 import jsky.coords.HMS;
 import jsky.coords.WorldCoords;
 import org.apache.log4j.Logger;
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
 import org.springframework.scheduling.annotation.Scheduled;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import javax.annotation.Resource;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 /**
@@ -61,7 +60,7 @@ public abstract class EpicsServiceImpl implements edu.gemini.lch.services.EpicsS
     protected EpicsServiceImpl(Map<String, Object> readChannels, String[] writeChannels) {
         this.readChannels = readChannels;
         this.writeChannels = writeChannels;
-        this.formatUTC = DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss.S").withZone(DateTimeZone.UTC);
+        this.formatUTC = DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss.S").withZone(ZoneId.of("UTC"));
     }
 
     /** {@inheritDoc} */
@@ -70,9 +69,9 @@ public abstract class EpicsServiceImpl implements edu.gemini.lch.services.EpicsS
     }
 
     /** {@inheritDoc} */
-    @Override public DateTime getTime() {
+    @Override public ZonedDateTime getTime() {
         String timeString = connector.readValue(EPICS_DATE) + " " + connector.readValue(EPICS_UTC);
-        return formatUTC.parseDateTime(timeString);
+        return ZonedDateTime.parse(timeString, formatUTC);
     }
 
     /** {@inheritDoc} */
@@ -177,7 +176,7 @@ public abstract class EpicsServiceImpl implements edu.gemini.lch.services.EpicsS
         // help to fully disconnect and reconnect the underlying channel access.
         if (!connector.isConnected()) {
             // if we lost connection for more than a few minutes try a full reconnect...
-            if (connector.getLastUpdate().isBefore(DateTime.now().minusMinutes(3))) {
+            if (connector.getLastUpdate().isBefore(ZonedDateTime.now().minusMinutes(3))) {
                 LOGGER.error("No updates from Epics received for more than 3 minutes, trying to reconnect...");
                 connect(connector.usesTcsSimulator());
             }
@@ -193,8 +192,6 @@ public abstract class EpicsServiceImpl implements edu.gemini.lch.services.EpicsS
      * Creates the connector used to read from and write to EPICS.
      * This is separated out in a separate method so that derived classes can override it and replace
      * the EPICS connector with something else for simulation, see EpicsServicesSimulator.
-     * @param useTcsSimulation
-     * @return
      */
     protected Connector createConnector(Map<String, Object> readChannels, String[] writeChannels, Boolean useTcsSimulation) {
         return new EpicsConnector(readChannels, writeChannels, useTcsSimulation);
@@ -211,13 +208,13 @@ public abstract class EpicsServiceImpl implements edu.gemini.lch.services.EpicsS
     // make this class public for testing etc.
     public static class Snapshot implements edu.gemini.lch.services.EpicsService.Snapshot {
         private final Boolean isConnected;
-        private final DateTime time;
+        private final ZonedDateTime time;
         private final Angle currentAz;
         private final Angle currentEl;
         private final WorldCoords currentRaDec;
         private final WorldCoords demandRaDec;
         private final String laserStatus;
-        public Snapshot(Boolean isConnected, DateTime time, Angle currentAz, Angle currentEl, WorldCoords currentRaDec, WorldCoords demandRaDec, String laserStatus) {
+        public Snapshot(Boolean isConnected, ZonedDateTime time, Angle currentAz, Angle currentEl, WorldCoords currentRaDec, WorldCoords demandRaDec, String laserStatus) {
             this.isConnected = isConnected;
             this.time = time;
             this.currentAz = currentAz;
@@ -227,7 +224,7 @@ public abstract class EpicsServiceImpl implements edu.gemini.lch.services.EpicsS
             this.laserStatus = laserStatus;
         }
         @Override public Boolean isConnected() { return isConnected; }
-        @Override public DateTime getTime() { return time; }
+        @Override public ZonedDateTime getTime() { return time; }
         @Override public Angle getCurrentAz() { return currentAz; }
         @Override public Angle getCurrentEl() { return currentEl; }
         @Override public WorldCoords getCurrentRaDec() { return currentRaDec; }

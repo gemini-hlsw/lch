@@ -4,13 +4,12 @@ import edu.gemini.odb.browser.Observation;
 import edu.gemini.odb.browser.TimingWindow;
 import edu.gemini.odb.browser.TimingWindowRepeats;
 import org.apache.commons.lang.Validate;
-import org.joda.time.DateTime;
-import org.joda.time.Period;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
-import org.joda.time.format.PeriodFormatter;
-import org.joda.time.format.PeriodFormatterBuilder;
 import org.springframework.stereotype.Component;
+
+import java.time.Period;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 
 /**
  * Helper to check time constraints for observations.
@@ -19,7 +18,7 @@ import org.springframework.stereotype.Component;
 class ConstraintsChecker {
 
     private static final DateTimeFormatter dateTimeFormatter =
-            DateTimeFormat.forPattern("yyyy-MM-dd HH:mm:ss").withZoneUTC();
+            DateTimeFormatter.ofPattern("yyyy-MM-dd HH:mm:ss").withZone(ZoneId.of("UTC"));
 
     private static final PeriodFormatter periodFormatter =
             new PeriodFormatterBuilder().
@@ -32,12 +31,8 @@ class ConstraintsChecker {
      * Checks if an observation can be observed between the given start and end time taking its timing
      * constraints into account. This is true if there is at least one timing window that overlaps with
      * the interval defined by start and end - or if there is no timing constraint at all.
-     * @param o
-     * @param start
-     * @param end
-     * @return
      */
-    boolean passesTimeConstraints(Observation o, DateTime start, DateTime end) {
+    boolean passesTimeConstraints(Observation o, ZonedDateTime start, ZonedDateTime end) {
 
         // no time constraints given ==> ok
         if (o.getConditions() == null || o.getConditions().getTimingWindowsNode() == null) {
@@ -56,26 +51,22 @@ class ConstraintsChecker {
 
     /**
      * Checks if a timing constraint overlaps with interval defined by start and end times.
-     * @param w
-     * @param nightStart
-     * @param nightEnd
-     * @return
      */
-    private boolean passesWindow(TimingWindow w, DateTime nightStart, DateTime nightEnd) {
+    private boolean passesWindow(TimingWindow w, ZonedDateTime nightStart, ZonedDateTime nightEnd) {
         Validate.isTrue(w.getTime().substring(20, 23).equals("UTC"));
         String s = w.getTime().substring(0, 19);
-        DateTime start = DateTime.parse(s, dateTimeFormatter);
+        ZonedDateTime start = ZonedDateTime.parse(s, dateTimeFormatter);
 
         if (w.getDuration() == null) {
             // duration is "forever"
-            if (start.isBefore(new DateTime(nightEnd))) {
+            if (start.isBefore(nightEnd)) {
                 return true;
             }  else {
                 return false;
             }
         }
 
-        DateTime end = start.plus(Period.parse(w.getDuration(), periodFormatter));
+        ZonedDateTime end = start.plus(Period.parse(w.getDuration(), periodFormatter));
         Integer times = 1;
         Period period = null;
         if (w.getRepeats() != null) {
@@ -85,8 +76,8 @@ class ConstraintsChecker {
         }
 
         for (Integer i = 0; i < times; i++) {
-            if (start.isBefore(new DateTime(nightEnd)) &&
-                    end.isAfter(new DateTime(nightStart))) {
+            if (start.isBefore(nightEnd) &&
+                    end.isAfter(nightStart)) {
                 // the window overlaps with the start and end date of the night!
                 return true;
             }

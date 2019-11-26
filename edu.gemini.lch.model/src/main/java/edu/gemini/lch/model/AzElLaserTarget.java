@@ -13,8 +13,6 @@ import javax.persistence.*;
         )
 })
 
-/**
- */
 @Entity
 @DiscriminatorValue("AzEl")
 public class AzElLaserTarget extends LaserTarget {

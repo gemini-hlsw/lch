@@ -23,7 +23,6 @@ public class StringLogger {
 
     /**
      * Create a string logger and attach it to the logger registered for the given class.
-     * @param clazz
      */
     public StringLogger(Class clazz) {
         logger = Logger.getLogger(clazz);
@@ -35,7 +34,6 @@ public class StringLogger {
 
     /**
      * Get the log messages as a string.
-     * @return
      */
     public String toString() {
         return writer.toString();

@@ -12,12 +12,12 @@ import edu.gemini.lch.web.app.components.TimeZoneSelector;
 import edu.gemini.lch.web.app.util.CoordFormatter;
 import edu.gemini.lch.web.app.util.TimeFormatter;
 import org.apache.commons.lang.Validate;
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Configurable;
 
 import java.io.ByteArrayInputStream;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.*;
 
 /**
@@ -38,15 +38,15 @@ public abstract class TargetsTable extends Table implements TimeZoneSelector.Lis
     private final String[] collapsedColumns;
 
     protected TimeFormatter timeFormatter;
-    private DateTimeZone currentTimeZone;
+    private ZoneId currentTimeZone;
     private Optional<LaserNight> night;
 
     public TargetsTable () {
         // use UTC as default
-        this(DateTimeZone.UTC, defaultVisibleColumns, defaultColumnsNames, defaultCollapsedColumns);
+        this(ZoneId.of("UTC"), defaultVisibleColumns, defaultColumnsNames, defaultCollapsedColumns);
     }
 
-    public TargetsTable(DateTimeZone zone, String[] visibleColumns, String[] columnNames, String[] collapsedColumns) {
+    public TargetsTable(ZoneId zone, String[] visibleColumns, String[] columnNames, String[] collapsedColumns) {
         this.night = Optional.empty();
         this.currentTimeZone = zone;
         this.timeFormatter = new TimeFormatter(currentTimeZone);
@@ -98,23 +98,23 @@ public abstract class TargetsTable extends Table implements TimeZoneSelector.Lis
         updateTimeLineHeader(night, currentTimeZone);
     }
 
-    private void updateTimeLineHeader(final LaserNight night, final DateTimeZone zone) {
+    private void updateTimeLineHeader(final LaserNight night, final ZoneId zone) {
         final byte[] headerImage = targetService.getImageHeader(night, 900, startOfNight(night), endOfNight(night), zone);
         final String name = "timeline-header"+UUID.randomUUID()+".png";
         final StreamResource imageresource = new StreamResource(() -> new ByteArrayInputStream(headerImage), name);
         setColumnIcon("timeline", imageresource);
     }
 
-    private DateTime startOfNight(final LaserNight night) {
-        return new DateTime(night.getStart()).withMinuteOfHour(0).withSecondOfMinute(0).withMillisOfSecond(0);
+    private ZonedDateTime startOfNight(final LaserNight night) {
+        return ZonedDateTime.ofInstant(night.getStart().toInstant(), ZoneId.systemDefault()).withMinute(0).withSecond(0).withNano(0);
     }
 
-    private DateTime endOfNight(final LaserNight night) {
-        return new DateTime(night.getEnd()).plusHours(1).withMinuteOfHour(0).withSecondOfMinute(0).withMillisOfSecond(0);
+    private ZonedDateTime endOfNight(final LaserNight night) {
+        return ZonedDateTime.ofInstant(night.getEnd().toInstant(), ZoneId.systemDefault()).plusHours(1).withMinute(0).withSecond(0).withNano(0);
     }
 
     @Override
-    public void updateTimeZone(final DateTimeZone zone) {
+    public void updateZoneId(final ZoneId zone) {
         night.ifPresent(night -> {
             updateTimeLineHeader(night, zone);
             currentTimeZone = zone;

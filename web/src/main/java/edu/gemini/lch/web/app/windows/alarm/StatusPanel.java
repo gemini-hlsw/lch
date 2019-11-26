@@ -7,10 +7,10 @@ import edu.gemini.lch.services.AlarmService;
 import edu.gemini.lch.services.EpicsService;
 import edu.gemini.lch.services.LtcsService;
 import edu.gemini.lch.web.app.util.TimeFormatter;
-import org.joda.time.DateTime;
-import org.joda.time.Duration;
-import org.joda.time.Interval;
 
+import java.time.Duration;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
 import java.util.List;
 
 abstract class StatusPanel extends Panel {
@@ -31,7 +31,6 @@ abstract class StatusPanel extends Panel {
 
     /**
      * Sets color and text of status panel according to current system state.
-     * @param snapshot
      */
     public abstract void update(AlarmService.Snapshot snapshot);
 
@@ -149,16 +148,18 @@ abstract class StatusPanel extends Panel {
                 return;
             }
 
-            DateTime epicsTime = snapshot.getEpicsSnapshot().getTime();
+            ZonedDateTime epicsTime = snapshot.getEpicsSnapshot().getTime();
             Boolean isOnSky = snapshot.getEpicsSnapshot().isOnSky();
 
             // inside a propagation window: show remaining time in current propagation window
             for (PropagationWindow w : snapshot.getPropagationWindows()) {
+
                 if (w.contains(epicsTime)) {
-                    Duration duration = new Duration(epicsTime, w.getEnd());
-                    if (isOnSky && duration.getStandardSeconds() <= 30 && duration.getStandardSeconds() % 2 == 0) {
+                    Duration duration = Duration.between(epicsTime, w.getEnd());
+                    if (isOnSky && duration.getSeconds() <= 30 && duration.getSeconds() % 2 == 0) {
                         setAlarm(duration);
-                    } else if (isOnSky && duration.getStandardMinutes() < 5) {
+                    // TODO-JODA: toStandardMinutes vs toMinutes
+                    } else if (isOnSky && duration.toMinutes() < 5) {
                         setWarn(duration);
                     } else {
                         setOk(duration);
@@ -170,7 +171,7 @@ abstract class StatusPanel extends Panel {
             // inside a shuttering window: show remaining time in current shuttering window
             for (ShutteringWindow w : snapshot.getShutteringWindows()) {
                 if (w.contains(epicsTime)) {
-                    Duration d = new Duration(epicsTime, w.getEnd());
+                    Duration d = Duration.between(epicsTime, w.getEnd());
                     setAlarm(d);
                     return;
                 }
@@ -179,8 +180,8 @@ abstract class StatusPanel extends Panel {
             // show time to first propagation window
             if (snapshot.getPropagationWindows().size() > 0) {
                 PropagationWindow w = snapshot.getPropagationWindows().get(0);
-                Duration d = new Duration(epicsTime, w.getStart());
-                if (d.getMillis() >= 0) {
+                Duration d = Duration.between(epicsTime, w.getStart());
+                if (d.toMillis() >= 0) {
                     setAlarm(d);
                     return;
                 }
@@ -225,7 +226,7 @@ abstract class StatusPanel extends Panel {
 
                 List<LtcsService.Collision> collisions = snapshot.getLtcsSnapshot().getCollisions();
                 EpicsService.Snapshot epicsSnapshot = snapshot.getEpicsSnapshot();
-                DateTime epicsTime = epicsSnapshot.getTime();
+                ZonedDateTime epicsTime = epicsSnapshot.getTime();
 
                 if (collisions.isEmpty()) {
 
@@ -242,15 +243,15 @@ abstract class StatusPanel extends Panel {
                     if (!c.getStart().isAfter(epicsTime) && c.getEnd().isAfter(epicsTime)) {
                         // inside collision! calculate remaining time as time from now until end of collision
                         // LTCS updates the start time of the collision window continuously
-                        Duration d = new Duration(epicsTime, c.getEnd());
+                        Duration d = Duration.between(epicsTime, c.getEnd());
                         setAlarm(c.getPriority() + ": " + TimeFormatter.asDuration(d));
                     } else {
                         // before collision
-                        Duration d = new Duration(epicsTime, c.getStart());
+                        Duration d = Duration.between(epicsTime, c.getStart());
                         String time = TimeFormatter.asDuration(d);
-                        if (needToReact && d.getStandardSeconds() <= 30 && d.getStandardSeconds() % 2 == 0) {
+                        if (needToReact && d.getSeconds() <= 30 && d.getSeconds() % 2 == 0) {
                             setAlarm(c.getPriority() + ": " + time);
-                        } else if (needToReact && d.getStandardMinutes() < 5) {
+                        } else if (needToReact && d.toMinutes() < 5) {
                             setWarn(c.getPriority() + ": " + time);
                         } else {
                             setOk(c.getPriority() + ": " + time);
@@ -284,7 +285,7 @@ abstract class StatusPanel extends Panel {
             LaserTarget target = snapshot.getTarget();
             Visibility visibility = target.getVisibility();
 
-            DateTime epicsTime = snapshot.getEpicsSnapshot().getTime();
+            ZonedDateTime epicsTime = snapshot.getEpicsSnapshot().getTime();
             List<Interval> visible = visibility.getVisibleIntervalsAboveLimitDuring(night);
             // we should always have at least one visible interval, but check for it just in case
             if (visible.size() == 0) {
@@ -295,7 +296,7 @@ abstract class StatusPanel extends Panel {
             // are we inside one of the visible intervals?
             Interval inside = inside(epicsTime, visible);
             if (inside != null) {
-                Duration d = new Duration(epicsTime, inside.getEnd());
+                Duration d = Duration.between(epicsTime, ZonedDateTime.ofInstant(inside.end(), ZoneId.systemDefault()));
                 setOk(d);
                 return;
             }
@@ -303,25 +304,22 @@ abstract class StatusPanel extends Panel {
             // are we before one of the visible intervals?
             Interval before = before(epicsTime, visible);
             if (before != null) {
-                Duration d = new Duration(epicsTime, before.getStart());
+                Duration d = Duration.between(epicsTime, before.start());
                 setWarn(d);
                 return;
             }
 
             // if not inside or before we must be after the last one
-            Duration d = new Duration(visible.get(visible.size()-1).getEnd(), epicsTime);
+            Duration d = Duration.between(visible.get(visible.size()-1).end(), epicsTime);
             setWarn(d);
         }
 
         /**
          * Finds the earliest interval that starts after the given time.
-         * @param time
-         * @param intervals
-         * @return
          */
-        private Interval before(DateTime time, List<Interval> intervals) {
+        private Interval before(ZonedDateTime time, List<Interval> intervals) {
             for (Interval i : intervals) {
-                if (i.isAfter(time)) {
+                if (i.isAfter(time.toInstant())) {
                     return i;
                 }
             }
@@ -330,13 +328,10 @@ abstract class StatusPanel extends Panel {
 
         /**
          * Finds the first interval that contains the given time.
-         * @param time
-         * @param intervals
-         * @return
          */
-        private Interval inside(DateTime time, List<Interval> intervals) {
+        private Interval inside(ZonedDateTime time, List<Interval> intervals) {
             for (Interval i : intervals) {
-                if (i.contains(time)) {
+                if (i.contains(time.toInstant())) {
                     return i;
                 }
             }
@@ -371,8 +366,5 @@ abstract class StatusPanel extends Panel {
             }
         }
     }
-
-
-
 }
 

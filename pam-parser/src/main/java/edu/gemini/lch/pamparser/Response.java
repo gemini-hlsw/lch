@@ -8,11 +8,11 @@ import org.antlr.runtime.RecognitionException;
 import org.antlr.runtime.tree.CommonTree;
 import org.antlr.runtime.tree.CommonTreeNodeStream;
 import org.apache.commons.lang.Validate;
-import org.joda.time.DateTime;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.ParseException;
+import java.time.*;
 import java.util.*;
 
 @SuppressWarnings("serial")
@@ -21,16 +21,16 @@ public class Response {
     private final List<Target> targets;
     private final Map<Target, List<PropagationWindow>> windows;
     private String missionId;
-    private DateTime reportTime;
-    private DateTime start;
-    private DateTime end;
+    private ZonedDateTime reportTime;
+    private ZonedDateTime start;
+    private ZonedDateTime end;
 
     public Response() {
         this.targets = new ArrayList<>();
         this.windows = new HashMap<>();
     }
 
-    public Response(List<Target> targets, Map<Target, List<PropagationWindow>> windows, Site site, DateTime reportTime, DateTime start, DateTime end) {
+    public Response(List<Target> targets, Map<Target, List<PropagationWindow>> windows, Site site, ZonedDateTime reportTime, ZonedDateTime start, ZonedDateTime end) {
         this.targets = targets;
         this.windows = windows;
         this.missionId = "Gemini " + site.getDisplayName();
@@ -48,20 +48,18 @@ public class Response {
     }
 
     public Integer getJDay() {
-        Calendar c = new GregorianCalendar(TimeZone.getTimeZone("UTC"));
-        c.setTime(start.toDate());
-        return c.get(Calendar.DAY_OF_YEAR);
+        return start.getDayOfYear();
     }
 
-    public DateTime getReportTime() {
+    public ZonedDateTime getReportTime() {
         return reportTime;
     }
 
-    public DateTime getMissionStart() {
+    public ZonedDateTime getMissionStart() {
         return start;
     }
 
-    public DateTime getMissionEnd() {
+    public ZonedDateTime getMissionEnd() {
         return end;
     }
 
@@ -100,16 +98,16 @@ public class Response {
         this.missionId = missionId;
     }
 
-    protected void setReportTime(Date reportTime) {
-        this.reportTime = new DateTime(reportTime);
+    protected void setReportTime(Instant reportTime) {
+        this.reportTime = ZonedDateTime.ofInstant(reportTime, ZoneId.systemDefault());
     }
 
-    protected void setMissionStart(Date start) {
-        this.start = new DateTime(start);
+    protected void setMissionStart(Instant start) {
+        this.start = ZonedDateTime.ofInstant(start, ZoneId.systemDefault());
     }
 
-    protected void setMissionEnd(Date end) {
-        this.end = new DateTime(end);
+    protected void setMissionEnd(Instant end) {
+        this.end = ZonedDateTime.ofInstant(end, ZoneId.systemDefault());
     }
 
     protected void addTarget(Target target) {

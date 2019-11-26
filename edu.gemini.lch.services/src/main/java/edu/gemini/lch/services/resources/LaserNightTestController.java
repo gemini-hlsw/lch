@@ -2,14 +2,13 @@ package edu.gemini.lch.services.resources;
 
 import edu.gemini.lch.services.LaserNightService;
 import edu.gemini.lch.services.model.*;
-import org.joda.time.DateTime;
-import org.joda.time.DateTimeZone;
-import org.joda.time.format.DateTimeFormat;
-import org.joda.time.format.DateTimeFormatter;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import java.time.ZoneId;
+import java.time.ZonedDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 /**
@@ -19,7 +18,7 @@ import java.util.*;
 @RequestMapping(value="/test/nights")
 public class LaserNightTestController {
 
-    private static final DateTimeFormatter formatter = DateTimeFormat.forPattern("yyyyMMdd").withZone(DateTimeZone.UTC);
+    private static final DateTimeFormatter formatter = DateTimeFormatter.ofPattern("yyyyMMdd").withZone(ZoneId.systemDefault());
 
     @Resource
     private LaserNightService laserNightService;
@@ -27,7 +26,7 @@ public class LaserNightTestController {
     @RequestMapping(value="", method= RequestMethod.GET, produces="application/xml")
     @ResponseBody
     public NightFull getTestNight(@RequestParam(value = "date") String dateString, @RequestParam Boolean full, @RequestParam Double laserLimit) {
-        DateTime date = formatter.parseDateTime(dateString).withTimeAtStartOfDay();
+        ZonedDateTime date = ZonedDateTime.parse(dateString, formatter).toLocalDate().atStartOfDay(ZoneId.systemDefault());
 
         Map<Long, edu.gemini.lch.services.model.LaserTarget> laserTargets = new HashMap<>();
         laserTargets.put(10L, new edu.gemini.lch.services.model.LaserTarget(10L, new Coordinates(Coordinates.RADEC,0.,0.)));
@@ -43,13 +42,13 @@ public class LaserNightTestController {
         // GS-2012B-Q-10-56
         List<ClearanceWindow> clearanceWindows = new ArrayList<>();
         for (int i = -10; i < 10; i++) {
-            ClearanceWindow w = new ClearanceWindow(date.plusHours(i).plusSeconds(3).toDate(),
-                    date.plusHours(i+1).toDate());
+            ClearanceWindow w = new ClearanceWindow(date.plusHours(i).plusSeconds(3).toInstant(),
+                    date.plusHours(i+1).toInstant());
             clearanceWindows.add(w);
         }
         List<ShutteringWindow> shutteringWindows = new ArrayList<>();
         for (int i = -10; i < 10; i++) {
-            ShutteringWindow w = new ShutteringWindow(date.plusHours(i).toDate(), date.plusHours(i).plusSeconds(3).toDate());
+            ShutteringWindow w = new ShutteringWindow(date.plusHours(i).toInstant(), date.plusHours(i).plusSeconds(3).toInstant());
             shutteringWindows.add(w);
         }
         edu.gemini.lch.services.model.LaserTarget laserTarget10 = laserTargets.get(10L);
@@ -64,14 +63,14 @@ public class LaserNightTestController {
         // GS-2012B-Q-13-86
         clearanceWindows = new ArrayList<>();
         for (int i = -10; i < 10; i++) {
-            ClearanceWindow w = new ClearanceWindow(date.plusHours(i).plusMinutes(30).plusSeconds(60).toDate(),
-                    date.plusHours(i+1).plusMinutes(30).toDate());
+            ClearanceWindow w = new ClearanceWindow(date.plusHours(i).plusMinutes(30).plusSeconds(60).toInstant(),
+                    date.plusHours(i+1).plusMinutes(30).toInstant());
             clearanceWindows.add(w);
         }
         shutteringWindows = new ArrayList<>();
         for (int i = -10; i < 10; i++) {
-            ShutteringWindow w = new ShutteringWindow(date.plusHours(i).plusMinutes(30).toDate(),
-                    date.plusHours(i).plusMinutes(30).plusSeconds(60).toDate());
+            ShutteringWindow w = new ShutteringWindow(date.plusHours(i).plusMinutes(30).toInstant(),
+                    date.plusHours(i).plusMinutes(30).plusSeconds(60).toInstant());
             shutteringWindows.add(w);
         }
         edu.gemini.lch.services.model.LaserTarget laserTarget13 = laserTargets.get(13L);
@@ -86,14 +85,14 @@ public class LaserNightTestController {
         // GS-2012B-Q-112-1
         clearanceWindows = new ArrayList<>();
         for (int i = 0; i < 10; i++) {
-            ClearanceWindow w = new ClearanceWindow(date.plusHours(i).plusMinutes(13).plusSeconds(500).toDate(),
-                    date.plusHours(i+1).plusMinutes(13).toDate());
+            ClearanceWindow w = new ClearanceWindow(date.plusHours(i).plusMinutes(13).plusSeconds(500).toInstant(),
+                    date.plusHours(i+1).plusMinutes(13).toInstant());
             clearanceWindows.add(w);
         }
         shutteringWindows = new ArrayList<>();
         for (int i = -10; i < 10; i++) {
-            ShutteringWindow w = new ShutteringWindow(date.plusHours(i).plusMinutes(13).toDate(),
-                    date.plusHours(i).plusMinutes(13).plusSeconds(500).toDate());
+            ShutteringWindow w = new ShutteringWindow(date.plusHours(i).plusMinutes(13).toInstant(),
+                    date.plusHours(i).plusMinutes(13).plusSeconds(500).toInstant());
             shutteringWindows.add(w);
         }
         edu.gemini.lch.services.model.LaserTarget laserTarget1121 = laserTargets.get(1121L);
@@ -102,14 +101,14 @@ public class LaserNightTestController {
 
         clearanceWindows = new ArrayList<>();
         for (int i = -6; i < 6; i++) {
-            ClearanceWindow w = new ClearanceWindow(date.plusHours(i).plusMinutes(25).plusSeconds(300).toDate(),
-                    date.plusHours(i+1).plusMinutes(25).toDate());
+            ClearanceWindow w = new ClearanceWindow(date.plusHours(i).plusMinutes(25).plusSeconds(300).toInstant(),
+                    date.plusHours(i+1).plusMinutes(25).toInstant());
             clearanceWindows.add(w);
         }
         shutteringWindows = new ArrayList<>();
         for (int i = -6; i < 6; i++) {
-            ShutteringWindow w = new ShutteringWindow(date.plusHours(i).plusMinutes(25).toDate(),
-                    date.plusHours(i).plusMinutes(25).plusSeconds(300).toDate());
+            ShutteringWindow w = new ShutteringWindow(date.plusHours(i).plusMinutes(25).toInstant(),
+                    date.plusHours(i).plusMinutes(25).plusSeconds(300).toInstant());
             shutteringWindows.add(w);
         }
         edu.gemini.lch.services.model.LaserTarget laserTarget1122 = laserTargets.get(1122L);
@@ -130,16 +129,16 @@ public class LaserNightTestController {
         return night;
     }
 
-    private Visibility createVisibility(DateTime start, DateTime end) {
-        final Visibility.Interval i = new Visibility.Interval(start.toDate(), end.toDate());
+    private Visibility createVisibility(ZonedDateTime start, ZonedDateTime end) {
+        final Visibility.Interval i = new Visibility.Interval(start.toInstant(), end.toInstant());
         List<Visibility.Interval> aboveHorizon = new ArrayList<Visibility.Interval>() {{ add(i); }};
         List<Visibility.Interval> aboveLaLimit = new ArrayList<Visibility.Interval>() {{ add(i); }};
         return new Visibility(aboveHorizon, aboveLaLimit);
     }
 
-    private Visibility createVisibility2(DateTime start1, DateTime end1, DateTime start2, DateTime end2) {
-        final Visibility.Interval i1 = new Visibility.Interval(start1.toDate(), end1.toDate());
-        final Visibility.Interval i2 = new Visibility.Interval(start2.toDate(), end2.toDate());
+    private Visibility createVisibility2(ZonedDateTime start1, ZonedDateTime end1, ZonedDateTime start2, ZonedDateTime end2) {
+        final Visibility.Interval i1 = new Visibility.Interval(start1.toInstant(), end1.toInstant());
+        final Visibility.Interval i2 = new Visibility.Interval(start2.toInstant(), end2.toInstant());
         List<Visibility.Interval> aboveHorizon = new ArrayList<Visibility.Interval>() {{ add(i1); add(i2);}};
         List<Visibility.Interval> aboveLaLimit = new ArrayList<Visibility.Interval>() {{ add(i1); add(i2);}};
         return new Visibility(aboveHorizon, aboveLaLimit);

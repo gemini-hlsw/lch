@@ -7,14 +7,13 @@ import edu.gemini.shared.skycalc.Angle;
 import jsky.coords.WorldCoords;
 import org.apache.commons.lang.Validate;
 import org.apache.log4j.Logger;
-import org.joda.time.DateTime;
-import org.joda.time.Duration;
 import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.Resource;
+import java.time.ZonedDateTime;
 import java.util.*;
 
 /**
@@ -48,8 +47,8 @@ public class AlarmServiceImpl implements AlarmService {
 
     private Integer bufferBefore;
     private Integer bufferAfter;
-    private DateTime earliestPropagation;
-    private DateTime latestPropagation;
+    private ZonedDateTime earliestPropagation;
+    private ZonedDateTime latestPropagation;
     private Angle errorCone;
     private LaserNight currentNight;
     private Snapshot currentStatus;
@@ -65,7 +64,7 @@ public class AlarmServiceImpl implements AlarmService {
         this.bufferBefore = 10;
         this.bufferAfter = 10;
         this.errorCone = new Angle(360.0, Angle.Unit.ARCSECS);
-        this.earliestPropagation = DateTime.now();
+        this.earliestPropagation = ZonedDateTime.now();
         this.latestPropagation = earliestPropagation;
         this.currentAutoShutter = getStartupAutoShutter();
         this.currentStatus =
@@ -74,7 +73,7 @@ public class AlarmServiceImpl implements AlarmService {
                         null,                                   // laser target (none)
                         null,                                   // earliest propagation (none)
                         null,                                   // latest propagation (none)
-                        Collections.EMPTY_LIST,                 // observations (none)
+                        Collections.emptyList(),                 // observations (none)
                         errorCone,                              // error cone
                         new Angle(0, Angle.Unit.ARCSECS),       // distance
                         ltcsService.getSnapshot(),              // ltcs status
@@ -86,7 +85,6 @@ public class AlarmServiceImpl implements AlarmService {
 
     /**
      * Gets the latest alarm status that has been calculated.
-     * @return
      */
     @Override
     public AlarmService.Snapshot getSnapshot() {
@@ -133,7 +131,7 @@ public class AlarmServiceImpl implements AlarmService {
      * Has to be called whenever a change is done to the night that needs to be reflected in the alarm clients.
      */
     @Transactional(readOnly = true)
-    private synchronized void updateNight(Boolean forceUpdate) {
+    synchronized void updateNight(Boolean forceUpdate) {
         // update the night in case we are forced to do so or we currently don't have a night or are leaving a night
         if (forceUpdate || currentNight == null || !currentNight.covers(epicsService.getTime())) {
             SimpleLaserNight night = nightService.getShortLaserNightCovering(epicsService.getTime());
@@ -143,7 +141,7 @@ public class AlarmServiceImpl implements AlarmService {
                 this.latestPropagation = nightService.getLatestPropagation(currentNight);
             } else {
                 this.currentNight = null;
-                this.earliestPropagation = DateTime.now();
+                this.earliestPropagation = ZonedDateTime.now();
                 this.latestPropagation = earliestPropagation;
             }
         }
@@ -207,7 +205,7 @@ public class AlarmServiceImpl implements AlarmService {
         }
 
         // load observations for target (if we have a target)
-        List<Observation> observations = Collections.EMPTY_LIST;
+        List<Observation> observations = Collections.emptyList();
         if (target != null) {
             observations = night.findObservationsForTarget(target);
         }
@@ -313,10 +311,8 @@ public class AlarmServiceImpl implements AlarmService {
      *     <li>We are pointing at a position inside the error cone around the target.</li>
      *     <li>We are inside a propagation window (taking safety buffers and blanket closures into account).</li>
      * </ul>
-     * @param currentTime
-     * @return
      */
-    private Boolean clearToPropagate(DateTime currentTime) {
+    private Boolean clearToPropagate(ZonedDateTime currentTime) {
 
         AlarmService.Snapshot s = getSnapshot();
 
@@ -356,7 +352,6 @@ public class AlarmServiceImpl implements AlarmService {
 
     /**
      * Checks if the current position is inside the error cone around the closest approved laser target.
-     * @return
      */
     private Boolean positionIsInsideErrorCone(LaserTarget target) {
         // calculate distance from target to most recent EPICS values (don't use snapshot to make it more accurate)
@@ -376,11 +371,6 @@ public class AlarmServiceImpl implements AlarmService {
 
     /**
      * Calculate distance between the closest approved laser target and the current position.
-     * @param target
-     * @param currentAz
-     * @param currentEl
-     * @param currentRaDec
-     * @return
      */
     private Angle getDistance(LaserTarget target, Angle currentAz, Angle currentEl, WorldCoords currentRaDec) {
         Validate.notNull(target);
@@ -435,7 +425,7 @@ public class AlarmServiceImpl implements AlarmService {
         sb.append("; system time: ");
         sb.append(System.currentTimeMillis());
         sb.append("; epics time: ");
-        sb.append(epicsService.getTime().getMillis());
+        sb.append(epicsService.getTime().toEpochSecond());
         return sb.toString();
     }
 
@@ -454,8 +444,8 @@ public class AlarmServiceImpl implements AlarmService {
         private final LaserTarget target;
         private final List<PropagationWindow> propagationWindows;
         private final List<ShutteringWindow> shutteringWindows;
-        private final DateTime earliestPropagation;
-        private final DateTime latestPropagation;
+        private final ZonedDateTime earliestPropagation;
+        private final ZonedDateTime latestPropagation;
         private final List<Observation> observations;
         private final Angle errorCone;
         private final Angle distance;
@@ -465,8 +455,8 @@ public class AlarmServiceImpl implements AlarmService {
         protected Snapshot(
                 LaserNight night,
                 LaserTarget target,
-                DateTime earliestPropagation,
-                DateTime latestPropagation,
+                ZonedDateTime earliestPropagation,
+                ZonedDateTime latestPropagation,
                 List<Observation> observations,
                 Angle errorCone,
                 Angle distance,
@@ -493,14 +483,11 @@ public class AlarmServiceImpl implements AlarmService {
          * Creates a list of propagation windows taking safety buffers and user defined blanket closures into account.
          * Only the propagation windows and the blanket closures are actually stored, all the other windows must be
          * created on the fly. We do this here once for the current snapshot.
-         * @param safetyBufferBefore
-         * @param safetyBufferAfter
-         * @return
          */
         private List<PropagationWindow> createPropagationWindows(Integer safetyBufferBefore, Integer safetyBufferAfter) {
 
             if (this.night == null || this.target == null) {
-                return Collections.EMPTY_LIST;
+                return Collections.emptyList();
             }
 
             // get propagation windows, blanket closures and shuttering windows (i.e. intervals between propagation windows)
@@ -588,9 +575,9 @@ public class AlarmServiceImpl implements AlarmService {
         @Override
         public List<ShutteringWindow> getShutteringWindows() { return shutteringWindows; }
         @Override
-        public DateTime getEarliestPropagation() { return earliestPropagation; }
+        public ZonedDateTime getEarliestPropagation() { return earliestPropagation; }
         @Override
-        public DateTime getLatestPropagation() { return latestPropagation; }
+        public ZonedDateTime getLatestPropagation() { return latestPropagation; }
         @Override
         public List<Observation> getObservations() { return observations; }
         @Override

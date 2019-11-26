@@ -1,7 +1,8 @@
 package edu.gemini.lch.services.timeline
 
-import org.joda.time.{DateTime, Interval}
-import edu.gemini.lch.model.{BlanketClosure, PropagationWindow, ShutteringWindow}
+import java.time.{Instant, ZoneId, ZonedDateTime}
+
+import edu.gemini.lch.model.{BlanketClosure, Interval, PropagationWindow, ShutteringWindow}
 import java.util.Date
 
 object PartType extends Enumeration {
@@ -18,29 +19,29 @@ import PartType._
 class Part(t: Set[PartType], int: Interval)  {
 
 
-  def this(t: Set[PartType], start: DateTime, end: DateTime) = this(t, new Interval(start, end))
+  def this(t: Set[PartType], start: ZonedDateTime, end: ZonedDateTime) = this(t, Interval(start.toInstant, end.toInstant))
 
   def types = t
   def interval = int
-  def start = int getStart
-  def end = int getEnd
+  def start = int.start
+  def end = int.end
 
   /** Gets overlapping part of this and other, if any. */
   def overlapping(other: Part): Option[Part] = {
-    val overlap = interval overlap other.interval
+    val overlap = interval.overlap(other.interval)
     if (overlap != null)                                            // TODO: how to deal nicely with null
-      Some(Part(t++other.types, overlap.getStart, overlap.getEnd))
+      Some(Part(t++other.types, ZonedDateTime.ofInstant(overlap.start, ZoneId.systemDefault()), ZonedDateTime.ofInstant(overlap.end, ZoneId.systemDefault())))
     else
       None
   }
 
   /** Gets part of this before other, if any */
   def heading(other: Part): Option[Part] =
-    if (start isBefore other.start) Some(Part(t, start, other.start)) else None
+    if (start.isBefore(other.start)) Some(Part(t, start, other.start)) else None
 
   /** Gets part of this that is after other, if any */
   def tailing(other: Part): Option[Part] =
-    if (end isAfter other.end) Some(Part(t, other.end, end)) else None
+    if (end.isAfter(other.end)) Some(Part(t, other.end, end)) else None
 
   /** Combines two parts by returning the heading, overlapping and tailing parts. */
   def combine(other: Part): List[Part] =
@@ -56,12 +57,12 @@ class Part(t: Set[PartType], int: Interval)  {
 }
 
 object Part {
-  def apply(t: Set[PartType], start: DateTime, end: DateTime) =
-    new Part(t, new Interval(start, end))
-  def apply(t: PartType, start: Date, end: Date) =
-    new Part(Set(t), new Interval(new DateTime(start), new DateTime(end)))
-  def apply(t: PartType, start: DateTime, end: DateTime) =
-    new Part(Set(t), new Interval(start, end))
+  def apply(t: Set[PartType], start: ZonedDateTime, end: ZonedDateTime) =
+    new Part(t, Interval(start.toInstant, end.toInstant))
+  def apply(t: PartType, start: Instant, end: Instant) =
+    new Part(Set(t), Interval(ZonedDateTime.ofInstant(start, ZoneId.systemDefault()), ZonedDateTime.ofInstant(end, ZoneId.systemDefault())))
+  def apply(t: PartType, start: ZonedDateTime, end: ZonedDateTime) =
+    new Part(Set(t), Interval(start, end))
 }
 
 
@@ -79,11 +80,11 @@ class Timeline(parts: List[Part]) {
   def addBlanketClosures(closures: List[BlanketClosure]) =
     add(closures map(w => Part(Set(Closed), w.getStart, w.getEnd)))
 
-  def addPart(t: PartType, start: DateTime, end: DateTime) =
+  def addPart(t: PartType, start: ZonedDateTime, end: ZonedDateTime) =
     add(Part(Set(t), start, end))
 
-  def addPart(t: PartType, start: Date, end: Date) =
-    add(Part(Set(t), new DateTime(start), new DateTime(end)))
+  def addPart(t: PartType, start: Instant, end: Instant) =
+    add(Part(Set(t), ZonedDateTime.ofInstant(start, ZoneId.systemDefault()), ZonedDateTime.ofInstant(end, ZoneId.systemDefault())))
 
   def add(part: Part) =
     new Timeline(parts flatMap (p => p combine part))
