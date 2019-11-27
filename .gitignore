@@ -13,6 +13,8 @@ app/**/idea
 **/*.iws
 **/*.ipr
 .idea/
+.metals/
+.bloop/
 
 # Credentials
-edu.gemini.lch.services/src/main/scala/edu/gemini/lch/services/impl/JSpOCCredentials.scala
+#edu.gemini.lch.services/src/main/scala/edu/gemini/lch/services/impl/JSpOCCredentials.scala
