@@ -26,7 +26,6 @@ jobs:
           sudo apt-get -yqq install libpq-dev postgresql-client-9.6
       - name: Setup db
         run: |
-          psql -c 'create database travis_ci_test;' -U postgres -h 127.0.0.1
           psql -c 'create user lch;' -U postgres -h 127.0.0.1
           psql -c 'create database lch_test;' -U postgres -h 127.0.0.1
           psql -c 'grant all privileges on database lch_test to lch;' -U postgres -h 127.0.0.1
