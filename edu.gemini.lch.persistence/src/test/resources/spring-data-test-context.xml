@@ -22,7 +22,7 @@
 		<property name="driverClassName" value="org.postgresql.Driver" />
         <property name="url" value="jdbc:postgresql:${lch.test.database.name}" />
         <property name="username" value="${lch.default.database.user}" />
-        <!--property name="password" value="itac"/-->
+        <property name="password" value="postgres"/>
 
 	</bean>
 

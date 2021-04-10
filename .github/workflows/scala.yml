@@ -8,28 +8,37 @@ jobs:
     services:
       postgres:
         image: postgres:9.6
-        ports: ["5432:5432"]
-        options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
+        env:
+          POSTGRES_PASSWORD: postgres
+          # optional (defaults to `postgres`)
+          POSTGRES_DB: lch_test
+          # optional (defaults to `5432`)
+          POSTGRES_PORT: 5432
+          # optional (defaults to `postgres`)
+          POSTGRES_USER: lch
+        ports:
+          # maps tcp port 5432 on service container to the host
+          - 5432:5432
+        # set health checks to wait until postgres has started
+        options: >-
+          --health-cmd pg_isready
+          --health-interval 10s
+          --health-timeout 5s
+          --health-retries 5
     steps:
-      - uses: actions/checkout@v1
-      - name: Set up JDK 1.8
-        uses: actions/setup-java@v1
+      - uses: actions/checkout@v2
+      - name: Set up JDK 8
+        uses: actions/setup-java@v2
         with:
-          java-version: 1.8
-      - uses: olafurpg/setup-scala@v2
-      - name: Install PostgreSQL 9.6 client
+          java-version: '8'
+          distribution: 'adopt'
+      - name: Install PostgreSQL client
         run: |
-          sudo apt update
-          sudo bash -c "echo deb http://apt.postgresql.org/pub/repos/apt/ bionic-pgdg main >> /etc/apt/sources.list.d/pgdg.list"
-          wget --quiet -O - https://www.postgresql.org/media/keys/ACCC4CF8.asc | sudo apt-key add -
           sudo apt-get update
-          sudo apt-get -yqq install libpq-dev postgresql-client-9.6
-      - name: Setup db
-        run: |
-          psql -c 'create user lch;' -U postgres -h 127.0.0.1
-          psql -c 'create database lch_test;' -U postgres -h 127.0.0.1
-          psql -c 'grant all privileges on database lch_test to lch;' -U postgres -h 127.0.0.1
-          psql -c 'create database lch_dev;' -U postgres -h 127.0.0.1
-          psql -c 'grant all privileges on database lch_dev to lch;' -U postgres -h 127.0.0.1
+          sudo apt-get install --yes postgresql-client
+        env:
+          PGPASSWORD: postgres
       - name: Run tests
+        env:
+          PGPASSWORD: postgres
         run: mvn -B clean install
