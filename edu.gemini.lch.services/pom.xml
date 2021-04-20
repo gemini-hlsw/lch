@@ -4,13 +4,13 @@
     <parent>
         <artifactId>lchUmbrella</artifactId>
         <groupId>edu.gemini.lch</groupId>
-        <version>3.3.0</version>
+        <version>3.4.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <name>LCH Services Module</name>
     <artifactId>services</artifactId>
-    <version>3.3.0</version>
+    <version>3.4.0</version>
     <packaging>jar</packaging>
 
     <!-- Build a test jar so that simulator classes can be used in web app for testing -->
@@ -43,22 +43,22 @@
         <dependency>
             <groupId>edu.gemini.odb</groupId>
             <artifactId>browser-client</artifactId>
-            <version>3.3.0</version>
+            <version>3.4.0</version>
         </dependency>
         <dependency>
             <groupId>edu.gemini.odb</groupId>
             <artifactId>browser-api</artifactId>
-            <version>3.3.0</version>
+            <version>3.4.0</version>
         </dependency>
         <dependency>
             <groupId>edu.gemini.lch</groupId>
             <artifactId>services-model</artifactId>
-            <version>3.3.0</version>
+            <version>3.4.0</version>
         </dependency>
         <dependency>
             <groupId>edu.gemini.odb</groupId>
             <artifactId>browser-sim</artifactId>
-            <version>3.3.0</version>
+            <version>3.4.0</version>
             <scope>test</scope>
         </dependency>
 
@@ -135,7 +135,7 @@
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
-            <version>2.9.10.7</version>
+            <version>2.5.1</version>
         </dependency>
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
@@ -185,12 +185,12 @@
         <dependency>
             <groupId>edu.gemini.lch</groupId>
             <artifactId>persistence</artifactId>
-            <version>3.3.0</version>
+            <version>3.4.0</version>
         </dependency>
         <dependency>
             <groupId>edu.gemini.lch</groupId>
             <artifactId>pam-parser</artifactId>
-            <version>3.3.0</version>
+            <version>3.4.0</version>
         </dependency>
 
         <!-- internal test only -->
@@ -198,7 +198,7 @@
         <dependency>
             <groupId>edu.gemini.lch</groupId>
             <artifactId>persistence</artifactId>
-            <version>3.3.0</version>
+            <version>3.4.0</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
