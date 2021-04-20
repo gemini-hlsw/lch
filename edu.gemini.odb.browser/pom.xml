@@ -5,14 +5,14 @@
     <parent>
         <artifactId>lchUmbrella</artifactId>
         <groupId>edu.gemini.lch</groupId>
-        <version>3.3.0</version>
+        <version>3.4.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <name>Gemini ODB Browser (API)</name>
     <groupId>edu.gemini.odb</groupId>
     <artifactId>browser-api</artifactId>
-    <version>3.3.0</version>
+    <version>3.4.0</version>
     <!-- make this an OSGi bundle -->
     <packaging>bundle</packaging>
 
