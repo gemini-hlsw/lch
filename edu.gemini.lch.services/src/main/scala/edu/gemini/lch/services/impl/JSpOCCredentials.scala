@@ -7,7 +7,11 @@ import scala.collection.immutable.HashMap
 
 object JSpOCCredentials {
   def unsafeGetEnv(key: String): String =
-    Option(System.getenv(key)).getOrElse(sys.error(s"Missing environment variable $key"))
+    Option(System.getenv(key)).getOrElse {
+      System.err.println("Missing environment variables")
+      // Absolutely kill the container
+      sys.exit(-1)
+    }
   val gsUserName = unsafeGetEnv("GS_USERNAME")
   val gsPassword = unsafeGetEnv("GS_PASSWORD")
   val gnUserName = unsafeGetEnv("GN_USERNAME")

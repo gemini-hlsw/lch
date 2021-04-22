@@ -53,6 +53,7 @@ public class LoggingServiceImpl implements LoggingService {
         LOGGER.info("Environment            = " + siteService.getEnvironment());
         LOGGER.info("Version                = " + siteService.getVersion());
         LOGGER.info("Log configuration file = " + logConfigurationFile);
+        LOGGER.info("Start JspOC Service    = GN: " + JSpOCCredentials$.MODULE$.gnUserName() + " GS: " + JSpOCCredentials$.MODULE$.gsUserName());
         LOGGER.info("=================================================================================");
 
     }
