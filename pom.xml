@@ -7,7 +7,7 @@
     <groupId>edu.gemini.lch</groupId>
     <artifactId>lchUmbrella</artifactId>
     <packaging>pom</packaging>
-    <version>3.4.0</version>
+    <version>3.5.0</version>
     <name>Laser Clearing House Umbrella Module</name>
 
     <modules>
