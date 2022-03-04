@@ -66,12 +66,12 @@
         <dependency>
             <groupId>edu.gemini.ocs</groupId>
             <artifactId>edu-gemini-horizons-api_2.11</artifactId>
-            <version>2021001.1.4</version>
+            <version>2022001.1.2</version>
         </dependency>
         <dependency>
             <groupId>edu.gemini.ocs</groupId>
             <artifactId>edu-gemini-spmodel-core_2.11</artifactId>
-            <version>2021001.1.4</version>
+            <version>2022001.1.2</version>
         </dependency>
         <dependency>
             <groupId>commons-httpclient</groupId>
@@ -101,17 +101,17 @@
             <version>1.0.1</version>
         </dependency>
 
-	<!-- Shared utilities -->
-	<dependency>
-	  <groupId>edu.gemini.ocs</groupId>
-	  <artifactId>edu-gemini-shared-util_2.11</artifactId>
-	  <version>2021001.1.4</version>
-	</dependency>
-	<dependency>
-	  <groupId>edu.gemini.ocs</groupId>
-	  <artifactId>edu-gemini-util-ssl_2.11</artifactId>
-	  <version>2021001.1.4</version>
-	</dependency>
+	      <!-- Shared utilities -->
+        <dependency>
+          <groupId>edu.gemini.ocs</groupId>
+          <artifactId>edu-gemini-shared-util_2.11</artifactId>
+          <version>2022001.1.2</version>
+        </dependency>
+        <dependency>
+          <groupId>edu.gemini.ocs</groupId>
+          <artifactId>edu-gemini-util-ssl_2.11</artifactId>
+            <version>2022001.1.2</version>
+	      </dependency>
 	
         <!-- Spring -->
         <dependency>
@@ -121,7 +121,7 @@
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
-            <artifactId>spring-context</artifactId>
+              <artifactId>spring-context</artifactId>
             <version>${lch.spring.version}</version>
         </dependency>
         <dependency>
