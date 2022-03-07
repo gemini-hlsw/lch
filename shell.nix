@@ -5,6 +5,10 @@ stdenv.mkDerivation rec {
     name = name;
     paths = buildInputs;
   };
+  GS_USERNAME = "";
+  GS_PASSWORD = "";
+  GN_USERNAME = "";
+  GN_PASSWORD = "";
   buildInputs = [
     maven
     postgresql_10
