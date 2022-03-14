@@ -50,6 +50,7 @@ public class EmailReader {
         props.setProperty("mail.imap.connectiontimeout", "30000");
         props.setProperty("mail.imap.timeout", "30000");
         props.setProperty("mail.debug", "true");
+        props.setProperty("mail.smtp.starttls.enable", "true");
         // -- ok, now we should be good to go..
 
         // get an imap session
