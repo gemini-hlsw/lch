@@ -3,6 +3,14 @@
 Laser Clearinghouse
 [![Actions Status](https://github.com/gemini-hlsw/lch/workflows/build/badge.svg)](https://github.com/gemini-hlsw/lch/actions)
 
+## Building
+```
+mvn install
+cd web
+mvn install
+```
+to get the war.
+
 ## Credentials
 Note that to run LCH in either development or production you need to provide the
 following environmental variables
