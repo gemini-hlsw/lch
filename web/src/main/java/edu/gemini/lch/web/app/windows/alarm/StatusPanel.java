@@ -237,7 +237,7 @@ abstract class StatusPanel extends Panel {
                     // get first collision (sorted by time) and check if we need to react
                     // we need to react if a) laser is on sky and b) other telescope has priority
                     LtcsService.Collision c = collisions.get(0);
-                    Boolean needToReact = snapshot.getEpicsSnapshot().isOnSky() && !c.geminiHasPriority();
+                    boolean needToReact = snapshot.getEpicsSnapshot().isOnSky() && !c.geminiHasPriority();
 
                     if (!c.getStart().isAfter(epicsTime) && c.getEnd().isAfter(epicsTime)) {
                         // inside collision! calculate remaining time as time from now until end of collision
