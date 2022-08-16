@@ -159,8 +159,9 @@ coords_azimuth
 
 CLASSIFICATION  : 'Classification: UNCLASSIFIED';
 HEADER_START    : 'UNITED STATES';
-HEADER_END      : 'VAFB, CA 93437';
-HEADER_CRAP_1   : HEADER_START (options{greedy=false;}:.)* HEADER_END;
+HEADER_END_1    : 'VAFB, CA 93437';
+HEADER_END_2    : 'VSFB, CA 93437';
+HEADER_CRAP_1   : HEADER_START (options{greedy=false;}:.)* (HEADER_END_1|HEADER_END_2);
 MISSION_ID      : 'Mission ID:';
 LASER_OWNER     : 'Laser Owner/Operator:' (options{greedy=false;}:~('\r'|'\n')*);
 MISSION_NAME    : 'Mission Name:' (options{greedy=false;}:~('\r'|'\n')*);
