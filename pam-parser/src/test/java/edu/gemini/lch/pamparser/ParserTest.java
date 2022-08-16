@@ -114,6 +114,22 @@ public class ParserTest {
         }
     }
 
+    @Test
+    public void canParseNorthRaDecFileNewFormat() throws Exception {
+        try (InputStream is = getClass().getResourceAsStream("/new-responseNorthRaDec.txt")) {
+            Response response = Response.parseResponse(is);
+            // check site
+            assertEquals(Site.NORTH, response.getSite());
+            // check mission start / end from header
+            // Mission Start Date/Time (UTC):   2022 Aug 17 04:49:37
+            // Mission Stop  Date/Time (UTC):   2022 Aug 17 16:02:35
+            assertEquals(new DateTime(2022, 8, 17, 4, 49, 37, DateTimeZone.UTC), response.getMissionStart().toDateTime(DateTimeZone.UTC));
+            assertEquals(new DateTime(2022, 8, 17, 16, 2, 35, DateTimeZone.UTC), response.getMissionEnd().toDateTime(DateTimeZone.UTC));
+            assertEquals(new Integer(229), response.getJDay());
+            // we expect 88 targets
+            assertEquals(88, response.getTargets().size());
+        }
+    }
 
     @Test
     public void canParseSouthAzimuthFile() throws Exception {

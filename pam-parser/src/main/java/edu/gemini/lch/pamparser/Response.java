@@ -129,23 +129,23 @@ public class Response {
 			CommonTree ct = (CommonTree) parser.response().getTree();
 			CommonTreeNodeStream ns = new CommonTreeNodeStream(ct);		
 			ResponseTree rt = new ResponseTree(ns);
-            Response response = rt.response();
+      Response response = rt.response();
 
-            // check for some values that must be in the parsed response
-            // if the header is not found at all (e.g. when trying to parse an arbitrary text file) currently
-            // the parser will just consume everything and return a Response object with all values set to null!
-            // this is a catch all to avoid this - actually it would be better to improve the parser..
-            // feel free to do so ;)
-            Validate.notNull(response.getMissionId(),       "PAM file header does not contain a mission ID.");
-            Validate.notNull(response.getMissionStart(),    "PAM file header does not contain a mission start time.");
-            Validate.notNull(response.getMissionEnd(),      "PAM file header does not contain a mission end time.");
-            Validate.notNull(response.getReportTime(),      "PAM file header does not contain a report time.");
-            Validate.notNull(response.getJDay(),            "PAM file header does not contain a JDay.");
-            Validate.notNull(response.getSite(),            "PAM file header does not contain a Site");
-            Validate.notNull(response.getTargets(),         "PAM file does not contain any targets.");
+      // check for some values that must be in the parsed response
+      // if the header is not found at all (e.g. when trying to parse an arbitrary text file) currently
+      // the parser will just consume everything and return a Response object with all values set to null!
+      // this is a catch all to avoid this - actually it would be better to improve the parser..
+      // feel free to do so ;)
+      Validate.notNull(response.getMissionId(),       "PAM file header does not contain a mission ID.");
+      Validate.notNull(response.getMissionStart(),    "PAM file header does not contain a mission start time.");
+      Validate.notNull(response.getMissionEnd(),      "PAM file header does not contain a mission end time.");
+      Validate.notNull(response.getReportTime(),      "PAM file header does not contain a report time.");
+      Validate.notNull(response.getJDay(),            "PAM file header does not contain a JDay.");
+      Validate.notNull(response.getSite(),            "PAM file header does not contain a Site");
+      Validate.notNull(response.getTargets(),         "PAM file does not contain any targets.");
 
-            // return the response
-            return response;
+      // return the response
+      return response;
 
 		} catch (RecognitionException re) {
 			ParseException pe = new ParseException(re.getMessage(), re.index);
