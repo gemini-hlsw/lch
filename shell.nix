@@ -45,10 +45,9 @@ stdenv.mkDerivation rec {
     export PGPORT="5432";
     export PGUSER="lch";
 
-
     # Setup: DB
-    if [[ ! -d $PGDATA ]]
-    then
+    if [ ! -d $PGDATA ]; then
+      echo "Starting ${postgresql_10.name}."
       initdb --username $PGUSER -D $PGDATA && cat "$postgresConf" >> $PGDATA/postgresql.conf 
       pg_ctl start -o "-p $PGPORT -c unix_socket_directories=/tmp" -D $PGDATA
       sleep 1
@@ -56,7 +55,7 @@ stdenv.mkDerivation rec {
       psql -p $PGPORT -U $PGUSER -c "grant all privileges on database $PGDATABASE to $PGUSER";
       sleep 1
       psql -p $PGPORT -U $PGUSER -d postgres -c "CREATE database $PGDATABASE_TEST;"
-      psql -p $PGPORT -U $PGUSER -c "grant all privileges on database $PGDATABASE_TESt to $PGUSER";
+      psql -p $PGPORT -U $PGUSER -c "grant all privileges on database $PGDATABASE_TEST to $PGUSER";
       sleep 1
       pg_ctl stop
     fi
