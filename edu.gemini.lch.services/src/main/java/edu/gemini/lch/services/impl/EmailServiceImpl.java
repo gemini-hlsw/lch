@@ -164,7 +164,7 @@ public class EmailServiceImpl implements EmailService {
      * bad to enforce this.
      */
     public synchronized void checkForNewEmails(String mailbox, String password) {
-        LOGGER.trace("checking for new emails");
+        LOGGER.info("Checking for new emails");
 
         Boolean hasImport = false;
         EmailReader emailReader = factory.createEmailReader();
