@@ -6,13 +6,13 @@
     <parent>
         <artifactId>lchUmbrella</artifactId>
         <groupId>edu.gemini.lch</groupId>
-        <version>3.7.0</version>
+        <version>3.8.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <name>LCH Configuration</name>
     <artifactId>configuration</artifactId>
-    <version>3.7.0</version>
+    <version>3.8.0</version>
     <packaging>jar</packaging>
 
     <dependencies>
@@ -20,7 +20,7 @@
         <dependency>
             <groupId>edu.gemini.lch</groupId>
             <artifactId>model</artifactId>
-            <version>3.7.0</version>
+            <version>3.8.0</version>
         </dependency>
 
         <!-- check if there is a javax package (not eclipse) -->

@@ -132,6 +132,18 @@ public class ParserTest {
     }
 
     @Test
+    public void canParseNorthRaDecFileYetAnotherNewFormat() throws Exception {
+        try (InputStream is = getClass().getResourceAsStream("/PAM_GS_Gemini_South_T-003_30DEC2022_For_JDAY002_RADEC.1-1.txt")) {
+            Response response = Response.parseResponse(is);
+            // check site
+            assertEquals(Site.SOUTH, response.getSite());
+            assertEquals(new Integer(2), response.getJDay());
+            // we expect 150 targets
+            assertEquals(150, response.getTargets().size());
+        }
+    }
+
+    @Test
     public void canParseSouthAzimuthFile() throws Exception {
         try (InputStream is = getClass().getResourceAsStream("/responseSouthAzimuth.txt")) {
             Response response = Response.parseResponse(is);
