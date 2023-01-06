@@ -102,6 +102,7 @@ class JSpOCCommunicatorServiceImpl extends JSpOCCommunicatorService {
   private def getFileID(filename: String): Try[Int] = {
     val fileIDURL = "https://" + Host + "/fileshare/query/class/file/FILE_NAME/" + encodeFilename(filename)
     val method = new GetMethod(fileIDURL)
+    method.setFollowRedirects(true)
 
     processMethodR(method)(postExecute = () =>
       // Note that we use get here to deliberately cause a NoSuchElementException if there is no FileId.
@@ -125,6 +126,7 @@ class JSpOCCommunicatorServiceImpl extends JSpOCCommunicatorService {
   override def downloadFile(fileId: Int, destination: File): Try[Unit] = {
     val fileContentsURL = "https://" + Host + "/fileshare/query/class/download/FILE_ID/" + fileId + "/format/stream"
     val method = new GetMethod(fileContentsURL)
+    method.setFollowRedirects(true)
 
     processMethod(method)(postExecute = () => {
       val is = method.getResponseBodyAsStream
@@ -145,6 +147,7 @@ class JSpOCCommunicatorServiceImpl extends JSpOCCommunicatorService {
   override def downloadFileAsByteArray(fileId: Int): Try[Array[Byte]] = {
     val fileContentsURL = "https://" + Host + "/fileshare/query/class/download/FILE_ID/" + fileId + "/format/stream"
     val method = new GetMethod(fileContentsURL)
+    method.setFollowRedirects(true)
     processMethodR(method)(postExecute = () => FileCopyUtils.copyToByteArray(method.getResponseBodyAsStream))
   }
 
@@ -156,6 +159,7 @@ class JSpOCCommunicatorServiceImpl extends JSpOCCommunicatorService {
     val maxId = currentMaxId
     val idFetchURL = "https://" + Host + "/fileshare/query/class/file/FOLDER_ID/" + folderId + "/FILE_ID/%3E" + maxId + attributeList.headOption.fold("")("/orderby/" + _.name)
     val method = new GetMethod(idFetchURL)
+    method.setFollowRedirects(true)
 
     processMethodR(method)(postExecute = () => {
       parseSimpleJSON(method.getResponseBodyAsString).map { json =>
