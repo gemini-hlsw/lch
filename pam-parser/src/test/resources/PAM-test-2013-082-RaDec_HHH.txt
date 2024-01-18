@@ -1,0 +1,117 @@
+		Classification: UNCLASSIFIED
+
+UNITED STATES STATEGIC COMMAND LASER CLEARINGHOUSE (LCH) TIME WINDOWS REPORT
+
+Date:    2013 Mar 21 14:26:55
+From:    JFCC-SPACE/J95 (LCH)
+To:      Gemini North
+Subject: LCH Authorized Shoot (Open) Windows
+
+
+1. The attached information contains the coordinated and approved
+   spatial parameters
+
+      (a) Authorized Shoot (Open) Windows
+
+   During Authorized Shoot Windows, the laser owner-operator (O/O) is authorized
+   to operate the approved system laser in accordance with the Source/Target
+   geometry definitions contained in this report.
+
+2. The laser O/O may perform Hybrid Predictive Avoidance (HPA) during Authorized
+   Shoot Windows, if previously certified in writing by USSTRATCOM to do so.
+
+3. Any deviation from this authorization must be immediately reported
+   to the Laser Clearinghouse at: Commercial 805-606-1075, 1282, 4341 (7:30 to 4:30 M-F,PST) DSN is 276
+   or contact the JSpOC SSA Ops Cell at Commercial 805-605-6546 (which is manned 24/7), DSN is 275.
+
+4. See below for comments specific to this mission.
+
+5. If you have any questions, please don't hesitate to contact LCH at
+   the above listed phone numbers.
+
+JFCC SPACE/J95 (LCH)
+747 NEBRASKA AVE RM B209
+VAFB, CA 93437
+
+
+
+Mission ID:                      Gemini North_589nm_14W_884nrad_76MHz_13080142655_P
+Laser Owner/Operator:            Gemini North
+Report Date/Time (UTC):          2013 Mar 21 14:26:55
+Mission Name:                    Gemini North_589nm_14W_884nrad_76MHz
+Mission Start Date/Time (UTC):   2013 Mar 23 04:33:32
+Mission Stop  Date/Time (UTC):   2013 Mar 23 16:23:27
+Mission Duration   (HHH:MM:SS):  111:49:54
+Type of Windows in this report:  Authorized Shoot (Open) Windows
+Comment:                         For EXECUTION purposes
+Number of Targets:               128
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2013 Mar 23 (082) 0433 32    2013 Mar 23 (082) 0733 39    0180:07
+2013 Mar 23 (082) 0733 44    2013 Mar 23 (082) 0755 12    0021:28
+2013 Mar 23 (082) 0755 16    2013 Mar 23 (082) 1129 02    0213:46
+2013 Mar 23 (082) 1129 25    2013 Mar 23 (082) 1556 50    0267:25
+
+Percent = 96.18%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 1
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 144.56 degrees
+Declination:     54.473 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2013 Mar 23 (082) 1037 17    2013 Mar 23 (082) 1242 57    0125:40
+2013 Mar 23 (082) 1243 00    2013 Mar 23 (082) 1623 27    0220:27
+
+Percent = 48.75%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 2
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 268.139 degrees
+Declination:     -17.684 degrees
+
+YYYY MMM dd (DDD) HHMM SS    YYYY MMM dd (DDD) HHMM SS      MM:SS
+-------------------------    -------------------------    -------
+2013 Mar 23 (082) 0549 43    2013 Mar 23 (082) 0703 33    0073:50
+2013 Mar 23 (082) 0703 47    2013 Mar 23 (082) 0806 15    0062:28
+2013 Mar 23 (082) 0806 19    2013 Mar 23 (082) 1213 05    0246:46
+2013 Mar 23 (082) 1213 11    2013 Mar 23 (082) 1436 23    0143:12
+2013 Mar 23 (082) 1436 27    2013 Mar 23 (082) 1516 47    0040:20
+2013 Mar 23 (082) 1516 51    2013 Mar 23 (082) 1546 11    0029:20
+2013 Mar 23 (082) 1546 16    2013 Mar 23 (082) 1623 27    0037:11
+
+Percent = 89.18%
+
+Source Geometry: (WGS-84)
+---------------
+Method: Fixed Point
+Latitude:  19.8238 degrees N
+Longitude: 155.469 degrees W
+Altitude:  4.2134 km
+
+Target Geometry: (WGS-84) 3
+---------------
+Method: Right Ascension And Declination
+Catalog Date:    J2000
+Right Ascension: 216.433 degrees
+Declination:     33.423 degrees
