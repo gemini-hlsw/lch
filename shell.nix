@@ -11,7 +11,7 @@ stdenv.mkDerivation rec {
   GN_PASSWORD = "";
   buildInputs = [
     maven
-    postgresql_10
+    postgresql_13
     (jdk8.overrideAttrs
       (_: { postPatch = "rm man; ln -s ../zulu-8.jdk/Contents/Home/man man"; }))
   ];
@@ -35,10 +35,10 @@ stdenv.mkDerivation rec {
 
   # Post Shell Hook
   shellHook = ''
-    echo "Using ${postgresql_10.name}."
+    echo "Using ${postgresql_13.name}."
     export PGDATABASE="lch_dev";
     export PGDATABASE_TEST="lch_test";
-    export PG="$PWD/.pg";
+    export PG="$PWD/.pg13";
     export PGDATA="$PG/pgdata";
     export PGHOST="/tmp";
     # The port may coilde with other instances but the app doesn't let you change it
@@ -47,7 +47,7 @@ stdenv.mkDerivation rec {
 
     # Setup: DB
     if [ ! -d $PGDATA ]; then
-      echo "Starting ${postgresql_10.name}."
+      echo "Starting ${postgresql_13.name}."
       initdb --username $PGUSER -D $PGDATA && cat "$postgresConf" >> $PGDATA/postgresql.conf 
       pg_ctl start -o "-p $PGPORT -c unix_socket_directories=/tmp" -D $PGDATA
       sleep 1
