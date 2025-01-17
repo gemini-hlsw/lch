@@ -1,0 +1,3590 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<queryResult>
+    <programs>
+        <program>
+            <semester>2025A</semester>
+            <title>Studying the Occurrence Rate of Planets Orbiting White Dwarfs with the GMT Method</title>
+            <reference>GS-2025A-Q-207</reference>
+            <active>Yes</active>
+            <completed>No</completed>
+            <investigators>
+                <investigator pi="true">
+                    <name>Chung-Uk Lee</name>
+                    <email>leecu@kasi.re.kr</email>
+                </investigator>
+                <investigator pi="false">
+                    <name>Weicheng Zang</name>
+                    <email>weicheng.zang@cfa.harvard.edu</email>
+                </investigator>
+                <investigator pi="false">
+                    <name>Jennifer Yee</name>
+                    <email>jyee@cfa.harvard.edu</email>
+                </investigator>
+                <investigator pi="false">
+                    <name>Gould Andrew</name>
+                    <email>gould.34@osu.edu</email>
+                </investigator>
+                <investigator pi="false">
+                    <name>Tanagodchaporn Inyanya</name>
+                    <email>tinyanya@kasi.re.kr</email>
+                </investigator>
+                <investigator pi="false">
+                    <name>Shude Mao</name>
+                    <email>shude.mao@gmail.com</email>
+                </investigator>
+                <investigator pi="false">
+                    <name>Hongjing Yang</name>
+                    <email>hongjing.yang@qq.com</email>
+                </investigator>
+            </investigators>
+            <notifyPi>Yes</notifyPi>
+            <rollover>No</rollover>
+            <abstrakt>Detecting planets at 1 &lt; a &lt; 5 AU orbiting white dwarfs (WDs) and studying their occurrence rate would shed light on the evolution of planetary systems during the post-main-sequence phase of stellar evolution and the ultimate fate of Earth. Currently, there is no measurement of the occurrence rate of WD planets. We propose 7.5 hrs of the Gemini GSAOI with the GeMS to measure the flux for the host stars for 16 microlensing planetary systems and constrain them to be WDs or main-sequence stars. We will form a statistical sample including ~5 WD planets if the occurrence rate of WD planets at 1 &lt; a &lt; 5 AU is the same for main-sequence stars and measure the occurrence rate of WDs for the first time. Our project can serve as the foundation for a future GMT microlensing project by training scientists in the essential skills to carry out GMT AO imaging. </abstrakt>
+            <scienceBand>2</scienceBand>
+            <supportPartner>Republic of Korea</supportPartner>
+            <partners>
+                <partner>
+                    <name>United States</name>
+                    <hoursAllocated>3.0</hoursAllocated>
+                </partner>
+            </partners>
+            <ngoEmail>jyseok@kasi.re.kr</ngoEmail>
+            <contactScientistEmail>jeong-eun.heo@noirlab.edu</contactScientistEmail>
+            <tooStatus>None</tooStatus>
+            <thesis>No</thesis>
+            <allocatedTime>10800000</allocatedTime>
+            <remainingTime>10800000</remainingTime>
+            <observations>
+                <observation>
+                    <name>GSAOI Observation: OB180532</name>
+                    <obsClass>Science</obsClass>
+                    <id>GS-2025A-Q-207-10</id>
+                    <status>Phase 2</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+<time>2025-04-15 18:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-04-19 18:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-04-20 18:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-13 18:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-17 18:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-13 18:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>OB180532</name>
+                            <hmsDms>
+<ra>17:59:56.02</ra>
+<dec>-28:59:51.9</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Untitled</name>
+                            <hmsDms>
+<ra>0:00:00.0</ra>
+<dec>0:00:00.0</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>GSAOI Observation: KB180029</name>
+                    <obsClass>Science</obsClass>
+                    <id>GS-2025A-Q-207-11</id>
+                    <status>Phase 2</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+<time>2025-04-15 18:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-04-19 18:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-04-20 18:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-13 18:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-17 18:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-13 18:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>KB180029</name>
+                            <hmsDms>
+<ra>17:37:52.67</ra>
+<dec>-27:59:04.92</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>GSAOI Observation: OB190468</name>
+                    <obsClass>Science</obsClass>
+                    <id>GS-2025A-Q-207-12</id>
+                    <status>Phase 2</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+<time>2025-04-15 18:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-04-19 18:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-04-20 18:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-13 18:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-17 18:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-13 18:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>OB190468</name>
+                            <hmsDms>
+<ra>17:45:37.44</ra>
+<dec>-24:26:50.2</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>GSAOI Observation: OB171375</name>
+                    <obsClass>Science</obsClass>
+                    <id>GS-2025A-Q-207-13</id>
+                    <status>Phase 2</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+<time>2025-04-15 18:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-04-19 18:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-04-20 18:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-13 18:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-17 18:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-13 18:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>OB171375</name>
+                            <hmsDms>
+<ra>17:56:37.17</ra>
+<dec>-30:18:41.1</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>GSAOI Observation: OB161190</name>
+                    <obsClass>Science</obsClass>
+                    <id>GS-2025A-Q-207-14</id>
+                    <status>Phase 2</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+<time>2025-04-15 18:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-04-19 18:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-04-20 18:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-13 18:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-17 18:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-13 18:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>OB161190</name>
+                            <hmsDms>
+<ra>17:58:52.3</ra>
+<dec>-27:36:48.8</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+            </observations>
+        </program>
+        <program>
+            <semester>2025A</semester>
+            <title>Test GNIRS Proposal</title>
+            <reference>GN-2025A-Q-3</reference>
+            <active>Yes</active>
+            <completed>No</completed>
+            <investigators>
+                <investigator pi="true">
+                    <name>Carlos Quiroz</name>
+                </investigator>
+            </investigators>
+            <notifyPi>Yes</notifyPi>
+            <rollover>No</rollover>
+            <abstrakt>GNIRS </abstrakt>
+            <scienceBand>1</scienceBand>
+            <supportPartner>Chile</supportPartner>
+            <ngoEmail></ngoEmail>
+            <contactScientistEmail></contactScientistEmail>
+            <tooStatus>None</tooStatus>
+            <thesis>No</thesis>
+            <allocatedTime>0</allocatedTime>
+            <remainingTime>0</remainingTime>
+            <observations/>
+        </program>
+        <program>
+            <semester>2025A</semester>
+            <title>Test GNIRS Proposal</title>
+            <reference>GN-2025A-Q-2</reference>
+            <active>Yes</active>
+            <completed>No</completed>
+            <investigators>
+                <investigator pi="true">
+                    <name>Carlos Quiroz</name>
+                </investigator>
+            </investigators>
+            <notifyPi>Yes</notifyPi>
+            <rollover>No</rollover>
+            <abstrakt>GNIRS </abstrakt>
+            <scienceBand>1</scienceBand>
+            <supportPartner>Chile</supportPartner>
+            <ngoEmail></ngoEmail>
+            <contactScientistEmail></contactScientistEmail>
+            <tooStatus>None</tooStatus>
+            <thesis>No</thesis>
+            <allocatedTime>0</allocatedTime>
+            <remainingTime>0</remainingTime>
+            <observations/>
+        </program>
+        <program>
+            <semester>2025A</semester>
+            <title>Test GNIRS Proposal</title>
+            <reference>GN-2025A-Q-1</reference>
+            <active>Yes</active>
+            <completed>No</completed>
+            <investigators>
+                <investigator pi="true">
+                    <name>Carlos Quiroz</name>
+                </investigator>
+            </investigators>
+            <notifyPi>Yes</notifyPi>
+            <rollover>No</rollover>
+            <abstrakt>GNIRS </abstrakt>
+            <scienceBand>1</scienceBand>
+            <ngoEmail></ngoEmail>
+            <contactScientistEmail></contactScientistEmail>
+            <tooStatus>None</tooStatus>
+            <thesis>No</thesis>
+            <allocatedTime>0</allocatedTime>
+            <remainingTime>0</remainingTime>
+            <observations/>
+        </program>
+        <program>
+            <semester>2025A</semester>
+            <title>Test GNIRS Proposal</title>
+            <reference>GN-2025A-Q-4</reference>
+            <active>Yes</active>
+            <completed>No</completed>
+            <investigators>
+                <investigator pi="true">
+                    <name>Carlos Quiroz</name>
+                </investigator>
+            </investigators>
+            <notifyPi>Yes</notifyPi>
+            <rollover>No</rollover>
+            <abstrakt>GNIRS </abstrakt>
+            <scienceBand>1</scienceBand>
+            <supportPartner>Chile</supportPartner>
+            <ngoEmail></ngoEmail>
+            <contactScientistEmail></contactScientistEmail>
+            <tooStatus>None</tooStatus>
+            <thesis>No</thesis>
+            <allocatedTime>0</allocatedTime>
+            <remainingTime>0</remainingTime>
+            <observations/>
+        </program>
+        <program>
+            <semester>2025A</semester>
+            <title>Investigating helium enhancement of RR Lyrae stars in NGC 6441 and NGC 6388</title>
+            <reference>GS-2025A-Q-217</reference>
+            <active>Yes</active>
+            <completed>No</completed>
+            <investigators>
+                <investigator pi="true">
+                    <name>Anupam Bhardwaj</name>
+                    <email>anupam.bhardwaj@iucaa.in</email>
+                </investigator>
+                <investigator pi="false">
+                    <name>Shashi Kanbur</name>
+                    <email>shashi.kanbur@oswego.edu</email>
+                </investigator>
+                <investigator pi="false">
+                    <name>Prashant Nishad</name>
+                    <email>prashant.nishad@iucaa.in</email>
+                </investigator>
+            </investigators>
+            <notifyPi>Yes</notifyPi>
+            <rollover>No</rollover>
+            <abstrakt>NGC 6441 and NGC 6388 are two unique Galactic bulge globular clusters that host a rich population of RR Lyrae variables in spite of their high metallicities. RR Lyrae in these clusters exhibit unusually long periods, which was suggested to be due to a helium enhancement that increases their luminosities and in turn their pulsation periods. However, the multi-epoch NIR observations of NGC 6441 showed that their RR Lyrae Period-Luminosity relations (PLR) are in excellent agreement with the predictions of pulsation models for normal helium content. Interestingly, the RR Lyrae PLR in NGC 6388 provide a strong hint of helium enhancement, but also exhibit larger scatter compared to NGC 6441 variable. Therefore, we propose GeMS-GSAOI high spatial resolution time-series imaging of the central region of NGC 6441 and NGC 6388 to obtain high-precision near-infrared photometry of their central RR Lyrae stars. These observations will probe likely helium enhancement in RR Lyrae populations in these twin clusters by a direct comparison with the predictions of the pulsation models. If the differences between the two cluster RR Lyrae stars are confirmed, that would challenge the stellar pulsation models. </abstrakt>
+            <scienceBand>2</scienceBand>
+            <supportPartner>United States</supportPartner>
+            <partners>
+                <partner>
+                    <name>United States</name>
+                    <hoursAllocated>16.8</hoursAllocated>
+                </partner>
+            </partners>
+            <ngoEmail>rodolfo.angeloni@noirlab.edu</ngoEmail>
+            <contactScientistEmail>rodrigo.carrasco@noirlab.edu</contactScientistEmail>
+            <tooStatus>None</tooStatus>
+            <thesis>Yes</thesis>
+            <allocatedTime>60480000</allocatedTime>
+            <remainingTime>60480000</remainingTime>
+            <observations>
+                <observation>
+                    <name>AO optimization sequence</name>
+                    <obsClass>Acquisition</obsClass>
+                    <id>GS-2025A-Q-217-10</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6388</name>
+                            <hmsDms>
+<ra>17:36:16.73</ra>
+<dec>-44:44:12.31</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269195849373440</name>
+                            <hmsDms>
+<ra>17:36:15.251</ra>
+<dec>-44:44:57.75</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269337621875712</name>
+                            <hmsDms>
+<ra>17:36:18.148</ra>
+<dec>-44:43:24.29</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269127129936384</name>
+                            <hmsDms>
+<ra>17:36:21.117</ra>
+<dec>-44:43:46.43</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269195849360768</name>
+                            <hmsDms>
+<ra>17:36:13.205</ra>
+<dec>-44:44:41.99</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955269264568826624</name>
+                            <hmsDms>
+<ra>17:36:11.413</ra>
+<dec>-44:44:07.84</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955268994001308928</name>
+                            <hmsDms>
+<ra>17:36:18.554</ra>
+<dec>-44:45:00.27</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5958272206968678656</name>
+                            <hmsDms>
+<ra>17:35:43.186</ra>
+<dec>-44:44:14.05</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5955267997591489536</name>
+                            <hmsDms>
+<ra>17:36:43.696</ra>
+<dec>-44:48:03.22</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>Crowded field/extended source: offset to sky (&lt; 5arcmin, Laser on)</name>
+                    <obsClass>Science</obsClass>
+                    <id>GS-2025A-Q-217-7</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+<time>2025-02-01 00:00:00 UTC</time>
+<duration>2:30</duration>
+<repeats>
+    <period>2:30</period>
+</repeats>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6388</name>
+                            <hmsDms>
+<ra>17:36:16.73</ra>
+<dec>-44:44:12.31</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269337621875712</name>
+                            <hmsDms>
+<ra>17:36:18.148</ra>
+<dec>-44:43:24.29</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269337621875712</name>
+                            <hmsDms>
+<ra>17:36:18.148</ra>
+<dec>-44:43:24.29</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269195849360768</name>
+                            <hmsDms>
+<ra>17:36:13.205</ra>
+<dec>-44:44:41.99</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269195849360768</name>
+                            <hmsDms>
+<ra>17:36:13.205</ra>
+<dec>-44:44:41.99</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955268994001308928</name>
+                            <hmsDms>
+<ra>17:36:18.554</ra>
+<dec>-44:45:00.27</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955268994001308928</name>
+                            <hmsDms>
+<ra>17:36:18.554</ra>
+<dec>-44:45:00.27</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5958272206968678656</name>
+                            <hmsDms>
+<ra>17:35:43.186</ra>
+<dec>-44:44:14.05</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5955267997591489536</name>
+                            <hmsDms>
+<ra>17:36:43.696</ra>
+<dec>-44:48:03.22</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>AO optimization sequence</name>
+                    <obsClass>Acquisition</obsClass>
+                    <id>GS-2025A-Q-217-12</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6388</name>
+                            <hmsDms>
+<ra>17:36:16.73</ra>
+<dec>-44:44:12.31</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269195849373440</name>
+                            <hmsDms>
+<ra>17:36:15.251</ra>
+<dec>-44:44:57.75</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269337621875712</name>
+                            <hmsDms>
+<ra>17:36:18.148</ra>
+<dec>-44:43:24.29</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269127129936384</name>
+                            <hmsDms>
+<ra>17:36:21.117</ra>
+<dec>-44:43:46.43</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269195849360768</name>
+                            <hmsDms>
+<ra>17:36:13.205</ra>
+<dec>-44:44:41.99</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955269264568826624</name>
+                            <hmsDms>
+<ra>17:36:11.413</ra>
+<dec>-44:44:07.84</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955268994001308928</name>
+                            <hmsDms>
+<ra>17:36:18.554</ra>
+<dec>-44:45:00.27</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5958272206968678656</name>
+                            <hmsDms>
+<ra>17:35:43.186</ra>
+<dec>-44:44:14.05</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5955267997591489536</name>
+                            <hmsDms>
+<ra>17:36:43.696</ra>
+<dec>-44:48:03.22</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>Crowded field/extended source: offset to sky (&lt; 5arcmin, Laser on)</name>
+                    <obsClass>Science</obsClass>
+                    <id>GS-2025A-Q-217-13</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+<time>2025-02-01 00:00:00 UTC</time>
+<duration>2:30</duration>
+<repeats>
+    <period>2:30</period>
+</repeats>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6388</name>
+                            <hmsDms>
+<ra>17:36:16.73</ra>
+<dec>-44:44:12.31</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269337621875712</name>
+                            <hmsDms>
+<ra>17:36:18.148</ra>
+<dec>-44:43:24.29</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269337621875712</name>
+                            <hmsDms>
+<ra>17:36:18.148</ra>
+<dec>-44:43:24.29</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269195849360768</name>
+                            <hmsDms>
+<ra>17:36:13.205</ra>
+<dec>-44:44:41.99</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269195849360768</name>
+                            <hmsDms>
+<ra>17:36:13.205</ra>
+<dec>-44:44:41.99</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955268994001308928</name>
+                            <hmsDms>
+<ra>17:36:18.554</ra>
+<dec>-44:45:00.27</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955268994001308928</name>
+                            <hmsDms>
+<ra>17:36:18.554</ra>
+<dec>-44:45:00.27</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5958272206968678656</name>
+                            <hmsDms>
+<ra>17:35:43.186</ra>
+<dec>-44:44:14.05</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5955267997591489536</name>
+                            <hmsDms>
+<ra>17:36:43.696</ra>
+<dec>-44:48:03.22</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>AO optimization sequence</name>
+                    <obsClass>Acquisition</obsClass>
+                    <id>GS-2025A-Q-217-16</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6388</name>
+                            <hmsDms>
+<ra>17:36:16.73</ra>
+<dec>-44:44:12.31</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269195849373440</name>
+                            <hmsDms>
+<ra>17:36:15.251</ra>
+<dec>-44:44:57.75</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269337621875712</name>
+                            <hmsDms>
+<ra>17:36:18.148</ra>
+<dec>-44:43:24.29</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269127129936384</name>
+                            <hmsDms>
+<ra>17:36:21.117</ra>
+<dec>-44:43:46.43</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269195849360768</name>
+                            <hmsDms>
+<ra>17:36:13.205</ra>
+<dec>-44:44:41.99</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955269264568826624</name>
+                            <hmsDms>
+<ra>17:36:11.413</ra>
+<dec>-44:44:07.84</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955268994001308928</name>
+                            <hmsDms>
+<ra>17:36:18.554</ra>
+<dec>-44:45:00.27</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5958272206968678656</name>
+                            <hmsDms>
+<ra>17:35:43.186</ra>
+<dec>-44:44:14.05</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5955267997591489536</name>
+                            <hmsDms>
+<ra>17:36:43.696</ra>
+<dec>-44:48:03.22</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>Crowded field/extended source: offset to sky (&lt; 5arcmin, Laser on)</name>
+                    <obsClass>Science</obsClass>
+                    <id>GS-2025A-Q-217-17</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+<time>2025-02-01 00:00:00 UTC</time>
+<duration>2:30</duration>
+<repeats>
+    <period>2:30</period>
+</repeats>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6388</name>
+                            <hmsDms>
+<ra>17:36:16.73</ra>
+<dec>-44:44:12.31</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269337621875712</name>
+                            <hmsDms>
+<ra>17:36:18.148</ra>
+<dec>-44:43:24.29</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269337621875712</name>
+                            <hmsDms>
+<ra>17:36:18.148</ra>
+<dec>-44:43:24.29</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269195849360768</name>
+                            <hmsDms>
+<ra>17:36:13.205</ra>
+<dec>-44:44:41.99</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269195849360768</name>
+                            <hmsDms>
+<ra>17:36:13.205</ra>
+<dec>-44:44:41.99</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955268994001308928</name>
+                            <hmsDms>
+<ra>17:36:18.554</ra>
+<dec>-44:45:00.27</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955268994001308928</name>
+                            <hmsDms>
+<ra>17:36:18.554</ra>
+<dec>-44:45:00.27</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5958272206968678656</name>
+                            <hmsDms>
+<ra>17:35:43.186</ra>
+<dec>-44:44:14.05</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5955267997591489536</name>
+                            <hmsDms>
+<ra>17:36:43.696</ra>
+<dec>-44:48:03.22</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>AO optimization sequence</name>
+                    <obsClass>Acquisition</obsClass>
+                    <id>GS-2025A-Q-217-20</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6388</name>
+                            <hmsDms>
+<ra>17:36:16.73</ra>
+<dec>-44:44:12.31</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269195849373440</name>
+                            <hmsDms>
+<ra>17:36:15.251</ra>
+<dec>-44:44:57.75</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269337621875712</name>
+                            <hmsDms>
+<ra>17:36:18.148</ra>
+<dec>-44:43:24.29</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269127129936384</name>
+                            <hmsDms>
+<ra>17:36:21.117</ra>
+<dec>-44:43:46.43</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269195849360768</name>
+                            <hmsDms>
+<ra>17:36:13.205</ra>
+<dec>-44:44:41.99</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955269264568826624</name>
+                            <hmsDms>
+<ra>17:36:11.413</ra>
+<dec>-44:44:07.84</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955268994001308928</name>
+                            <hmsDms>
+<ra>17:36:18.554</ra>
+<dec>-44:45:00.27</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5958272206968678656</name>
+                            <hmsDms>
+<ra>17:35:43.186</ra>
+<dec>-44:44:14.05</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5955267997591489536</name>
+                            <hmsDms>
+<ra>17:36:43.696</ra>
+<dec>-44:48:03.22</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>Crowded field/extended source: offset to sky (&lt; 5arcmin, Laser on)</name>
+                    <obsClass>Science</obsClass>
+                    <id>GS-2025A-Q-217-21</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+<time>2025-02-01 00:00:00 UTC</time>
+<duration>2:30</duration>
+<repeats>
+    <period>2:30</period>
+</repeats>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6388</name>
+                            <hmsDms>
+<ra>17:36:16.73</ra>
+<dec>-44:44:12.31</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269337621875712</name>
+                            <hmsDms>
+<ra>17:36:18.148</ra>
+<dec>-44:43:24.29</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269337621875712</name>
+                            <hmsDms>
+<ra>17:36:18.148</ra>
+<dec>-44:43:24.29</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269195849360768</name>
+                            <hmsDms>
+<ra>17:36:13.205</ra>
+<dec>-44:44:41.99</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269195849360768</name>
+                            <hmsDms>
+<ra>17:36:13.205</ra>
+<dec>-44:44:41.99</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955268994001308928</name>
+                            <hmsDms>
+<ra>17:36:18.554</ra>
+<dec>-44:45:00.27</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955268994001308928</name>
+                            <hmsDms>
+<ra>17:36:18.554</ra>
+<dec>-44:45:00.27</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5958272206968678656</name>
+                            <hmsDms>
+<ra>17:35:43.186</ra>
+<dec>-44:44:14.05</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5955267997591489536</name>
+                            <hmsDms>
+<ra>17:36:43.696</ra>
+<dec>-44:48:03.22</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>AO optimization sequence</name>
+                    <obsClass>Acquisition</obsClass>
+                    <id>GS-2025A-Q-217-24</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6388</name>
+                            <hmsDms>
+<ra>17:36:16.73</ra>
+<dec>-44:44:12.31</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269195849373440</name>
+                            <hmsDms>
+<ra>17:36:15.251</ra>
+<dec>-44:44:57.75</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269337621875712</name>
+                            <hmsDms>
+<ra>17:36:18.148</ra>
+<dec>-44:43:24.29</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269127129936384</name>
+                            <hmsDms>
+<ra>17:36:21.117</ra>
+<dec>-44:43:46.43</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269195849360768</name>
+                            <hmsDms>
+<ra>17:36:13.205</ra>
+<dec>-44:44:41.99</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955269264568826624</name>
+                            <hmsDms>
+<ra>17:36:11.413</ra>
+<dec>-44:44:07.84</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955268994001308928</name>
+                            <hmsDms>
+<ra>17:36:18.554</ra>
+<dec>-44:45:00.27</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5958272206968678656</name>
+                            <hmsDms>
+<ra>17:35:43.186</ra>
+<dec>-44:44:14.05</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5955267997591489536</name>
+                            <hmsDms>
+<ra>17:36:43.696</ra>
+<dec>-44:48:03.22</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>Crowded field/extended source: offset to sky (&lt; 5arcmin, Laser on)</name>
+                    <obsClass>Science</obsClass>
+                    <id>GS-2025A-Q-217-25</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+<time>2025-02-01 00:00:00 UTC</time>
+<duration>2:30</duration>
+<repeats>
+    <period>2:30</period>
+</repeats>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6388</name>
+                            <hmsDms>
+<ra>17:36:16.73</ra>
+<dec>-44:44:12.31</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269337621875712</name>
+                            <hmsDms>
+<ra>17:36:18.148</ra>
+<dec>-44:43:24.29</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269337621875712</name>
+                            <hmsDms>
+<ra>17:36:18.148</ra>
+<dec>-44:43:24.29</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269195849360768</name>
+                            <hmsDms>
+<ra>17:36:13.205</ra>
+<dec>-44:44:41.99</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269195849360768</name>
+                            <hmsDms>
+<ra>17:36:13.205</ra>
+<dec>-44:44:41.99</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955268994001308928</name>
+                            <hmsDms>
+<ra>17:36:18.554</ra>
+<dec>-44:45:00.27</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955268994001308928</name>
+                            <hmsDms>
+<ra>17:36:18.554</ra>
+<dec>-44:45:00.27</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5958272206968678656</name>
+                            <hmsDms>
+<ra>17:35:43.186</ra>
+<dec>-44:44:14.05</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5955267997591489536</name>
+                            <hmsDms>
+<ra>17:36:43.696</ra>
+<dec>-44:48:03.22</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>AO optimization sequence</name>
+                    <obsClass>Acquisition</obsClass>
+                    <id>GS-2025A-Q-217-28</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6388</name>
+                            <hmsDms>
+<ra>17:36:16.73</ra>
+<dec>-44:44:12.31</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269195849373440</name>
+                            <hmsDms>
+<ra>17:36:15.251</ra>
+<dec>-44:44:57.75</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269337621875712</name>
+                            <hmsDms>
+<ra>17:36:18.148</ra>
+<dec>-44:43:24.29</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269127129936384</name>
+                            <hmsDms>
+<ra>17:36:21.117</ra>
+<dec>-44:43:46.43</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269195849360768</name>
+                            <hmsDms>
+<ra>17:36:13.205</ra>
+<dec>-44:44:41.99</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955269264568826624</name>
+                            <hmsDms>
+<ra>17:36:11.413</ra>
+<dec>-44:44:07.84</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955268994001308928</name>
+                            <hmsDms>
+<ra>17:36:18.554</ra>
+<dec>-44:45:00.27</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5958272206968678656</name>
+                            <hmsDms>
+<ra>17:35:43.186</ra>
+<dec>-44:44:14.05</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5955267997591489536</name>
+                            <hmsDms>
+<ra>17:36:43.696</ra>
+<dec>-44:48:03.22</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>Crowded field/extended source: offset to sky (&lt; 5arcmin, Laser on)</name>
+                    <obsClass>Science</obsClass>
+                    <id>GS-2025A-Q-217-29</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+<time>2025-02-01 00:00:00 UTC</time>
+<duration>2:30</duration>
+<repeats>
+    <period>2:30</period>
+</repeats>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6388</name>
+                            <hmsDms>
+<ra>17:36:16.73</ra>
+<dec>-44:44:12.31</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269337621875712</name>
+                            <hmsDms>
+<ra>17:36:18.148</ra>
+<dec>-44:43:24.29</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269337621875712</name>
+                            <hmsDms>
+<ra>17:36:18.148</ra>
+<dec>-44:43:24.29</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269195849360768</name>
+                            <hmsDms>
+<ra>17:36:13.205</ra>
+<dec>-44:44:41.99</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269195849360768</name>
+                            <hmsDms>
+<ra>17:36:13.205</ra>
+<dec>-44:44:41.99</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955268994001308928</name>
+                            <hmsDms>
+<ra>17:36:18.554</ra>
+<dec>-44:45:00.27</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955268994001308928</name>
+                            <hmsDms>
+<ra>17:36:18.554</ra>
+<dec>-44:45:00.27</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5958272206968678656</name>
+                            <hmsDms>
+<ra>17:35:43.186</ra>
+<dec>-44:44:14.05</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5955267997591489536</name>
+                            <hmsDms>
+<ra>17:36:43.696</ra>
+<dec>-44:48:03.22</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>AO optimization sequence</name>
+                    <obsClass>Acquisition</obsClass>
+                    <id>GS-2025A-Q-217-32</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6388</name>
+                            <hmsDms>
+<ra>17:36:16.73</ra>
+<dec>-44:44:12.31</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269195849373440</name>
+                            <hmsDms>
+<ra>17:36:15.251</ra>
+<dec>-44:44:57.75</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269337621875712</name>
+                            <hmsDms>
+<ra>17:36:18.148</ra>
+<dec>-44:43:24.29</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269127129936384</name>
+                            <hmsDms>
+<ra>17:36:21.117</ra>
+<dec>-44:43:46.43</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269195849360768</name>
+                            <hmsDms>
+<ra>17:36:13.205</ra>
+<dec>-44:44:41.99</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955269264568826624</name>
+                            <hmsDms>
+<ra>17:36:11.413</ra>
+<dec>-44:44:07.84</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955268994001308928</name>
+                            <hmsDms>
+<ra>17:36:18.554</ra>
+<dec>-44:45:00.27</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5958272206968678656</name>
+                            <hmsDms>
+<ra>17:35:43.186</ra>
+<dec>-44:44:14.05</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5955267997591489536</name>
+                            <hmsDms>
+<ra>17:36:43.696</ra>
+<dec>-44:48:03.22</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>Crowded field/extended source: offset to sky (&lt; 5arcmin, Laser on)</name>
+                    <obsClass>Science</obsClass>
+                    <id>GS-2025A-Q-217-33</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+<time>2025-02-01 00:00:00 UTC</time>
+<duration>2:30</duration>
+<repeats>
+    <period>2:30</period>
+</repeats>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6388</name>
+                            <hmsDms>
+<ra>17:36:16.73</ra>
+<dec>-44:44:12.31</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269337621875712</name>
+                            <hmsDms>
+<ra>17:36:18.148</ra>
+<dec>-44:43:24.29</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269337621875712</name>
+                            <hmsDms>
+<ra>17:36:18.148</ra>
+<dec>-44:43:24.29</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269195849360768</name>
+                            <hmsDms>
+<ra>17:36:13.205</ra>
+<dec>-44:44:41.99</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269195849360768</name>
+                            <hmsDms>
+<ra>17:36:13.205</ra>
+<dec>-44:44:41.99</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955268994001308928</name>
+                            <hmsDms>
+<ra>17:36:18.554</ra>
+<dec>-44:45:00.27</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955268994001308928</name>
+                            <hmsDms>
+<ra>17:36:18.554</ra>
+<dec>-44:45:00.27</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5958272206968678656</name>
+                            <hmsDms>
+<ra>17:35:43.186</ra>
+<dec>-44:44:14.05</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5955267997591489536</name>
+                            <hmsDms>
+<ra>17:36:43.696</ra>
+<dec>-44:48:03.22</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>AO optimization sequence</name>
+                    <obsClass>Acquisition</obsClass>
+                    <id>GS-2025A-Q-217-36</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6388</name>
+                            <hmsDms>
+<ra>17:36:16.73</ra>
+<dec>-44:44:12.31</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269195849373440</name>
+                            <hmsDms>
+<ra>17:36:15.251</ra>
+<dec>-44:44:57.75</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269337621875712</name>
+                            <hmsDms>
+<ra>17:36:18.148</ra>
+<dec>-44:43:24.29</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269127129936384</name>
+                            <hmsDms>
+<ra>17:36:21.117</ra>
+<dec>-44:43:46.43</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269195849360768</name>
+                            <hmsDms>
+<ra>17:36:13.205</ra>
+<dec>-44:44:41.99</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955269264568826624</name>
+                            <hmsDms>
+<ra>17:36:11.413</ra>
+<dec>-44:44:07.84</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955268994001308928</name>
+                            <hmsDms>
+<ra>17:36:18.554</ra>
+<dec>-44:45:00.27</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5958272206968678656</name>
+                            <hmsDms>
+<ra>17:35:43.186</ra>
+<dec>-44:44:14.05</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5955267997591489536</name>
+                            <hmsDms>
+<ra>17:36:43.696</ra>
+<dec>-44:48:03.22</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>Crowded field/extended source: offset to sky (&lt; 5arcmin, Laser on)</name>
+                    <obsClass>Science</obsClass>
+                    <id>GS-2025A-Q-217-37</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+<time>2025-02-01 00:00:00 UTC</time>
+<duration>2:30</duration>
+<repeats>
+    <period>2:30</period>
+</repeats>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6388</name>
+                            <hmsDms>
+<ra>17:36:16.73</ra>
+<dec>-44:44:12.31</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269337621875712</name>
+                            <hmsDms>
+<ra>17:36:18.148</ra>
+<dec>-44:43:24.29</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 5955269337621875712</name>
+                            <hmsDms>
+<ra>17:36:18.148</ra>
+<dec>-44:43:24.29</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269195849360768</name>
+                            <hmsDms>
+<ra>17:36:13.205</ra>
+<dec>-44:44:41.99</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 5955269195849360768</name>
+                            <hmsDms>
+<ra>17:36:13.205</ra>
+<dec>-44:44:41.99</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955268994001308928</name>
+                            <hmsDms>
+<ra>17:36:18.554</ra>
+<dec>-44:45:00.27</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 5955268994001308928</name>
+                            <hmsDms>
+<ra>17:36:18.554</ra>
+<dec>-44:45:00.27</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5958272206968678656</name>
+                            <hmsDms>
+<ra>17:35:43.186</ra>
+<dec>-44:44:14.05</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 5955267997591489536</name>
+                            <hmsDms>
+<ra>17:36:43.696</ra>
+<dec>-44:48:03.22</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>AO optimization sequence</name>
+                    <obsClass>Acquisition</obsClass>
+                    <id>GS-2025A-Q-217-11</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6441</name>
+                            <hmsDms>
+<ra>17:50:12.89</ra>
+<dec>-37:03:04.28</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 4039968048264829952</name>
+                            <hmsDms>
+<ra>17:50:11.818</ra>
+<dec>-37:03:10.83</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 4039967395429841152</name>
+                            <hmsDms>
+<ra>17:50:17.82</ra>
+<dec>-37:02:57.05</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 4039968116943499904</name>
+                            <hmsDms>
+<ra>17:50:10.274</ra>
+<dec>-37:02:31.48</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 4039970212928564224</name>
+                            <hmsDms>
+<ra>17:50:31.474</ra>
+<dec>-36:57:55.14</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>Crowded field/extended source: offset to sky (&lt; 5arcmin, Laser on)</name>
+                    <obsClass>Science</obsClass>
+                    <id>GS-2025A-Q-217-9</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+<time>2024-12-28 07:34:15 UTC</time>
+<duration>2:30</duration>
+<repeats>
+    <period>2:30</period>
+</repeats>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6441</name>
+                            <hmsDms>
+<ra>17:50:12.89</ra>
+<dec>-37:03:04.28</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 4039968048264829952</name>
+                            <hmsDms>
+<ra>17:50:11.818</ra>
+<dec>-37:03:10.83</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 4039968116943499904</name>
+                            <hmsDms>
+<ra>17:50:10.274</ra>
+<dec>-37:02:31.48</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 4039967395429625856</name>
+                            <hmsDms>
+<ra>17:50:16.803</ra>
+<dec>-37:02:43.57</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 4039970212928564224</name>
+                            <hmsDms>
+<ra>17:50:31.474</ra>
+<dec>-36:57:55.14</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>AO optimization sequence</name>
+                    <obsClass>Acquisition</obsClass>
+                    <id>GS-2025A-Q-217-14</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6441</name>
+                            <hmsDms>
+<ra>17:50:12.89</ra>
+<dec>-37:03:04.28</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 4039968048264829952</name>
+                            <hmsDms>
+<ra>17:50:11.818</ra>
+<dec>-37:03:10.83</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 4039967395429841152</name>
+                            <hmsDms>
+<ra>17:50:17.82</ra>
+<dec>-37:02:57.05</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 4039968116943499904</name>
+                            <hmsDms>
+<ra>17:50:10.274</ra>
+<dec>-37:02:31.48</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 4039970212928564224</name>
+                            <hmsDms>
+<ra>17:50:31.474</ra>
+<dec>-36:57:55.14</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>Crowded field/extended source: offset to sky (&lt; 5arcmin, Laser on)</name>
+                    <obsClass>Science</obsClass>
+                    <id>GS-2025A-Q-217-15</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+<time>2024-12-28 07:34:15 UTC</time>
+<duration>2:30</duration>
+<repeats>
+    <period>2:30</period>
+</repeats>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6441</name>
+                            <hmsDms>
+<ra>17:50:12.89</ra>
+<dec>-37:03:04.28</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 4039968048264829952</name>
+                            <hmsDms>
+<ra>17:50:11.818</ra>
+<dec>-37:03:10.83</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 4039968116943499904</name>
+                            <hmsDms>
+<ra>17:50:10.274</ra>
+<dec>-37:02:31.48</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 4039967395429625856</name>
+                            <hmsDms>
+<ra>17:50:16.803</ra>
+<dec>-37:02:43.57</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 4039970212928564224</name>
+                            <hmsDms>
+<ra>17:50:31.474</ra>
+<dec>-36:57:55.14</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>AO optimization sequence</name>
+                    <obsClass>Acquisition</obsClass>
+                    <id>GS-2025A-Q-217-18</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6441</name>
+                            <hmsDms>
+<ra>17:50:12.89</ra>
+<dec>-37:03:04.28</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 4039968048264829952</name>
+                            <hmsDms>
+<ra>17:50:11.818</ra>
+<dec>-37:03:10.83</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 4039967395429841152</name>
+                            <hmsDms>
+<ra>17:50:17.82</ra>
+<dec>-37:02:57.05</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 4039968116943499904</name>
+                            <hmsDms>
+<ra>17:50:10.274</ra>
+<dec>-37:02:31.48</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 4039970212928564224</name>
+                            <hmsDms>
+<ra>17:50:31.474</ra>
+<dec>-36:57:55.14</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>Crowded field/extended source: offset to sky (&lt; 5arcmin, Laser on)</name>
+                    <obsClass>Science</obsClass>
+                    <id>GS-2025A-Q-217-19</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+<time>2024-12-28 07:34:15 UTC</time>
+<duration>2:30</duration>
+<repeats>
+    <period>2:30</period>
+</repeats>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6441</name>
+                            <hmsDms>
+<ra>17:50:12.89</ra>
+<dec>-37:03:04.28</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 4039968048264829952</name>
+                            <hmsDms>
+<ra>17:50:11.818</ra>
+<dec>-37:03:10.83</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 4039968116943499904</name>
+                            <hmsDms>
+<ra>17:50:10.274</ra>
+<dec>-37:02:31.48</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 4039967395429625856</name>
+                            <hmsDms>
+<ra>17:50:16.803</ra>
+<dec>-37:02:43.57</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 4039970212928564224</name>
+                            <hmsDms>
+<ra>17:50:31.474</ra>
+<dec>-36:57:55.14</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>AO optimization sequence</name>
+                    <obsClass>Acquisition</obsClass>
+                    <id>GS-2025A-Q-217-22</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6441</name>
+                            <hmsDms>
+<ra>17:50:12.89</ra>
+<dec>-37:03:04.28</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 4039968048264829952</name>
+                            <hmsDms>
+<ra>17:50:11.818</ra>
+<dec>-37:03:10.83</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 4039967395429841152</name>
+                            <hmsDms>
+<ra>17:50:17.82</ra>
+<dec>-37:02:57.05</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 4039968116943499904</name>
+                            <hmsDms>
+<ra>17:50:10.274</ra>
+<dec>-37:02:31.48</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 4039970212928564224</name>
+                            <hmsDms>
+<ra>17:50:31.474</ra>
+<dec>-36:57:55.14</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>Crowded field/extended source: offset to sky (&lt; 5arcmin, Laser on)</name>
+                    <obsClass>Science</obsClass>
+                    <id>GS-2025A-Q-217-23</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+<time>2024-12-28 07:34:15 UTC</time>
+<duration>2:30</duration>
+<repeats>
+    <period>2:30</period>
+</repeats>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6441</name>
+                            <hmsDms>
+<ra>17:50:12.89</ra>
+<dec>-37:03:04.28</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 4039968048264829952</name>
+                            <hmsDms>
+<ra>17:50:11.818</ra>
+<dec>-37:03:10.83</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 4039968116943499904</name>
+                            <hmsDms>
+<ra>17:50:10.274</ra>
+<dec>-37:02:31.48</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 4039967395429625856</name>
+                            <hmsDms>
+<ra>17:50:16.803</ra>
+<dec>-37:02:43.57</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 4039970212928564224</name>
+                            <hmsDms>
+<ra>17:50:31.474</ra>
+<dec>-36:57:55.14</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>AO optimization sequence</name>
+                    <obsClass>Acquisition</obsClass>
+                    <id>GS-2025A-Q-217-26</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6441</name>
+                            <hmsDms>
+<ra>17:50:12.89</ra>
+<dec>-37:03:04.28</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 4039968048264829952</name>
+                            <hmsDms>
+<ra>17:50:11.818</ra>
+<dec>-37:03:10.83</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 4039967395429841152</name>
+                            <hmsDms>
+<ra>17:50:17.82</ra>
+<dec>-37:02:57.05</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 4039968116943499904</name>
+                            <hmsDms>
+<ra>17:50:10.274</ra>
+<dec>-37:02:31.48</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 4039970212928564224</name>
+                            <hmsDms>
+<ra>17:50:31.474</ra>
+<dec>-36:57:55.14</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>Crowded field/extended source: offset to sky (&lt; 5arcmin, Laser on)</name>
+                    <obsClass>Science</obsClass>
+                    <id>GS-2025A-Q-217-27</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+<time>2024-12-28 07:34:15 UTC</time>
+<duration>2:30</duration>
+<repeats>
+    <period>2:30</period>
+</repeats>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6441</name>
+                            <hmsDms>
+<ra>17:50:12.89</ra>
+<dec>-37:03:04.28</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 4039968048264829952</name>
+                            <hmsDms>
+<ra>17:50:11.818</ra>
+<dec>-37:03:10.83</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 4039968116943499904</name>
+                            <hmsDms>
+<ra>17:50:10.274</ra>
+<dec>-37:02:31.48</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 4039967395429625856</name>
+                            <hmsDms>
+<ra>17:50:16.803</ra>
+<dec>-37:02:43.57</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 4039970212928564224</name>
+                            <hmsDms>
+<ra>17:50:31.474</ra>
+<dec>-36:57:55.14</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>AO optimization sequence</name>
+                    <obsClass>Acquisition</obsClass>
+                    <id>GS-2025A-Q-217-30</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6441</name>
+                            <hmsDms>
+<ra>17:50:12.89</ra>
+<dec>-37:03:04.28</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 4039968048264829952</name>
+                            <hmsDms>
+<ra>17:50:11.818</ra>
+<dec>-37:03:10.83</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 4039967395429841152</name>
+                            <hmsDms>
+<ra>17:50:17.82</ra>
+<dec>-37:02:57.05</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 4039968116943499904</name>
+                            <hmsDms>
+<ra>17:50:10.274</ra>
+<dec>-37:02:31.48</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 4039970212928564224</name>
+                            <hmsDms>
+<ra>17:50:31.474</ra>
+<dec>-36:57:55.14</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>Crowded field/extended source: offset to sky (&lt; 5arcmin, Laser on)</name>
+                    <obsClass>Science</obsClass>
+                    <id>GS-2025A-Q-217-31</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+<time>2024-12-28 07:34:15 UTC</time>
+<duration>2:30</duration>
+<repeats>
+    <period>2:30</period>
+</repeats>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6441</name>
+                            <hmsDms>
+<ra>17:50:12.89</ra>
+<dec>-37:03:04.28</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 4039968048264829952</name>
+                            <hmsDms>
+<ra>17:50:11.818</ra>
+<dec>-37:03:10.83</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 4039968116943499904</name>
+                            <hmsDms>
+<ra>17:50:10.274</ra>
+<dec>-37:02:31.48</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 4039967395429625856</name>
+                            <hmsDms>
+<ra>17:50:16.803</ra>
+<dec>-37:02:43.57</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 4039970212928564224</name>
+                            <hmsDms>
+<ra>17:50:31.474</ra>
+<dec>-36:57:55.14</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>AO optimization sequence</name>
+                    <obsClass>Acquisition</obsClass>
+                    <id>GS-2025A-Q-217-34</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6441</name>
+                            <hmsDms>
+<ra>17:50:12.89</ra>
+<dec>-37:03:04.28</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 4039968048264829952</name>
+                            <hmsDms>
+<ra>17:50:11.818</ra>
+<dec>-37:03:10.83</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 4039967395429841152</name>
+                            <hmsDms>
+<ra>17:50:17.82</ra>
+<dec>-37:02:57.05</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 4039968116943499904</name>
+                            <hmsDms>
+<ra>17:50:10.274</ra>
+<dec>-37:02:31.48</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 4039970212928564224</name>
+                            <hmsDms>
+<ra>17:50:31.474</ra>
+<dec>-36:57:55.14</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>Crowded field/extended source: offset to sky (&lt; 5arcmin, Laser on)</name>
+                    <obsClass>Science</obsClass>
+                    <id>GS-2025A-Q-217-35</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+<time>2024-12-28 07:34:15 UTC</time>
+<duration>2:30</duration>
+<repeats>
+    <period>2:30</period>
+</repeats>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6441</name>
+                            <hmsDms>
+<ra>17:50:12.89</ra>
+<dec>-37:03:04.28</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 4039968048264829952</name>
+                            <hmsDms>
+<ra>17:50:11.818</ra>
+<dec>-37:03:10.83</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 4039968116943499904</name>
+                            <hmsDms>
+<ra>17:50:10.274</ra>
+<dec>-37:02:31.48</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 4039967395429625856</name>
+                            <hmsDms>
+<ra>17:50:16.803</ra>
+<dec>-37:02:43.57</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 4039970212928564224</name>
+                            <hmsDms>
+<ra>17:50:31.474</ra>
+<dec>-36:57:55.14</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>AO optimization sequence</name>
+                    <obsClass>Acquisition</obsClass>
+                    <id>GS-2025A-Q-217-38</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6441</name>
+                            <hmsDms>
+<ra>17:50:12.89</ra>
+<dec>-37:03:04.28</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 4039968048264829952</name>
+                            <hmsDms>
+<ra>17:50:11.818</ra>
+<dec>-37:03:10.83</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 4039967395429841152</name>
+                            <hmsDms>
+<ra>17:50:17.82</ra>
+<dec>-37:02:57.05</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 4039968116943499904</name>
+                            <hmsDms>
+<ra>17:50:10.274</ra>
+<dec>-37:02:31.48</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 4039970212928564224</name>
+                            <hmsDms>
+<ra>17:50:31.474</ra>
+<dec>-36:57:55.14</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>Crowded field/extended source: offset to sky (&lt; 5arcmin, Laser on)</name>
+                    <obsClass>Science</obsClass>
+                    <id>GS-2025A-Q-217-39</id>
+                    <status>Ready</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+<time>2024-12-28 07:34:15 UTC</time>
+<duration>2:30</duration>
+<repeats>
+    <period>2:30</period>
+</repeats>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>NGC 6441</name>
+                            <hmsDms>
+<ra>17:50:12.89</ra>
+<dec>-37:03:04.28</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 4039968048264829952</name>
+                            <hmsDms>
+<ra>17:50:11.818</ra>
+<dec>-37:03:10.83</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 4039968116943499904</name>
+                            <hmsDms>
+<ra>17:50:10.274</ra>
+<dec>-37:02:31.48</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 4039967395429625856</name>
+                            <hmsDms>
+<ra>17:50:16.803</ra>
+<dec>-37:02:43.57</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 4039970212928564224</name>
+                            <hmsDms>
+<ra>17:50:31.474</ra>
+<dec>-36:57:55.14</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+            </observations>
+        </program>
+        <program>
+            <semester>2025A</semester>
+            <title>Studying the Occurrence Rate of Planets Orbiting White Dwarfs with the GMT Method</title>
+            <reference>GS-2025A-Q-109</reference>
+            <active>Yes</active>
+            <completed>No</completed>
+            <investigators>
+                <investigator pi="true">
+                    <name>Chung-Uk Lee</name>
+                    <email>leecu@kasi.re.kr, weicheng.zang@cfa.harvard.edu</email>
+                </investigator>
+                <investigator pi="false">
+                    <name>Weicheng Zang</name>
+                    <email>weicheng.zang@cfa.harvard.edu</email>
+                </investigator>
+                <investigator pi="false">
+                    <name>Jennifer Yee</name>
+                    <email>jyee@cfa.harvard.edu</email>
+                </investigator>
+                <investigator pi="false">
+                    <name>Gould Andrew</name>
+                    <email>gould.34@osu.edu</email>
+                </investigator>
+                <investigator pi="false">
+                    <name>Tanagodchaporn Inyanya</name>
+                    <email>tinyanya@kasi.re.kr</email>
+                </investigator>
+                <investigator pi="false">
+                    <name>Shude Mao</name>
+                    <email>shude.mao@gmail.com</email>
+                </investigator>
+                <investigator pi="false">
+                    <name>Hongjing Yang</name>
+                    <email>hongjing.yang@qq.com</email>
+                </investigator>
+            </investigators>
+            <notifyPi>Yes</notifyPi>
+            <rollover>Yes</rollover>
+            <abstrakt>Detecting planets at 1 &lt; a &lt; 5 AU orbiting white dwarfs (WDs) and studying their occurrence rate would shed light on the evolution of planetary systems during the post-main-sequence phase of stellar evolution and the ultimate fate of Earth. Currently, there is no measurement of the occurrence rate of WD planets. We propose 7.5 hrs of the Gemini GSAOI with the GeMS to measure the flux for the host stars for 16 microlensing planetary systems and constrain them to be WDs or main-sequence stars. We will form a statistical sample including ~5 WD planets if the occurrence rate of WD planets at 1 &lt; a &lt; 5 AU is the same for main-sequence stars and measure the occurrence rate of WDs for the first time. Our project can serve as the foundation for a future GMT microlensing project by training scientists in the essential skills to carry out GMT AO imaging. </abstrakt>
+            <scienceBand>1</scienceBand>
+            <supportPartner>Republic of Korea</supportPartner>
+            <partners>
+                <partner>
+                    <name>Republic of Korea</name>
+                    <hoursAllocated>4.5</hoursAllocated>
+                </partner>
+            </partners>
+            <ngoEmail>jyseok@kasi.re.kr</ngoEmail>
+            <contactScientistEmail>jeong-eun.heo@noirlab.edu</contactScientistEmail>
+            <tooStatus>None</tooStatus>
+            <thesis>No</thesis>
+            <allocatedTime>16200000</allocatedTime>
+            <remainingTime>16200000</remainingTime>
+            <observations>
+                <observation>
+                    <name>GSAOI Observation: OB190954</name>
+                    <obsClass>Science</obsClass>
+                    <id>GS-2025A-Q-109-22</id>
+                    <status>Phase 2</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+<time>2025-04-15 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-04-19 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2024-04-20 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-13 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-17 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-18 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>OB190954</name>
+                            <hmsDms>
+<ra>17:51:39.19</ra>
+<dec>-29:36:39.8</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 4056468075653837952</name>
+                            <hmsDms>
+<ra>17:51:37.489</ra>
+<dec>-29:36:01.78</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 4056468002572682752</name>
+                            <hmsDms>
+<ra>17:51:41.354</ra>
+<dec>-29:36:28.3</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 4056468006975933184</name>
+                            <hmsDms>
+<ra>17:51:43.031</ra>
+<dec>-29:37:02.42</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 4056468075653837952</name>
+                            <hmsDms>
+<ra>17:51:37.489</ra>
+<dec>-29:36:01.78</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 4056467972614919424</name>
+                            <hmsDms>
+<ra>17:51:38.16</ra>
+<dec>-29:37:27.47</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 4056467972614919424</name>
+                            <hmsDms>
+<ra>17:51:38.16</ra>
+<dec>-29:37:27.47</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 4056455637465455488</name>
+                            <hmsDms>
+<ra>17:52:06.307</ra>
+<dec>-29:37:55.44</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 4056455637465455488</name>
+                            <hmsDms>
+<ra>17:52:06.307</ra>
+<dec>-29:37:55.44</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>GSAOI Observation: KB221923</name>
+                    <obsClass>Science</obsClass>
+                    <id>GS-2025A-Q-109-23</id>
+                    <status>Phase 2</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+<time>2025-04-15 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-04-19 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2024-04-20 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-13 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-17 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-18 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>KB221923</name>
+                            <hmsDms>
+<ra>17:58:17.79</ra>
+<dec>-29:03:12.34</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 4062351592371995264</name>
+                            <hmsDms>
+<ra>17:58:19.314</ra>
+<dec>-29:03:56.7</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 4062350183622747136</name>
+                            <hmsDms>
+<ra>17:58:14.395</ra>
+<dec>-29:03:32.09</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 4062351699833383680</name>
+                            <hmsDms>
+<ra>17:58:18.343</ra>
+<dec>-29:02:33.04</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 4062540369132899456</name>
+                            <hmsDms>
+<ra>17:58:22.098</ra>
+<dec>-28:57:11.98</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>GSAOI Observation: KB212284</name>
+                    <obsClass>Science</obsClass>
+                    <id>GS-2025A-Q-109-24</id>
+                    <status>Phase 2</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+<time>2025-04-15 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-04-19 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2024-04-20 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-13 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-17 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-18 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>KB212284</name>
+                            <hmsDms>
+<ra>17:44:48.72</ra>
+<dec>-35:52:25.28</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 4041069380969209472</name>
+                            <hmsDms>
+<ra>17:44:45.917</ra>
+<dec>-35:51:48.39</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 4041069342224498048</name>
+                            <hmsDms>
+<ra>17:44:49.51</ra>
+<dec>-35:52:21.27</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 4041068556335373696</name>
+                            <hmsDms>
+<ra>17:44:48.305</ra>
+<dec>-35:53:25.54</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 4041071128930682624</name>
+                            <hmsDms>
+<ra>17:44:17.399</ra>
+<dec>-35:52:29.27</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>GSAOI Observation: KB210185</name>
+                    <obsClass>Science</obsClass>
+                    <id>GS-2025A-Q-109-25</id>
+                    <status>Phase 2</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+<time>2025-04-15 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-04-19 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2024-04-20 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-13 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-17 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-18 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>KB210185</name>
+                            <hmsDms>
+<ra>17:53:43.86</ra>
+<dec>-32:24:45.22</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 4043553001555379200</name>
+                            <hmsDms>
+<ra>17:53:44.264</ra>
+<dec>-32:25:21.74</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 4043553177699926400</name>
+                            <hmsDms>
+<ra>17:53:43.593</ra>
+<dec>-32:24:03.3</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 4043553070279763072</name>
+                            <hmsDms>
+<ra>17:53:40.149</ra>
+<dec>-32:24:25.4</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 4043550905611342208</name>
+                            <hmsDms>
+<ra>17:53:25.383</ra>
+<dec>-32:29:31.88</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>GSAOI Observation: KB170165</name>
+                    <obsClass>Science</obsClass>
+                    <id>GS-2025A-Q-109-26</id>
+                    <status>Phase 2</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+<time>2025-04-15 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-04-19 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2024-04-20 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-13 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-17 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-18 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>KB170165</name>
+                            <hmsDms>
+<ra>17:58:35.92</ra>
+<dec>-28:08:01.21</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 4062744569074098816</name>
+                            <hmsDms>
+<ra>17:58:32.979</ra>
+<dec>-28:07:27.49</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 4062741545416932224</name>
+                            <hmsDms>
+<ra>17:58:37.135</ra>
+<dec>-28:08:51.85</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 4062743018513823616</name>
+                            <hmsDms>
+<ra>17:58:39.938</ra>
+<dec>-28:07:47.49</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 4062745084470533632</name>
+                            <hmsDms>
+<ra>17:58:09.59</ra>
+<dec>-28:08:30.28</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>GSAOI Observation: OB160596</name>
+                    <obsClass>Science</obsClass>
+                    <id>GS-2025A-Q-109-27</id>
+                    <status>Phase 2</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+<time>2025-04-15 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-04-19 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2024-04-20 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-13 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-17 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-18 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>OB160596</name>
+                            <hmsDms>
+<ra>17:51:12.81</ra>
+<dec>-30:50:59.4</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 4055769812698711296</name>
+                            <hmsDms>
+<ra>17:51:10.076</ra>
+<dec>-30:51:39.99</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 4055770298092502784</name>
+                            <hmsDms>
+<ra>17:51:13.115</ra>
+<dec>-30:50:05.9</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 4055770225015621632</name>
+                            <hmsDms>
+<ra>17:51:16.643</ra>
+<dec>-30:50:48.56</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 4055767755471318272</name>
+                            <hmsDms>
+<ra>17:51:40.563</ra>
+<dec>-30:51:41.65</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>GSAOI Observation: OB160613</name>
+                    <obsClass>Science</obsClass>
+                    <id>GS-2025A-Q-109-28</id>
+                    <status>Phase 2</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+<time>2025-04-15 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-04-19 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2024-04-20 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-13 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-17 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-18 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>OB160613</name>
+                            <hmsDms>
+<ra>17:57:02.5</ra>
+<dec>-28:06:58.21</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 4062665335553355648</name>
+                            <hmsDms>
+<ra>17:57:00.753</ra>
+<dec>-28:07:31.99</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 4062665468784437504</name>
+                            <hmsDms>
+<ra>17:57:05.338</ra>
+<dec>-28:06:49.21</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 4062665640385571200</name>
+                            <hmsDms>
+<ra>17:57:01.371</ra>
+<dec>-28:06:45.91</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 4062661246745014784</name>
+                            <hmsDms>
+<ra>17:57:21.457</ra>
+<dec>-28:11:19.15</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>GSAOI Observation: KB190842</name>
+                    <obsClass>Science</obsClass>
+                    <id>GS-2025A-Q-109-29</id>
+                    <status>Phase 2</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+<time>2025-04-15 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-04-19 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2024-04-20 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-13 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-17 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-18 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>KB190842</name>
+                            <hmsDms>
+<ra>17:53:50.03</ra>
+<dec>-29:52:38.78</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 4056388253619841280</name>
+                            <hmsDms>
+<ra>17:53:47.217</ra>
+<dec>-29:52:40.61</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 4056388253619841280</name>
+                            <hmsDms>
+<ra>17:53:47.217</ra>
+<dec>-29:52:40.61</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 4056481372869003776</name>
+                            <hmsDms>
+<ra>17:53:52.823</ra>
+<dec>-29:52:05.62</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 4056481372869003776</name>
+                            <hmsDms>
+<ra>17:53:52.823</ra>
+<dec>-29:52:05.62</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 4056387536445835008</name>
+                            <hmsDms>
+<ra>17:53:52.465</ra>
+<dec>-29:53:03.94</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 4056387502086121728</name>
+                            <hmsDms>
+<ra>17:53:49.711</ra>
+<dec>-29:53:23.67</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 4056477863818447744</name>
+                            <hmsDms>
+<ra>17:54:17.845</ra>
+<dec>-29:55:12.83</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 4056477863818447744</name>
+                            <hmsDms>
+<ra>17:54:17.845</ra>
+<dec>-29:55:12.83</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+                <observation>
+                    <name>GSAOI Observation: OB181269</name>
+                    <obsClass>Science</obsClass>
+                    <id>GS-2025A-Q-109-30</id>
+                    <status>Phase 2</status>
+                    <tooPriority>None</tooPriority>
+                    <instrument>GSAOI</instrument>
+                    <ao>None</ao>
+                    <conditions>
+                        <timingWindows>
+                            <timingWindow>
+<time>2025-04-15 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-04-19 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2024-04-20 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-13 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-17 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                            <timingWindow>
+<time>2025-05-18 12:00:00 UTC</time>
+<duration>24:00</duration>
+                            </timingWindow>
+                        </timingWindows>
+                    </conditions>
+                    <targets>
+                        <sidereal>
+                            <type>Base</type>
+                            <name>OB181269</name>
+                            <hmsDms>
+<ra>17:58:46.42</ra>
+<dec>-27:37:04.6</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS1</type>
+                            <name>Gaia DR2 4062797925372141952</name>
+                            <hmsDms>
+<ra>17:58:48.495</ra>
+<dec>-27:36:31.15</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS2</type>
+                            <name>Gaia DR2 4062798131531374976</name>
+                            <hmsDms>
+<ra>17:58:45.518</ra>
+<dec>-27:36:40.15</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>CWFS3</type>
+                            <name>Gaia DR2 4062797826688001664</name>
+                            <hmsDms>
+<ra>17:58:44.588</ra>
+<dec>-27:37:32.42</dec>
+                            </hmsDms>
+                        </sidereal>
+                        <sidereal>
+                            <type>PWFS1</type>
+                            <name>Gaia DR2 4063550339289112320</name>
+                            <hmsDms>
+<ra>17:58:36.695</ra>
+<dec>-27:31:14.92</dec>
+                            </hmsDms>
+                        </sidereal>
+                    </targets>
+                </observation>
+            </observations>
+        </program>
+    </programs>
+</queryResult>
