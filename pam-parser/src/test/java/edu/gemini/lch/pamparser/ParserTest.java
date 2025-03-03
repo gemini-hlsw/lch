@@ -172,12 +172,14 @@ public class ParserTest {
         canParse("/PAM-test-2013-055-RaDec.txt");
         canParse("/PAM-test-2013-055-AzEl.txt");
         canParse("/PAM-test-2013-082-RaDec.txt");
+        canParse("/PAM-test-2013-082-RaDec_HHH.txt");
         canParse("/PAM-test-2013-083-RaDec.txt");
         canParse("/PAM-test-2013-083-AzEl.txt");
         canParse("/PAM-test-2013-084-RaDec.txt");
         canParse("/PAM-test-2013-084-AzEl.txt");
         canParse("/PAM-test-2013-087-RaDec.txt");
         canParse("/PAM-test-2013-087-AzEl.txt");
+        canParse("/PAM-test-2013-087-AzEl_HHH.txt");
     }
 
     private void canParse(String name) throws Exception {
