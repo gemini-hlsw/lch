@@ -6,13 +6,13 @@
     <parent>
         <artifactId>lchUmbrella</artifactId>
         <groupId>edu.gemini.lch</groupId>
-        <version>3.9.0</version>
+        <version>3.10.0</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <name>LTTS Internal Data Model</name>
     <artifactId>model</artifactId>
-    <version>3.9.0</version>
+    <version>3.10.0</version>
     <packaging>jar</packaging>
 
     <dependencies>
