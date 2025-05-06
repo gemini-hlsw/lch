@@ -24,11 +24,10 @@
     </modules>
 
     <scm>
-        <connection>scm:svn:http://source.gemini.edu/software/lch/trunk/</connection>
-        <developerConnection>scm:svn:http://source.gemini.edu/software/lch/trunk/</developerConnection>
-        <url>http://source.gemini.edu/software/lch/trunk/</url>
+        <connection>scm:git:git@github.com:gemini-hlsw/lch.git</connection>
+        <developerConnection>scm:git:git@github.com:gemini-hlsw/lch.git</developerConnection>
+        <url>https://github.com/gemini-hlsw/lch</url>
     </scm>
-
 
     <properties>
         <!-- Global encoding -->
