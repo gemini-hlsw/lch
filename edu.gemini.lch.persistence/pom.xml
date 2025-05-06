@@ -5,13 +5,13 @@
     <parent>
         <artifactId>lchUmbrella</artifactId>
         <groupId>edu.gemini.lch</groupId>
-        <version>3.11.0</version>
+        <version>3.11.1-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <name>LCH Persistence Module</name>
     <artifactId>persistence</artifactId>
-    <version>3.11.0</version>
+    <version>3.11.1-SNAPSHOT</version>
     <packaging>jar</packaging>
 
 
@@ -37,12 +37,12 @@
         <dependency>
             <groupId>edu.gemini.lch</groupId>
             <artifactId>model</artifactId>
-            <version>3.11.0</version>
+            <version>3.11.1-SNAPSHOT</version>
         </dependency>
         <dependency>
             <groupId>edu.gemini.lch</groupId>
             <artifactId>configuration</artifactId>
-            <version>3.11.0</version>
+            <version>3.11.1-SNAPSHOT</version>
         </dependency>
 
         <!-- EXTERNAL DEPENDENCIES (3rd party libraries) -->
@@ -117,7 +117,7 @@
         <dependency>
             <groupId>edu.gemini.odb</groupId>
             <artifactId>browser-sim</artifactId>
-            <version>3.11.0</version>
+            <version>3.11.1-SNAPSHOT</version>
         </dependency>
 
         <!-- external test only dependencies -->
@@ -139,7 +139,6 @@
         <!-- initialise database -->
         <profile>
             <id>defaultResetParameters</id>
-            <activation><activeByDefault>true</activeByDefault></activation>
             <properties>
                 <lch.reset.database.user>${lch.default.database.user}</lch.reset.database.user>
                 <lch.reset.database.name>${lch.test.database.name}</lch.reset.database.name>
@@ -149,7 +148,6 @@
             <!-- use: "mvn test -DresetWeb=true -PresetDatabase" to reset database for web server -->
             <profile>
                 <id>webResetParameters</id>
-                <activation><property><name>resetWeb</name></property></activation>
                 <properties>
                     <lch.reset.database.user>${lch.default.database.user}</lch.reset.database.user>
                     <lch.reset.database.name>${lch.development.database.name}</lch.reset.database.name>
@@ -158,7 +156,6 @@
 
         <profile>
             <id>resetDatabase</id>
-            <activation><activeByDefault>true</activeByDefault></activation>
             <build>
                 <plugins>
                     <plugin>
