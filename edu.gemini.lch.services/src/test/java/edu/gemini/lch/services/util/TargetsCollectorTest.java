@@ -77,6 +77,30 @@ public class TargetsCollectorTest implements BeanFactoryAware {
         assertTrue(observations.size() > 0);
     }
 
+    // REL-4634 demonstration test
+    // It throws a NumberFormatException because timing windows have a repeat window of "forever"
+    @Ignore
+    @Test
+    public void targetsWithForeverRepeatWindows() throws JAXBException {
+        // create laser night
+        DateTime start = new DateTime(2012, 9, 1, 18, 0, 0);
+        DateTime end = new DateTime(2012, 9, 2, 6, 0, 0);
+        LaserNight night = new LaserNight(Site.NORTH,  start, end);
+
+        // set targets collector up with mock visibility calculator
+        Visibility visibleTwice = new Visibility(new DateTime(2012,9,2,3,0,0), new DateTime(2012,9,1,22,0,0));
+        TargetsCollector collector = (TargetsCollector)beanFactory.getBean("targetsCollector", night);
+        ReflectionTestUtils.setField(collector, "visibilityCalculator", createMockVisCalc(visibleTwice));
+
+        // add targets to collector
+        QueryResult result = getQueryResult("/REL-4634.xml");
+        collector.addScienceTargets(result);
+
+        // check result
+        Set<Observation> observations = collector.getObservations();
+        assertTrue(observations.size() > 0);
+    }
+
     @Test
     public void doesCollectVisibleTwiceTargets() throws JAXBException {
         // create laser night
