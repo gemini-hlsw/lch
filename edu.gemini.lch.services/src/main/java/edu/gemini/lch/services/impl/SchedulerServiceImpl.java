@@ -96,7 +96,7 @@ public class SchedulerServiceImpl implements SchedulerService {
         try {
             Integer waitIntervall = configurationService.getInteger(Configuration.Value.NEW_MAIL_POLL_INTERVAL);
             if (isDue(Task.EmailCheck, waitIntervall)) {
-                    emailService.checkForNewEmails();
+                    emailService.downloadPamsFromSpaceTrack();
             }
         } catch (Exception e) {
             LOGGER.error("could not check for new emails", e);

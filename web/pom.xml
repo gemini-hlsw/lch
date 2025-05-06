@@ -2,17 +2,17 @@
 <project xmlns="http://maven.apache.org/POM/4.0.0"
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0
-			     http://maven.apache.org/xsd/maven-4.0.0.xsd">  
+			     http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
         <artifactId>lchUmbrella</artifactId>
         <groupId>edu.gemini.lch</groupId>
-        <version>3.10.0</version>
+        <version>3.11.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <name>LCH Web Module</name>
     <artifactId>web</artifactId>
-    <version>3.10.0</version>
+    <version>3.11.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
     <properties>
@@ -210,20 +210,20 @@
         <dependency>
             <groupId>edu.gemini.lch</groupId>
             <artifactId>services</artifactId>
-            <version>3.10.0</version>
+            <version>3.11.0-SNAPSHOT</version>
         </dependency>
         <!-- reuse the test code of the services module (simulators) -->
         <dependency>
             <groupId>edu.gemini.lch</groupId>
             <artifactId>persistence</artifactId>
-            <version>3.10.0</version>
+            <version>3.11.0-SNAPSHOT</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>edu.gemini.lch</groupId>
             <artifactId>services</artifactId>
-            <version>3.10.0</version>
+            <version>3.11.0-SNAPSHOT</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
